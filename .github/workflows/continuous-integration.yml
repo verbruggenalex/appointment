@@ -34,7 +34,9 @@ jobs:
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u verbruggenalex --password-stdin
           docker network create proxy
           docker-compose up -d
+          docker-compose restart
           docker-compose ps
+          sleep 5
 
       - name: Test project
         run: |
