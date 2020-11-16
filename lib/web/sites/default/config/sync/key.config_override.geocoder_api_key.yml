@@ -1,0 +1,14 @@
+uuid: 4274b009-da8f-41e6-a4ea-2297713e4901
+langcode: en
+status: true
+dependencies:
+  config:
+    - geocoder.geocoder_provider.googlemaps
+    - key.key.google_maps_api_key
+id: geocoder_api_key
+label: 'Geocoder API Key'
+config_type: geocoder_provider
+config_prefix: geocoder.geocoder_provider
+config_name: googlemaps
+config_item: configuration.apiKey
+key_id: google_maps_api_key
