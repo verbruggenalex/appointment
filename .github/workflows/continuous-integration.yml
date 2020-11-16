@@ -24,8 +24,8 @@ jobs:
         if: steps.changed-dockerfile.outputs.changed == 'true'
         run: |
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u verbruggenalex --password-stdin
-          docker build . --file lib/docker/Dockerfile --target prod --tag docker.pkg.github.com/verbruggenalex/appointment/prod:${GITHUB_REF##*/}
-          docker build . --file lib/docker/Dockerfile --target ci --tag docker.pkg.github.com/verbruggenalex/appointment/ci:${GITHUB_REF##*/}
+          docker build ./lib/docker --target prod --tag docker.pkg.github.com/verbruggenalex/appointment/prod:${GITHUB_REF##*/}
+          docker build ./lib/docker --target ci --tag docker.pkg.github.com/verbruggenalex/appointment/ci:${GITHUB_REF##*/}
           docker push docker.pkg.github.com/verbruggenalex/appointment/prod:${GITHUB_REF##*/}
           docker push docker.pkg.github.com/verbruggenalex/appointment/ci:${GITHUB_REF##*/}
 
