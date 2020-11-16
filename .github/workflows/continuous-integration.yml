@@ -17,9 +17,10 @@ jobs:
         id: filepath
         run: |
           echo ::set-output name=commitpath::$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})
+          git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
 
       - name: Build and push Docker images
-        if: Contains(steps.filepath.outputs.commitpath, 'Dockerfile')
+        if: Contains(steps.filepath.outputs.commitpath, 'lib/docker/Dockerfile')
         run: |
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u verbruggenalex --password-stdin
           docker build . --file lib/docker/Dockerfile --target prod --tag docker.pkg.github.com/verbruggenalex/appointment/prod:${GITHUB_REF##*/}
