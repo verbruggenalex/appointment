@@ -45,4 +45,4 @@ volumes:
 networks:
   proxy:
     external: true
-    name: ${TRAEFIK_NETWORK}
+    name: ${TRAEFIK_NETWORK:-proxy}
