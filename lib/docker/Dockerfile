@@ -52,3 +52,5 @@ FROM prod as ci
 
 RUN curl -sS https://getcomposer.org/installer | php -- --version=1.10.17 --install-dir=/usr/local/bin --filename=composer
 
+USER 1000:1000
+
