@@ -2,7 +2,7 @@ version: '3.7'
 services:
 
   web-prod:
-    image: docker.pkg.github.com/verbruggenalex/appointment/${TRAEFIK_ENV:-ci}
+    image: docker.pkg.github.com/verbruggenalex/appointment/prod:latest
     working_dir: /var/www/html
     environment:
       SOCIAL_AUTH_FACEBOOK_APP_ID:
