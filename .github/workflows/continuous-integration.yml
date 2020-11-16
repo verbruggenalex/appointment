@@ -12,15 +12,16 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
 
-      - name: Get filepath
-        id: filepath
-        run: |
-          echo ::set-output name=commitpath::$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})
-          git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
+      - uses: marceloprado/has-changed-path@v1
+        id: changed-dockerfile
+        with:
+          paths: lib/docker/Dockerfile
 
       - name: Build and push Docker images
-        if: Contains(steps.filepath.outputs.commitpath, 'lib/docker/Dockerfile')
+        if: steps.changed-dockerfile.outputs.changed == 'true'
         run: |
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u verbruggenalex --password-stdin
           docker build . --file lib/docker/Dockerfile --target prod --tag docker.pkg.github.com/verbruggenalex/appointment/prod:${GITHUB_REF##*/}
