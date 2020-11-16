@@ -36,3 +36,9 @@ jobs:
           docker-compose up -d
           docker-compose ps
 
+      - name: Test project
+        run: |
+          docker-compose exec -T web composer install
+          docker-compose exec -T web composer test-phpcs
+          docker-compose exec -T web composer drupal-install-clean
+
