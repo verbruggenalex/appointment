@@ -30,6 +30,9 @@ jobs:
           docker push docker.pkg.github.com/verbruggenalex/appointment/ci
 
       - name: Setup environment
+        env:
+          TRAEFIK_DOMAIN: ${{ secrets.TRAEFIK_DOMAIN }}
+          TRAEFIK_BASIC_AUTH: ${{ secrets.TRAEFIK_BASIC_AUTH }}
         run: |
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u verbruggenalex --password-stdin
           docker network create proxy
