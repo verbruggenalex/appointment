@@ -1,0 +1,25 @@
+uuid: 7d88b41c-e42a-402d-8ad0-4e9da9bf4781
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_n_persons
+    - node.type.appointment
+id: node.appointment.field_n_persons
+field_name: field_n_persons
+entity_type: node
+bundle: appointment
+label: 'Number of persons'
+description: 'Enter the number of persons for the appointment.'
+required: true
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,22 @@
+uuid: e6998bdf-1241-4a2a-8092-14b653901da8
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.appointment
+id: node.appointment.promote
+field_name: promote
+entity_type: node
+bundle: appointment
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

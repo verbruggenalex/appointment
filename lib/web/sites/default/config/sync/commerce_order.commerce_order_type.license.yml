@@ -1,0 +1,27 @@
+uuid: ada4c523-c50c-4958-beda-dfcf06ac0037
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_cart
+    - commerce_checkout
+    - smart_date_selector
+third_party_settings:
+  commerce_cart:
+    cart_form_view: commerce_cart_form
+    cart_block_view: commerce_cart_block
+    cart_expiration:
+      unit: day
+      number: 30
+  commerce_checkout:
+    checkout_flow: license
+label: License
+id: license
+workflow: smart_date_selector_manual_payment_processing
+numberPattern: order_default
+refresh_mode: customer
+refresh_frequency: 300
+sendReceipt: true
+receiptBcc: storeadmin@example.com
+traits: {  }
+locked: false

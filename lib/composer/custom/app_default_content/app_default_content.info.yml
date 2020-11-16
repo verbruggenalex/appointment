@@ -1,0 +1,28 @@
+name: 'App Default Content'
+type: module
+description: 'Contains default content to be used on clean install of this app.'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - smart_date_selector:smart_date_selector
+  - default_content:default_content
+
+default_content:
+  node:
+    - 6a2dfd13-b1fa-4aa8-a902-f0d2c577b5fa
+    - db583335-8a67-4c8e-930f-b8f94a7b4fc0
+    - 65e47993-8f0d-4e97-9e1e-d5604ca5c2d0
+    - 24fa96ad-6086-49d9-90f7-45be866e02df
+    - 14dfe5cf-b5df-44d8-a501-f8382a4774ab
+    - 1834f8db-f55b-4673-9fdb-33d2bcbf01fa
+    - 4b624068-1937-4ae7-a259-6a75837b6e71
+    - 1473de02-46a4-4509-aae9-636c266bdbcf
+  taxonomy_term:
+    - 16fbefc2-d23e-40b0-a68d-90a27e823e29
+    - 288675af-54d3-419d-b39a-650e7525fb66
+    - 518942a7-7769-40a4-88ea-1e5d4e10cd2b
+    - c771c2f9-f2de-454f-9d3a-3af2c28cd7fa
+    - cdd89c4d-2504-4590-9faa-c0aac6029c87
+    - dc535490-40ba-41af-ab57-b460eb526e41
+    - deba76dc-b532-4327-b404-ada6d02ae818
+    - fd8fcfaf-f1f9-4f30-beb5-6b95cca2db2c

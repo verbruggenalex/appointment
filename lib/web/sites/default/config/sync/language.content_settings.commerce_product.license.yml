@@ -1,0 +1,11 @@
+uuid: ad8e3762-7cf5-4d57-8f92-156e953b7e67
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.license
+id: commerce_product.license
+target_entity_type_id: commerce_product
+target_bundle: license
+default_langcode: site_default
+language_alterable: false

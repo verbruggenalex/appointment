@@ -1,0 +1,20 @@
+uuid: 0937c555-44a7-474e-ad7a-7456092f8f1b
+langcode: en
+status: true
+dependencies:
+  module:
+    - profile
+id: profile.field_slot_max_cojoined
+field_name: field_slot_max_cojoined
+entity_type: profile
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,12 @@
+uuid: c6753ff8-92fe-4645-9946-e79c4443ec99
+langcode: en
+status: true
+dependencies: {  }
+id: license
+label: License
+description: 'A license product type is used to sell access to a certain role for a certain period of time.'
+variationType: license
+multipleVariations: true
+injectVariationFields: true
+traits: {  }
+locked: false

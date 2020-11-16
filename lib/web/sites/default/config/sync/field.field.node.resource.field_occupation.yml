@@ -1,0 +1,29 @@
+uuid: 2ba92aca-c617-4809-84f0-af0a63503214
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_occupation
+    - node.type.resource
+    - taxonomy.vocabulary.occupations
+id: node.resource.field_occupation
+field_name: field_occupation
+entity_type: node
+bundle: resource
+label: Occupation
+description: 'Select the occupation of the resource.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      occupations: occupations
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

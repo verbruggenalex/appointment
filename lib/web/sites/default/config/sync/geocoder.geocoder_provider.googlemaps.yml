@@ -1,0 +1,13 @@
+uuid: 22b27616-d572-4fc9-8181-ae692fd9f4dc
+langcode: en
+status: true
+dependencies: {  }
+id: googlemaps
+label: GoogleMaps
+plugin: googlemaps
+configuration:
+  region: be
+  apiKey: AIzaSyCpIZvA-5jcTNWL3lvprztPepzgr7RBiuA
+  throttle:
+    period: 1
+    limit: 3

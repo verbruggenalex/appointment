@@ -1,0 +1,23 @@
+uuid: cc72903f-d865-4d3e-9947-cd285fc48717
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_slot_duration
+    - node.type.resource
+id: node.resource.field_slot_duration
+field_name: field_slot_duration
+entity_type: node
+bundle: resource
+label: 'Slot duration'
+description: 'Enter the number of minutes a single slot will be reserved for.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: minute|minutes
+field_type: integer

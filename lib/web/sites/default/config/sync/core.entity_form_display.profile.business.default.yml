@@ -1,0 +1,38 @@
+uuid: 0d93535c-98d9-4f24-97e7-d0d050838cbb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.profile.business.field_office_hours
+    - field.field.profile.business.field_slot_duration
+    - field.field.profile.business.field_slot_max_cojoined
+    - profile.type.business
+  module:
+    - duration_field
+    - office_hours
+id: profile.business.default
+targetEntityType: profile
+bundle: business
+mode: default
+content:
+  field_office_hours:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: office_hours_default
+    region: content
+  field_slot_duration:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: duration_widget
+    region: content
+  field_slot_max_cojoined:
+    weight: 28
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+hidden:
+  is_default: true

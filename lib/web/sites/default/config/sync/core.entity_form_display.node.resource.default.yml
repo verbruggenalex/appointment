@@ -1,0 +1,160 @@
+uuid: a8207617-2663-4c5e-9179-6173fdeaed83
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.resource.field_address
+    - field.field.node.resource.field_geofield
+    - field.field.node.resource.field_occupation
+    - field.field.node.resource.field_office_hours
+    - field.field.node.resource.field_slot_duration
+    - field.field.node.resource.field_slot_max_cojoined
+    - node.type.resource
+  module:
+    - address
+    - geofield_map
+    - office_hours
+    - path
+    - select_or_other
+id: node.resource.default
+targetEntityType: node
+bundle: resource
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_address:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_geofield:
+    weight: 12
+    settings:
+      map_geocoder:
+        settings:
+          providers:
+            googlemaps:
+              weight: 0
+              checked: false
+          min_terms: 4
+          delay: 800
+          options: ''
+        control: 0
+      map_google_places:
+        places_additional_options: ''
+        places_control: false
+      map_library: leaflet
+      map_type_google: roadmap
+      map_type_leaflet: OpenStreetMap_Mapnik
+      map_type_selector: true
+      map_dimensions:
+        width: 100%
+        height: 450px
+      zoom:
+        start: 6
+        focus: 12
+        min: 0
+        max: 22
+      click_to_find_marker: true
+      click_to_place_marker: true
+      hide_coordinates: true
+      geoaddress_field:
+        field: '0'
+        disabled: true
+        hidden: false
+      html5_geolocation: true
+      default_value:
+        lat: !!float 0
+        lon: !!float 0
+      map_google_api_key: ''
+      zoom_level: 5
+    third_party_settings: {  }
+    type: geofield_map
+    region: content
+  field_occupation:
+    weight: 26
+    settings:
+      select_element_type: select_or_other_select
+      sort_options: ''
+    third_party_settings: {  }
+    type: select_or_other_reference
+    region: content
+  field_office_hours:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: office_hours_default
+    region: content
+  field_slot_duration:
+    weight: 10
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_slot_max_cojoined:
+    weight: 11
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 7
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+hidden: {  }

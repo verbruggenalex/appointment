@@ -1,0 +1,9 @@
+uuid: 225b69b3-dd0c-461b-9399-33bb34341148
+langcode: en
+status: true
+dependencies: {  }
+id: business
+label: Business
+weight: 4
+is_admin: null
+permissions: {  }

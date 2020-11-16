@@ -1,0 +1,105 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 4b624068-1937-4ae7-a259-6a75837b6e71
+  bundle: resource
+  default_langcode: en
+  depends:
+    dc535490-40ba-41af-ab57-b460eb526e41: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: Serenita
+  created:
+    -
+      value: 1604939292
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /resource/serenita
+      langcode: en
+      pathauto: 1
+  field_address:
+    -
+      langcode: en
+      country_code: BE
+      administrative_area: ''
+      locality: Herentals
+      dependent_locality: ''
+      postal_code: '2200'
+      sorting_code: ''
+      address_line1: 'Stationsplein 1'
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+  field_geofield:
+    -
+      value: 'POINT(4.830605 51.180964)'
+      geo_type: Point
+      lat: 51.180964
+      lon: 4.830605
+      left: 4.830605
+      top: 51.180964
+      right: 4.830605
+      bottom: 51.180964
+      geohash: u157jvjw9r0n
+      latlon: '51.180964,4.830605'
+  field_occupation:
+    -
+      entity: dc535490-40ba-41af-ab57-b460eb526e41
+  field_office_hours:
+    -
+      day: 1
+      starthours: 900
+      endhours: 1800
+      comment: ''
+    -
+      day: 2
+      starthours: 900
+      endhours: 1800
+      comment: ''
+    -
+      day: 3
+      starthours: 900
+      endhours: 1800
+      comment: ''
+    -
+      day: 4
+      starthours: 900
+      endhours: 1800
+      comment: ''
+    -
+      day: 5
+      starthours: 900
+      endhours: 1800
+      comment: ''
+    -
+      day: 6
+      starthours: 800
+      endhours: 1600
+      comment: ''
+  field_slot_duration:
+    -
+      value: 30
+  field_slot_max_cojoined:
+    -
+      value: 1

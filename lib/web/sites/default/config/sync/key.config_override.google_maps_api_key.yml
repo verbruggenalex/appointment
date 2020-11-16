@@ -1,0 +1,14 @@
+uuid: ec63b258-3455-4017-896d-e32424489d76
+langcode: en
+status: true
+dependencies:
+  config:
+    - geofield_map.settings
+    - key.key.google_maps_api_key
+id: google_maps_api_key
+label: 'Google Maps API Key'
+config_type: system.simple
+config_prefix: ''
+config_name: geofield_map.settings
+config_item: gmap_api_key
+key_id: google_maps_api_key

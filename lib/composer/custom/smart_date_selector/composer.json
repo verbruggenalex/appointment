@@ -1,0 +1,21 @@
+{
+    "name": "custom/smart_date_selector",
+    "description": "Smart Date Selector",
+    "type": "drupal-custom-module",
+    "authors": [
+        {
+            "name": "Alex Verbruggen",
+            "email": "verbruggenalex@gmail.com"
+        }
+    ],
+    "require": {
+        "drupal/smart_date": "^3.0"
+    },
+    "repositories": {
+        "drupal": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+
+    }
+}

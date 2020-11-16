@@ -1,0 +1,22 @@
+uuid: 1764bb26-a214-4b36-87a5-510161ac8377
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: resource_nodes
+label: 'Resource nodes'
+type: 'canonical_entities:node'
+pattern: 'resource/[node:title]'
+selection_criteria:
+  947bb965-5c91-4464-be56-fd1d26258666:
+    id: node_type
+    bundles:
+      resource: resource
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 947bb965-5c91-4464-be56-fd1d26258666
+selection_logic: and
+weight: -5
+relationships: {  }

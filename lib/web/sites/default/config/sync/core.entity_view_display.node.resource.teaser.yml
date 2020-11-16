@@ -1,0 +1,33 @@
+uuid: e6280e7f-faf3-4f1b-a0b3-05206ca653ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.resource.field_address
+    - field.field.node.resource.field_geofield
+    - field.field.node.resource.field_occupation
+    - field.field.node.resource.field_office_hours
+    - field.field.node.resource.field_slot_duration
+    - field.field.node.resource.field_slot_max_cojoined
+    - node.type.resource
+  module:
+    - user
+id: node.resource.teaser
+targetEntityType: node
+bundle: resource
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_address: true
+  field_geofield: true
+  field_occupation: true
+  field_office_hours: true
+  field_slot_duration: true
+  field_slot_max_cojoined: true
+  langcode: true

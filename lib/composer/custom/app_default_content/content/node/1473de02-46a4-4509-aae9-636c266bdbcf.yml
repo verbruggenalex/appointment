@@ -1,0 +1,90 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 1473de02-46a4-4509-aae9-636c266bdbcf
+  bundle: resource
+  default_langcode: en
+  depends:
+    fd8fcfaf-f1f9-4f30-beb5-6b95cca2db2c: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Swinnen Sara'
+  created:
+    -
+      value: 1604939530
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /resource/swinnen-sara
+      langcode: en
+      pathauto: 1
+  field_address:
+    -
+      langcode: en
+      country_code: BE
+      administrative_area: ''
+      locality: Tessenderlo
+      dependent_locality: ''
+      postal_code: '3980'
+      sorting_code: ''
+      address_line1: 'Spoorwegstraat 14'
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+  field_geofield:
+    -
+      value: 'POINT(5.102339 51.068486)'
+      geo_type: Point
+      lat: 51.068486
+      lon: 5.102339
+      left: 5.102339
+      top: 51.068486
+      right: 5.102339
+      bottom: 51.068486
+      geohash: u15ds0ermpg9
+      latlon: '51.068486,5.102339'
+  field_occupation:
+    -
+      entity: fd8fcfaf-f1f9-4f30-beb5-6b95cca2db2c
+  field_office_hours:
+    -
+      day: 3
+      starthours: 1400
+      endhours: 1600
+      comment: ''
+    -
+      day: 4
+      starthours: 1530
+      endhours: 2000
+      comment: ''
+    -
+      day: 5
+      starthours: 1530
+      endhours: 2000
+      comment: ''
+  field_slot_duration:
+    -
+      value: 20
+  field_slot_max_cojoined:
+    -
+      value: 1

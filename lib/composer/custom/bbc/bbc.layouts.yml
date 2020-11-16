@@ -1,0 +1,15 @@
+bbc_col3:
+  label: 3 Columns
+  category: BBC Columns
+  path: templates/layout_builder
+  template: three-column
+  default_region: first
+  icon_map:
+    - [first, second, third]
+  regions:
+    first:
+      label: First
+    second:
+      label: Second
+    third:
+      label: Third

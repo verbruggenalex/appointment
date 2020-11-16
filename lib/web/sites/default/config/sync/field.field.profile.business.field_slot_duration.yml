@@ -1,0 +1,22 @@
+uuid: 79f26a7b-e358-4ad0-8ceb-bb355990de9a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_slot_duration
+    - profile.type.business
+  module:
+    - duration_field
+id: profile.business.field_slot_duration
+field_name: field_slot_duration
+entity_type: profile
+bundle: business
+label: 'Slot duration'
+description: 'The slot duration determines how much time in minutes a single slot can be booked for.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  granularity: i
+field_type: duration

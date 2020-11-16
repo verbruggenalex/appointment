@@ -1,0 +1,32 @@
+uuid: 52e6a5d9-679a-4e85-baa7-fc60becdcc82
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resource
+    - node.type.appointment
+    - node.type.resource
+  content:
+    - 'node:resource:3423a701-3e4e-4c8f-8a32-18cc0f56b6cb'
+id: node.appointment.field_resource
+field_name: field_resource
+entity_type: node
+bundle: appointment
+label: Resource
+description: 'Select the resource you wish to make an appointment with.'
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: 3423a701-3e4e-4c8f-8a32-18cc0f56b6cb
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      resource: resource
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

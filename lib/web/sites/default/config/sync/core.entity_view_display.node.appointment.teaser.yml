@@ -1,0 +1,27 @@
+uuid: 6a35184d-72f0-4af0-9328-9be826715f6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.appointment.field_n_persons
+    - field.field.node.appointment.field_resource
+    - field.field.node.appointment.field_smart_date_range
+    - node.type.appointment
+  module:
+    - user
+id: node.appointment.teaser
+targetEntityType: node
+bundle: appointment
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_n_persons: true
+  field_resource: true
+  field_smart_date_range: true
+  langcode: true

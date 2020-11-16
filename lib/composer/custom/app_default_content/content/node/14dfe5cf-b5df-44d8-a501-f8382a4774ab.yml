@@ -1,0 +1,100 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 14dfe5cf-b5df-44d8-a501-f8382a4774ab
+  bundle: resource
+  default_langcode: en
+  depends:
+    16fbefc2-d23e-40b0-a68d-90a27e823e29: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Hélène Winandy'
+  created:
+    -
+      value: 1604939012
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /resource/helene-winandy
+      langcode: en
+      pathauto: 1
+  field_address:
+    -
+      langcode: en
+      country_code: BE
+      administrative_area: ''
+      locality: Herentals
+      dependent_locality: ''
+      postal_code: '2200'
+      sorting_code: ''
+      address_line1: 'Eikenlaan 4'
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+  field_geofield:
+    -
+      value: 'POINT(4.822149 51.162207)'
+      geo_type: Point
+      lat: 51.162207
+      lon: 4.822149
+      left: 4.822149
+      top: 51.162207
+      right: 4.822149
+      bottom: 51.162207
+      geohash: u157j9z3knwu
+      latlon: '51.162207,4.822149'
+  field_occupation:
+    -
+      entity: 16fbefc2-d23e-40b0-a68d-90a27e823e29
+  field_office_hours:
+    -
+      day: 1
+      starthours: 800
+      endhours: 2100
+      comment: ''
+    -
+      day: 2
+      starthours: 800
+      endhours: 2100
+      comment: ''
+    -
+      day: 3
+      starthours: 800
+      endhours: 2100
+      comment: ''
+    -
+      day: 4
+      starthours: 800
+      endhours: 2100
+      comment: ''
+    -
+      day: 5
+      starthours: 800
+      endhours: 2100
+      comment: ''
+  field_slot_duration:
+    -
+      value: 60
+  field_slot_max_cojoined:
+    -
+      value: 1

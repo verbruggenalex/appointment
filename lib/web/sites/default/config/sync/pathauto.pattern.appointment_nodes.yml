@@ -1,0 +1,22 @@
+uuid: a0217f0f-2369-49c5-a884-0f8375d9df93
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: appointment_nodes
+label: 'Appointment nodes'
+type: 'canonical_entities:node'
+pattern: 'appointment/[node:uuid]'
+selection_criteria:
+  a3b28f07-c797-46ca-a537-e080e55156f4:
+    id: node_type
+    bundles:
+      appointment: appointment
+    negate: false
+    context_mapping:
+      node: node
+    uuid: a3b28f07-c797-46ca-a537-e080e55156f4
+selection_logic: and
+weight: -5
+relationships: {  }

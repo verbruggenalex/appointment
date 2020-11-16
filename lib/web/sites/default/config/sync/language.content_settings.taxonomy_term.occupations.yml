@@ -1,0 +1,11 @@
+uuid: 03224d2f-22d3-4025-b848-7fcb8885bf7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.occupations
+id: taxonomy_term.occupations
+target_entity_type_id: taxonomy_term
+target_bundle: occupations
+default_langcode: current_interface
+language_alterable: true

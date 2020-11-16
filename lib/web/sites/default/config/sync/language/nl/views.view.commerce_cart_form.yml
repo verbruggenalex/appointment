@@ -1,0 +1,24 @@
+display:
+  default:
+    display_title: Hoofd
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Toepassen
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sorteren op'
+          sort_asc_label: Oplopend
+          sort_desc_label: Aflopend
+      fields:
+        purchased_entity:
+          separator: ', '
+        unit_price__number:
+          separator: ', '
+        remove_button:
+          label: Verwijderen
+        total_price__number:
+          separator: ', '
+      arguments:
+        order_id:
+          exception:
+            title: Alle

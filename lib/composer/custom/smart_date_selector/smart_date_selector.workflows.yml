@@ -1,0 +1,26 @@
+smart_date_selector_manual_payment_processing:
+      id: smart_date_selector_manual_payment_processing
+      group: commerce_order
+      label: 'With manual payment processing'
+      states:
+        draft:
+          label: Draft
+        pending:
+          label: Waiting for Payment
+        completed:
+          label: Completed
+        canceled:
+          label: Canceled
+      transitions:
+        place:
+          label: 'Place order'
+          from: [draft]
+          to: pending
+        validate:
+          label: 'Process order'
+          from: [pending]
+          to: completed
+        cancel:
+          label: 'Cancel order'
+          from: [draft, pending]
+          to: canceled

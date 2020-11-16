@@ -1,0 +1,100 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 1834f8db-f55b-4673-9fdb-33d2bcbf01fa
+  bundle: resource
+  default_langcode: en
+  depends:
+    288675af-54d3-419d-b39a-650e7525fb66: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Nele Driesen'
+  created:
+    -
+      value: 1604939176
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /resource/nele-driesen
+      langcode: en
+      pathauto: 1
+  field_address:
+    -
+      langcode: en
+      country_code: BE
+      administrative_area: ''
+      locality: Diest
+      dependent_locality: ''
+      postal_code: '3294'
+      sorting_code: ''
+      address_line1: 'Turnhoutsebaan 131'
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+  field_geofield:
+    -
+      value: 'POINT(5.028119 51.004258)'
+      geo_type: Point
+      lat: 51.004258
+      lon: 5.028119
+      left: 5.028119
+      top: 51.004258
+      right: 5.028119
+      bottom: 51.004258
+      geohash: u15d4mj37dv6
+      latlon: '51.004258,5.028119'
+  field_occupation:
+    -
+      entity: 288675af-54d3-419d-b39a-650e7525fb66
+  field_office_hours:
+    -
+      day: 1
+      starthours: 800
+      endhours: 2000
+      comment: ''
+    -
+      day: 2
+      starthours: 800
+      endhours: 2000
+      comment: ''
+    -
+      day: 3
+      starthours: 800
+      endhours: 2000
+      comment: ''
+    -
+      day: 4
+      starthours: 800
+      endhours: 2000
+      comment: ''
+    -
+      day: 5
+      starthours: 800
+      endhours: 2000
+      comment: ''
+  field_slot_duration:
+    -
+      value: 90
+  field_slot_max_cojoined:
+    -
+      value: 1

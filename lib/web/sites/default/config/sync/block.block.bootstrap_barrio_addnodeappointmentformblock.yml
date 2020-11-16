@@ -1,0 +1,28 @@
+uuid: 76c3d834-e736-4be0-984d-e7b900d2f90e
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - smart_date_selector
+  theme:
+    - bootstrap_barrio
+id: bootstrap_barrio_addnodeappointmentformblock
+theme: bootstrap_barrio
+region: sidebar_first
+weight: -7
+provider: null
+plugin: add_node_appointment_form_block
+settings:
+  id: add_node_appointment_form_block
+  label: 'Make an appointment'
+  provider: smart_date_selector
+  label_display: visible
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      resource: resource
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

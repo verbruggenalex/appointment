@@ -1,0 +1,115 @@
+{#
+/**
+ * @file
+ * Theme override for the basic structure of a single Drupal page.
+ *
+ * Variables:
+ * - logged_in: A flag indicating if user is logged in.
+ * - root_path: The root path of the current page (e.g., node, admin, user).
+ * - node_type: The content type for the current node, if the page is a node.
+ * - head_title: List of text elements that make up the head_title variable.
+ *   May contain or more of the following:
+ *   - title: The title of the page.
+ *   - name: The name of the site.
+ *   - slogan: The slogan of the site.
+ * - page_top: Initial rendered markup. This should be printed before 'page'.
+ * - page: The rendered page markup.
+ * - path_info.args: Array of URL arguments un aliassed.
+ * - page_bottom: Closing rendered markup. This variable should be printed after
+ *   'page'.
+ * - db_offline: A flag indicating if the database is offline.
+ * - placeholder_token: The token for generating head, css, js and js-bottom
+ *   placeholders.
+ *
+ * @see template_preprocess_html()
+ */
+#}
+{%
+  set body_classes = [
+    logged_in ? 'user-logged-in',
+    not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
+    node_type ? 'node--type-' ~ node_type|clean_class,
+    db_offline ? 'db-offline',
+  ]
+%}
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+  <head>
+    <head-placeholder token="{{ placeholder_token|raw }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token|raw }}">
+    <js-placeholder token="{{ placeholder_token|raw }}">
+  </head>
+    {# <body{{ attributes.addClass(body_classes) }}> #}
+    <body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed page-loading">
+
+    <a href="#main-content" class="visually-hidden focusable skip-link">
+      {{ 'Skip to main content'|t }}
+    </a>
+    {{ page_top }}
+    {{ page }}
+    {{ page_bottom }}
+<!--begin::Global Config(global config for global JS scripts)-->
+<script>
+	var KTAppSettings = {
+"breakpoints": {
+"sm": 576,
+"md": 768,
+"lg": 992,
+"xl": 1200,
+"xxl": 1400
+},
+"colors": {
+"theme": {
+"base": {
+"white": "#ffffff",
+"primary": "#3699FF",
+"secondary": "#E5EAEE",
+"success": "#1BC5BD",
+"info": "#8950FC",
+"warning": "#FFA800",
+"danger": "#F64E60",
+"light": "#E4E6EF",
+"dark": "#181C32"
+},
+"light": {
+"white": "#ffffff",
+"primary": "#E1F0FF",
+"secondary": "#EBEDF3",
+"success": "#C9F7F5",
+"info": "#EEE5FF",
+"warning": "#FFF4DE",
+"danger": "#FFE2E5",
+"light": "#F3F6F9",
+"dark": "#D6D6E0"
+},
+"inverse": {
+"white": "#ffffff",
+"primary": "#ffffff",
+"secondary": "#3F4254",
+"success": "#ffffff",
+"info": "#ffffff",
+"warning": "#ffffff",
+"danger": "#ffffff",
+"light": "#464E5F",
+"dark": "#ffffff"
+}
+},
+"gray": {
+"gray-100": "#F3F6F9",
+"gray-200": "#EBEDF3",
+"gray-300": "#E4E6EF",
+"gray-400": "#D1D3E0",
+"gray-500": "#B5B5C3",
+"gray-600": "#7E8299",
+"gray-700": "#5E6278",
+"gray-800": "#3F4254",
+"gray-900": "#181C32"
+}
+},
+"font-family": "Poppins"
+};
+</script>
+    <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+  </body>
+</html>

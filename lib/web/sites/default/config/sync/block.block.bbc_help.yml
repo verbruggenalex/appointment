@@ -1,0 +1,22 @@
+uuid: f68728f1-5190-4d37-a626-da972f15fe77
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - bbc
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: bbc_help
+theme: bbc
+region: content
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

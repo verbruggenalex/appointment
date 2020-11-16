@@ -1,0 +1,22 @@
+uuid: 2380cb80-985a-47c0-8370-a5b9ac7527b4
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bbc
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: bbc_messages
+theme: bbc
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

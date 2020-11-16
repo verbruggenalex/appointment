@@ -1,0 +1,63 @@
+uuid: d62b9b04-e7d3-455b-8640-2e740e5e2085
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.profile.business.field_office_hours
+    - field.field.profile.business.field_slot_duration
+    - field.field.profile.business.field_slot_max_cojoined
+    - profile.type.business
+  module:
+    - duration_field
+    - office_hours
+id: profile.business.default
+targetEntityType: profile
+bundle: business
+mode: default
+content:
+  field_office_hours:
+    weight: 0
+    label: above
+    settings:
+      day_format: long
+      time_format: G
+      compress: false
+      grouped: false
+      show_closed: all
+      closed_format: Closed
+      separator:
+        days: '<br />'
+        grouped_days: ' - '
+        day_hours: ': '
+        hours_hours: '-'
+        more_hours: ', '
+      current_status:
+        position: ''
+        open_text: 'Currently open!'
+        closed_text: 'Currently closed'
+      schema:
+        enabled: false
+      timezone_field: ''
+      office_hours_first_day: ''
+    third_party_settings: {  }
+    type: office_hours
+    region: content
+  field_slot_duration:
+    weight: 1
+    label: above
+    settings:
+      text_length: full
+      separator: space
+    third_party_settings: {  }
+    type: duration_human_display
+    region: content
+  field_slot_max_cojoined:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+hidden: {  }

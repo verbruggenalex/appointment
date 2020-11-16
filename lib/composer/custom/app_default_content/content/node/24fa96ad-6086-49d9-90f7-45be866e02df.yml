@@ -1,0 +1,105 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 24fa96ad-6086-49d9-90f7-45be866e02df
+  bundle: resource
+  default_langcode: en
+  depends:
+    c771c2f9-f2de-454f-9d3a-3af2c28cd7fa: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Sofie Goovaerts'
+  created:
+    -
+      value: 1604938450
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /resource/sofie-goovaerts
+      langcode: en
+      pathauto: 1
+  field_address:
+    -
+      langcode: en
+      country_code: BE
+      administrative_area: ''
+      locality: Geel
+      dependent_locality: ''
+      postal_code: '2440'
+      sorting_code: ''
+      address_line1: 'Rijn 168 b/c'
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+  field_geofield:
+    -
+      value: 'POINT (5.016143 51.163651)'
+      geo_type: Point
+      lat: 51.163651
+      lon: 5.016143
+      left: 5.016143
+      top: 51.163651
+      right: 5.016143
+      bottom: 51.163651
+      geohash: u15e44h9ueg6
+      latlon: '51.163651,5.016143'
+  field_occupation:
+    -
+      entity: c771c2f9-f2de-454f-9d3a-3af2c28cd7fa
+  field_office_hours:
+    -
+      day: 1
+      starthours: 900
+      endhours: 2000
+      comment: ''
+    -
+      day: 2
+      starthours: 900
+      endhours: 2000
+      comment: ''
+    -
+      day: 3
+      starthours: 900
+      endhours: 2000
+      comment: ''
+    -
+      day: 4
+      starthours: 900
+      endhours: 2000
+      comment: ''
+    -
+      day: 5
+      starthours: 900
+      endhours: 2000
+      comment: ''
+    -
+      day: 6
+      starthours: 900
+      endhours: 1200
+      comment: ''
+  field_slot_duration:
+    -
+      value: 60
+  field_slot_max_cojoined:
+    -
+      value: 1

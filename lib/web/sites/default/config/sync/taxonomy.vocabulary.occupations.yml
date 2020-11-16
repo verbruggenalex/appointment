@@ -1,0 +1,8 @@
+uuid: 665d3cf2-f5e0-40cb-8f75-67694a2f5e44
+langcode: en
+status: true
+dependencies: {  }
+name: Occupations
+vid: occupations
+description: 'A list of occupations with which a resource can be tagged.'
+weight: 0

@@ -1,0 +1,19 @@
+uuid: ef6743e2-ac88-4bf6-add6-9f70da2c9f80
+langcode: en
+status: true
+dependencies: {  }
+id: manual
+label: Manual
+weight: null
+plugin: manual
+configuration:
+  instructions:
+    value: TODO
+    format: plain_text
+  display_label: Manual
+  mode: n/a
+  payment_method_types:
+    - credit_card
+  collect_billing_information: false
+conditions: {  }
+conditionOperator: AND

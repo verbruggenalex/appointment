@@ -1,0 +1,23 @@
+uuid: f7174b06-8239-4f15-b5b5-dd587f0bee18
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_slot_max_cojoined
+    - profile.type.business
+id: profile.business.field_slot_max_cojoined
+field_name: field_slot_max_cojoined
+entity_type: profile
+bundle: business
+label: 'Slot max cojoined'
+description: 'Set the maximum number of consecutive slots that can be booked by a single customer.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

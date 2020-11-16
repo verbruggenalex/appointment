@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a media layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{% if content %}
+  <div class="d-flex flex-column flex-md-row">
+    <div class="flex-md-row-auto w-md-275px w-xl-325px">
+      <div class="card card-custom gutter-b">
+        <div class="card-body pt-0">
+          {{ drupal_block('add_node_appointment_form_block', wrapper=false) }}
+        </div>
+      </div>
+    </div>
+    <div class="flex-md-row-fluid ml-md-6 ml-lg-8">
+      <div class="row">
+        <div class="col-xxl-6">
+          <div class="card card-custom gutter-b">
+            <div class="card-body pt-0">
+              {{ drupal_block('views_block:calendar-calendar_select', wrapper=false) }}
+            </div>
+          </div>
+        </div>
+        <div class="col-xxl-6">
+          <div class="card card-custom gutter-b">
+            <div class="card-body pt-0">
+              {{ content.third }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}

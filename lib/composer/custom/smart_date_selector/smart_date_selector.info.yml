@@ -1,0 +1,8 @@
+name: 'Smart Date Selector'
+type: module
+description: 'Smart Date Selector'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - drupal:views
+  - smart_date:smart_date

@@ -1,0 +1,6 @@
+status: 1
+pattern: '[node:uuid]'
+escape: false
+dependencies:
+  config:
+    - node.type.appointment

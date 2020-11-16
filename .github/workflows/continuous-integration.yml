@@ -1,0 +1,33 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Get filepath
+        id: filepath
+        run: |
+              echo ::set-output name=commitpath::$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})
+
+      - name: Build and push Docker images
+        if: Contains(steps.filepath.outputs.commitpath, 'Dockerfile')
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u verbruggenalex --password-stdin
+          docker build . --file lib/docker/Dockerfile --target prod --tag docker.pkg.github.com/verbruggenalex/appointment/prod:${GITHUB_REF##*/}
+          docker build . --file lib/docker/Dockerfile --target ci --tag docker.pkg.github.com/verbruggenalex/appointment/ci:${GITHUB_REF##*/}
+          docker push docker.pkg.github.com/verbruggenalex/appointment/prod:${GITHUB_REF##*/}
+          docker push docker.pkg.github.com/verbruggenalex/appointment/ci:${GITHUB_REF##*/}
+
+      - name: Setup environment
+        run: |
+          docker-compose up -d
+

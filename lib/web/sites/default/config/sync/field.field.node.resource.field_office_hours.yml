@@ -1,0 +1,21 @@
+uuid: 3ec07ff5-9246-4489-ae90-b1ab1ef3991e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_office_hours
+    - node.type.resource
+  module:
+    - office_hours
+id: node.resource.field_office_hours
+field_name: field_office_hours
+entity_type: node
+bundle: resource
+label: 'Office hours'
+description: 'Enter the hours your business is available for appointments.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: office_hours

@@ -1,0 +1,23 @@
+uuid: 21f36f5f-ffa1-4e82-ab69-497809cb1fac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_slot_max_cojoined
+    - node.type.resource
+id: node.resource.field_slot_max_cojoined
+field_name: field_slot_max_cojoined
+entity_type: node
+bundle: resource
+label: 'Slot max cojoined'
+description: 'Enter a number for how many slots should be able be booked cojoined. So for example with a slot duration of 30 minutes and a max cojoined slots of 5 a person will be able to book 1 to 5 consecutive slots.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

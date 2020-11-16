@@ -1,0 +1,22 @@
+uuid: 38ceff56-1a81-40e4-86e5-72325cd9913f
+langcode: en
+status: true
+dependencies:
+  theme:
+    - bbc
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: bbc_local_tasks
+theme: bbc
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

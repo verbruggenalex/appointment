@@ -1,0 +1,45 @@
+/**
+ * @file
+ * General styles for dropbuttons.
+ */
+.js .dropbutton-widget {
+  border-radius: 0.42rem;
+  margin: 0;
+ }
+
+ .js .dropbutton-widget ul {
+  border-right: none;
+ }
+
+.js .dropbutton .dropbutton-action:hover, .js .dropbutton a:hover {
+  background: #187DE4;
+  border-bottom: 0 none;
+}
+
+ .js .dropbutton a {
+  padding: 0.65rem 1rem;
+  background-color: #3699FF;
+  border-color: #3699FF;
+  color: #FFFFFF;
+  border-bottom: 0 none;
+  font-size: 1rem;
+}
+
+.js .dropbutton-toggle button {
+  color: #FFFFFF;
+  background-color: #3699FF;
+  background-image: none;
+  border-color: #187DE4;
+}
+
+.js .dropbutton-toggle button:hover {
+  background-color: #187DE4;
+}
+
+.js .dropbutton-toggle .dropbutton-arrow:hover {
+  background: none;
+}
+
+.js .dropbutton .secondary-action {
+  border: none;
+}

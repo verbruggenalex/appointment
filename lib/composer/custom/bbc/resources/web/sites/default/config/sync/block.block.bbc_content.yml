@@ -1,0 +1,22 @@
+uuid: 9a0867a0-349f-4f84-9c2c-75047d996093
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bbc
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: bbc_content
+theme: bbc
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

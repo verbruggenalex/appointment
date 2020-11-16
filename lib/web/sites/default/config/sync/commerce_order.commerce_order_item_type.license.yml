@@ -1,0 +1,11 @@
+uuid: 796ade76-f284-4e68-92fa-cf69b7a264d9
+langcode: en
+status: true
+dependencies: {  }
+label: License
+id: license
+purchasableEntityType: commerce_product_variation
+orderType: license
+traits:
+  - commerce_license_order_item_type
+locked: false

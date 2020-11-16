@@ -1,0 +1,44 @@
+uuid: 1482f10b-ef66-48d5-9a68-f35fe5516b2d
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_payment
+id: license
+label: License
+plugin: multistep_default
+configuration:
+  display_checkout_progress: true
+  panes:
+    login:
+      allow_guest_checkout: false
+      allow_registration: true
+      step: login
+      weight: 0
+    contact_information:
+      double_entry: false
+      step: order_information
+      weight: 1
+    payment_information:
+      step: order_information
+      weight: 2
+    review:
+      step: review
+      weight: 3
+    payment_process:
+      capture: false
+      step: payment
+      weight: 4
+    completion_register:
+      step: complete
+      weight: 5
+    completion_message:
+      message:
+        value: "Your order number is [commerce_order:order_number].\r\nYou can view your order on your account page when logged in."
+        format: plain_text
+      step: complete
+      weight: 6
+    order_summary:
+      view: ''
+      step: _sidebar
+      weight: 7

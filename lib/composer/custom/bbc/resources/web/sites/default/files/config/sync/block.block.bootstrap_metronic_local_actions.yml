@@ -1,0 +1,20 @@
+uuid: a4c1ce29-460b-49a8-a1bb-04877e2dcb4e
+langcode: en
+status: true
+dependencies:
+  theme:
+    - bootstrap_metronic
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: bootstrap_metronic_local_actions
+theme: bootstrap_metronic
+region: content
+weight: -20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

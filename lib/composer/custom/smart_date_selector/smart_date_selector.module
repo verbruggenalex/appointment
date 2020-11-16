@@ -1,0 +1,434 @@
+<?php
+
+/**
+ * @file
+ * Contains smart_date_selector.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\HtmlCommand;
+use Drupal\Core\Url;
+use Drupal\Core\Render\Markup;
+use Drupal\Core\Datetime\DrupalDateTime;
+
+/**
+ * Implements hook_help().
+ */
+function smart_date_selector_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the smart_date_selector module.
+    case 'help.page.smart_date_selector':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Smart Date Selector') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_views_plugins_style_alter().
+ *
+ * @see: https://www.drupal.org/project/fullcalendar_view/issues/3168188
+ */
+function smart_date_selector_views_plugins_style_alter(array &$plugins)
+{
+  $plugins['fullcalendar_view_display']['even empty'] = true;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function smart_date_selector_form_views_exposed_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  $view_ids = ['business_listing'];
+  $view = $form_state->getStorage('view');
+  $exposedInput = $view['view']->getExposedInput();
+  // kint($form);
+  if ($form_id == 'views_exposed_form' && in_array($view['view']->id(), $view_ids)) {
+    if (isset($form['field_address_country_code']['#options']['All'])) {
+      $form['field_address_country_code']['#options']['All'] = '- ' . t('Any country') . ' -';
+    }
+    if (isset($form['field_occupation_target_id']['#options']['All'])) {
+      $form['field_occupation_target_id']['#options']['All'] = '- ' . t('Any occupation') . ' -';
+    }
+    if (isset($form['items_per_page']['#title'])) {
+      unset($form['items_per_page']['#title']);
+    }
+    if (isset($form['title'])) {
+      $form['title']['#size'] = 12;
+    }
+    if (isset($form['field_address_postal_code'])) {
+      $form['field_address_postal_code']['#size'] = 6;
+      // $connection = \Drupal::database();
+      // /** @var \Drupal\Core\Database\Query\Select $query */
+      // $query = $connection->select('node__field_address', 'fa')
+      // ->fields('fa', ['field_address_postal_code'])
+      // ->distinct(TRUE)
+      // ->orderBy('field_address_postal_code', 'asc')
+      // ->condition('bundle', 'resource');
+
+      // if ($exposedInput['field_address_country_code']) {
+      //   $query->condition('field_address_country_code', $exposedInput['field_address_country_code']);
+      // }
+
+      // if ($options = $query->execute()->fetchAllKeyed(0, 0)) {
+      //   $form['field_address_postal_code']['#type'] = 'select';
+      //   unset($form['field_address_postal_code']['#size']);
+      //   $emptyOption = ['' => '- ' . t('Any postal code') . ' -'];
+      //   $form['field_address_postal_code']['#options'] = $emptyOption + $options;
+      // }
+    }
+  }
+}
+
+/**
+ * Ajax callback to return the slot_select form element.
+ *
+ * @param array $form
+ *   The form array.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The form state.
+ *
+ * @return array
+ *   The form element.
+ */
+function _smart_date_selector_return_slot_options(array &$form, FormStateInterface $form_state) {
+  return $form['slot_select'];
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ *
+ * Add social login buttons.
+ */
+function smart_date_selector_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id)
+{
+  if ($auth = \Drupal::config('social_auth.settings')->get('auth')) {
+    // Set social auth redirection to current page if we are not on /user/login.
+    $linkOptions = ($currentPath = \Drupal::service('path.current')->getPath()) && $currentPath != '/user/login' ? ['query' => ['destination' => $currentPath]] : [];
+    $linkOptions['language'] = \Drupal::service('language_manager')->getDefaultLanguage();
+    // Set a redirect on the form submit function to stay on current page.
+    $form['#submit'][] = '_smart_date_selector_form_user_login_submit';
+    // @todo: Float submit button to the left.
+    $form['actions']['submit']['#weight'] = 0;
+    $form['actions']['submit']['#attributes']['class'][] = 'ml-2';
+    $form['actions']['extra_actions'] = [
+      '#type' => 'dropbutton',
+      '#links' => [],
+      '#weight' => 5,
+    ];
+    foreach ($auth as $provider => $settings) {
+      $form['actions']['extra_actions']['#links'][$provider] = [
+        'title' => t('Login with') . ' ' . ucfirst(str_replace('social_auth_', '', $provider)),
+        'url' => Url::fromRoute($settings['route'], [], $linkOptions),
+      ];
+    }
+  }
+}
+
+
+
+/**
+ * Custom submit handler for user login form.
+ */
+function _smart_date_selector_form_user_login_submit(array $form, FormStateInterface $form_state) {
+  $route_match = \Drupal::routeMatch();
+  // Entity will be found in the route parameters.
+  if (($route = $route_match->getRouteObject()) && ($parameters = $route->getOption('parameters'))) {
+    // Determine if the current route represents an entity.
+    foreach ($parameters as $name => $options) {
+      if (isset($options['type']) && strpos($options['type'], 'entity:') === 0) {
+        $entity = $route_match->getParameter($name);
+        // If we are logging in on a resource page we redirect back to it.
+        if ($entity->getEntityTypeId() == 'node') {
+          $form_state->setRedirect('entity.node.canonical', ['node' => $entity->id()]);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ *
+ * Prepopulate the smart date field with the date passed from query parameter.
+ */
+function smart_date_selector_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (in_array($form_id, [
+    'node_appointment_form',
+    'node_appointment_edit_form',
+  ])) {
+    $ajax = [
+      'callback' => '_smart_date_selector_return_slot_options',
+      'disable-refocus' => FALSE,
+      'event' => 'autocompleteclose change',
+      'wrapper' => 'edit-slot-select-time',
+      'progress' => [
+        'type' => 'throbber',
+        'message' => t('Verifying entry...'),
+      ],
+    ];
+
+    // The slots selection widget.
+    $form['field_slots']['widget']['#ajax'] = $ajax;
+    // The resource selection widget.
+    $form['field_resource']['widget'][0]['target_id']['#ajax'] = $ajax;
+    // This should be populated during validation?
+    $form['field_smart_date_range']['#access'] = FALSE;
+    //$form['field_smart_date_range']['#disabled'] = TRUE;
+
+    $form['date_select'] = [
+      '#type' => 'date',
+      '#title' => t('Date'),
+      '#description' => t('Select the date for your appointment.'),
+      '#weight' => 2,
+      '#required' => TRUE,
+      '#ajax' => $ajax,
+      '#default_value' => $form_state->getValue('date_select') ? $form_state->getValue('date_select') : $form['field_smart_date_range']['widget'][0]['value']['#default_value']->format('Y-m-d'),
+    ];
+    $form['date_select']['#attributes']['min'] = date('Y-m-d');
+    // @todo: Make configurable according to the license type.
+    // $form['date_select']['#attributes']['max'] = date('Y-m-d', strtotime("+1 week"));
+    // Add the slot select box.
+    $form['slot_select'] = [
+      '#title' => t('Time'),
+      '#description' => t('Select the time for your appointment.'),
+      '#type' => 'select',
+      '#weight' => 2,
+      '#options' => [],
+      '#required' => TRUE,
+      '#default_value' => $form_state->getValue('slot_select') ? $form_state->getValue('slot_select') : $form['field_smart_date_range']['widget'][0]['value']['#default_value']->getTimestamp(),
+      '#prefix' => '<div id="edit-slot-select-time">',
+      '#suffix' => '</div>',
+    ];
+    $nodeId = ($node = $form_state->getFormObject()->getEntity()) ? $node->id() : NULL;
+    // $appointmentStartDate = $form['field_smart_date_range']['widget'][0]['value']['#default_value'] = ($smartDateRange = $form_state->getValue('field_smart_date_range')) ? $smartDateRange[0]['value'] :  $form['field_smart_date_range']['widget'][0]['value']['#default_value'];
+    $appointmentStartDate = ($startDate = $form_state->getValue('date_select')) ? DrupalDateTime::createFromFormat('Y-m-d', $startDate) : $form['field_smart_date_range']['widget'][0]['value']['#default_value'];
+    $resourceNid = ($resourceReference = $form_state->getValue('field_resource')) ? $resourceReference[0]['target_id'] : $form['field_resource']['widget'][0]['target_id']['#default_value']->id();
+
+    if ($resourceNid && $appointmentStartDate) {
+      // In format drupalDateTime.
+      $date = $appointmentStartDate;
+      $dateString = $date->format('Y-m-d');
+      // Find the weekday of this date.
+      $day = $date->format('w');
+
+      // Get the office hours for that weekday.
+      $availabilities = [];
+      $slots = [];
+      if ($resource = \Drupal::entityTypeManager()->getStorage('node')->load($resourceNid)) {
+        $officeHours = $resource->get('field_office_hours')->getValue();
+        $slotDuration = $resource->get('field_slot_duration')->getValue() ? $resource->get('field_slot_duration')->getValue()[0]['value'] : 30;
+        $form['slot_duration'] = [
+          '#type' => 'hidden',
+          '#required' => TRUE,
+          '#default_value' => $slotDuration,
+        ];
+        $slotMaxCojoined = $resource->get('field_slot_max_cojoined')->getValue() ? $resource->get('field_slot_max_cojoined')->getValue()[0]['value'] : 1;
+        foreach ($officeHours as $restrictedHour) {
+          if ($restrictedHour['day'] === $day) {
+            $start = DrupalDateTime::createFromFormat('Y-m-d Hi', $dateString . ' ' . sprintf('%04d', $restrictedHour['starthours']));
+            $end = DrupalDateTime::createFromFormat('Y-m-d Hi', $dateString . ' ' . sprintf('%04d', $restrictedHour['endhours']));
+            $interval = new \DateInterval('PT' . $slotDuration . 'M');
+            $periods = new \DatePeriod($start->getPhpDateTime(), $interval, $end->getPhpDateTime());
+            foreach ($periods as $period) {
+              $periodTimestamp = $period->getTimestamp();
+              $maxTimestamp = $periodTimestamp + ($slotDuration * 60);
+              if ($maxTimestamp <= $end->getTimestamp()) {
+                $slots[$period->getTimestamp()] = $period->format('H:i');
+              }
+            }
+            $availabilities[] = [
+              'start' => $start->getTimestamp(),
+              'end' => $end->getTimestamp(),
+            ];
+          }
+        }
+        if ($slotMaxCojoined > 1) {
+          $form['field_n_persons']['#weight'] = 2;
+          $form['field_n_persons']['widget'][0]['value']['#type'] = 'select';
+          $form['field_n_persons']['widget'][0]['value']['#options'] = array_combine(range(1, $slotMaxCojoined), range(1, $slotMaxCojoined));
+          $form['field_n_persons']['widget'][0]['value']['#default_value'] = $form_state->getValue('field_n_persons') ? $form_state->getValue('field_n_persons')[0]['value'] : $form['field_n_persons']['widget'][0]['value']['#default_value'];
+          $form['field_n_persons']['widget'][0]['value']['#ajax'] = $ajax;
+        } else {
+          $form['field_n_persons']['#access'] = FALSE;
+        }
+      }
+      // Only try removing slots if we have slots...
+      if (count($availabilities) > 0) {
+        // Find all appointments for that date.
+        $query = \Drupal::entityQuery('node')
+          ->condition('status', 1)
+          ->condition('type', 'appointment')
+          ->condition('field_resource.entity:node.nid', $resourceNid);
+        // Exclude the current nid if we have one.
+        if ($nodeId) {
+          $query->condition('nid', $nodeId, '!=');
+        }
+        $orGroup = $query->orConditionGroup();
+
+        foreach ($availabilities as $availability) {
+          $andGroup = $query
+            ->andConditionGroup()
+            ->condition('field_smart_date_range.value', $availability['start'], '>=')
+            ->condition('field_smart_date_range.end_value', $availability['end'], '<=');
+          $orGroup
+            ->condition($andGroup);
+        }
+
+        $nids = $query->condition($orGroup)->execute();
+        $activeAppointments = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($nids);
+
+        // Remove any slots that have already been taken.
+        foreach ($activeAppointments as $activeAppointment) {
+          $dateRange = $activeAppointment->get('field_smart_date_range')->getValue()[0];
+          // Filter out all timestamps that have been taken already.
+          $slots = array_filter($slots, function ($timestamp) use ($dateRange) {
+            return !(($timestamp >= $dateRange['value']) && ($timestamp < $dateRange['end_value']));
+          }, ARRAY_FILTER_USE_KEY);
+        }
+        // Remove any slots that can not be a part of the multislot.
+        if ($slotMaxCojoined > 1) {
+          $numberOfPersons = (int) $form['field_n_persons']['widget'][0]['value']['#default_value'] - 1;
+          $secondsForNextSlot = $slotDuration * $numberOfPersons * 60;
+          $slots = array_filter($slots, function ($timestamp) use ($secondsForNextSlot, $numberOfPersons, $slots) {
+            $keys = array_keys($slots);
+            $nextTimestamp = $timestamp + $secondsForNextSlot;
+            $from_index = array_search($timestamp, $keys);
+            $to_index = array_search($nextTimestamp, $keys);
+            $steps = $to_index - $from_index;
+
+            return array_key_exists($nextTimestamp, $slots) && $steps === $numberOfPersons;
+          }, ARRAY_FILTER_USE_KEY);
+        }
+        // Filter out all timestamps are in the past.
+        $currentTime = \Drupal::time()->getCurrentTime();
+        $currentDate = DrupalDateTime::createFromTimestamp($currentTime);
+        if ($date->diff($currentDate)->days == 0) {
+          $slots = array_filter($slots, function ($timestamp) use ($currentTime) {
+            return $timestamp > $currentTime;
+          }, ARRAY_FILTER_USE_KEY);
+        }
+      }
+    }
+    // Populate the slots.
+    if (count($slots) > 0) {
+      $form['slot_select']['#options'] = $slots;
+    } else {
+      $form['slot_select']['#options'] = ['' => t('No slots available.')];
+      $form['slot_select']['#default_value'] = '';
+      $form['slot_select']['#disabled'] = TRUE;
+    }
+
+    // Add validation function located in the module file.
+    $form['#validate'][] = 'smart_date_selector_appointment_node_form_validate';
+    $form['actions']['submit']['#submit'][] = 'smart_date_selector_appointment_node_form_submit';
+    $form['actions']['#attributes']['class'][] = 'text-center';
+    $form['actions']['submit']['#value'] = t('Book appointment now!');
+  }
+}
+
+/**
+ * Custom submit handler for appointment node form.
+ */
+function smart_date_selector_appointment_node_form_submit(array $form, FormStateInterface $form_state) {
+  // Redirect the form.
+  $form_state->setRedirect('<current>');
+}
+
+/**
+ * Custom validation handler for appointment node form.
+ */
+function smart_date_selector_appointment_node_form_validate(array $form, FormStateInterface $form_state) {
+
+  // For some reason we were not getting published appointments on the block form.
+  $form_state->setValue('status', ['value' => 1]);
+
+  $startTimestamp = $form_state->getValue('slot_select');
+  if ($startTimestamp === '') {
+    $form_state->setErrorByName('date_select', t('This date is fully booked. Please try another date'));
+  }
+  else {
+    $duration = $form_state->getValue('field_n_persons')[0]['value'] * $form_state->getValue('slot_duration');
+    $endTimestamp = $startTimestamp + ($duration * 60);
+    $startDate = DrupalDateTime::createFromTimestamp($startTimestamp);
+    $endDate = DrupalDateTime::createFromTimestamp($endTimestamp);
+    $appointmentId = ($appointment = $form_state->getFormObject()->getEntity()) ? $appointment->id() : null;
+    $resourceId = ($resource = $form_state->getValue('field_resource')) ? $resource[0]['target_id'] : null;
+
+    // Check if no other appointments have been booked there in the meantime.
+    $query = \Drupal::entityQuery('node')
+      ->condition('status', 1)
+      ->condition('type', 'appointment')
+      ->condition('field_resource.entity:node.nid', $resourceId)
+      ->condition('field_smart_date_range.value', $startTimestamp, '>=')
+      ->condition('field_smart_date_range.end_value', $endTimestamp, '<=');
+    // Exclude the current nid if we have one.
+    if ($appointmentId) {
+      $query->condition('nid', $appointmentId, '!=');
+    }
+    $nids = $query->execute();
+
+    if (count($nids) > 0) {
+      $form_state->setErrorByName('slot_select', t('The slot you selected was already booked, please try again.'));
+    }
+
+    // If we do not have any errors on the form we update the date range field
+    // values accordingly.
+    if (count($form_state->getErrors()) === 0) {
+      $form_state->setValue(['field_smart_date_range', 0, 'value'], $startDate);
+      $form_state->setValue(['field_smart_date_range', 0, 'end_value'], $endDate);
+      $form_state->setValue(['field_smart_date_range', 0, 'duration'], $duration);
+    }
+  }
+}
+
+/**
+ * Add active language and icons.
+ */
+function smart_date_selector_preprocess_links__language_block(&$variables)
+{
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $nativeNames = \Drupal::languageManager()->getStandardLanguageList();
+  $iconpath = '/themes/custom/bbc/assets/media/svg/flags/';
+  $icons = [
+    'en' => '260-united-kingdom.svg',
+    'nl' => '237-netherlands.svg',
+    'fr' => '195-france.svg',
+  ];
+  $variables['active_icon'] = $iconpath . '/' . $icons[$language];
+  foreach ($variables['links'] as $lid => $link) {
+    $variables['links'][$lid]['link']['#options']['attributes']['class'][] = 'navi-link';
+    if ($lid === $language) {
+      $variables['links'][$lid]['link']['#options']['attributes']['class'][] = 'btn-light';
+    }
+    $variables['links'][$lid]['link']['#title'] = Markup::create('<span class="symbol symbol-20 mr-3"><img src="' . $iconpath . '/' . $icons[$lid] . '" alt=""></span><span class="navi-text">' . $nativeNames[$lid][1] . '</span>');
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function smart_date_selector_theme() {
+  return [
+    'user_button_block' => [
+      'variables' => [
+        'firstname' => NULL,
+        'login_url' => NULL,
+        'picture' => NULL
+      ],
+    ],
+    'user_profile_block' => [
+      'variables' => [
+        'email' => NULL,
+        'displayname' => NULL,
+        'logout_url' => NULL,
+        'profile_url' => NULL,
+        'picture' => NULL
+      ],
+    ],
+  ];
+}

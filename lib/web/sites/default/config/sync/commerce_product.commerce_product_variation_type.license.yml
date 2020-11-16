@@ -1,0 +1,18 @@
+uuid: bdb6f725-0e3c-49b8-b292-3558ca98d75c
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_license
+third_party_settings:
+  commerce_license:
+    license_types:
+      role: role
+    activate_on_place: false
+id: license
+label: License
+orderItemType: license
+generateTitle: true
+traits:
+  - commerce_license
+locked: false

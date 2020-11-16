@@ -1,0 +1,21 @@
+{
+    "name": "custom/app_default_content",
+    "description": "Default content for the app (only for dev)",
+    "type": "drupal-custom-module",
+    "authors": [
+        {
+            "name": "Alex Verbruggen",
+            "email": "verbruggenalex@gmail.com"
+        }
+    ],
+    "require": {
+        "custom/smart_date_selector": "@dev",
+        "drupal/default_content": "^2.0@alpha"
+    },
+    "repositories": {
+        "drupal": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    }
+}

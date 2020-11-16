@@ -1,0 +1,125 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 6a2dfd13-b1fa-4aa8-a902-f0d2c577b5fa
+  bundle: resource
+  default_langcode: en
+  depends:
+    cdd89c4d-2504-4590-9faa-c0aac6029c87: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'De Kwaffeur'
+  created:
+    -
+      value: 1603711731
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /resource/de-kwaffeur
+      langcode: en
+      pathauto: 1
+  field_address:
+    -
+      langcode: en
+      country_code: BE
+      administrative_area: ''
+      locality: Schaffen
+      dependent_locality: ''
+      postal_code: '3290'
+      sorting_code: ''
+      address_line1: 'Diestsebaan 121'
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+  field_geofield:
+    -
+      value: 'POINT (5.072896 50.996647)'
+      geo_type: Point
+      lat: 50.996647
+      lon: 5.072896
+      left: 5.072896
+      top: 50.996647
+      right: 5.072896
+      bottom: 50.996647
+      geohash: u15d57tvp012
+      latlon: '50.996647,5.072896'
+  field_occupation:
+    -
+      entity: cdd89c4d-2504-4590-9faa-c0aac6029c87
+  field_office_hours:
+    -
+      day: 2
+      starthours: 800
+      endhours: 1200
+      comment: ''
+    -
+      day: 2
+      starthours: 1300
+      endhours: 1830
+      comment: ''
+    -
+      day: 3
+      starthours: 800
+      endhours: 1200
+      comment: ''
+    -
+      day: 3
+      starthours: 1300
+      endhours: 1830
+      comment: ''
+    -
+      day: 4
+      starthours: 800
+      endhours: 1200
+      comment: ''
+    -
+      day: 4
+      starthours: 1300
+      endhours: 1830
+      comment: ''
+    -
+      day: 5
+      starthours: 800
+      endhours: 1200
+      comment: ''
+    -
+      day: 5
+      starthours: 1300
+      endhours: 1830
+      comment: ''
+    -
+      day: 6
+      starthours: 800
+      endhours: 1200
+      comment: ''
+    -
+      day: 6
+      starthours: 1300
+      endhours: 1830
+      comment: ''
+  field_slot_duration:
+    -
+      value: 30
+  field_slot_max_cojoined:
+    -
+      value: 1

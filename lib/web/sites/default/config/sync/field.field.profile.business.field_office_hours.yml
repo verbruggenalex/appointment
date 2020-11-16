@@ -1,0 +1,21 @@
+uuid: 7936ed5c-bed9-43e6-9042-fc89d9203499
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_office_hours
+    - profile.type.business
+  module:
+    - office_hours
+id: profile.business.field_office_hours
+field_name: field_office_hours
+entity_type: profile
+bundle: business
+label: 'Office hours'
+description: 'Set the hours that your business will be open. Customers will be able to book slots within those hours.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: office_hours

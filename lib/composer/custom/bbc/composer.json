@@ -1,0 +1,117 @@
+{
+  "name": "custom/bbc",
+  "type": "drupal-custom-theme",
+  "description": "Bootstrap Barrio Custom theme for Drupal 8",
+  "homepage": "https://drupal.org/project/bbc",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Verbruggen Alex",
+      "email": "verbruggenalex@gmail.com"
+    }
+  ],
+  "require": {
+    "PHP": ">=7.1",
+    "drupal/bootstrap_barrio": "^5.1"
+  },
+  "require-dev": {
+    "composer/installers": "^1.7",
+    "cweagans/composer-patches": "^1.7",
+    "drupal/admin_toolbar": "^2.0",
+    "drupal/coder": "^8.3",
+    "drupal/console": "^1.9",
+    "drupal/core": "^8.9",
+    "drupal/core-composer-scaffold": "^9.0",
+    "drupal/core-dev": "^8.9",
+    "drupal/devel": "^4.0",
+    "drupal/devel_kint_extras": "^1.0",
+    "drupal/drupal-extension": "^4.0",
+    "drupal/toolbar_themes": "^1.0@alpha",
+    "drush/drush": "^10.1",
+    "ergebnis/composer-normalize": "^2.2",
+    "keenthemeshub/metronic": "^7.1"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "composer-exit-on-patch-failure": true,
+    "drupal-scaffold": {
+      "allowed-packages": [
+        "drupal/core"
+      ],
+      "locations": {
+        "web-root": "./web"
+      },
+      "file-mapping": {
+        "[web-root]/sites/default/settings.php": "resources/web/sites/default/settings.php",
+        "[web-root]/sites/development.services.yml": "resources/web/sites/development.services.yml"
+      },
+      "symlink": true,
+      "overwrite": true
+    },
+    "installer-paths": {
+      "web/core": [
+        "type:drupal-core"
+      ],
+      "web/modules/contrib/{$name}": [
+        "type:drupal-module"
+      ],
+      "web/themes/contrib/{$name}": [
+        "type:drupal-theme"
+      ]
+    },
+    "patchLevel": {
+      "drupal/core": "-p2"
+    },
+    "patches": {
+      "drupal/toolbar_themes": [
+        "https://www.drupal.org/files/issues/2018-12-08/toolbar_themes-padding-issue-2981847-7.patch"
+      ]
+    }
+  },
+  "repositories": {
+    "drupal": {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    },
+    "metronic": {
+      "type": "package",
+      "package": {
+        "name": "keenthemeshub/metronic",
+        "version": "v7.1.2",
+        "source": {
+          "url": "git@github.com:KeenthemesHub/Metronic.git",
+          "type": "git",
+          "reference": "v7.1.2"
+        }
+      }
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "post-install-cmd": [
+      "@drupal:scaffold",
+      "@setup-codebase"
+    ],
+    "drupal-install-clean": [
+      "Composer\\Config::disableProcessTimeout",
+      "drush si --db-url=mysql://root:@mysql:3306/drupal standard --account-pass=admin --ansi",
+      "drush core:cron"
+    ],
+    "drupal-install-config": [
+      "Composer\\Config::disableProcessTimeout",
+      "drush si --existing-config --account-pass=admin --ansi",
+      "drush core:cron"
+    ],
+    "setup-codebase": [
+      "rm -rf web/themes/custom/bbc",
+      "mkdir -p web/themes/custom/bbc web/libraries",
+      "ln -sf $(pwd)/* web/themes/custom/bbc",
+      "rm -f web/themes/custom/bbc/web",
+      "rm -f web/themes/custom/bbc/vendor",
+      "ln -sf $(pwd)/vendor/twbs/bootstrap web/libraries/bootstrap"
+    ]
+  }
+}

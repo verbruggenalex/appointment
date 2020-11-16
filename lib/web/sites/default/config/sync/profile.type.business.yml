@@ -1,0 +1,16 @@
+uuid: 843e5e80-6087-475a-b47a-ecb6f382eba1
+langcode: en
+status: true
+dependencies: {  }
+third_party_settings:
+  commerce_order:
+    customer_profile_type: false
+id: business
+label: Business
+display_label: Business
+multiple: false
+registration: false
+roles:
+  business: business
+allow_revisions: false
+new_revision: false

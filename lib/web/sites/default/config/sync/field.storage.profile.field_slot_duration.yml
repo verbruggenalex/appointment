@@ -1,0 +1,19 @@
+uuid: 80cb1509-20c5-4e25-9e47-4ee8b334c5c8
+langcode: en
+status: true
+dependencies:
+  module:
+    - duration_field
+    - profile
+id: profile.field_slot_duration
+field_name: field_slot_duration
+entity_type: profile
+type: duration
+settings: {  }
+module: duration_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,26 @@
+uuid: e57e8998-041f-4358-b8fa-e4d8bafc0581
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_smart_date_range
+    - node.type.appointment
+  module:
+    - smart_date
+id: node.appointment.field_smart_date_range
+field_name: field_smart_date_range
+entity_type: node
+bundle: appointment
+label: 'Smart date range'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: ''
+    default_duration_increments: "30\r\n60|1 hour\r\n90\r\n120|2 hours\r\ncustom"
+    default_duration: 60
+default_value_callback: ''
+settings: {  }
+field_type: smartdate

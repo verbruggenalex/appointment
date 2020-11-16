@@ -1,0 +1,22 @@
+uuid: 10bca599-7ac7-474d-b76b-829e590c1d55
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bbc
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: bbc_breadcrumbs
+theme: bbc
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }
