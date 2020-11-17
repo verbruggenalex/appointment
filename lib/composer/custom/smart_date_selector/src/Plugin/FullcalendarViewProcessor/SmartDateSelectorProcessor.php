@@ -51,8 +51,8 @@ class SmartDateSelectorProcessor extends FullcalendarViewProcessorBase {
     $validRange = new \StdClass();
     $validRange->start = \Drupal::service('date.formatter')->format(time(), 'custom', 'Y-m-d');
     // @todo set end range per license type.
-    // $validRange->end = \Drupal::service('date.formatter')->format((time() + 691200), 'custom', 'Y-m-d');
-
+    // $validRange->end = \Drupal::service('date.formatter')
+    // ->format((time() + 691200), 'custom', 'Y-m-d');
     $calendar_options = json_decode($variables['#attached']['drupalSettings']['fullCalendarView'][$view_index]['calendar_options'], TRUE);
 
     foreach ($calendar_options['events'] as $key => &$event) {

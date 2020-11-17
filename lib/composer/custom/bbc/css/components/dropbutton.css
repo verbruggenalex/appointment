@@ -5,35 +5,36 @@
 .js .dropbutton-widget {
   border-radius: 0.42rem;
   margin: 0;
- }
+}
 
- .js .dropbutton-widget ul {
+.js .dropbutton-widget ul {
   border-right: none;
- }
+}
 
-.js .dropbutton .dropbutton-action:hover, .js .dropbutton a:hover {
-  background: #187DE4;
+.js .dropbutton .dropbutton-action:hover,
+.js .dropbutton a:hover {
+  background: #187de4;
   border-bottom: 0 none;
 }
 
- .js .dropbutton a {
+.js .dropbutton a {
   padding: 0.65rem 1rem;
-  background-color: #3699FF;
-  border-color: #3699FF;
-  color: #FFFFFF;
+  background-color: #3699ff;
+  border-color: #3699ff;
+  color: #ffffff;
   border-bottom: 0 none;
   font-size: 1rem;
 }
 
 .js .dropbutton-toggle button {
-  color: #FFFFFF;
-  background-color: #3699FF;
+  color: #ffffff;
+  background-color: #3699ff;
   background-image: none;
-  border-color: #187DE4;
+  border-color: #187de4;
 }
 
 .js .dropbutton-toggle button:hover {
-  background-color: #187DE4;
+  background-color: #187de4;
 }
 
 .js .dropbutton-toggle .dropbutton-arrow:hover {
