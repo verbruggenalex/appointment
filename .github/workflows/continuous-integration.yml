@@ -40,8 +40,38 @@ jobs:
           sleep 5
 
       - name: Test project
+        if: startsWith(github.ref, 'refs/tags/') != true
         run: |
           docker-compose exec -T web-prod composer install --no-progress --no-suggest --ansi
           docker-compose exec -T web-prod composer test-phpcs
           docker-compose exec -T web-prod composer drupal-install-clean
           docker-compose exec -T web-prod composer test-behat
+
+      - name: Prepare release
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          docker-compose exec -T web-prod composer build-dist
+
+      - name: Create Release
+        id: create_release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Asset
+        id: upload-release-asset
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./dist.tar.gz
+          asset_name: dist.tar.gz
+          asset_content_type: application/gzip
