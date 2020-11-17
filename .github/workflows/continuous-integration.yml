@@ -41,7 +41,6 @@ jobs:
 
       - name: Test project
         run: |
-          sudo chown -R 1000:1000 .
           docker-compose exec -T web-prod composer install --no-progress --no-suggest --ansi
           docker-compose exec -T web-prod composer test-phpcs
           docker-compose exec -T web-prod composer drupal-install-clean
