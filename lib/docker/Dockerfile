@@ -50,6 +50,9 @@ ENV APACHE_RUN_USER=www-data \
 
 FROM prod as ci
 
+RUN apt-get update && \
+    apt-get install -y patch --no-install-recommends
+
 RUN curl -sS https://getcomposer.org/installer | php -- --version=1.10.17 --install-dir=/usr/local/bin --filename=composer
 
 USER docker
