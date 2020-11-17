@@ -160,7 +160,7 @@
             "drush sql-dump --result-file=../dump.sql"
         ],
         "build-dist": [
-            "composer install --no-dev",
+            "composer install --no-dev --no-progress --no-suggest --ansi",
             "tar -zchf dist.tar.gz vendor/ web/ composer.json composer.lock"
         ],
         "test-behat": "./vendor/bin/behat",
