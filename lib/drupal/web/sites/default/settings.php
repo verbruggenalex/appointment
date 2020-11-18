@@ -5,10 +5,10 @@
  * This is the settings file.
  */
 
-$dbName = str_replace(['/home/project/', '/var/www/html/', '/lib/drupal/web/sites/default', '/', '.'], ['', '', '', '_', '-'], __DIR__);
+$dbName = preg_match('/\/build\/(dist|dev)\/((?:[0-9]+\.?)+)\//i', __DIR__, $matches) ? $matches[1] . '_' . str_replace('.', '-', $matches[2]) : 'appointment';
 
 $databases['default']['default'] = [
-  'database' => 'appointment',
+  'database' => $dbName,
   'driver' => 'mysql',
   'host' => 'mysql',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
