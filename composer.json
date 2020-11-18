@@ -173,8 +173,9 @@
             "tar -zcf dist.tar.gz lib/drupal vendor/ web/ composer.json composer.lock"
         ],
         "deploy": [
-            "mkdir -p build/dist/1.0.0",
-            "tar -zxf dist.tar.gz -C build/dist/1.0.0"
+            "mkdir -p build/dist/1.0.1",
+            "wget https://github.com/verbruggenalex/appointment/releases/download/1.0.1/dist.tar.gz",
+            "tar -zxf dist.tar.gz -C build/dist/1.0.1"
         ],
         "test-behat": "./vendor/bin/behat",
         "test-phpcs": "./vendor/bin/phpcs"

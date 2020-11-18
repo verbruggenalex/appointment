@@ -5,7 +5,7 @@
  * This is the settings file.
  */
 
-$dbName = preg_match('/\/build\/(dist|dev)\/((?:[0-9]+\.?)+)\//i', __DIR__, $matches) ? $matches[1] . '_' . str_replace('.', '-', $matches[2]) : 'appointment';
+$dbName = preg_match('/\/build\/(dist|dev)\/((?:[0-9]+\.?)+)\//i', __DIR__, $matches) ? $matches[1] . '_' . str_replace('.', '_', $matches[2]) : 'appointment';
 
 $databases['default']['default'] = [
   'database' => $dbName,
