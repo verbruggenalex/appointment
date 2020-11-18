@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Installs default content on the behalf of modules at time of install.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function app_default_content_install() {
+  // Disable geocoder presave so we don't make API callbacks for content import.
+  if (\Drupal::moduleHandler()->moduleExists('geocoder')) {
+    \Drupal::configFactory()->getEditable('geocoder.settings')->set('geocoder_presave_disabled', TRUE)->save(TRUE);
+  }
+}
+
+/**
+ * Implements hook_install().
+ *
+ * Deletes this module default content when being uninstalled.
+ */
+function app_default_content_uninstall() {
+  $info_file = \Drupal::moduleHandler()->getModule('app_default_content')->getPathname();
+  $info = \Drupal::service('info_parser')->parse($info_file);
+  if (isset($info['default_content'])) {
+    $entityRepository = \Drupal::service('entity.repository');
+    foreach ($info['default_content'] as $entity_type => $uuids) {
+      foreach ($uuids as $uuid) {
+        if ($entity = $entityRepository->loadEntityByUuid($entity_type, $uuid)) {
+          $entity->delete();
+        }
+      }
+    }
+  }
+}

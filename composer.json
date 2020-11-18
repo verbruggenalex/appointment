@@ -120,6 +120,9 @@
             "drupal/core": "-p2"
         },
         "patches": {
+            "drupal/core": [
+                "https://www.drupal.org/files/issues/2020-05-04/2924549-38.patch"
+            ],
             "drupal/commerce_license": [
                 "https://www.drupal.org/files/issues/2020-01-14/3100029-5-license-overview-broken.patch"
             ],
@@ -153,7 +156,13 @@
         "drupal-install-clean": [
             "mkdir -p web/sites/default/files/geofieldmap_icons",
             "Composer\\Config::disableProcessTimeout",
-            "drush si --existing-config --account-pass=admin --ansi"
+            "./vendor/bin/drush si --existing-config --account-pass=admin --ansi",
+            "@drupal-import-content"
+        ],
+        "drupal-import-content": [
+            "./vendor/bin/drush php:eval \"Drupal::configFactory()->getEditable('geocoder.settings')->set('geocoder_presave_disabled', TRUE)->save(TRUE);\"",
+            "./vendor/bin/drush en app_default_content -y",
+            "./vendor/bin/drush php:eval \"Drupal::configFactory()->getEditable('geocoder.settings')->set('geocoder_presave_disabled', FALSE)->save(TRUE);\""
         ],
         "build-bak": [
             "drush cex -y",
