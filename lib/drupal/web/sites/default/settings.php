@@ -25,7 +25,7 @@ $config['config_split.config_split.config_dev']['status'] = (getenv('ENVIRONMENT
 
 $settings['hash_salt'] = 'rFikc364CPkTMP22vy_PhbXU0HTq0U-jSmg5v22qpiKNNPnO3-6LQq4FG43GVFs4-L1vc1X1CA';
 
-$settings["config_sync_directory"] = '../lib/web/sites/default/config/sync';
+$settings["config_sync_directory"] = '../lib/drupal/config/default/sync';
 
 $config['locale.settings']['translation']['use_source'] = 'remote_and_local';
 

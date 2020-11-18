@@ -22,6 +22,7 @@ jobs:
         with:
           paths: lib/docker/Dockerfile
 
+      # Looks like in the future we might need some image versioning here.
       - name: Build and push Docker images
         if: steps.changed-dockerfile.outputs.changed == 'true'
         run: |

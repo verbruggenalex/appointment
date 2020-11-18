@@ -68,8 +68,8 @@
                 "web-root": "./web"
             },
             "file-mapping": {
-                "[web-root]/sites/default/settings.php": "lib/web/sites/default/settings.php",
-                "[web-root]/sites/development.services.yml": "lib/web/sites/development.services.yml",
+                "[web-root]/sites/default/settings.php": "lib/drupal/web/sites/default/settings.php",
+                "[web-root]/sites/development.services.yml": "lib/drupal/web/sites/development.services.yml",
                 "[web-root]/libraries/bootstrap/dist/js/bootstrap.min.js": "vendor/twbs/bootstrap/dist/js/bootstrap.min.js"
             },
             "symlink": true,
@@ -144,7 +144,7 @@
         },
         "local": {
             "type": "path",
-            "url": "lib/composer/custom/*"
+            "url": "lib/drupal/*/*"
         }
     },
     "minimum-stability": "dev",
@@ -161,7 +161,12 @@
         ],
         "build-dist": [
             "composer install --no-dev --no-progress --no-suggest --ansi",
-            "tar -zchf dist.tar.gz vendor/ web/ composer.json composer.lock"
+            "tar -zcf dist.tar.gz lib/drupal vendor/ web/ composer.json composer.lock"
+        ],
+        "deploy": [
+            "mkdir -p build/dist/1.0.0",
+            "wget https://github.com/verbruggenalex/appointment/releases/download/1.0.0/dist.tar.gz",
+            "tar -zxf dist.tar.gz -C build/dist/1.0.0"
         ],
         "test-behat": "./vendor/bin/behat",
         "test-phpcs": "./vendor/bin/phpcs"
