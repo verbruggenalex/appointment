@@ -165,7 +165,6 @@
         ],
         "deploy": [
             "mkdir -p build/dist/1.0.0",
-            "wget https://github.com/verbruggenalex/appointment/releases/download/1.0.0/dist.tar.gz",
             "tar -zxf dist.tar.gz -C build/dist/1.0.0"
         ],
         "test-behat": "./vendor/bin/behat",
