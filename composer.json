@@ -177,6 +177,7 @@
             "tar -zxf dist.tar.gz -C build/dist/$2"
         ],
         "set-permissions": [
+            "[ $ENVIRONMENT != 'development'] && sudo chown -R docker:www-data",
             "find web -type d -exec chmod u=rwx,g=rx,o= '{}' \\;",
             "find web -type f -exec chmod u=rw,g=r,o= '{}' \\;",
             "find web/sites/default/files -type d -exec chmod ug=rwx,o= '{}' \\;",
