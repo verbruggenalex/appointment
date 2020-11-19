@@ -173,9 +173,14 @@
             "tar -zcf dist.tar.gz lib/drupal vendor/ web/ composer.json composer.lock"
         ],
         "deploy": [
-            "mkdir -p build/dist/1.0.1",
-            "wget https://github.com/verbruggenalex/appointment/releases/download/1.0.1/dist.tar.gz",
-            "tar -zxf dist.tar.gz -C build/dist/1.0.1"
+            "mkdir -p build/dist/$2",
+            "tar -zxf dist.tar.gz -C build/dist/$2"
+        ],
+        "set-permissions": [
+            "find web -type d -exec chmod u=rwx,g=rx,o= '{}' \\;",
+            "find web -type f -exec chmod u=rw,g=r,o= '{}' \\;",
+            "find web/sites/default/files -type d -exec chmod ug=rwx,o= '{}' \\;",
+            "find web/sites/default/files -type f -exec chmod ug=rw,o= '{}' \\;"
         ],
         "test-behat": "./vendor/bin/behat",
         "test-phpcs": "./vendor/bin/phpcs"

@@ -22,9 +22,10 @@ $settings['trusted_host_patterns'] = [
   '.*',
 ];
 
-if (getenv('ENVIRONMENT') == 'development') {
-  // Development configuration.
-  $config['config_split.config_split.config_dev']['status'] = TRUE;
+$isDevelopmentEnvironment = getenv('ENVIRONMENT') === 'development';
+$hasDevelommentModule = file_exists(DRUPAL_ROOT . '/modules/contrib/devel/devel.info.yml');
+$config['config_split.config_split.config_dev']['status'] = $isDevelopmentEnvironment && $hasDevelommentModule ? TRUE : FALSE;
+if ($config['config_split.config_split.config_dev']['status']) {
 
   // Use development services.
   $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';

@@ -47,7 +47,6 @@ ENV APACHE_RUN_USER=www-data \
     TEMPLATE_PHP_INI=production \
     PHP_INI_DISABLE_FUNCTIONS=phpinfo
 
-
 FROM prod as ci
 
 RUN apt-get update && \
