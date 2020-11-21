@@ -2,7 +2,6 @@
 
 namespace Drupal\smart_date_selector\Plugin\Field\FieldFormatter;
 
-use Drupal\Component\Utility\Html;
 use Drupal\Core\Field\FieldItemInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\FormatterBase;
@@ -44,7 +43,6 @@ class GeofieldOpenlayerFieldFormatter extends FormatterBase {
    */
   public function settingsSummary() {
     $summary = [];
-    // Implement settings summary.
 
     return $summary;
   }
@@ -81,10 +79,7 @@ class GeofieldOpenlayerFieldFormatter extends FormatterBase {
    */
   protected function viewValue(FieldItemInterface $item) {
     $values = $item->getValue();
-    // The text value has no text format assigned to it, so the user input
-    // should equal the output, including newlines.
-    // return nl2br(Html::escape($item->value));
-    return '<div id="map" data-lat="'. $values['lat'] . '" data-lon="' . $values['lon'] . '" class="openlayers-map"></div>';
+    return '<div id="map" data-lat="' . $values['lat'] . '" data-lon="' . $values['lon'] . '" class="openlayers-map"></div>';
   }
 
 }
