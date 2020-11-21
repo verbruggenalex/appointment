@@ -4,7 +4,7 @@ description: 'Contains default content to be used on clean install of this app.'
 core: 8.x
 package: 'Custom'
 dependencies:
-  - smart_date_selector:smart_date_selector
+  - app_core:app_core
   - default_content:default_content
 
 default_content:

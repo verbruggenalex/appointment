@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\smart_date_selector\Plugin\Field\FieldFormatter;
+namespace Drupal\app_core\Plugin\Field\FieldFormatter;
 
 use Drupal\Core\Field\FieldItemInterface;
 use Drupal\Core\Field\FieldItemListInterface;
@@ -60,7 +60,7 @@ class GeofieldOpenlayerFieldFormatter extends FormatterBase {
     $elements['library'] = [
       '#attached' => [
         'library' => [
-          'smart_date_selector/openlayers',
+          'app_core/openlayers',
         ],
       ],
     ];

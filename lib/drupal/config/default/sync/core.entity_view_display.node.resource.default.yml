@@ -14,7 +14,7 @@ dependencies:
     - address
     - layout_builder
     - office_hours
-    - smart_date_selector
+    - app_core
     - user
 third_party_settings:
   layout_builder:

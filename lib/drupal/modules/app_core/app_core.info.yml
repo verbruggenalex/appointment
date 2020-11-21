@@ -1,6 +1,6 @@
-name: 'Smart Date Selector'
+name: 'App core'
 type: module
-description: 'Smart Date Selector'
+description: 'App core'
 core: 8.x
 package: 'Custom'
 dependencies:

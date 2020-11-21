@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\smart_date_selector\Plugin\FullcalendarViewProcessor;
+namespace Drupal\app_core\Plugin\FullcalendarViewProcessor;
 
 use Drupal\fullcalendar_view\Plugin\FullcalendarViewProcessorBase;
 use Drupal\Core\Datetime\DrupalDateTime;
@@ -9,14 +9,14 @@ use Drupal\Core\Datetime\DrupalDateTime;
  * Smart Date plugin.
  *
  * @FullcalendarViewProcessor(
- *   id = "fullcalendar_view_smart_date_selector",
- *   label = @Translation("Smart date selector processor"),
+ *   id = "fullcalendar_view_app_core",
+ *   label = @Translation("App core processor"),
  *   field_types = {
  *     "smartdate"
  *   }
  * )
  */
-class SmartDateSelectorProcessor extends FullcalendarViewProcessorBase {
+class AppCoreProcessor extends FullcalendarViewProcessorBase {
 
   /**
    * Process retrieved values before being passed to Fullcalendar.

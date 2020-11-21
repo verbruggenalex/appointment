@@ -4,7 +4,7 @@ status: true
 dependencies:
   module:
     - ctools
-    - smart_date_selector
+    - app_core
   theme:
     - bartik
 id: addnodeappointmentformblock
@@ -16,7 +16,7 @@ plugin: add_node_appointment_form_block
 settings:
   id: add_node_appointment_form_block
   label: 'Make an appointment'
-  provider: smart_date_selector
+  provider: app_core
   label_display: visible
 visibility:
   'entity_bundle:node':

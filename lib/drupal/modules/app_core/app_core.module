@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains smart_date_selector.module.
+ * Contains app_core.module.
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
@@ -16,13 +16,13 @@ use Drupal\Core\Datetime\DrupalDateTime;
 /**
  * Implements hook_help().
  */
-function smart_date_selector_help($route_name, RouteMatchInterface $route_match) {
+function app_core_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
-    // Main module help for the smart_date_selector module.
-    case 'help.page.smart_date_selector':
+    // Main module help for the app_core module.
+    case 'help.page.app_core':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Smart Date Selector') . '</p>';
+      $output .= '<p>' . t('App core') . '</p>';
       return $output;
 
     default:
@@ -34,7 +34,7 @@ function smart_date_selector_help($route_name, RouteMatchInterface $route_match)
  *
  * @see: https://www.drupal.org/project/fullcalendar_view/issues/3168188
  */
-function smart_date_selector_views_plugins_style_alter(array &$plugins)
+function app_core_views_plugins_style_alter(array &$plugins)
 {
   $plugins['fullcalendar_view_display']['even empty'] = true;
 }
@@ -42,7 +42,7 @@ function smart_date_selector_views_plugins_style_alter(array &$plugins)
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function smart_date_selector_form_views_exposed_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+function app_core_form_views_exposed_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
   $view_ids = ['business_listing'];
   $view = $form_state->getStorage('view');
   $exposedInput = $view['view']->getExposedInput();
@@ -95,7 +95,7 @@ function smart_date_selector_form_views_exposed_form_alter(array &$form, FormSta
  * @return array
  *   The form element.
  */
-function _smart_date_selector_return_slot_options(array &$form, FormStateInterface $form_state) {
+function _app_core_return_slot_options(array &$form, FormStateInterface $form_state) {
   return $form['slot_select'];
 }
 
@@ -104,14 +104,14 @@ function _smart_date_selector_return_slot_options(array &$form, FormStateInterfa
  *
  * Add social login buttons.
  */
-function smart_date_selector_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id)
+function app_core_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id)
 {
   if ($auth = \Drupal::config('social_auth.settings')->get('auth')) {
     // Set social auth redirection to current page if we are not on /user/login.
     $linkOptions = ($currentPath = \Drupal::service('path.current')->getPath()) && $currentPath != '/user/login' ? ['query' => ['destination' => $currentPath]] : [];
     $linkOptions['language'] = \Drupal::service('language_manager')->getDefaultLanguage();
     // Set a redirect on the form submit function to stay on current page.
-    $form['#submit'][] = '_smart_date_selector_form_user_login_submit';
+    $form['#submit'][] = '_app_core_form_user_login_submit';
     // @todo: Float submit button to the left.
     $form['actions']['submit']['#weight'] = 0;
     $form['actions']['submit']['#attributes']['class'][] = 'ml-2';
@@ -134,7 +134,7 @@ function smart_date_selector_form_user_login_form_alter(&$form, FormStateInterfa
 /**
  * Custom submit handler for user login form.
  */
-function _smart_date_selector_form_user_login_submit(array $form, FormStateInterface $form_state) {
+function _app_core_form_user_login_submit(array $form, FormStateInterface $form_state) {
   $route_match = \Drupal::routeMatch();
   // Entity will be found in the route parameters.
   if (($route = $route_match->getRouteObject()) && ($parameters = $route->getOption('parameters'))) {
@@ -156,13 +156,13 @@ function _smart_date_selector_form_user_login_submit(array $form, FormStateInter
  *
  * Prepopulate the smart date field with the date passed from query parameter.
  */
-function smart_date_selector_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+function app_core_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if (in_array($form_id, [
     'node_appointment_form',
     'node_appointment_edit_form',
   ])) {
     $ajax = [
-      'callback' => '_smart_date_selector_return_slot_options',
+      'callback' => '_app_core_return_slot_options',
       'disable-refocus' => FALSE,
       'event' => 'autocompleteclose change',
       'wrapper' => 'edit-slot-select-time',
@@ -324,8 +324,8 @@ function smart_date_selector_form_node_form_alter(&$form, FormStateInterface $fo
     }
 
     // Add validation function located in the module file.
-    $form['#validate'][] = 'smart_date_selector_appointment_node_form_validate';
-    $form['actions']['submit']['#submit'][] = 'smart_date_selector_appointment_node_form_submit';
+    $form['#validate'][] = 'app_core_appointment_node_form_validate';
+    $form['actions']['submit']['#submit'][] = 'app_core_appointment_node_form_submit';
     $form['actions']['#attributes']['class'][] = 'text-center';
     $form['actions']['submit']['#value'] = t('Book appointment now!');
   }
@@ -334,7 +334,7 @@ function smart_date_selector_form_node_form_alter(&$form, FormStateInterface $fo
 /**
  * Custom submit handler for appointment node form.
  */
-function smart_date_selector_appointment_node_form_submit(array $form, FormStateInterface $form_state) {
+function app_core_appointment_node_form_submit(array $form, FormStateInterface $form_state) {
   // Redirect the form.
   $form_state->setRedirect('<current>');
 }
@@ -342,7 +342,7 @@ function smart_date_selector_appointment_node_form_submit(array $form, FormState
 /**
  * Custom validation handler for appointment node form.
  */
-function smart_date_selector_appointment_node_form_validate(array $form, FormStateInterface $form_state) {
+function app_core_appointment_node_form_validate(array $form, FormStateInterface $form_state) {
 
   // For some reason we were not getting published appointments on the block form.
   $form_state->setValue('status', ['value' => 1]);
@@ -389,7 +389,7 @@ function smart_date_selector_appointment_node_form_validate(array $form, FormSta
 /**
  * Add active language and icons.
  */
-function smart_date_selector_preprocess_links__language_block(&$variables)
+function app_core_preprocess_links__language_block(&$variables)
 {
   $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
   $nativeNames = \Drupal::languageManager()->getStandardLanguageList();
@@ -412,7 +412,7 @@ function smart_date_selector_preprocess_links__language_block(&$variables)
 /**
  * Implements hook_theme().
  */
-function smart_date_selector_theme() {
+function app_core_theme() {
   return [
     'user_button_block' => [
       'variables' => [

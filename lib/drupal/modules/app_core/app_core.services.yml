@@ -1,0 +1,12 @@
+services:
+  app_core.order_paid_subscriber:
+    class: Drupal\app_core\EventSubscriber\OrderPaidSubscriber
+    tags:
+    - { name: event_subscriber }
+  app_core.social_auth_subscriber:
+    class: Drupal\app_core\EventSubscriber\SocialAuthSubscriber
+    arguments:
+      - '@social_auth_google.manager'
+      - '@social_auth_facebook.manager'
+    tags:
+      - { name: 'event_subscriber' }

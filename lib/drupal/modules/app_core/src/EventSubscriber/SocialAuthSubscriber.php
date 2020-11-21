@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\smart_date_selector\EventSubscriber;
+namespace Drupal\app_core\EventSubscriber;
 
 use Drupal\social_auth\AuthManager\OAuth2ManagerInterface;
 use Drupal\social_auth\Event\UserEvent;

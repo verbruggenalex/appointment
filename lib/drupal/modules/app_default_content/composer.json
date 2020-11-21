@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "custom/smart_date_selector": "@dev",
+        "custom/app_core": "@dev",
         "drupal/default_content": "^2.0@alpha"
     },
     "repositories": {

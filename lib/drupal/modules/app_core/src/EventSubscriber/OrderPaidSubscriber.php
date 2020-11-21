@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\smart_date_selector\EventSubscriber;
+namespace Drupal\app_core\EventSubscriber;
 
 use Drupal\commerce_order\Event\OrderEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;

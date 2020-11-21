@@ -1,6 +1,6 @@
 {
-    "name": "custom/smart_date_selector",
-    "description": "Smart Date Selector",
+    "name": "custom/app_core",
+    "description": "App core",
     "type": "drupal-custom-module",
     "authors": [
         {

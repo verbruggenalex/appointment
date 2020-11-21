@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\smart_date_selector\Plugin\Block;
+namespace Drupal\app_core\Plugin\Block;
 
 use Drupal\user\Form\UserLoginForm;
 use Drupal\Core\Entity\ContentEntityInterface;

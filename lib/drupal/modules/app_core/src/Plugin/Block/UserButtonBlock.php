@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\smart_date_selector\Plugin\Block;
+namespace Drupal\app_core\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
@@ -8,14 +8,14 @@ use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Provides a 'UserProfileBlock' block.
+ * Provides a 'UserButtonBlock' block.
  *
  * @Block(
- *  id = "user_profile_block",
- *  admin_label = @Translation("User profile block"),
+ *  id = "user_button_block",
+ *  admin_label = @Translation("User button block"),
  * )
  */
-class UserProfileBlock extends BlockBase implements ContainerFactoryPluginInterface {
+class UserButtonBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
    * Drupal\Core\Session\AccountProxyInterface definition.
@@ -45,15 +45,13 @@ class UserProfileBlock extends BlockBase implements ContainerFactoryPluginInterf
    * {@inheritdoc}
    */
   public function build() {
-    $user = $this->entityTypeManager->getStorage('user')->load($this->currentUser->id());
     $build = [];
-    $build['#theme'] = 'user_profile_block';
-    $build['#displayname'] = $user->getDisplayName();
-    $build['#email'] = $user->getEmail();
-    $build['#logout_url'] = Url::fromRoute('user.logout');
-    $build['#profile_url'] = Url::fromRoute('entity.user.edit_form', ['user' => $user->id()]);
-    $build['#picture'] = !is_null($user->user_picture->entity) ? $user->user_picture->entity->createFileUrl() : NULL;
-
+    $build['#theme'] = 'user_button_block';
+    $build['#login_url'] = Url::fromRoute('user.login');
+    if ($user = $this->entityTypeManager->getStorage('user')->load($this->currentUser->id())) {
+      $build['#firstname'] = $user->field_first_name->value;
+      $build['#picture'] = !is_null($user->user_picture->entity) ? $user->user_picture->entity->getFileUri() : NULL;
+    }
     return $build;
   }
 

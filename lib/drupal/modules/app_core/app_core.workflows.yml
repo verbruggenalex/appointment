@@ -1,5 +1,5 @@
-smart_date_selector_manual_payment_processing:
-      id: smart_date_selector_manual_payment_processing
+app_core_manual_payment_processing:
+      id: app_core_manual_payment_processing
       group: commerce_order
       label: 'With manual payment processing'
       states:

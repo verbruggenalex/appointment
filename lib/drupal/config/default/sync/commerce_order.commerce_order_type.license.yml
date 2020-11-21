@@ -5,7 +5,7 @@ dependencies:
   module:
     - commerce_cart
     - commerce_checkout
-    - smart_date_selector
+    - app_core
 third_party_settings:
   commerce_cart:
     cart_form_view: commerce_cart_form
@@ -17,7 +17,7 @@ third_party_settings:
     checkout_flow: license
 label: License
 id: license
-workflow: smart_date_selector_manual_payment_processing
+workflow: app_core_manual_payment_processing
 numberPattern: order_default
 refresh_mode: customer
 refresh_frequency: 300
