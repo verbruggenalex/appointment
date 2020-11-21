@@ -1,0 +1,7 @@
+openlayers:
+  js:
+    js/openlayers-map.js: {}
+    https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js: { type: external, minified: true }
+  css:
+    component:
+      https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/css/ol.css: { type: external, minified: true }

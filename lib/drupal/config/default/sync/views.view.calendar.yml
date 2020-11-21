@@ -84,7 +84,7 @@ display:
             resource: '#3a87ad'
           rrule: ''
           duration: ''
-          bundle_type: appointment
+          bundle_type: ''
           classes: ''
       row:
         type: fields

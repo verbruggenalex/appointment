@@ -63,6 +63,7 @@ class SmartDateSelectorProcessor extends FullcalendarViewProcessorBase {
       }
     }
 
+    $calendar_options['dblClickToCreate'] = FALSE;
     $calendar_options['allDaySlot'] = FALSE;
     $calendar_options['slotDuration'] = '00:' . $slotDuration . ':00';
     $calendar_options['validRange'] = $validRange;

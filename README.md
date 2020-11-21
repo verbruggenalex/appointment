@@ -23,10 +23,6 @@ composer build-dist
 
 ## Todo's
 
-* For sure lower the Googel Maps API callback count!
- * Cache?
- * Image replacement?
- * Disable geocoding on node save?
 * Put traefik inside of this project docker-compose.yml?
 * Keep traefik in seperate docker-compose.yml or repo?
 * Fix breadcrumb and url alias for resource pages.
