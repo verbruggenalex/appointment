@@ -4,4 +4,5 @@ openlayers:
     https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js: { type: external, minified: true }
   css:
     component:
+      css/openlayers-map.css: {}
       https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/css/ol.css: { type: external, minified: true }
