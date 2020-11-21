@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9fc115bcffe858428317f13cea2ce3e6",
+    "content-hash": "53bab02a203e01ca2499b6478a90c0fb",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1279,6 +1279,29 @@
             "time": "2017-02-14T19:40:03+00:00"
         },
         {
+            "name": "custom/app_core",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "lib/drupal/modules/app_core",
+                "reference": "271abd10854292c440a584bdbe2d0cdda4fca462"
+            },
+            "require": {
+                "drupal/smart_date": "^3.0"
+            },
+            "type": "drupal-custom-module",
+            "authors": [
+                {
+                    "name": "Alex Verbruggen",
+                    "email": "verbruggenalex@gmail.com"
+                }
+            ],
+            "description": "App core",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "custom/bbc",
             "version": "dev-master",
             "dist": {
@@ -1379,29 +1402,6 @@
             ],
             "description": "Bootstrap Barrio Custom theme for Drupal 8",
             "homepage": "https://drupal.org/project/bbc",
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
-            "name": "custom/smart_date_selector",
-            "version": "dev-master",
-            "dist": {
-                "type": "path",
-                "url": "lib/drupal/modules/smart_date_selector",
-                "reference": "2aed770d0bd8904b1c1596df3dd07ddf684d0deb"
-            },
-            "require": {
-                "drupal/smart_date": "^3.0"
-            },
-            "type": "drupal-custom-module",
-            "authors": [
-                {
-                    "name": "Alex Verbruggen",
-                    "email": "verbruggenalex@gmail.com"
-                }
-            ],
-            "description": "Smart Date Selector",
             "transport-options": {
                 "relative": true
             }
@@ -4048,7 +4048,10 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
-                }
+                },
+                "patches_applied": [
+                    "https://git.drupalcode.org/project/fullcalendar_view/-/merge_requests/1/diffs.patch"
+                ]
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
@@ -4073,17 +4076,17 @@
         },
         {
             "name": "drupal/geocoder",
-            "version": "3.13.0",
+            "version": "3.14.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/geocoder.git",
-                "reference": "8.x-3.13"
+                "reference": "8.x-3.14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/geocoder-8.x-3.13.zip",
-                "reference": "8.x-3.13",
-                "shasum": "fd6dac91885e54b6d363f6e39f327aa15f720b56"
+                "url": "https://ftp.drupal.org/files/projects/geocoder-8.x-3.14.zip",
+                "reference": "8.x-3.14",
+                "shasum": "8b69279f6da536c84af94557b7dd65f15fed6020"
             },
             "require": {
                 "davedevelopment/stiphle": "^0.9.2",
@@ -4126,8 +4129,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.13",
-                    "datestamp": "1603399347",
+                    "version": "8.x-3.14",
+                    "datestamp": "1605985806",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6642,16 +6645,16 @@
         },
         {
             "name": "laminas/laminas-stdlib",
-            "version": "3.3.0",
+            "version": "3.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-stdlib.git",
-                "reference": "b9d84eaa39fde733356ea948cdef36c631f202b6"
+                "reference": "d81c7ffe602ed0e6ecb18691019111c0f4bf1efe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-stdlib/zipball/b9d84eaa39fde733356ea948cdef36c631f202b6",
-                "reference": "b9d84eaa39fde733356ea948cdef36c631f202b6",
+                "url": "https://api.github.com/repos/laminas/laminas-stdlib/zipball/d81c7ffe602ed0e6ecb18691019111c0f4bf1efe",
+                "reference": "d81c7ffe602ed0e6ecb18691019111c0f4bf1efe",
                 "shasum": ""
             },
             "require": {
@@ -6664,15 +6667,9 @@
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
                 "phpbench/phpbench": "^0.17.1",
-                "phpunit/phpunit": "^9.3.7"
+                "phpunit/phpunit": "~9.3.7"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.3.x-dev",
-                    "dev-develop": "3.4.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Laminas\\Stdlib\\": "src/"
@@ -6694,7 +6691,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2020-08-25T09:08:16+00:00"
+            "time": "2020-11-19T20:18:59+00:00"
         },
         {
             "name": "laminas/laminas-zendframework-bridge",
@@ -7148,16 +7145,16 @@
         },
         {
             "name": "pear/archive_tar",
-            "version": "1.4.10",
+            "version": "1.4.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pear/Archive_Tar.git",
-                "reference": "bbb4f10f71a1da2715ec6d9a683f4f23c507a49b"
+                "reference": "17d355cb7d3c4ff08e5729f29cd7660145208d9d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pear/Archive_Tar/zipball/bbb4f10f71a1da2715ec6d9a683f4f23c507a49b",
-                "reference": "bbb4f10f71a1da2715ec6d9a683f4f23c507a49b",
+                "url": "https://api.github.com/repos/pear/Archive_Tar/zipball/17d355cb7d3c4ff08e5729f29cd7660145208d9d",
+                "reference": "17d355cb7d3c4ff08e5729f29cd7660145208d9d",
                 "shasum": ""
             },
             "require": {
@@ -7210,7 +7207,7 @@
                 "archive",
                 "tar"
             ],
-            "time": "2020-09-15T14:13:23+00:00"
+            "time": "2020-11-19T22:10:24+00:00"
         },
         {
             "name": "pear/console_getopt",
@@ -11458,10 +11455,10 @@
             "dist": {
                 "type": "path",
                 "url": "lib/drupal/modules/app_default_content",
-                "reference": "1a6239dd9c9fc56f7e73197b342e9f622fea79fa"
+                "reference": "77efa058d72c690423d4a1c4a2372475065a8cd3"
             },
             "require": {
-                "custom/smart_date_selector": "@dev",
+                "custom/app_core": "@dev",
                 "drupal/default_content": "^2.0@alpha"
             },
             "type": "drupal-custom-module",
@@ -15162,7 +15159,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "custom/bbc": 20,
-        "custom/smart_date_selector": 20,
+        "custom/app_core": 20,
         "drupal/auto_entitylabel": 10,
         "drupal/commerce_license": 15,
         "drupal/default_content": 15,

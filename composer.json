@@ -5,7 +5,7 @@
     "require": {
         "composer/installers": "^1.9",
         "custom/bbc": "dev-master",
-        "custom/smart_date_selector": "@dev",
+        "custom/app_core": "@dev",
         "cweagans/composer-patches": "^1.6",
         "drupal/admin_toolbar": "^2.3",
         "drupal/auto_entitylabel": "^3.0@beta",
