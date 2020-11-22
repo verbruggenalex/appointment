@@ -1,0 +1,24 @@
+# French translation of Select (or other) (8.x-1.0-alpha4)
+# Copyright (c) 2019 by the French translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Select (or other) (8.x-1.0-alpha4)\n"
+"POT-Creation-Date: 2019-08-13 12:47+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: French\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n>1);\n"
+
+msgid "- None -"
+msgstr "- Aucun(e) -"
+msgid "Fields"
+msgstr "Champs"
+msgid "Other"
+msgstr "Autre"
+msgid "Select list"
+msgstr "Liste de sélection"
+msgid "Check boxes/radio buttons"
+msgstr "Cases à cocher/boutons radio"
