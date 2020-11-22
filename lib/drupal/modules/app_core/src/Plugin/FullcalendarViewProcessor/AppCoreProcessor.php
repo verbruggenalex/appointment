@@ -63,6 +63,9 @@ class AppCoreProcessor extends FullcalendarViewProcessorBase {
       }
     }
 
+    $today = new DrupalDateTime('now');
+
+    $calendar_options['defaultDate'] = ($date = \Drupal::request()->query->get('date_select')) ? $date : $today->format('Y-m-d');
     $calendar_options['dblClickToCreate'] = FALSE;
     $calendar_options['allDaySlot'] = FALSE;
     $calendar_options['slotDuration'] = '00:' . $slotDuration . ':00';

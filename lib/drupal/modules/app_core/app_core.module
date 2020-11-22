@@ -336,7 +336,12 @@ function app_core_form_node_form_alter(&$form, FormStateInterface $form_state, $
  */
 function app_core_appointment_node_form_submit(array $form, FormStateInterface $form_state) {
   // Redirect the form.
-  $form_state->setRedirect('<current>');
+  $options = $form_state->getValue('date_select')
+    ? ['query' =>
+        ['date_select' => $form_state->getValue('date_select')]
+      ]
+    : [];
+  $form_state->setRedirect('<current>', [], $options);
 }
 
 /**

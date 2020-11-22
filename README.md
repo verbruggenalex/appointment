@@ -23,11 +23,12 @@ composer build-dist
 
 ## Todo's
 
+* Do some translation work.
+* Contact page form.
 * Put traefik inside of this project docker-compose.yml?
 * Keep traefik in seperate docker-compose.yml or repo?
 * Fix breadcrumb and url alias for resource pages.
 * Change appointment creation message to be more user friendly.
-* Try to keep the same date on form submit (not going to be easy).
 * Create licensing options
  * Free: 1 week appointments - 3 months license.
  * Basic: 1 month appointments - 1 year license - Pay 19 euro per month = 228 euro
