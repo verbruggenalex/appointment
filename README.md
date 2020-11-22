@@ -23,6 +23,7 @@ composer build-dist
 
 ## Todo's
 
+* Provide business picture
 * Do some translation work.
 * Contact page form.
 * Put traefik inside of this project docker-compose.yml?
