@@ -5,7 +5,7 @@ dependencies: {  }
 id: config_dev
 label: 'Config dev'
 description: 'The development configuration.'
-folder: ../lib/drupal/config/default/dev
+folder: ../lib/drupal/web/sites/default/config/dev
 module:
   default_content: 0
   devel: 0
