@@ -38,31 +38,20 @@ class LanguageNegotiationUserAccountSaver extends LanguageNegotiationUser implem
 
     if ($request && $this->languageManager) {
       $languages = $this->languageManager->getLanguages();
-      $negotiation_config = \Drupal::config('language.negotiation');
-
-      $request_path = urldecode(trim($request->getPathInfo(), '/'));
-      $path_args = explode('/', $request_path);
-      $prefix = array_shift($path_args);
-
-      // Search prefix within added languages.
-      foreach ($languages as $language) {
-        $langcode = $language->getId();
-        $expected_prefix = $negotiation_config->get('url.prefixes.' . $langcode);
-        $query_lang = $request->query->all()['language'] ?? '';
-        if (($expected_prefix == '' && $query_lang == $langcode) || $expected_prefix == $prefix) {
-          $id = $this->currentUser->id();
-          if ($id) {
-            $user = User::load($id);
-            $user->set('preferred_langcode', $langcode);
-            $user->save();
-          }
-          else {
-            $_SESSION['language-anon'] = $langcode;
-          }
-
-          // The URL contains a path prefix.
-          return $langcode;
+      $query_lang = $request->query->all()['language'] ?? '';
+      if ($query_lang && isset($languages[$query_lang])) {
+        $id = $this->currentUser->id();
+        if ($id) {
+          $user = User::load($id);
+          $user->set('preferred_langcode', $query_lang);
+          $user->save();
         }
+        else {
+          $_SESSION['language-anon'] = $query_lang;
+        }
+
+        // The URL contains a path prefix.
+        return $query_lang;
       }
     }
 
@@ -108,11 +97,11 @@ class LanguageNegotiationUserAccountSaver extends LanguageNegotiationUser implem
       $new_url = clone $url;
       $langcode = $language->getId();
       $prefix = $negotiation_config->get('url.prefixes.' . $langcode);
-      unset($query['language']);
-      if ($prefix && $negotiation_config->get('url.source') == LanguageNegotiationUrl::CONFIG_PATH_PREFIX)
-        $new_url->setOption('prefix', $prefix . '/');
-      else
-        $query['language'] = $langcode;
+      // unset($query['language']);
+      // if ($prefix && $negotiation_config->get('url.source') == LanguageNegotiationUrl::CONFIG_PATH_PREFIX)
+      //   $new_url->setOption('prefix', $prefix . '/');
+      // else
+      $query['language'] = $langcode;
 
 
       $links[$langcode] = [

@@ -60,6 +60,14 @@ content:
     weight: 90
     region: content
     third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
 hidden:
   created: true
   uid: true
