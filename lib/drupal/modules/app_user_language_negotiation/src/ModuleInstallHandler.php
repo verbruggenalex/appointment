@@ -7,18 +7,30 @@ use Drupal\Core\Language\LanguageManager;
 use Drupal\locale\PoDatabaseWriter;
 use Drupal\app_user_language_negotiation\Plugin\LanguageNegotiation\LanguageNegotiationUserAccountSaver;
 
+/**
+ * Helper class with installation methods.
+ */
 class ModuleInstallHandler {
 
   const CONFIG_KEY = 'negotiation.language_interface.enabled';
 
+  /**
+   * Install function.
+   */
   public function onInstall() {
     $this->translateLanguageNames();
   }
 
+  /**
+   * Uninstall function.
+   */
   public function onUninstall() {
     $this->disableOurPluginIfNeeded();
   }
 
+  /**
+   * Translate language names.
+   */
   private function translateLanguageNames(): void {
     $writer = new PoDatabaseWriter();
     $writer->setOptions(['overwrite_options' => []]);
@@ -38,7 +50,9 @@ class ModuleInstallHandler {
   }
 
   /**
-   * Prevent exception "The "language-user-account-saver" plugin does not exist".
+   * Prevent exception for.
+   *
+   * "The "language-user-account-saver" plugin does not exist".
    */
   private function disableOurPluginIfNeeded(): void {
     $config_factory = \Drupal::configFactory();
@@ -49,4 +63,5 @@ class ModuleInstallHandler {
     $config->set(self::CONFIG_KEY, $enabled_plugins);
     $config->save();
   }
+
 }

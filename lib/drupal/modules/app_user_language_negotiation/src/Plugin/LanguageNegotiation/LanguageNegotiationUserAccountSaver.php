@@ -5,7 +5,6 @@ namespace Drupal\app_user_language_negotiation\Plugin\LanguageNegotiation;
 use Drupal\Core\PathProcessor\InboundPathProcessorInterface;
 use Drupal\Core\Url;
 use Drupal\language\LanguageSwitcherInterface;
-use Drupal\language\Plugin\LanguageNegotiation\LanguageNegotiationUrl;
 use Drupal\user\Entity\User;
 use Drupal\user\Plugin\LanguageNegotiation\LanguageNegotiationUser;
 use Symfony\Component\HttpFoundation\Request;
@@ -90,23 +89,16 @@ class LanguageNegotiationUserAccountSaver extends LanguageNegotiationUser implem
   public function getLanguageSwitchLinks(Request $request, $type, Url $url) {
     $links = [];
     $query = $request->query->all();
-    $negotiation_config = \Drupal::config('language.negotiation');
 
     foreach ($this->languageManager->getNativeLanguages() as $language) {
       // Add prefix of the language to switch to:
       $new_url = clone $url;
       $langcode = $language->getId();
-      $prefix = $negotiation_config->get('url.prefixes.' . $langcode);
-      // unset($query['language']);
-      // if ($prefix && $negotiation_config->get('url.source') == LanguageNegotiationUrl::CONFIG_PATH_PREFIX)
-      //   $new_url->setOption('prefix', $prefix . '/');
-      // else
       $query['language'] = $langcode;
-
 
       $links[$langcode] = [
         'url' => $new_url,
-        'title' => t($language->getName(), [], ['langcode' => $langcode]),
+        'title' => $language->getName(),
         'language' => $language,
         'attributes' => ['class' => ['language-link']],
         'query' => $query,
