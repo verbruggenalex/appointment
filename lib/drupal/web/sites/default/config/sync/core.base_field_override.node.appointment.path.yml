@@ -1,0 +1,20 @@
+uuid: 3154e2ec-c53c-4fd7-b39d-b35850a2cb57
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.appointment
+  module:
+    - path
+id: node.appointment.path
+field_name: path
+entity_type: node
+bundle: appointment
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

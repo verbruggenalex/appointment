@@ -23,6 +23,10 @@ composer build-dist
 
 ## Todo's
 
+* Make language switcher change user setting.
+ * https://www.drupal.org/project/user_account_language_negotiation
+* Start cleaning up user sidebar.
+* Allow nodes to be displayed in multiple languages.
 * Provide business picture
 * Do some translation work.
 * Contact page form.

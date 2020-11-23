@@ -1,0 +1,22 @@
+uuid: 30a9820c-cb9e-4100-ad9c-fb5a2fcdb3c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.appointment
+id: node.appointment.status
+field_name: status
+entity_type: node
+bundle: appointment
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

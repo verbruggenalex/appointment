@@ -1,0 +1,18 @@
+uuid: e3ad3293-9abe-4df6-ad61-d0f6d1cdde9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.appointment
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.appointment
+target_entity_type_id: node
+target_bundle: appointment
+default_langcode: site_default
+language_alterable: false

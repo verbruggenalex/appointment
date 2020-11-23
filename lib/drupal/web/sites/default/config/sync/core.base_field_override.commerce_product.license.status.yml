@@ -1,0 +1,22 @@
+uuid: 9a88bd9a-a352-486b-96eb-18b654d0c021
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.license
+id: commerce_product.license.status
+field_name: status
+entity_type: commerce_product
+bundle: license
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

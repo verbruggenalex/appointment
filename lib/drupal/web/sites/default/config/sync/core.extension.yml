@@ -100,6 +100,7 @@ module:
   views_autosubmit: 0
   views_ui: 0
   pathauto: 1
+  content_translation: 10
   views: 10
   minimal: 1000
 theme:

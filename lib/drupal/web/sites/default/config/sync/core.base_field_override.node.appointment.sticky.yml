@@ -1,0 +1,22 @@
+uuid: cba3cb0e-dd6f-473c-8757-1c350fef45a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.appointment
+id: node.appointment.sticky
+field_name: sticky
+entity_type: node
+bundle: appointment
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
