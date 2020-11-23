@@ -4,8 +4,9 @@
     "description": "Test project",
     "require": {
         "composer/installers": "^1.9",
-        "custom/bbc": "dev-master",
         "custom/app_core": "@dev",
+        "custom/app_user_language_negotiation": "dev-master",
+        "custom/bbc": "dev-master",
         "cweagans/composer-patches": "^1.6",
         "drupal/admin_toolbar": "^2.3",
         "drupal/auto_entitylabel": "^3.0@beta",

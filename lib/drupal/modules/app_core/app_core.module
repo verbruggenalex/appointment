@@ -394,8 +394,7 @@ function app_core_appointment_node_form_validate(array $form, FormStateInterface
 /**
  * Add active language and icons.
  */
-function app_core_preprocess_links__language_block(&$variables)
-{
+function app_core_preprocess_links__language_block(&$variables) {
   $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
   $nativeNames = \Drupal::languageManager()->getStandardLanguageList();
   $iconpath = '/themes/custom/bbc/assets/media/svg/flags/';

@@ -52,7 +52,7 @@ class UserProfileBlock extends BlockBase implements ContainerFactoryPluginInterf
     $build['#email'] = $user->getEmail();
     $build['#logout_url'] = Url::fromRoute('user.logout');
     $build['#profile_url'] = Url::fromRoute('entity.user.edit_form', ['user' => $user->id()]);
-    $build['#picture'] = !is_null($user->user_picture->entity) ? $user->user_picture->entity->createFileUrl() : NULL;
+    $build['#picture'] = !is_null($user->user_picture->entity) ? $user->user_picture->entity->createFileUrl() : 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Google_Images_2015_logo.svg/1200px-Google_Images_2015_logo.svg.png';
 
     return $build;
   }

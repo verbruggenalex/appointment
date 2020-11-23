@@ -23,6 +23,7 @@ composer build-dist
 
 ## Todo's
 
+* Fix profile picture!!!!!!
 * Make language switcher change user setting.
  * https://www.drupal.org/project/user_account_language_negotiation
 * Start cleaning up user sidebar.

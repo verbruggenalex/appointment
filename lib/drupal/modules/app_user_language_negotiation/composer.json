@@ -1,0 +1,17 @@
+{
+    "name": "custom/app_user_language_negotiation",
+    "description": "Allows language switcher to set user language",
+    "type": "drupal-custom-module",
+    "authors": [
+        {
+            "name": "Alex Verbruggen",
+            "email": "verbruggenalex@gmail.com"
+        }
+    ],
+    "repositories": {
+        "drupal": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    }
+}
