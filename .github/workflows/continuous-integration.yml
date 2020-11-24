@@ -20,26 +20,28 @@ jobs:
       - uses: marceloprado/has-changed-path@v1
         id: changed-dockerfile
         with:
-          paths: lib/docker/Dockerfile
+          paths: lib/docker/image/Dockerfile
 
       # Looks like in the future we might need some image versioning here.
       - name: Build and push Docker images
         if: steps.changed-dockerfile.outputs.changed == 'true'
         run: |
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u verbruggenalex --password-stdin
-          docker build ./lib/docker --target prod --tag docker.pkg.github.com/verbruggenalex/appointment/prod
-          docker build ./lib/docker --target ci --tag docker.pkg.github.com/verbruggenalex/appointment/ci
+          docker build lib/docker/image --target prod --tag docker.pkg.github.com/verbruggenalex/appointment/prod
+          docker build lib/docker/image --target ci --tag docker.pkg.github.com/verbruggenalex/appointment/ci
           docker push docker.pkg.github.com/verbruggenalex/appointment/prod
           docker push docker.pkg.github.com/verbruggenalex/appointment/ci
 
       - name: Setup environment
         env:
           TRAEFIK_DOMAIN: ${{ secrets.TRAEFIK_DOMAIN }}
+          TRAEFIK_NETWORK: ${{ secrets.TRAEFIK_NETWORK }}
           TRAEFIK_BASIC_AUTH: ${{ secrets.TRAEFIK_BASIC_AUTH }}
         run: |
+          sudo chmod 777 /var/run/docker.sock
+          make mkcert_setup mkcert_install docker_network_create
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u verbruggenalex --password-stdin
-          docker network create proxy
-          docker-compose up -d
+          docker-compose -f docker-compose.yml -f docker-compose.traefik.yml up -d
           sleep 5
 
       - name: Cache Composer
