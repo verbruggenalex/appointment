@@ -108,7 +108,7 @@
                   {% endif %}
               </div>
               <h4 class="font-weight-bold my-2">{{ drupal_field('title', 'node', node.id) }}</h4>
-              <div class="text-muted mb-2">{{ drupal_field('field_occupation', 'node', node.id) }}</div>
+              <div class="text-muted mb-2">{{ drupal_field('field_occupation', 'node', node.id, 'default', language.getId()) }}</div>
               {% if content.field_office_hours['#items'].isOpen() %}
                 <span class="label label-light-success label-inline font-weight-bold label-lg">{{ 'Open at this moment!'|t }}</span>
               {% else %}
