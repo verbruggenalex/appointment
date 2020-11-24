@@ -39,12 +39,10 @@ jobs:
           TRAEFIK_BASIC_AUTH: ${{ secrets.TRAEFIK_BASIC_AUTH }}
         run: |
           sudo chmod 777 /var/run/docker.sock
-          make mkcert_setup mkcert_install docker_network_create setup_hosts
+          make mkcert_setup mkcert_install docker_network_create setup_hosts example_build
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u verbruggenalex --password-stdin
           docker-compose up -d traefik mysql ci
           sleep 5
-          docker-compose ps
-          curl https://traefik.localhost.com
           curl https://pre-production.localhost.com
           docker-compose logs ci
 
