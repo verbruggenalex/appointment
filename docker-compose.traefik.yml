@@ -1,4 +1,4 @@
-ersion: '3.7'
+version: '3.7'
 
 services:
   traefik:
@@ -24,7 +24,7 @@ services:
       - ${pwd}/lib/docker/compose/traefik/config.yml:/etc/traefik/config.yml:ro
       - ./certs:/etc/certs:ro
     networks:
-      - proxy
+      - ${TRAEFIK_NETWORK:-proxy}
     labels:
       traefik.enable: true
       traefik.http.routers.traefik: true
