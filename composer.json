@@ -162,8 +162,7 @@
             "mkdir -p web/sites/default/files/geofieldmap_icons",
             "ln -sf $(pwd)/lib/drupal/web/sites/default/files/translations $(pwd)/web/sites/default/files/translations",
             "Composer\\Config::disableProcessTimeout",
-            "./vendor/bin/drush si --existing-config --account-pass=admin --ansi",
-            "@drupal-import-content"
+            "./vendor/bin/drush si --existing-config --account-pass=admin --ansi"
         ],
         "build-bak": [
             "drush cex -y",

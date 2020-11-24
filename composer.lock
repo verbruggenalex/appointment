@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "962eb7e267d1652a2cb5ab5df178d5ff",
+    "content-hash": "7b40a9522b9d35b468c6ebfefd36d20b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3619,7 +3619,8 @@
                     }
                 },
                 "patches_applied": [
-                    "https://www.drupal.org/files/issues/2020-05-04/2924549-38.patch"
+                    "https://www.drupal.org/files/issues/2020-05-04/2924549-38.patch",
+                    "https://www.drupal.org/files/issues/2019-12-09/drupal-language-prefix-neutral-content-2883450-31.patch"
                 ]
             },
             "autoload": {
