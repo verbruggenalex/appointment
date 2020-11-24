@@ -40,11 +40,11 @@ jobs:
         run: |
           sudo chmod 777 /var/run/docker.sock
           make mkcert_setup mkcert_install docker_network_create setup_hosts
-          curl https://traefik.localhost.com
-          curl https://post-production.localhost.com
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u verbruggenalex --password-stdin
           docker-compose -f docker-compose.yml -f docker-compose.traefik.yml up -d
           sleep 5
+          curl https://traefik.localhost.com
+          curl https://post-production.localhost.com
 
       - name: Cache Composer
         if: startsWith(github.ref, 'refs/tags/') != true
