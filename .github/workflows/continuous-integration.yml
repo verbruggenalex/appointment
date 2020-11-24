@@ -41,7 +41,7 @@ jobs:
           sudo chmod 777 /var/run/docker.sock
           make mkcert_setup mkcert_install docker_network_create setup_hosts
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u verbruggenalex --password-stdin
-          docker-compose -f docker-compose.yml -f docker-compose.traefik.yml up -d
+          docker-compose -f docker-compose.ci.yml -f docker-compose.traefik.yml up -d
           sleep 5
           docker-compose ps
           curl https://post-production.localhost.com
