@@ -13,3 +13,5 @@ mkcert_install:
 	&& mkcert -cert-file certs/local-cert.pem -key-file certs/local-key.pem "${TRAEFIK_DOMAIN}" "*.${TRAEFIK_DOMAIN}"
 docker_network_create:
 	docker network create ${TRAEFIK_NETWORK}
+setup_hosts:
+  sudo echo "127.0.0.1 traefik.${TRAEFIK_DOMAIN} production.${TRAEFIK_DOMAIN} pre-production.${TRAEFIK_DOMAIN} post-production.${TRAEFIK_DOMAIN}" >> /etc/hosts
