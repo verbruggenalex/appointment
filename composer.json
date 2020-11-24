@@ -165,11 +165,6 @@
             "./vendor/bin/drush si --existing-config --account-pass=admin --ansi",
             "@drupal-import-content"
         ],
-        "drupal-import-content": [
-            "./vendor/bin/drush php:eval \"Drupal::configFactory()->getEditable('geocoder.settings')->set('geocoder_presave_disabled', TRUE)->save(TRUE);\"",
-            "./vendor/bin/drush en app_default_content -y",
-            "./vendor/bin/drush php:eval \"Drupal::configFactory()->getEditable('geocoder.settings')->set('geocoder_presave_disabled', FALSE)->save(TRUE);\""
-        ],
         "build-bak": [
             "drush cex -y",
             "drush sql-dump --result-file=../dump.sql"
