@@ -42,6 +42,15 @@ jobs:
           docker-compose up -d
           sleep 5
 
+      - name: Cache Composer
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: |
+            vendor/
+            web/
+          key: vendor-web-${{ hashFiles('composer.lock') }}
+
       - name: Test project
         if: startsWith(github.ref, 'refs/tags/') != true
         run: |
