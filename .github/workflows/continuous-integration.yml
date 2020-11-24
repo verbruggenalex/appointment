@@ -46,6 +46,7 @@ jobs:
           docker-compose ps
           curl https://traefik.localhost.com
           curl https://pre-production.localhost.com
+          docker-compose logs ci
 
       - name: Cache Composer
         if: startsWith(github.ref, 'refs/tags/') != true

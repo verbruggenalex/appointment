@@ -165,8 +165,6 @@ services:
       GOOGLE_MAPS_API_KEY:
     volumes:
       - ${PWD}:/var/www/html
-    ports:
-      - 80:80
     labels:
       traefik.enable: true
       traefik.http.routers.production.tls: true
