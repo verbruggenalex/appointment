@@ -23,24 +23,17 @@ composer build-dist
 
 ## Todo's
 
+* Provide the first real behat tests.
 * Fix profile picture!!!!!!
-* Make language switcher change user setting.
- * https://www.drupal.org/project/user_account_language_negotiation
 * Start cleaning up user sidebar.
-* Allow nodes to be displayed in multiple languages.
 * Provide business picture
-* Do some translation work.
 * Contact page form.
 * Put traefik inside of this project docker-compose.yml?
 * Keep traefik in seperate docker-compose.yml or repo?
-* Fix breadcrumb and url alias for resource pages.
+* Fix breadcrumb.
 * Change appointment creation message to be more user friendly.
 * Create licensing options
- * Free: 1 week appointments - 3 months license.
- * Basic: 1 month appointments - 1 year license - Pay 19 euro per month = 228 euro
- * Pro: 6 months appointments - 1 year license - Pay 29 euro per month = 348 euro
 * Calculate percentage booked to show on month calendar on days?
-* Implement CI
 * Implement lighthouse CI.
 * See if we need to provide an ical to provide a feed for users appointments:
 https://www.drupal.org/project/views_ical
