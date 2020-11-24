@@ -6,3 +6,5 @@ package: 'Custom'
 dependencies:
   - drupal:views
   - smart_date:smart_date
+interface translation project: app_core
+interface translation server pattern: modules/custom/%project/translations/%project.%language.po

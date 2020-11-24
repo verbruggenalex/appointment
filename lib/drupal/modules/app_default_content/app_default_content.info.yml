@@ -6,6 +6,8 @@ package: 'Custom'
 dependencies:
   - app_core:app_core
   - default_content:default_content
+interface translation project: app_default_content
+interface translation server pattern: modules/custom/%project/translations/%project.%language.po
 
 default_content:
   node:

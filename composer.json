@@ -122,7 +122,8 @@
         },
         "patches": {
             "drupal/core": [
-                "https://www.drupal.org/files/issues/2020-05-04/2924549-38.patch"
+                "https://www.drupal.org/files/issues/2020-05-04/2924549-38.patch",
+                "https://www.drupal.org/files/issues/2019-12-09/drupal-language-prefix-neutral-content-2883450-31.patch"
             ],
             "drupal/commerce_license": [
                 "https://www.drupal.org/files/issues/2020-01-14/3100029-5-license-overview-broken.patch"
@@ -187,6 +188,18 @@
             "find web -type f -exec chmod u=rw,g=r,o= '{}' \\;",
             "find web/sites/default/files -type d -exec chmod ug=rwx,o= '{}' \\;",
             "find web/sites/default/files -type f -exec chmod ug=rw,o= '{}' \\;"
+        ],
+        "export-custom-translations": [
+            "drush locale:export nl --types=customized > lib/drupal/web/sites/default/files/translations/custom-translations.nl.po",
+            "drush locale:export fr --types=customized > lib/drupal/web/sites/default/files/translations/custom-translations.fr.po"
+        ],
+        "import-custom-translations": [
+            "drush locale:import nl ../lib/drupal/web/sites/default/files/translations/custom-translations.nl.po --type=customized --override=all",
+            "drush locale:import fr ../lib/drupal/web/sites/default/files/translations/custom-translations.fr.po --type=customized --override=all"
+        ],
+        "import-translations": [
+            "drush locale-check",
+            "drush locale-update"
         ],
         "test-behat": "./vendor/bin/behat",
         "test-phpcs": "./vendor/bin/phpcs"

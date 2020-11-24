@@ -3,7 +3,7 @@ _meta:
   entity_type: node
   uuid: 14dfe5cf-b5df-44d8-a501-f8382a4774ab
   bundle: resource
-  default_langcode: en
+  default_langcode: zxx
   depends:
     16fbefc2-d23e-40b0-a68d-90a27e823e29: taxonomy_term
 default:
@@ -31,6 +31,12 @@ default:
   revision_translation_affected:
     -
       value: true
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
   field_address:
     -
       langcode: en
@@ -48,7 +54,7 @@ default:
       family_name: ''
   field_geofield:
     -
-      value: 'POINT(4.822149 51.162207)'
+      value: 'POINT (4.822149 51.162207)'
       geo_type: Point
       lat: 51.162207
       lon: 4.822149

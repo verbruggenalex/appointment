@@ -8,3 +8,5 @@ package: Custom
 dependencies:
   - 'drupal:language'
   - 'drupal:locale'
+interface translation project: app_user_language_negotiation
+interface translation server pattern: modules/custom/%project/translations/%project.%language.po

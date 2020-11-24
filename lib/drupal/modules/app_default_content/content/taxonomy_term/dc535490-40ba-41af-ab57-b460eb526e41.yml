@@ -20,17 +20,23 @@ default:
   revision_translation_affected:
     -
       value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
   content_translation_source:
     -
       value: und
   content_translation_outdated:
     -
       value: false
-  path:
+  content_translation_uid:
     -
-      alias: ''
-      langcode: en
-      pathauto: 0
+      target_id: 1
+  content_translation_created:
+    -
+      value: 1606130918
 translations:
   nl:
     name:
@@ -39,6 +45,11 @@ translations:
     revision_translation_affected:
       -
         value: true
+    path:
+      -
+        alias: ''
+        langcode: nl
+        pathauto: 0
     content_translation_source:
       -
         value: en
@@ -51,11 +62,6 @@ translations:
     content_translation_created:
       -
         value: 1606088321
-    path:
-      -
-        alias: ''
-        langcode: nl
-        pathauto: 0
   fr:
     name:
       -
@@ -63,6 +69,11 @@ translations:
     revision_translation_affected:
       -
         value: true
+    path:
+      -
+        alias: ''
+        langcode: fr
+        pathauto: 0
     content_translation_source:
       -
         value: en
@@ -75,8 +86,3 @@ translations:
     content_translation_created:
       -
         value: 1606088333
-    path:
-      -
-        alias: ''
-        langcode: fr
-        pathauto: 0

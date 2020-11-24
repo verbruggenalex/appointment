@@ -3,7 +3,7 @@ _meta:
   entity_type: node
   uuid: 1473de02-46a4-4509-aae9-636c266bdbcf
   bundle: resource
-  default_langcode: en
+  default_langcode: zxx
   depends:
     fd8fcfaf-f1f9-4f30-beb5-6b95cca2db2c: taxonomy_term
 default:
@@ -31,6 +31,12 @@ default:
   revision_translation_affected:
     -
       value: true
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
   field_address:
     -
       langcode: en
