@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-11-24 10:12+0000\n"
-"PO-Revision-Date: 2020-11-24 10:12+0000\n"
+"POT-Creation-Date: 2020-11-24 11:01+0000\n"
+"PO-Revision-Date: 2020-11-24 11:01+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -20,5 +20,20 @@ msgstr "Eender land"
 
 msgid "Any occupation"
 msgstr "Eender beroep"
+
+msgid "Select the date for your appointment."
+msgstr "Selecteer de datum voor uw afspraak."
+
+msgid "Select the time for your appointment."
+msgstr "Selecteer het tijdstip voor uw afspraak."
+
+msgid "Book appointment now!"
+msgstr "Boek afspraak nu!"
+
+msgid "Open at this moment!"
+msgstr "Open op dit moment!"
+
+msgid "We are expecting you!"
+msgstr "Wij verwachten u!"
 
 

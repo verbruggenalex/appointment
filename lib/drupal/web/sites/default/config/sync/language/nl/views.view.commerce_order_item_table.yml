@@ -1,3 +1,5 @@
+label: Bestellingsitems
+description: 'Een set bestellingsitems in een tabel weergeven.'
 display:
   default:
     display_title: Hoofd
@@ -14,11 +16,17 @@ display:
           label: Titel
           separator: ', '
         unit_price__number:
+          label: Eenheidsprijs
           separator: ', '
         quantity:
+          label: Hoeveelheid
           separator: ', '
         total_price__number:
+          label: Totaalprijs
           separator: ', '
+      empty:
+        area_text_custom:
+          content: 'Er zijn nog geen bestellingsitems.'
       arguments:
         order_id:
           exception:

@@ -23,14 +23,20 @@ display:
       fields:
         state:
           label: Status
+        type:
+          label: Vacaturetype
         message:
           label: Bericht
         operations:
           label: Bewerkingen
       filters:
+        type:
+          expose:
+            label: Vacaturetype
         state:
           expose:
             label: Status
+      title: Opdrachten
       arguments:
         queue_id:
           exception:

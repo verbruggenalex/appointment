@@ -1,3 +1,4 @@
+label: Boutiques
 display:
   default:
     display_title: Maître
@@ -21,6 +22,8 @@ display:
             first: "«\_premier"
             last: "dernier\_»"
       fields:
+        commerce_store_bulk_form:
+          action_title: 'Pour la sélection'
         name:
           label: Nom
           separator: ', '
@@ -33,5 +36,9 @@ display:
         type:
           expose:
             label: Type
+      title: Boutiques
+      empty:
+        area_text_custom:
+          content: 'Aucune boutique n''est disponible.'
   page_1:
     display_title: Page

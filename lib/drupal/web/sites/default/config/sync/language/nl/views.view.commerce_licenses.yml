@@ -1,3 +1,4 @@
+label: Licenties
 display:
   default:
     display_title: Hoofd
@@ -45,5 +46,6 @@ display:
         state:
           expose:
             label: Status
+      title: Licenties
   page_1:
     display_title: Pagina

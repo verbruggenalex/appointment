@@ -1,3 +1,4 @@
+label: Paniers
 display:
   default:
     display_title: Maître
@@ -21,17 +22,22 @@ display:
             first: "«\_premier"
             last: "dernier\_»"
       fields:
+        commerce_order_bulk_form:
+          action_title: 'Pour la sélection'
         type:
           label: Type
           separator: ', '
         store_id:
+          label: Boutique
           separator: ', '
         uid:
+          label: Client
           separator: ', '
         mail:
           label: Courriel
           separator: ', '
         total_price__number:
+          label: Total
           separator: ', '
         changed:
           label: 'Mis à jour'
@@ -42,5 +48,12 @@ display:
         type:
           expose:
             label: Type
+      title: Paniers
+      empty:
+        area_text_custom:
+          content: 'Aucune commande n''est disponible.'
   page_1:
     display_title: Page
+    display_options:
+      menu:
+        title: Paniers

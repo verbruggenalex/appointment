@@ -1,0 +1,101 @@
+uuid: 4df12e12-1d53-4af6-a6d3-c7e16a2b9fb9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.resource.field_address
+    - field.field.node.resource.field_geofield
+    - field.field.node.resource.field_occupation
+    - field.field.node.resource.field_office_hours
+    - field.field.node.resource.field_slot_duration
+    - field.field.node.resource.field_slot_max_cojoined
+    - node.type.resource
+  module:
+    - address
+    - layout_builder
+    - office_hours
+    - app_core
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.resource.default
+targetEntityType: node
+bundle: resource
+mode: default
+content:
+  field_address:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_geofield:
+    weight: 105
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: geofield_openlayer_field_formatter
+    region: content
+  field_occupation:
+    weight: 107
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_office_hours:
+    weight: 102
+    label: inline
+    settings:
+      show_closed: all
+      office_hours_first_day: ''
+      day_format: long
+      time_format: G
+      closed_format: Gesloten
+      separator:
+        days: '<br />'
+        grouped_days: ' - '
+        day_hours: ': '
+        hours_hours: '-'
+        more_hours: ', '
+      current_status:
+        position: ''
+        open_text: 'Currently open!'
+        closed_text: 'Currently closed'
+      compress: false
+      grouped: false
+      schema:
+        enabled: false
+      timezone_field: ''
+    third_party_settings: {  }
+    type: office_hours
+    region: content
+  field_slot_duration:
+    weight: 103
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_slot_max_cojoined:
+    weight: 104
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

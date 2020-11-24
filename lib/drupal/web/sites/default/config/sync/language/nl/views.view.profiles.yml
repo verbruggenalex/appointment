@@ -1,3 +1,4 @@
+label: Profielen
 display:
   default:
     display_title: Hoofd
@@ -19,3 +20,6 @@ display:
         status:
           exception:
             title: Alle
+      title: Profielen
+  user_page:
+    display_title: Profielpagina

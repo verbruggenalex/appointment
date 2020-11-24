@@ -5,18 +5,20 @@ dependencies:
   module:
     - node
 id: resource_nodes
-label: 'Resource nodes'
+label: 'Resource nodes English'
 type: 'canonical_entities:node'
-pattern: 'resource/[node:title]'
+pattern: 'business/[node:title]'
 selection_criteria:
-  947bb965-5c91-4464-be56-fd1d26258666:
+  4481f208-cc18-48c2-aad0-5f65dcb8d69a:
     id: node_type
     bundles:
       resource: resource
     negate: false
     context_mapping:
       node: node
-    uuid: 947bb965-5c91-4464-be56-fd1d26258666
+    uuid: 4481f208-cc18-48c2-aad0-5f65dcb8d69a
 selection_logic: and
 weight: -5
-relationships: {  }
+relationships:
+  'node:langcode:language':
+    label: Language

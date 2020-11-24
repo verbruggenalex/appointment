@@ -1,3 +1,4 @@
+label: Bestellingen
 display:
   default:
     display_title: Hoofd
@@ -21,7 +22,10 @@ display:
             first: '« eerste'
             last: 'laatste »'
       fields:
+        commerce_order_bulk_form:
+          action_title: 'Met selectie'
         order_number:
+          label: '#'
           separator: ', '
         placed:
           label: Datum
@@ -30,8 +34,10 @@ display:
           label: Type
           separator: ', '
         store_id:
+          label: Winkel
           separator: ', '
         uid:
+          label: Klant
           separator: ', '
         mail:
           label: E-mail
@@ -40,15 +46,29 @@ display:
           label: Status
           separator: ', '
         total_price__number:
+          label: Totaal
           separator: ', '
         operations:
           label: Bewerkingen
       filters:
+        order_number:
+          expose:
+            label: Bestelnummer
         type:
           expose:
             label: Type
         state:
           expose:
             label: Status
+      title: Bestellingen
+      empty:
+        area_text_custom:
+          content: 'U heeft nog geen bestellingen geplaatst.'
   page_1:
     display_title: Pagina
+    display_options:
+      menu:
+        title: Bestellingen
+      tab_options:
+        title: Bestellingen
+        description: 'Bestellingen beheren.'

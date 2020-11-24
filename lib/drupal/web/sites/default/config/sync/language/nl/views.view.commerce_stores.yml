@@ -1,3 +1,4 @@
+label: Winkels
 display:
   default:
     display_title: Hoofd
@@ -21,6 +22,8 @@ display:
             first: '« eerste'
             last: 'laatste »'
       fields:
+        commerce_store_bulk_form:
+          action_title: 'Met selectie'
         name:
           label: Naam
           separator: ', '
@@ -33,5 +36,9 @@ display:
         type:
           expose:
             label: Type
+      title: Winkels
+      empty:
+        area_text_custom:
+          content: 'Geen winkels beschikbaar.'
   page_1:
     display_title: Pagina

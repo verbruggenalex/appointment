@@ -1,3 +1,4 @@
+label: 'Formulaire du panier'
 display:
   default:
     display_title: Maître
@@ -11,12 +12,17 @@ display:
           sort_desc_label: Desc
       fields:
         purchased_entity:
+          label: Élément
           separator: ', '
         unit_price__number:
+          label: Prix
           separator: ', '
+        edit_quantity:
+          label: Quantité
         remove_button:
           label: Retirer
         total_price__number:
+          label: Total
           separator: ', '
       arguments:
         order_id:

@@ -1,3 +1,4 @@
+label: Licences
 display:
   default:
     display_title: Maître
@@ -27,6 +28,7 @@ display:
         label:
           label: Étiquette
         type:
+          label: 'Type de licence'
           separator: ', '
         uid:
           label: Propriétaire
@@ -38,6 +40,7 @@ display:
           label: 'Mis à jour'
           separator: ', '
         granted:
+          label: Accordé(e)
           separator: ', '
         operations:
           label: 'Liens d''actions'
@@ -45,5 +48,6 @@ display:
         state:
           expose:
             label: État
+      title: Licences
   page_1:
     display_title: Page

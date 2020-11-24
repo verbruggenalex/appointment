@@ -25,16 +25,27 @@ display:
           label: 'Identifiant (ID)'
           separator: ', '
         order_number:
+          label: 'Numéro de commande'
           separator: ', '
         placed:
           label: Date
           separator: ', '
         total_price__number:
+          label: Total
           separator: ', '
         state:
           label: État
           separator: ', '
+      title: Commandes
+      empty:
+        area:
+          content:
+            value: 'Vous ne nous avez encore rien commandé.'
       arguments:
         uid:
           exception:
             title: Tout
+  order_page:
+    display_options:
+      menu:
+        title: Commandes

@@ -1,3 +1,5 @@
+label: 'Bestellingen van gebruiker'
+description: 'Geef een lijst van bestellingen van een gebruiker weer.'
 display:
   default:
     display_title: Hoofd
@@ -25,16 +27,28 @@ display:
           label: ID
           separator: ', '
         order_number:
+          label: Bestelnummer
           separator: ', '
         placed:
           label: Datum
           separator: ', '
         total_price__number:
+          label: Totaal
           separator: ', '
         state:
           label: Status
           separator: ', '
+      title: Bestellingen
+      empty:
+        area:
+          content:
+            value: 'U heeft nog geen bestellingen bij ons gedaan.'
       arguments:
         uid:
           exception:
             title: Alle
+  order_page:
+    display_title: 'Bestellingen van gebruiker'
+    display_options:
+      menu:
+        title: Bestellingen

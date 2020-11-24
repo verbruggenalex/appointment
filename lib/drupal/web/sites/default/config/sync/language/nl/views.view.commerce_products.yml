@@ -1,3 +1,4 @@
+label: Producten
 display:
   default:
     display_title: Hoofd
@@ -21,6 +22,8 @@ display:
             first: '« eerste'
             last: 'laatste »'
       fields:
+        commerce_product_bulk_form:
+          action_title: 'Met selectie'
         title:
           label: Titel
           separator: ', '
@@ -45,5 +48,9 @@ display:
         title:
           expose:
             label: Titel
+      title: Producten
+      empty:
+        area_text_custom:
+          content: 'Geen producten beschikbaar.'
   page_1:
     display_title: Pagina

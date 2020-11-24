@@ -1,3 +1,4 @@
+label: Winkelwagens
 display:
   default:
     display_title: Hoofd
@@ -21,17 +22,22 @@ display:
             first: '« eerste'
             last: 'laatste »'
       fields:
+        commerce_order_bulk_form:
+          action_title: 'Met selectie'
         type:
           label: Type
           separator: ', '
         store_id:
+          label: Winkel
           separator: ', '
         uid:
+          label: Klant
           separator: ', '
         mail:
           label: E-mail
           separator: ', '
         total_price__number:
+          label: Totaal
           separator: ', '
         changed:
           label: Bijgewerkt
@@ -42,5 +48,12 @@ display:
         type:
           expose:
             label: Type
+      title: Winkelwagens
+      empty:
+        area_text_custom:
+          content: 'U heeft nog geen bestellingen geplaatst.'
   page_1:
     display_title: Pagina
+    display_options:
+      menu:
+        title: Winkelwagens

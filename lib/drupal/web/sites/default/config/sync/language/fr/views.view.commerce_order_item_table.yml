@@ -1,3 +1,4 @@
+label: 'Eléments de la commande'
 display:
   default:
     display_title: Maître
@@ -14,10 +15,13 @@ display:
           label: Titre
           separator: ', '
         unit_price__number:
+          label: 'Prix unitaire'
           separator: ', '
         quantity:
+          label: Quantité
           separator: ', '
         total_price__number:
+          label: 'Prix total'
           separator: ', '
       arguments:
         order_id:

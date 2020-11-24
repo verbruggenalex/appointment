@@ -1,3 +1,4 @@
+label: Produits
 display:
   default:
     display_title: Maître
@@ -21,6 +22,8 @@ display:
             first: "«\_premier"
             last: "dernier\_»"
       fields:
+        commerce_product_bulk_form:
+          action_title: 'Pour la sélection'
         title:
           label: Titre
           separator: ', '
@@ -45,5 +48,9 @@ display:
         title:
           expose:
             label: Titre
+      title: Produits
+      empty:
+        area_text_custom:
+          content: 'Aucun produit disponible.'
   page_1:
     display_title: Page

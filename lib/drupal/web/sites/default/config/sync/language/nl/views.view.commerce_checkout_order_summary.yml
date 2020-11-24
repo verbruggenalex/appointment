@@ -1,3 +1,4 @@
+label: 'Bestellingsoverzicht bij afrekenen'
 display:
   default:
     display_title: Hoofd
@@ -11,6 +12,8 @@ display:
           sort_desc_label: Aflopend
       fields:
         quantity:
+          alter:
+            text: '{{ quantity }}&nbsp;x'
           separator: ', '
         purchased_entity:
           separator: ', '
