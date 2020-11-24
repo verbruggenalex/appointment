@@ -14,4 +14,4 @@ mkcert_install:
 docker_network_create:
 	docker network create ${TRAEFIK_NETWORK}
 setup_hosts:
-  sudo echo "127.0.0.1 traefik.${TRAEFIK_DOMAIN} production.${TRAEFIK_DOMAIN} pre-production.${TRAEFIK_DOMAIN} post-production.${TRAEFIK_DOMAIN}" >> /etc/hosts
+  sudo echo "127.0.0.1 traefik.localhost.com production.traefik.localhost.com pre-production.traefik.localhost.com post-production.traefik.localhost.com" >> /etc/hosts
