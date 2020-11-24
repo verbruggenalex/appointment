@@ -46,6 +46,13 @@ class LanguageNegotiationUserAccountSaver extends LanguageNegotiationUser implem
   /**
    * {@inheritdoc}
    */
+  public function processInbound($path, Request $request) {
+    return $path;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function getLanguageSwitchLinks(Request $request, $type, Url $url) {
     $links = [];
     $new_url = clone $url;
