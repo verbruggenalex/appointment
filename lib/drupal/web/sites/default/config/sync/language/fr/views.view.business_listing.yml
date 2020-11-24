@@ -18,3 +18,12 @@ display:
       footer:
         result:
           content: 'Affichage @start - @end de @total'
+      pager:
+        options:
+          tags:
+            first: '«  Première'
+            last: 'Dernière »'
+          expose:
+            items_per_page_label: 'Objets par page'
+            items_per_page_options_all_label: '- Tout -'
+            offset_label: Décalage
