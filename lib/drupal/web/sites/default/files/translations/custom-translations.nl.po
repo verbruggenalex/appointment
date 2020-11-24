@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-11-24 11:03+0000\n"
-"PO-Revision-Date: 2020-11-24 11:03+0000\n"
+"POT-Creation-Date: 2020-11-24 13:58+0000\n"
+"PO-Revision-Date: 2020-11-24 13:58+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -21,11 +21,23 @@ msgstr "Eender land"
 msgid "Any occupation"
 msgstr "Eender beroep"
 
+msgid "Login with"
+msgstr "Log in met"
+
+msgid "Login by username/email address"
+msgstr "Log in met gebruikersnaam/email adres"
+
+msgid "You can use your username or email address to login."
+msgstr "Je kan je gebruikersnaam of email adres gebruiken om in te loggen."
+
 msgid "Currently closed"
 msgstr "Op dit moment gesloten"
 
 msgid "Select the date for your appointment."
 msgstr "Selecteer de datum voor uw afspraak."
+
+msgid "No slots available."
+msgstr "Geen slots beschikbaar."
 
 msgid "Select the time for your appointment."
 msgstr "Selecteer het tijdstip voor uw afspraak."

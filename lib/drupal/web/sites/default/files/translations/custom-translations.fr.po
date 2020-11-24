@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-11-24 11:03+0000\n"
-"PO-Revision-Date: 2020-11-24 11:03+0000\n"
+"POT-Creation-Date: 2020-11-24 13:58+0000\n"
+"PO-Revision-Date: 2020-11-24 13:58+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -21,11 +21,25 @@ msgstr "Tous les pays"
 msgid "Any occupation"
 msgstr "Toute profession"
 
+msgid "Login with"
+msgstr "Connectez-vous avec"
+
+msgid "Login by username/email address"
+msgstr "Connexion par nom d'utilisateur/adresse e-mail"
+
+msgid "You can use your username or email address to login."
+msgstr ""
+"Vous pouvez utiliser votre nom d'utilisateur ou adresse e-mail pour "
+"vous connecter."
+
 msgid "Currently closed"
 msgstr "Actuellement fermé"
 
 msgid "Select the date for your appointment."
 msgstr "Sélectionnez la date de votre rendez-vous."
+
+msgid "No slots available."
+msgstr "Aucun emplacement disponible."
 
 msgid "Select the time for your appointment."
 msgstr "Sélectionnez l'heure de votre rendez-vous."

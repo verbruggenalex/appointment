@@ -23,6 +23,7 @@ composer build-dist
 
 ## Todo's
 
+* Provide a validation request on multiple appointments in one day!
 * Provide the first real behat tests.
 * Fix profile picture!!!!!!
 * Start cleaning up user sidebar.
