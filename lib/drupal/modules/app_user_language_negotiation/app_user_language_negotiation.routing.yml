@@ -1,9 +1,0 @@
-
-app_user_language_negotiation.app_user_language_negotiation_controller_redirect:
-  path: 'language/redirect/{langcode}'
-  defaults:
-    _controller: '\Drupal\app_user_language_negotiation\Controller\AppUserLanguageNegotiationController::languageRedirect'
-    _title: 'Language redirect'
-  requirements:
-    _permission: 'access content'
-

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7b40a9522b9d35b468c6ebfefd36d20b",
+    "content-hash": "8bc733f3ca4912f26446a628dec16fe5",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1297,26 +1297,6 @@
                 }
             ],
             "description": "App core",
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
-            "name": "custom/app_user_language_negotiation",
-            "version": "dev-master",
-            "dist": {
-                "type": "path",
-                "url": "lib/drupal/modules/app_user_language_negotiation",
-                "reference": "1d40ad40e4557ce71591f8f5416db78a45f093a9"
-            },
-            "type": "drupal-custom-module",
-            "authors": [
-                {
-                    "name": "Alex Verbruggen",
-                    "email": "verbruggenalex@gmail.com"
-                }
-            ],
-            "description": "Allows language switcher to set user language",
             "transport-options": {
                 "relative": true
             }
@@ -15180,7 +15160,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "custom/app_core": 20,
-        "custom/app_user_language_negotiation": 20,
         "custom/bbc": 20,
         "drupal/auto_entitylabel": 10,
         "drupal/commerce_license": 15,
