@@ -9,7 +9,7 @@ mkcert_setup:
 	&& sudo chmod +x /usr/local/bin/mkcert
 mkcert_install:
 	mkcert -install \
-  && mkdir -p certs \
+	&& mkdir -p certs \
 	&& mkcert -cert-file certs/local-cert.pem -key-file certs/local-key.pem "${TRAEFIK_DOMAIN}" "*.${TRAEFIK_DOMAIN}"
 docker_network_create:
 	docker network create ${TRAEFIK_NETWORK}
