@@ -43,7 +43,7 @@ jobs:
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u verbruggenalex --password-stdin
           docker-compose -f docker-compose.ci.yml -f docker-compose.traefik.yml up -d
           sleep 5
-          docker-compose ps
+          docker-compose -f docker-compose.ci.yml -f docker-compose.traefik.yml ps
           curl https://post-production.localhost.com
 
       - name: Cache Composer
