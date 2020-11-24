@@ -43,7 +43,7 @@ jobs:
           sleep 5
 
       - name: Cache Composer
-        id: cache-node-modules
+        if: startsWith(github.ref, 'refs/tags/') != true
         uses: actions/cache@v2
         with:
           path: |
