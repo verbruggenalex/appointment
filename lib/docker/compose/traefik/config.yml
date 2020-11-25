@@ -8,6 +8,12 @@ http:
           - main: "{{env "TRAEFIK_DOMAIN"}}"
             sans:
               - "*.{{env "TRAEFIK_DOMAIN"}}"
+  # middlewares:
+  #   secure-whitelist:
+  #     ipwhitelist:
+  #       sourcerange:
+  #          - 127.0.0.1/32
+  #          - 172.29.0.1/32
 
 tls:
   certificates:

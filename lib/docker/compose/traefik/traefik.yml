@@ -19,6 +19,10 @@ log:
   level: INFO
   format: common
 
+accessLog:
+  filePath: "/etc/traefik/access.log"
+  bufferingSize:  100
+
 entryPoints:
   http:
     address: ":80"
