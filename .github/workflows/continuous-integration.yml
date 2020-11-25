@@ -54,6 +54,7 @@ jobs:
           path: |
             vendor/
             web/
+            dump.sql
           key: vendor-web-${{ hashFiles('composer.lock') }}
 
       - name: Test project
@@ -61,7 +62,7 @@ jobs:
         run: |
           docker-compose exec -T ci composer install --no-progress --no-suggest --ansi
           docker-compose exec -T ci composer test-phpcs
-          docker-compose exec -T ci composer drupal-install-clean
+          docker-compose exec -T ci composer setup-project
           docker-compose exec -T ci composer test-behat
 
       - name: Prepare release

@@ -158,15 +158,22 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
-        "drupal-install-clean": [
-            "mkdir -p web/sites/default/files/geofieldmap_icons",
-            "ln -sf $(pwd)/lib/drupal/web/sites/default/files/translations $(pwd)/web/sites/default/files/translations",
-            "Composer\\Config::disableProcessTimeout",
-            "./vendor/bin/drush si empty --account-pass=admin --ansi",
-            "./vendor/bin/drush cset system.site uuid 6f305eea-1b69-4861-aefe-2548861790fe -y",
-            "./vendor/bin/drush cim -y",
+        "setup-project": [
+            "@create-dirs",
+            "@drupal-install-clean",
             "@import-local-translations",
             "@import-translations"
+        ],
+        "create-dirs": [
+            "mkdir -p web/sites/default/files/geofieldmap_icons",
+            "ln -sf $(pwd)/lib/drupal/web/sites/default/files/translations $(pwd)/web/sites/default/files/translations"
+        ],
+        "drupal-install-clean": [
+            "Composer\\Config::disableProcessTimeout",
+            "if test -f 'dump.sql'; then ./vendor/bin/drush sqlc < dump.sql; else ./vendor/bin/drush si empty --account-pass=admin --ansi; fi",
+            "./vendor/bin/drush cset system.site uuid 6f305eea-1b69-4861-aefe-2548861790fe -y",
+            "./vendor/bin/drush cim -y",
+            "./vendor/bin/drush sql-dump --result-file=../dump.sql"
         ],
         "build-bak": [
             "drush cex -y",
