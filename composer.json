@@ -69,8 +69,8 @@
                 "web-root": "./web"
             },
             "file-mapping": {
-                "[web-root]/sites/default/settings.php": "lib/drupal/web/sites/default/settings.php",
-                "[web-root]/sites/development.services.yml": "lib/drupal/web/sites/development.services.yml",
+                "[web-root]/sites/default/settings.php": "lib/drupal/sites/default/settings.php",
+                "[web-root]/sites/development.services.yml": "lib/drupal/sites/development.services.yml",
                 "[web-root]/libraries/bootstrap/dist/js/bootstrap.min.js": "vendor/twbs/bootstrap/dist/js/bootstrap.min.js"
             },
             "symlink": true,
@@ -185,15 +185,16 @@
             "find web/sites/default/files -type d -exec chmod ug=rwx,o= '{}' \\;",
             "find web/sites/default/files -type f -exec chmod ug=rw,o= '{}' \\;"
         ],
-        "export-custom-translations": [
-            "drush locale:export nl --types=customized > lib/drupal/web/sites/default/files/translations/custom-translations.nl.po",
-            "drush locale:export fr --types=customized > lib/drupal/web/sites/default/files/translations/custom-translations.fr.po"
+        "export-local-translations": [
+            "drush locale:export nl --types=customized > lib/drupal/translations/translations-custom.nl.po",
+            "drush locale:export fr --types=customized > lib/drupal/translations/translations-custom.fr.po"
         ],
-        "import-custom-translations": [
-            "drush locale:import nl ../lib/drupal/web/sites/default/files/translations/custom-translations.nl.po --type=customized --override=all",
-            "drush locale:import fr ../lib/drupal/web/sites/default/files/translations/custom-translations.fr.po --type=customized --override=all"
+        "import-local-translations": [
+            "drush locale:import nl ../lib/drupal/translations/translations-custom.nl.po --type=customized --override=all",
+            "drush locale:import fr ../lib/drupal/translations/translations-custom.fr.po --type=customized --override=all"
         ],
         "import-translations": [
+            "Composer\\Config::disableProcessTimeout",
             "drush locale-check",
             "drush locale-update"
         ],

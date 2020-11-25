@@ -1,0 +1,28 @@
+label: 'Liste des entreprises'
+display:
+  default:
+    display_options:
+      fields:
+        title:
+          label: Titre
+        field_address_postal_code:
+          label: ' Code postal'
+      filters:
+        title:
+          expose:
+            placeholder: Chercher
+        field_address_postal_code:
+          expose:
+            placeholder: 'Code postal'
+      title: 'Liste des entreprises'
+      footer:
+        result:
+          content: 'Affichage @start - @end de @total'
+      pager:
+        options:
+          tags:
+            first: '«  Première'
+            last: 'Dernière »'
+          expose:
+            items_per_page_label: 'Objets par page'
+            items_per_page_options_all_label: '- Tout -'

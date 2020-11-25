@@ -1,0 +1,119 @@
+# French translation of Open Appointment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-11-25 22:25+0000\n"
+"PO-Revision-Date: 2020-11-25 22:25+0000\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Master"
+msgstr "Maître"
+
+msgid "Apply"
+msgstr "Appliquer"
+
+msgid "Reset"
+msgstr "Réinitialiser"
+
+msgid "Sort by"
+msgstr "Trier par"
+
+msgid "« First"
+msgstr "« Premier"
+
+msgid "Last »"
+msgstr "Dernier »"
+
+msgid "Items per page"
+msgstr "Éléments par page"
+
+msgid "- All -"
+msgstr "- Tout -"
+
+msgid "Offset"
+msgstr "Décalage"
+
+msgid "State"
+msgstr "État"
+
+msgid "Job type"
+msgstr "Catégorie de travail"
+
+msgid "Operations"
+msgstr "Actions"
+
+msgid "Jobs"
+msgstr "Travaux"
+
+msgid "All"
+msgstr "Tout"
+
+msgid "Licenses"
+msgstr "Licences"
+
+msgid "Filter"
+msgstr "Filtrer"
+
+msgid "ID"
+msgstr "Identifiant (ID)"
+
+msgid "Label"
+msgstr "Étiquette"
+
+msgid "Owner"
+msgstr "Propriétaire"
+
+msgid "Updated"
+msgstr "Mis à jour"
+
+msgid "Operations links"
+msgstr "Liens d'actions"
+
+msgid "Any country"
+msgstr "Tous les pays"
+
+msgid "Any occupation"
+msgstr "Toute profession"
+
+msgid "Login with"
+msgstr "Connectez-vous avec"
+
+msgid "Login by username/email address"
+msgstr "Connexion par nom d'utilisateur/adresse e-mail"
+
+msgid "You can use your username or email address to login."
+msgstr ""
+"Vous pouvez utiliser votre nom d'utilisateur ou adresse e-mail pour "
+"vous connecter."
+
+msgid "Currently closed"
+msgstr "Actuellement fermé"
+
+msgid "Select the date for your appointment."
+msgstr "Sélectionnez la date de votre rendez-vous."
+
+msgid "No slots available."
+msgstr "Aucun emplacement disponible."
+
+msgid "Select the time for your appointment."
+msgstr "Sélectionnez l'heure de votre rendez-vous."
+
+msgid "Book appointment now!"
+msgstr "Prenez rendez-vous maintenant!"
+
+msgid "Open at this moment!"
+msgstr "Ouvert en ce moment!"
+
+msgid "We are expecting you!"
+msgstr "Nous vous attendons!"
+
+msgid "French"
+msgstr "French"
+
+
