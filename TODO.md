@@ -1,4 +1,6 @@
-## Todo's
+# Todo's
+
+## Development
 
 * Provide a validation request on multiple appointments in one day!
 * Provide the first real behat tests.
@@ -15,3 +17,8 @@
 * Implement lighthouse CI.
 * See if we need to provide an ical to provide a feed for users appointments:
 https://www.drupal.org/project/views_ical
+
+# Deployment
+
+* Make sure the deployed files have the correct permissions (files folder)
+* Provide FB & Google app for login on production environment.

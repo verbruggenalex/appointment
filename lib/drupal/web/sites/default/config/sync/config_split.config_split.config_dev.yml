@@ -12,6 +12,7 @@ module:
   devel: 0
   devel_generate: 0
   devel_kint_extras: 0
+  smtp: 0
 theme: {  }
 blacklist: {  }
 graylist: {  }

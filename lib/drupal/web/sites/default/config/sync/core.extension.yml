@@ -80,7 +80,6 @@ module:
   select_or_other: 0
   serialization: 0
   smart_date: 0
-  smtp: 0
   social_api: 0
   social_auth: 0
   social_auth_facebook: 0

@@ -28,7 +28,6 @@
         "drupal/realname": "^1.0@RC",
         "drupal/select_or_other": "^1.0@alpha",
         "drupal/smart_date": "^3.0",
-        "drupal/smtp": "^1.0",
         "drupal/social_auth_facebook": "^2.0",
         "drupal/social_auth_google": "^2.1",
         "drupal/token": "^1.7",
@@ -53,6 +52,7 @@
         "drupal/devel": "^4.0",
         "drupal/devel_kint_extras": "^1.0",
         "drupal/drupal-extension": "^4.1",
+        "drupal/smtp": "^1.0",
         "ergebnis/composer-normalize": "^2.8"
     },
     "config": {
@@ -176,7 +176,7 @@
             "tar -zxf dist.tar.gz -C build/dist/$2"
         ],
         "set-permissions": [
-            "[ $ENVIRONMENT != 'development'] && sudo chown -R docker:www-data",
+            "sudo chown -R docker:$APACHE_RUN_GROUP web",
             "find web -type d -exec chmod u=rwx,g=rx,o= '{}' \\;",
             "find web -type f -exec chmod u=rw,g=r,o= '{}' \\;",
             "find web/sites/default/files -type d -exec chmod ug=rwx,o= '{}' \\;",
