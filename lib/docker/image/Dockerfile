@@ -1,7 +1,7 @@
 ARG PHP_EXTENSIONS="bcmath gd mysqli pdo_mysql"
 ARG PHP_VERSION=7.4
 
-FROM thecodingmachine/php:$PHP_VERSION-v3-slim-apache as prod
+FROM thecodingmachine/php:$PHP_VERSION-v3-slim-apache as base
 
 USER root
 
@@ -40,6 +40,7 @@ RUN a2ensite production.conf
 RUN a2ensite pre-production.conf
 RUN a2ensite post-production.conf
 
+FROM base as prod
 
 # Change back Apache user and group to www-data use production ini.
 ENV APACHE_RUN_USER=www-data \
@@ -47,7 +48,7 @@ ENV APACHE_RUN_USER=www-data \
     TEMPLATE_PHP_INI=production \
     PHP_INI_DISABLE_FUNCTIONS=phpinfo
 
-FROM prod as ci
+FROM base as ci
 
 RUN apt-get update && \
     apt-get install -y patch --no-install-recommends
