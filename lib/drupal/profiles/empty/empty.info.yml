@@ -1,0 +1,5 @@
+name: Empty
+type: profile
+description: 'Empty profile used for quick existing config installations.'
+version: VERSION
+core: 8.x

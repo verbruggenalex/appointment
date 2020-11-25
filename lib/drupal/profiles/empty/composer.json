@@ -1,0 +1,11 @@
+{
+    "name": "custom/empty",
+    "description": "Empty profile",
+    "type": "drupal-custom-profile",
+    "authors": [
+        {
+            "name": "Alex Verbruggen",
+            "email": "verbruggenalex@gmail.com"
+        }
+    ]
+}

@@ -7,6 +7,7 @@
         "custom/app_core": "@dev",
         "custom/app_default_content": "dev-master",
         "custom/bbc": "dev-master",
+        "custom/empty": "dev-master",
         "cweagans/composer-patches": "^1.6",
         "drupal/admin_toolbar": "^2.3",
         "drupal/auto_entitylabel": "^3.0@beta",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e334ede741f69859df9e991c1cd47ae5",
+    "content-hash": "03ef732288e041009c1cf70a79cd59fc",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1426,6 +1426,26 @@
             ],
             "description": "Bootstrap Barrio Custom theme for Drupal 8",
             "homepage": "https://drupal.org/project/bbc",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "custom/empty",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "lib/drupal/profiles/empty",
+                "reference": "d484134d6b8eaf677d8adda9bd29e20216defc78"
+            },
+            "type": "drupal-custom-profile",
+            "authors": [
+                {
+                    "name": "Alex Verbruggen",
+                    "email": "verbruggenalex@gmail.com"
+                }
+            ],
+            "description": "Empty profile",
             "transport-options": {
                 "relative": true
             }
@@ -15162,6 +15182,7 @@
         "custom/app_core": 20,
         "custom/app_default_content": 20,
         "custom/bbc": 20,
+        "custom/empty": 20,
         "drupal/auto_entitylabel": 10,
         "drupal/commerce_license": 15,
         "drupal/default_content": 15,
