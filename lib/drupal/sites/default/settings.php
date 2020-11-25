@@ -62,5 +62,5 @@ $settings['reverse_proxy'] = TRUE;
 $settings['reverse_proxy_addresses'] = [$_SERVER['REMOTE_ADDR']];
 
 
-// Test for production, not needed I think?
+// phpcs:ignore
 $settings['reverse_proxy_trusted_headers'] = \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_ALL | \Symfony\Component\HttpFoundation\Request::HEADER_FORWARDED;
