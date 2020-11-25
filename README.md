@@ -1,40 +1,59 @@
-# Appointment project
+# Open Appointment
 
-## Development setup.
+## Preparing the host environment.
+
+### Requirements
+
+Execute the following commands on a linux environment. You can/should change the
+environment variables according to your needs.
 
 ```bash
-# Make sure your environment has all needed variables.
-[ ! -f .env ] && cp .env.dist .env
-# Edit the file.
-nano .env
-# Setup your development environment.
-docker-compose up -d
-# Install codebase.
-composer install
-# Install a clean Drupal site from config.
-composer drupal-instal-clean
+# Install docker:
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker <your-user>
+# Install docker-compose:
+sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+# Add required environment variables:
+echo "export TRAEFIK_DOMAIN=localhost.com" >> ~/.bashrc
+echo "export TRAEFIK_NETWORK=proxy" >> ~/.bashrc
+echo "export TRAEFIK_BASIC_AUTH=$(htpasswd -nb admin admin)" >> ~/.bashrc
+# Source .bashrc file.
+. ~/.bashrc
 ```
 
-## Build distribution.
+### Makefile
+
+All functions needed to set up the environment are to be placed in the
+[Makefile](Makefile) that is found in the root of this project. Execute the
+following command after you have met the requirements:
+
 ```bash
-# Compresses to dist.tar.gz
-composer build-dist
+# Installs a locally trusted certificate and sets up network and hosts.
+make mkcert_setup mkcert_install docker_network_create setup_hosts example_build
 ```
 
-## Todo's
 
-* Provide a validation request on multiple appointments in one day!
-* Provide the first real behat tests.
-* Fix profile picture!!!!!!
-* Start cleaning up user sidebar.
-* Provide business picture
-* Contact page form.
-* Put traefik inside of this project docker-compose.yml?
-* Keep traefik in seperate docker-compose.yml or repo?
-* Fix breadcrumb.
-* Change appointment creation message to be more user friendly.
-* Create licensing options
-* Calculate percentage booked to show on month calendar on days?
-* Implement lighthouse CI.
-* See if we need to provide an ical to provide a feed for users appointments:
-https://www.drupal.org/project/views_ical
+## Starting the project environment.
+
+### Development.
+
+```bash
+# Starts all required services for a development environment.
+make dev
+```
+
+### Continuous integration.
+
+```bash
+# Starts all required services for a ci environment.
+make ci
+```
+
+### Production.
+
+```bash
+# Starts all required services for a production environment.
+make prod
+```
