@@ -164,7 +164,9 @@
             "Composer\\Config::disableProcessTimeout",
             "./vendor/bin/drush si empty --account-pass=admin --ansi",
             "./vendor/bin/drush cset system.site uuid 6f305eea-1b69-4861-aefe-2548861790fe -y",
-            "./vendor/bin/drush cim -y"
+            "./vendor/bin/drush cim -y",
+            "@import-local-translations",
+            "@import-translations"
         ],
         "build-bak": [
             "drush cex -y",
