@@ -1,5 +1,7 @@
 #!make
 
+include .env
+
 mkcert_setup:
 	curl -s https://api.github.com/repos/FiloSottile/mkcert/releases/latest \
 	| grep "browser_download_url.*-linux-amd64" \
