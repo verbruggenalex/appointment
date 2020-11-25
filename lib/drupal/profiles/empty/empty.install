@@ -9,4 +9,5 @@ function empty_install_tasks_alter(&$tasks, $install_state) {
   $tasks['install_download_translation']['run'] = INSTALL_TASK_SKIP;
   $tasks['install_import_translations']['run'] = INSTALL_TASK_SKIP;
   $tasks['install_config_download_translations']['run'] = INSTALL_TASK_SKIP;
+  $tasks['install_finish_translations']['run'] = INSTALL_TASK_SKIP;
 }
