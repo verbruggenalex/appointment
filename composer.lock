@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8bc733f3ca4912f26446a628dec16fe5",
+    "content-hash": "be44b2c33e29bc946b3e5edccfde71d5",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1297,6 +1297,30 @@
                 }
             ],
             "description": "App core",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "custom/app_default_content",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "lib/drupal/modules/app_default_content",
+                "reference": "77efa058d72c690423d4a1c4a2372475065a8cd3"
+            },
+            "require": {
+                "custom/app_core": "@dev",
+                "drupal/default_content": "^2.0@alpha"
+            },
+            "type": "drupal-custom-module",
+            "authors": [
+                {
+                    "name": "Alex Verbruggen",
+                    "email": "verbruggenalex@gmail.com"
+                }
+            ],
+            "description": "Default content for the app (only for dev)",
             "transport-options": {
                 "relative": true
             }
@@ -11451,30 +11475,6 @@
             "time": "2020-11-13T08:04:11+00:00"
         },
         {
-            "name": "custom/app_default_content",
-            "version": "dev-master",
-            "dist": {
-                "type": "path",
-                "url": "lib/drupal/modules/app_default_content",
-                "reference": "77efa058d72c690423d4a1c4a2372475065a8cd3"
-            },
-            "require": {
-                "custom/app_core": "@dev",
-                "drupal/default_content": "^2.0@alpha"
-            },
-            "type": "drupal-custom-module",
-            "authors": [
-                {
-                    "name": "Alex Verbruggen",
-                    "email": "verbruggenalex@gmail.com"
-                }
-            ],
-            "description": "Default content for the app (only for dev)",
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
             "version": "v0.7.0",
             "source": {
@@ -15160,6 +15160,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "custom/app_core": 20,
+        "custom/app_default_content": 20,
         "custom/bbc": 20,
         "drupal/auto_entitylabel": 10,
         "drupal/commerce_license": 15,
@@ -15167,7 +15168,6 @@
         "drupal/realname": 5,
         "drupal/select_or_other": 15,
         "drupal/toolbar_themes": 15,
-        "custom/app_default_content": 20,
         "drupal-composer/drupal-security-advisories": 20
     },
     "prefer-stable": true,

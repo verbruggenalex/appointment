@@ -47,11 +47,11 @@ ENV APACHE_RUN_USER=www-data \
     TEMPLATE_PHP_INI=production \
     PHP_INI_DISABLE_FUNCTIONS=phpinfo
 
-FROM prod as ci
-
-ENV PHP_INI_DISABLE_FUNCTIONS=""
-
 RUN apt-get update && \
     apt-get install -y patch --no-install-recommends
 
 RUN curl -sS https://getcomposer.org/installer | php -- --version=1.10.17 --install-dir=/usr/local/bin --filename=composer
+
+FROM prod as ci
+
+ENV PHP_INI_DISABLE_FUNCTIONS=""

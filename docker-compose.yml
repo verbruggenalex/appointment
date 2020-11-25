@@ -56,6 +56,7 @@ services:
     working_dir: /home/project
     environment:
       ENVIRONMENT:
+      TRAEFIK_DOMAIN:
       APACHE_DOCUMENT_ROOT: /home/project/web
       PHP_EXTENSION_BLACKFIRE: 1
       PHP_EXTENSION_GD: 1
@@ -132,6 +133,7 @@ services:
     image: docker.pkg.github.com/verbruggenalex/appointment/prod:latest
     working_dir: /var/www/html
     environment:
+      TRAEFIK_DOMAIN:
       SOCIAL_AUTH_FACEBOOK_APP_ID:
       SOCIAL_AUTH_FACEBOOK_APP_SECRET:
       SOCIAL_AUTH_GOOGLE_CLIENT_ID:
@@ -160,6 +162,7 @@ services:
     image: docker.pkg.github.com/verbruggenalex/appointment/ci:latest
     working_dir: /var/www/html
     environment:
+      TRAEFIK_DOMAIN:
       SOCIAL_AUTH_FACEBOOK_APP_ID:
       SOCIAL_AUTH_FACEBOOK_APP_SECRET:
       SOCIAL_AUTH_GOOGLE_CLIENT_ID:

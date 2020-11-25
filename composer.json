@@ -5,6 +5,7 @@
     "require": {
         "composer/installers": "^1.9",
         "custom/app_core": "@dev",
+        "custom/app_default_content": "dev-master",
         "custom/bbc": "dev-master",
         "cweagans/composer-patches": "^1.6",
         "drupal/admin_toolbar": "^2.3",
@@ -44,7 +45,6 @@
         "drupal/drupal": "*"
     },
     "require-dev": {
-        "custom/app_default_content": "dev-master",
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
         "drupal-composer/drupal-security-advisories": "dev-8.x-v2",
         "drupal/coder": "^8.3",
