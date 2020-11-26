@@ -41,6 +41,7 @@ jobs:
           sudo chmod 777 /var/run/docker.sock
           cp .env.dist .env
           make mkcert_setup mkcert_install docker_network_create setup_hosts example_build
+          rm build/pre-production && ln -sf $(pwd) $(pwd)/build/pre-production
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u verbruggenalex --password-stdin
           docker-compose up -d traefik mysql ci
           sleep 5
@@ -62,6 +63,16 @@ jobs:
           docker-compose exec -T ci composer test-phpcs
           docker-compose exec -T ci composer setup-project
           docker-compose exec -T ci composer test-behat
+
+      - name: Run Lighthouse on urls and validate with lighthouserc
+        if: startsWith(github.ref, 'refs/tags/') != true
+        uses: treosh/lighthouse-ci-action@v3
+        with:
+          urls: |
+            https://pre-production.localhost.com/en
+            https://pre-production.localhost.com/fr
+            https://pre-production.localhost.com/nl
+          configPath: ./lighthouserc.yml
 
       - name: Prepare release
         if: startsWith(github.ref, 'refs/tags/')

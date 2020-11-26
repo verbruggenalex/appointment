@@ -166,8 +166,7 @@
             "@build-bak"
         ],
         "create-dirs": [
-            "mkdir -p web/sites/default/files/geofieldmap_icons",
-            "ln -sf $(pwd)/lib/drupal/web/sites/default/files/translations $(pwd)/web/sites/default/files/translations"
+            "mkdir -p web/sites/default/files/geofieldmap_icons"
         ],
         "drupal-install-clean": [
             "Composer\\Config::disableProcessTimeout",
