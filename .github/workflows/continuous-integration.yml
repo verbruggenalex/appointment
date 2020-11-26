@@ -43,9 +43,6 @@ jobs:
           make mkcert_setup mkcert_install docker_network_create setup_hosts example_build
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u verbruggenalex --password-stdin
           docker-compose up -d traefik mysql ci
-          sleep 5
-          curl https://pre-production.localhost.com
-          docker-compose logs ci
 
       - name: Cache Composer
         if: startsWith(github.ref, 'refs/tags/') != true
@@ -55,7 +52,7 @@ jobs:
             vendor/
             web/
             dump.sql
-          key: vendor-web-${{ hashFiles('composer.lock') }}
+          key: sql-vendor-web-${{ hashFiles('composer.lock') }}
 
       - name: Test project
         if: startsWith(github.ref, 'refs/tags/') != true
