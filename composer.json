@@ -31,6 +31,7 @@
         "drupal/smart_date": "^3.0",
         "drupal/social_auth_facebook": "^2.0",
         "drupal/social_auth_google": "^2.1",
+        "drupal/sw_register": "^1.0",
         "drupal/token": "^1.7",
         "drupal/toolbar_themes": "^1.0@alpha",
         "drupal/twig_field_value": "^2.0",
@@ -71,7 +72,10 @@
             "file-mapping": {
                 "[web-root]/sites/default/settings.php": "lib/drupal/sites/default/settings.php",
                 "[web-root]/sites/development.services.yml": "lib/drupal/sites/development.services.yml",
-                "[web-root]/libraries/bootstrap/dist/js/bootstrap.min.js": "vendor/twbs/bootstrap/dist/js/bootstrap.min.js"
+                "[web-root]/libraries/bootstrap/dist/js/bootstrap.min.js": "vendor/twbs/bootstrap/dist/js/bootstrap.min.js",
+                "[web-root]/manifest.json": "lib/offline/manifest.json",
+                "[web-root]/offline.html": "lib/offline/offline.html",
+                "[web-root]/service-worker.js": "lib/offline/service-worker.js"
             },
             "symlink": true,
             "overwrite": true

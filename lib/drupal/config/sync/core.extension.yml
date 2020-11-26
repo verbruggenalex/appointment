@@ -85,6 +85,7 @@ module:
   social_auth_facebook: 0
   social_auth_google: 0
   state_machine: 0
+  sw_register: 0
   system: 0
   taxonomy: 0
   text: 0

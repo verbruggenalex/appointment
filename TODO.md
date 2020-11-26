@@ -3,6 +3,7 @@
 ## Development
 
 * Set aside a day for performance improvements on lighthouse results.
+ * https://www.drupal.org/docs/contributed-modules/service-worker-registration/implementing-a-custom-offline-page-with-the
 * Provide a validation request on multiple appointments in one day!
 * Provide the first real behat tests.
 * Fix profile picture!!!!!!
