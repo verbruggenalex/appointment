@@ -133,3 +133,8 @@ body {
   width: 1.75rem;
   height: 1.75rem;
 }
+
+/* Hiding labels because we have placeholders (lighthouse). Can be improved. */
+.views-exposed-form .form-group label, .view-footer .form-group label {
+  display: none;
+}
