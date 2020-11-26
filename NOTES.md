@@ -62,6 +62,9 @@ place them there.</p>
 
 We will use https://www.drupal.org/project/metatag to set the tag on the page.
 
+Important: core might be including this functionality.
+See: https://www.drupal.org/project/drupal/issues/2698127
+
 ```bash
 composer require drupal/metatag
 drush en metatag_mobile -y
