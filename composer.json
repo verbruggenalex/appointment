@@ -177,8 +177,7 @@
         ],
         "build-bak": [
             "./vendor/bin/drush cex -y",
-            "./vendor/bin/drush sql-dump --result-file=../dump.sql",
-            "ls -la"
+            "./vendor/bin/drush sql-dump --result-file=../dump.sql"
         ],
         "build-dist": [
             "composer install --no-dev --no-progress --no-suggest --ansi",
