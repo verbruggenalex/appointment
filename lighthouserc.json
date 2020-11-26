@@ -5,6 +5,7 @@
       "assertions": {
         "color-contrast": "off",
         "font-display": "off",
+        "label": "off",
         "themed-omnibox": "off",
         "unminified-javascript": "off",
         "unsized-images": "off",
