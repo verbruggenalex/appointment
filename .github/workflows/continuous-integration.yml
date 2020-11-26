@@ -73,7 +73,7 @@ jobs:
             https://web.localhost.com/en
             https://web.localhost.com/fr
             https://web.localhost.com/nl
-          configPath: ./lighthouserc.yml
+          configPath: ./lighthouserc.json
           temporaryPublicStorage: true
 
       - name: Prepare release
