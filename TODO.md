@@ -2,10 +2,10 @@
 
 ## Development
 
+* Fix bug where appointment is one hour off on calendar.
 * Provide the first real behat tests.
 * Fix profile picture!!!!!!
 * Start cleaning up user sidebar.
-* Provide business picture
 * Contact page form.
 * Fix breadcrumb.
 * Change appointment creation message to be more user friendly.
