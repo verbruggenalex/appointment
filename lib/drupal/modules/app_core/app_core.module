@@ -49,34 +49,23 @@ function app_core_form_views_exposed_form_alter(array &$form, FormStateInterface
   // kint($form);
   if ($form_id == 'views_exposed_form' && in_array($view['view']->id(), $view_ids)) {
     if (isset($form['field_address_country_code']['#options']['All'])) {
+      $form['field_address_country_code']['#title_display'] = 'invisible';
       $form['field_address_country_code']['#options']['All'] = '- ' . t('Any country') . ' -';
     }
     if (isset($form['field_occupation_target_id']['#options']['All'])) {
+      $form['field_occupation_target_id']['#title_display'] = 'invisible';
       $form['field_occupation_target_id']['#options']['All'] = '- ' . t('Any occupation') . ' -';
+    }
+    if (isset($form['items_per_page']['#title'])) {
+      $form['items_per_page']['#title_display'] = 'invisible';
     }
     if (isset($form['title'])) {
       $form['title']['#size'] = 12;
+      $form['title']['#title_display'] = 'invisible';
     }
     if (isset($form['field_address_postal_code'])) {
       $form['field_address_postal_code']['#size'] = 6;
-      // $connection = \Drupal::database();
-      // /** @var \Drupal\Core\Database\Query\Select $query */
-      // $query = $connection->select('node__field_address', 'fa')
-      // ->fields('fa', ['field_address_postal_code'])
-      // ->distinct(TRUE)
-      // ->orderBy('field_address_postal_code', 'asc')
-      // ->condition('bundle', 'resource');
-
-      // if ($exposedInput['field_address_country_code']) {
-      //   $query->condition('field_address_country_code', $exposedInput['field_address_country_code']);
-      // }
-
-      // if ($options = $query->execute()->fetchAllKeyed(0, 0)) {
-      //   $form['field_address_postal_code']['#type'] = 'select';
-      //   unset($form['field_address_postal_code']['#size']);
-      //   $emptyOption = ['' => '- ' . t('Any postal code') . ' -'];
-      //   $form['field_address_postal_code']['#options'] = $emptyOption + $options;
-      // }
+      $form['field_address_postal_code']['#title_display'] = 'invisible';
     }
   }
 }
