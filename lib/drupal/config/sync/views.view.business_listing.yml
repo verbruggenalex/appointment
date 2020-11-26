@@ -404,7 +404,7 @@ display:
           exposed: true
           expose:
             operator_id: title_op
-            label: ''
+            label: Search
             description: ''
             use_operator: false
             operator: title_op
@@ -457,7 +457,7 @@ display:
           exposed: true
           expose:
             operator_id: field_occupation_target_id_op
-            label: ''
+            label: Occupation
             description: ''
             use_operator: false
             operator: field_occupation_target_id_op
@@ -506,7 +506,7 @@ display:
           exposed: true
           expose:
             operator_id: field_address_country_code_op
-            label: ''
+            label: Country
             description: ''
             use_operator: false
             operator: field_address_country_code_op
@@ -549,7 +549,7 @@ display:
           exposed: true
           expose:
             operator_id: field_address_postal_code_op
-            label: ''
+            label: 'Postal code'
             description: ''
             use_operator: false
             operator: field_address_postal_code_op
