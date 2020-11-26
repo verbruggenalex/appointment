@@ -162,7 +162,8 @@
             "@create-dirs",
             "@drupal-install-clean",
             "@import-local-translations",
-            "@import-translations"
+            "@import-translations",
+            "@build-bak"
         ],
         "create-dirs": [
             "mkdir -p web/sites/default/files/geofieldmap_icons",
@@ -170,14 +171,13 @@
         ],
         "drupal-install-clean": [
             "Composer\\Config::disableProcessTimeout",
-            "if test -f 'dump.sql'; then ./vendor/bin/drush sqlc < dump.sql; else ./vendor/bin/drush si empty --account-pass=admin --ansi; fi",
+            "if test -f 'dump.sql'; then ./vendor/bin/drush sql:create; ./vendor/bin/drush sqlc < dump.sql; else ./vendor/bin/drush si empty --account-pass=admin --ansi; fi",
             "./vendor/bin/drush cset system.site uuid 6f305eea-1b69-4861-aefe-2548861790fe -y",
-            "./vendor/bin/drush cim -y",
-            "./vendor/bin/drush sql-dump --result-file=../dump.sql"
+            "./vendor/bin/drush cim -y"
         ],
         "build-bak": [
-            "drush cex -y",
-            "drush sql-dump --result-file=../dump.sql"
+            "./vendor/bin/drush cex -y",
+            "./vendor/bin/drush sql-dump --result-file=../dump.sql"
         ],
         "build-dist": [
             "composer install --no-dev --no-progress --no-suggest --ansi",
