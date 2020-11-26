@@ -64,14 +64,14 @@ jobs:
           docker-compose exec -T ci composer setup-project
           docker-compose exec -T ci composer test-behat
 
-      - name: Run Lighthouse on urls and validate with lighthouserc
+      - name: Test lighthouse
         if: startsWith(github.ref, 'refs/tags/') != true
         uses: treosh/lighthouse-ci-action@v3
         with:
           urls: |
-            https://pre-production.localhost.com/en
-            https://pre-production.localhost.com/fr
-            https://pre-production.localhost.com/nl
+            http://pre-production.localhost.com/en
+            http://pre-production.localhost.com/fr
+            http://pre-production.localhost.com/nl
           configPath: ./lighthouserc.yml
 
       - name: Prepare release
