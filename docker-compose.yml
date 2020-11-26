@@ -93,6 +93,8 @@ services:
 
   selenium:
     image: selenium/standalone-chrome
+    networks:
+      - proxy
 
   smtp:
     image: tophfr/mailcatcher

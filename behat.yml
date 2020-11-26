@@ -5,10 +5,14 @@ default:
         - %paths.base%/tests/features
       contexts:
         - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
   extensions:
     Drupal\MinkExtension:
       goutte: ~
       javascript_session: 'selenium2'
+      browser_name: chrome
       selenium2:
         wd_host: 'selenium:4444/wd/hub'
         capabilities: { "browser": 'chrome', "version": "*" }
