@@ -2,7 +2,9 @@
 
 ## Installing offline page through service worker.
 
-### Download three files from [this repository](https://github.com/GoogleChrome/samples/tree/gh-pages/service-worker/custom-offline-page)
+
+<details>
+ <summary>Download three files from <a href="https://github.com/GoogleChrome/samples/tree/gh-pages/service-worker/custom-offline-page">this repository</a></summary>
 
 ```bash
 mkdir lib/offline
@@ -11,8 +13,10 @@ wget https://raw.githubusercontent.com/GoogleChrome/samples/gh-pages/service-wor
 wget https://raw.githubusercontent.com/GoogleChrome/samples/gh-pages/service-worker/custom-offline-page/offline.html
 wget https://raw.githubusercontent.com/GoogleChrome/samples/gh-pages/service-worker/custom-offline-page/service-worker.js
 ```
+</details>
 
-### Use drupal/core-composer-scaffold settings to place the files in the root directory.
+<details>
+ <summary>Use drupal/core-composer-scaffold settings to place the files in the root directory.</summary>
 
 ```json
     "extra": {
@@ -25,8 +29,10 @@ wget https://raw.githubusercontent.com/GoogleChrome/samples/gh-pages/service-wor
         }
     }
 ```
+</details>
 
-### Get the Service Worker Registration module, enable and configure it.
+<details>
+ <summary>Get the Service Worker Registration module, enable and configure it.</summary>
 
 ```bash
 composer require drupal/sw_register
@@ -34,3 +40,4 @@ drush en sw_register -y
 drush php:eval "Drupal::configFactory()->getEditable('sw_register.settings')->set('service_worker_js_script_path', 'service-worker.js')->save(TRUE);"
 drush cex
 ```
+</details>
