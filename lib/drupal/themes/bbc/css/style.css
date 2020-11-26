@@ -135,6 +135,7 @@ body {
 }
 
 /* Hiding labels because we have placeholders (lighthouse). Can be improved. */
-.views-exposed-form .form-group label, .view-footer .form-group label {
+.views-exposed-form .form-group label,
+.view-footer .form-group label {
   display: none;
 }
