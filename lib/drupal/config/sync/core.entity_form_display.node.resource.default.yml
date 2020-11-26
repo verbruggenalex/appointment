@@ -5,14 +5,17 @@ dependencies:
   config:
     - field.field.node.resource.field_address
     - field.field.node.resource.field_geofield
+    - field.field.node.resource.field_image
     - field.field.node.resource.field_occupation
     - field.field.node.resource.field_office_hours
     - field.field.node.resource.field_slot_duration
     - field.field.node.resource.field_slot_max_cojoined
+    - image.style.thumbnail
     - node.type.resource
   module:
     - address
     - geofield_map
+    - image
     - office_hours
     - path
     - select_or_other
@@ -76,6 +79,14 @@ content:
       zoom_level: 5
     third_party_settings: {  }
     type: geofield_map
+    region: content
+  field_image:
+    weight: 27
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
     region: content
   field_occupation:
     weight: 26

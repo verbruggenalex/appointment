@@ -100,7 +100,7 @@
           <div class="card-body">
             <div class="text-center mb-10">
               <div class="symbol symbol-60 symbol-circle symbol-xl-90">
-                <div class="symbol-label" style="background-image:url('/themes/custom/bbc/assets/media/users/300_21.jpg')"></div>
+                <div class="symbol-label" style="background-image:url('{{ drupal_field('field_image', 'node', node.id, {type: 'image_url', settings: {image_style: 'medium'}}) |without('#theme') }}')"></div>
                   {% if content.field_office_hours['#items'].isOpen() %}
                     <i class="symbol-badge symbol-badge-bottom bg-success"></i>
                   {% else %}

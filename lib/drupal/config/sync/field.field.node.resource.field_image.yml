@@ -1,0 +1,45 @@
+uuid: 9039b758-f0e9-498c-8838-9382229d3da7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image
+    - node.type.resource
+  module:
+    - content_translation
+    - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      file: '0'
+      alt: '0'
+      title: '0'
+id: node.resource.field_image
+field_name: field_image
+entity_type: node
+bundle: resource
+label: 'Business image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]/business-images'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: 360x360
+  min_resolution: ''
+  alt_field: false
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: c0efb531-136d-4dde-b75c-48b2facb86ba
+    alt: ''
+    title: ''
+    width: 360
+    height: 360
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

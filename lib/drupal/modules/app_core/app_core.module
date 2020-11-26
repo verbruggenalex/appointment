@@ -351,6 +351,30 @@ function app_core_appointment_node_form_validate(array $form, FormStateInterface
     $appointmentId = ($appointment = $form_state->getFormObject()->getEntity()) ? $appointment->id() : null;
     $resourceId = ($resource = $form_state->getValue('field_resource')) ? $resource[0]['target_id'] : null;
 
+    $beginOfDay = strtotime("today", $startTimestamp);
+    $endOfDay = strtotime("tomorrow", $beginOfDay) - 1;
+
+    // Check if no other appointments have been booked on this day by this user.
+    $query = \Drupal::entityQuery('node')
+      ->condition('status', 1)
+      ->condition('type', 'appointment')
+      ->condition('uid', \Drupal::currentUser()->id())
+      ->condition('field_resource.entity:node.nid', $resourceId)
+      ->condition('field_smart_date_range.value', $beginOfDay, '>=')
+      ->condition('field_smart_date_range.end_value', $endOfDay, '<=');
+    // Exclude the current nid if we have one.
+    if ($appointmentId) {
+      $query->condition('nid', $appointmentId, '!=');
+    }
+    $nids = $query->execute();
+
+    // This may need some more control. People may want to be able to book
+    // multiple slots per day. But if we open that up we need to make sure
+    // people can not start booking entire agenda's of people!
+    if (count($nids) > 0) {
+      $form_state->setErrorByName('slot_select', t('You can only book one slot per day.'));
+    }
+
     // Check if no other appointments have been booked there in the meantime.
     $query = \Drupal::entityQuery('node')
       ->condition('status', 1)
