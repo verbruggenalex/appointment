@@ -25,7 +25,7 @@ $settings['trusted_host_patterns'] = [
 $config['locale.settings']['translation']['use_source'] = 'local';
 $config['locale.settings']['translation']['path'] = '../lib/drupal/translations';
 
-$isDevelopmentEnvironment = getenv('ENVIRONMENT') !== 'development';
+$isDevelopmentEnvironment = getenv('ENVIRONMENT') === 'development';
 $hasDevelommentModule = file_exists(DRUPAL_ROOT . '/modules/contrib/devel/devel.info.yml');
 $config['config_split.config_split.config_dev']['status'] = ($isDevelopmentEnvironment && $hasDevelommentModule) ? TRUE : FALSE;
 if ($config['config_split.config_split.config_dev']['status']) {
@@ -36,6 +36,7 @@ if ($config['config_split.config_split.config_dev']['status']) {
   // Disable css js aggregation.
   $config['system.performance']['css']['preprocess'] = FALSE;
   $config['system.performance']['js']['preprocess'] = FALSE;
+  $config['system.performance']['cache']['page']['max_age'] = 0;
 
   // Disable caches.
   $settings['cache']['bins']['render'] = 'cache.backend.null';
