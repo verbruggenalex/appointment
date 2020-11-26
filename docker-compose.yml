@@ -172,6 +172,8 @@ services:
       - ${PWD}:/var/www/html
     labels:
       traefik.enable: true
+      traefik.http.routers.web.tls: true
+      traefik.http.routers.web.rule: Host(`web.${TRAEFIK_DOMAIN}`)
       traefik.http.routers.production.tls: true
       traefik.http.routers.production.rule: Host(`production.${TRAEFIK_DOMAIN}`)
       traefik.http.routers.pre-production.tls: true

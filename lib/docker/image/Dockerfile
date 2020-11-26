@@ -36,6 +36,7 @@ USER root
 COPY apache2/sites-available/* /etc/apache2/sites-available/
 RUN a2dissite 000-default.conf
 RUN a2dissite default-ssl.conf
+RUN a2ensite web.conf
 RUN a2ensite production.conf
 RUN a2ensite pre-production.conf
 RUN a2ensite post-production.conf

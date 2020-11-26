@@ -68,9 +68,7 @@ jobs:
         uses: treosh/lighthouse-ci-action@v3
         with:
           urls: |
-            https://pre-production.localhost.com
-            https://production.localhost.com
-            https://post-production.localhost.com
+            https://web.localhost.com
           configPath: ./lighthouserc.yml
 
       - name: Prepare release
