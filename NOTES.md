@@ -69,6 +69,7 @@ See: https://www.drupal.org/project/drupal/issues/2698127
 composer require drupal/metatag
 drush en metatag_mobile -y
 drush php:eval "Drupal::configFactory()->getEditable('metatag.metatag_defaults.global')->set('tags.web_manifest', 'manifest.json')->save(TRUE);"
+drush php:eval "Drupal::configFactory()->getEditable('metatag.metatag_defaults.global')->set('tags.theme_color', '#FFFFFF')->save(TRUE);"
 drush cex
 ```
 </details>
@@ -81,18 +82,21 @@ More information on the manifest can be found here: https://w3c.github.io/manife
 
 ```json
 {
-  "name": "Custom Offline Page",
-  "short_name": "Offline Page",
-  "icons": [{
-    "src": "images/launcher-icon-2x.png",
-    "sizes": "96x96"
-  }, {
-    "src": "images/launcher-icon-4x.png",
-    "sizes": "192x192"
-  }],
+  "lang": "en",
+  "dir": "ltr",
+  "name": "Open Appointment",
+  "short_name": "Open Appoint",
+  "icons": [
+    {
+      "src": "themes/custom/bbc/icon-128.png",
+      "sizes": "128x128"
+    }
+  ],
   "start_url": "/",
-  "display": "standalone",
-  "orientation": "portrait"
+  "display": "browser",
+  "orientation": "portrait",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff"
 }
 ```
 </details>

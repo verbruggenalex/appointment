@@ -3,7 +3,6 @@
 ## Development
 
 * Set aside a day for performance improvements on lighthouse results.
- * Finish the progressive web app requirements.
 * Provide a validation request on multiple appointments in one day!
 * Provide the first real behat tests.
 * Fix profile picture!!!!!!

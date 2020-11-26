@@ -7,10 +7,20 @@
     {
       "src": "themes/custom/bbc/icon-128.png",
       "sizes": "128x128"
+    },
+    {
+      "src": "themes/custom/bbc/icon-512.png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "themes/custom/bbc/icon-maskable.png",
+      "sizes": "213x213",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
   "start_url": "/",
-  "display": "browser",
+  "display": "fullscreen",
   "orientation": "portrait",
   "theme_color": "#ffffff",
   "background_color": "#ffffff"
