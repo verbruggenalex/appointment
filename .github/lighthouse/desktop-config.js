@@ -1,6 +1,7 @@
 module.exports = {
   extends: 'lighthouse:default',
   settings: {
+    chromeFlags: ["--disable-gpu", "--no-sandbox", "--no-zygote", "--ignore-certificate-errors"],
     emulatedFormFactor: 'desktop',
     throttling: { rttMs: 40, throughputKbps: 10240, cpuSlowdownMultiplier: 1 },
     audits: [
