@@ -1,8 +1,11 @@
 ci:
   collect:
     settings:
-      chromeFlags: "--disable-gpu --ignore-certificate-errors"
-      emulatedFormFactor": "desktop"
+      chromeFlags: --disable-gpu --ignore-certificate-errors
+      maxWaitForFcp: 15 * 1000
+      maxWaitForLoad: 35 * 1000
+      emulatedFormFactor: desktop
+      throttling: desktopDense4G
 
   assert:
     assertions:
