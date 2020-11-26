@@ -58,7 +58,7 @@ jobs:
       - name: Test project
         if: startsWith(github.ref, 'refs/tags/') != true
         run: |
-          docker-compose exec -T ci 'echo "127.0.0.1 web.localhost.com" | sudo tee -a /etc/hosts'
+          docker-compose exec -T ci echo "127.0.0.1 web.localhost.com" | sudo tee -a /etc/hosts
           docker-compose exec -T ci cat /etc/hosts
           docker-compose exec -T ci composer install --no-progress --no-suggest --ansi
           docker-compose exec -T ci composer test-phpcs
