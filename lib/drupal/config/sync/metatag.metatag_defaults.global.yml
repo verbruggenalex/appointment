@@ -10,4 +10,4 @@ tags:
   canonical_url: '[current-page:url]'
   title: '[current-page:title] | [site:name]'
   theme_color: '#FFFFFF'
-  web_manifest: manifest.json
+  web_manifest: /manifest.json
