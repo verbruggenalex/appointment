@@ -43,6 +43,7 @@ jobs:
           make mkcert_setup mkcert_install docker_network_create setup_hosts example_build
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u verbruggenalex --password-stdin
           docker-compose up -d traefik mysql ci
+          sleep 5
 
       - name: Cache Composer
         if: startsWith(github.ref, 'refs/tags/') != true
