@@ -1,7 +1,7 @@
 {
-    "name": "verbruggenalex/project",
+    "name": "verbruggenalex/appointment",
     "type": "project",
-    "description": "Test project",
+    "description": "Appointment project",
     "require": {
         "composer/installers": "^1.9",
         "custom/app_core": "@dev",
