@@ -172,6 +172,11 @@ services:
       GOOGLE_MAPS_API_KEY:
     volumes:
       - ${PWD}:/var/www/html
+    extra_hosts:
+      - "web.${TRAEFIK_DOMAIN}:127.0.0.1"
+      - "production.${TRAEFIK_DOMAIN}:127.0.0.1"
+      - "pre-production.${TRAEFIK_DOMAIN}:127.0.0.1"
+      - "post-production.${TRAEFIK_DOMAIN}:127.0.0.1"
     labels:
       traefik.enable: true
       traefik.http.routers.web.tls: true
