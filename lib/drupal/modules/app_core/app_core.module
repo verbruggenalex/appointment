@@ -190,6 +190,7 @@ function app_core_form_node_form_alter(&$form, FormStateInterface $form_state, $
       '#default_value' => $form_state->getValue('date_select') ? $form_state->getValue('date_select') : $form['field_smart_date_range']['widget'][0]['value']['#default_value']->format('Y-m-d'),
     ];
     $form['date_select']['#attributes']['min'] = date('Y-m-d');
+    $form['date_select']['#attributes']['type'] = 'date';
     // @todo: Make configurable according to the license type.
     // $form['date_select']['#attributes']['max'] = date('Y-m-d', strtotime("+1 week"));
     // Add the slot select box.
