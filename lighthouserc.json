@@ -17,8 +17,7 @@
         "chromeFlags": [
           "--ignore-certificate-errors"
         ],
-        "configPath": ".github/lighthouse/desktop-config.js",
-        "extraHeaders": "{\"Cookie\":\"monster=blue\",\"x-men\":\"wolverine\"}"
+        "configPath": ".github/lighthouse/desktop-config.js"
       }
     }
   }
