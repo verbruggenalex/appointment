@@ -1,5 +1,19 @@
 # Notes
 
+## Drupal caching
+
+### Max age bubbling
+
+See: https://www.drupal.org/project/drupal/issues/2352009
+
+I'm just taking a note of this to see if this module could be a candidate to
+solve some of the caching issues.
+
+```bash
+composer require drupal/cache_control_override
+drush en cache_control_override
+```
+
 ## Lighthouse performance
 
 ### Installing offline page through service worker.

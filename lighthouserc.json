@@ -24,7 +24,7 @@
       }
     },
     "collect": {
-      "numberOfRuns": 1,
+      "numberOfRuns": 2,
       "settings": {
         "chromeFlags": [
           "--ignore-certificate-errors"
