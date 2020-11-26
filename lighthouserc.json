@@ -15,10 +15,7 @@
       "numberOfRuns": 1,
       "settings": {
         "chromeFlags": [
-          "--ignore-certificate-errors",
-          "--disable-gpu",
-          "--no-sandbox",
-          "--no-zygote"
+          "--ignore-certificate-errors"
         ],
         "configPath": ".github/lighthouse/desktop-config.js",
         "extraHeaders": "{\"Cookie\":\"monster=blue\",\"x-men\":\"wolverine\"}"
