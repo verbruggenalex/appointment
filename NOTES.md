@@ -41,3 +41,37 @@ drush php:eval "Drupal::configFactory()->getEditable('sw_register.settings')->se
 drush cex
 ```
 </details>
+
+
+## Set app start_url in manifest.json.
+
+<details>
+ <summary>Information on what the start_url is exactly.</summary>
+<p>The start_url is required and tells the browser where your application should
+start when it is launched, and prevents the app from starting on whatever page
+the user was on when they added your app to their home screen. Your start_url
+should direct the user straight into your app, rather than a product landing
+page. Think about what the user will want to do once they open your app, and
+place them there.</p>
+</details>
+
+<details>
+ <summary>Show manifest.json example</summary>
+
+```json
+{
+  "name": "Custom Offline Page",
+  "short_name": "Offline Page",
+  "icons": [{
+    "src": "images/launcher-icon-2x.png",
+    "sizes": "96x96"
+  }, {
+    "src": "images/launcher-icon-4x.png",
+    "sizes": "192x192"
+  }],
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}
+```
+</details>
