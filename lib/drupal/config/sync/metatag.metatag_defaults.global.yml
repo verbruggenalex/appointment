@@ -1,0 +1,12 @@
+uuid: 7e3df6a6-7135-4dc6-9eec-cc7fabcdfa51
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: sL588ui1E_8-2c_UupwyYxcqX2OVyMFp3HTLbbFqvPc
+id: global
+label: Global
+tags:
+  canonical_url: '[current-page:url]'
+  title: '[current-page:title] | [site:name]'
+  web_manifest: manifest.json

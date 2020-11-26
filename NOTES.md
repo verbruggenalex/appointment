@@ -1,6 +1,8 @@
 # Notes
 
-## Installing offline page through service worker.
+## Lighthouse performance
+
+### Installing offline page through service worker.
 
 
 <details>
@@ -43,7 +45,7 @@ drush cex
 </details>
 
 
-## Set app start_url in manifest.json.
+### Set app start_url in manifest.json.
 
 <details>
  <summary>Information on what the start_url is exactly.</summary>
@@ -56,7 +58,23 @@ place them there.</p>
 </details>
 
 <details>
+ <summary>Use metatag module to define the mobile manifest.json</summary>
+
+We will use https://www.drupal.org/project/metatag to set the tag on the page.
+
+```bash
+composer require drupal/metatag
+drush en metatag_mobile -y
+drush php:eval "Drupal::configFactory()->getEditable('metatag.metatag_defaults.global')->set('tags.web_manifest', 'manifest.json')->save(TRUE);"
+drush cex
+```
+</details>
+
+<details>
  <summary>Show manifest.json example</summary>
+
+More information on the manifest can be found here: https://w3c.github.io/manifest/
+
 
 ```json
 {
