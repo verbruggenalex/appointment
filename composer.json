@@ -160,6 +160,7 @@
     "scripts": {
         "setup-project": [
             "@create-dirs",
+            "@set-permissions",
             "@drupal-install-clean",
             "@import-local-translations",
             "@import-translations",

@@ -68,8 +68,8 @@ jobs:
         uses: treosh/lighthouse-ci-action@v3
         with:
           urls: |
-            https://web.localhost.com
             https://web.localhost.com/en
+            https://web.localhost.com/fr
             https://web.localhost.com/nl
           configPath: ./lighthouserc.yml
           temporaryPublicStorage: true
