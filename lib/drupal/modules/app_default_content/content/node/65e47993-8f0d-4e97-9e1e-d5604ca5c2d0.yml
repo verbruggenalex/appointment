@@ -31,12 +31,6 @@ default:
   revision_translation_affected:
     -
       value: true
-  content_translation_source:
-    -
-      value: und
-  content_translation_outdated:
-    -
-      value: false
   field_address:
     -
       langcode: en
@@ -54,7 +48,7 @@ default:
       family_name: ''
   field_geofield:
     -
-      value: 'POINT (5.053991 50.983573)'
+      value: 'POINT(5.053991 50.983573)'
       geo_type: Point
       lat: 50.983573
       lon: 5.053991

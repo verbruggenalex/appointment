@@ -5,6 +5,7 @@ _meta:
   bundle: resource
   default_langcode: zxx
   depends:
+    cad82075-71a4-48b2-9f7f-3d802195a4f8: file
     cdd89c4d-2504-4590-9faa-c0aac6029c87: taxonomy_term
 default:
   revision_uid:
@@ -31,12 +32,6 @@ default:
   revision_translation_affected:
     -
       value: true
-  content_translation_source:
-    -
-      value: und
-  content_translation_outdated:
-    -
-      value: false
   field_address:
     -
       langcode: en
@@ -64,6 +59,13 @@ default:
       bottom: 50.996647
       geohash: u15d57tvp012
       latlon: '50.996647,5.072896'
+  field_image:
+    -
+      entity: cad82075-71a4-48b2-9f7f-3d802195a4f8
+      alt: ''
+      title: ''
+      width: 300
+      height: 300
   field_occupation:
     -
       entity: cdd89c4d-2504-4590-9faa-c0aac6029c87

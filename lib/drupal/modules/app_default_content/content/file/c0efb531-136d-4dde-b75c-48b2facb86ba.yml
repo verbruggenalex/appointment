@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: c0efb531-136d-4dde-b75c-48b2facb86ba
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: blank.png
+  uri:
+    -
+      value: 'public://default_images/blank.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 79963
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1606420690
