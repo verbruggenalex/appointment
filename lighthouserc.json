@@ -12,10 +12,14 @@
       }
     },
     "collect": {
-        "numberOfRuns": 1,
-        "settings": {
-          "chromeFlags": ["--ignore-certificate-errors", "--disable-gpu", "--no-sandbox", "--no-zygote"]
-        },
+      "numberOfRuns": 1,
+      "settings": {
+        "chromeFlags": [
+          "--ignore-certificate-errors",
+          "--disable-gpu",
+          "--no-sandbox",
+          "--no-zygote"
+        ],
         "configPath": ".github/lighthouse/desktop-config.js",
         "extraHeaders": "{\"Cookie\":\"monster=blue\",\"x-men\":\"wolverine\"}"
       }
