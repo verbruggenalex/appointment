@@ -1,7 +1,7 @@
 Feature: Default
   Check if the site is functional.
 
-  @api @javascript
+  @api
   Scenario: Visit frontpages
     Given I am not logged in
     When I visit '/en'

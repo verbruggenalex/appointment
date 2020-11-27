@@ -25,7 +25,7 @@ default:
         drupal_root: "web"
       subcontexts:
         paths:
-          - "/home/project/web/modules/contrib/watchdog_registry"
+          - ./modules/contrib/watchdog_registry
         autoload: 1
       selectors:
         message_selector: '.messages'
@@ -36,5 +36,5 @@ default:
       text:
         password_field: "pass"
         username_field: "name"
-  # formatters:
-  #   progress: ~
+  formatters:
+    progress: ~
