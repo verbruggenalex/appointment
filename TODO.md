@@ -2,7 +2,10 @@
 
 ## Development
 
-* Fix bug where appointment is one hour off on calendar.
+* Trusted host settings for local, ci and production.
+* Apcu to prod image?
+* Setup cronjobs on image and in Drupal (each minute, ultimate_cron?)
+* Fix bug where appointment is one hour off on calendar (only on local?).
 * Provide the first real behat tests.
 * Fix profile picture!!!!!!
 * Start cleaning up user sidebar.
@@ -17,7 +20,6 @@ https://www.drupal.org/project/views_ical
 # Deployment
 
 * Make sure the deployed files have the correct permissions (files folder)
-* Provide FB & Google app for login on production environment.
 
 # Behat testing
 

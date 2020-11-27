@@ -1,4 +1,4 @@
-ARG PHP_EXTENSIONS="bcmath gd mysqli pdo_mysql"
+ARG PHP_EXTENSIONS="apcu bcmath gd mysqli pdo_mysql"
 ARG PHP_VERSION=7.4
 
 FROM thecodingmachine/php:$PHP_VERSION-v3-slim-apache as prod
