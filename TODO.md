@@ -2,9 +2,11 @@
 
 ## Development
 
-* Trusted host settings for local, ci and production.
-* Apcu to prod image?
-* Setup cronjobs on image and in Drupal (each minute, ultimate_cron?)
+* Create cleanup module to remove "Cron run completed." logs from dblog:
+ * A module with it's own cronjob that every so often through ultimate_cron will
+   fetch all these messages, delete them and place a counter message in the
+   watchdog table. This way we can see the cron runs every minute but doesn't
+   create pages and pages of messages.
 * Fix bug where appointment is one hour off on calendar (only on local?).
 * Provide the first real behat tests.
 * Fix profile picture!!!!!!

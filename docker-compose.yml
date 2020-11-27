@@ -71,6 +71,9 @@ services:
       SOCIAL_AUTH_GOOGLE_CLIENT_ID:
       SOCIAL_AUTH_GOOGLE_CLIENT_SECRET:
       GOOGLE_MAPS_API_KEY:
+      CRON_USER_1: root
+      CRON_SCHEDULE_1: '* * * * *'
+      CRON_COMMAND_1: ./vendor/bin/drush core:cron
     volumes:
       - ${PWD}:/home/project
       - ~/.ssh:/home/docker/.ssh
@@ -141,8 +144,17 @@ services:
       SOCIAL_AUTH_GOOGLE_CLIENT_ID:
       SOCIAL_AUTH_GOOGLE_CLIENT_SECRET:
       GOOGLE_MAPS_API_KEY:
+      CRON_USER_1: www-data
+      CRON_SCHEDULE_1: '* * * * *'
+      CRON_COMMAND_1: |
+        /usr/bin/wget -O - -q -t 1 \
+        http://production.${TRAEFIK_DOMAIN}/cron.php
     volumes:
       - ${PWD}:/var/www/html
+    extra_hosts:
+      - "production.${TRAEFIK_DOMAIN}:127.0.0.1"
+      - "pre-production.${TRAEFIK_DOMAIN}:127.0.0.1"
+      - "post-production.${TRAEFIK_DOMAIN}:127.0.0.1"
     labels:
       traefik.enable: true
       traefik.http.routers.production.tls: true
@@ -170,6 +182,11 @@ services:
       SOCIAL_AUTH_GOOGLE_CLIENT_ID:
       SOCIAL_AUTH_GOOGLE_CLIENT_SECRET:
       GOOGLE_MAPS_API_KEY:
+      CRON_USER_1: www-data
+      CRON_SCHEDULE_1: '* * * * *'
+      CRON_COMMAND_1: |
+        /usr/bin/wget -O - -q -t 1 \
+        http://production.${TRAEFIK_DOMAIN}/cron.php
     volumes:
       - ${PWD}:/var/www/html
     extra_hosts:
