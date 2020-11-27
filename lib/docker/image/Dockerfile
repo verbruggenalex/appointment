@@ -42,7 +42,6 @@ RUN a2ensite production.conf
 RUN a2ensite pre-production.conf
 RUN a2ensite post-production.conf
 
-
 # Change back Apache user and group to www-data use production ini.
 ENV APACHE_RUN_USER=www-data \
     APACHE_RUN_GROUP=www-data \
