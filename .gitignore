@@ -3,5 +3,6 @@
 /vendor/
 /certs/
 /*.sql
+/*.png
 /*.tar.gz
 /.env

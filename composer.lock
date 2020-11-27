@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d50d58f7bd78f68848399fb21a30d261",
+    "content-hash": "b5c6ea4f7df5f5c2ad2410e5590347f9",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5636,12 +5636,18 @@
             }
         },
         {
-            "name": "drupal/watchdog-registry",
-            "version": "1.0.x-dev",
+            "name": "drupal/watchdog_registry",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/watchdog_registry.git",
-                "reference": "8f27bc00238d50cdf766d8119a4cccbe4f5770cb"
+                "url": "https://github.com/verbruggenalex/watchdog_registry.git",
+                "reference": "9dc3e1b91e5fefcd7cb409a0e4f7473913daac29"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verbruggenalex/watchdog_registry/zipball/9dc3e1b91e5fefcd7cb409a0e4f7473913daac29",
+                "reference": "9dc3e1b91e5fefcd7cb409a0e4f7473913daac29",
+                "shasum": ""
             },
             "require": {
                 "php": ">=7.1"
@@ -5672,12 +5678,6 @@
                     ]
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Drupal\\watchdog_registry\\": "src/",
-                    "WatchdogRegistry\\Tests\\": "./tests/"
-                }
-            },
             "license": [
                 "GPL-2.0-or-later"
             ],
@@ -5689,7 +5689,11 @@
             ],
             "description": "Register PHP errors, notices and warnings",
             "homepage": "https://drupal.org/project/watchdog_registry",
-            "time": "2020-11-27T11:10:56+00:00"
+            "support": {
+                "source": "https://github.com/verbruggenalex/watchdog_registry/tree/master",
+                "issues": "https://github.com/verbruggenalex/watchdog_registry/issues"
+            },
+            "time": "2020-11-27T23:38:07+00:00"
         },
         {
             "name": "drush/drush",
@@ -7291,16 +7295,16 @@
         },
         {
             "name": "php-http/discovery",
-            "version": "1.12.0",
+            "version": "1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-http/discovery.git",
-                "reference": "4366bf1bc39b663aa87459bd725501d2f1988b6c"
+                "reference": "788f72d64c43dc361e7fcc7464c3d947c64984a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-http/discovery/zipball/4366bf1bc39b663aa87459bd725501d2f1988b6c",
-                "reference": "4366bf1bc39b663aa87459bd725501d2f1988b6c",
+                "url": "https://api.github.com/repos/php-http/discovery/zipball/788f72d64c43dc361e7fcc7464c3d947c64984a7",
+                "reference": "788f72d64c43dc361e7fcc7464c3d947c64984a7",
                 "shasum": ""
             },
             "require": {
@@ -7352,7 +7356,7 @@
                 "message",
                 "psr7"
             ],
-            "time": "2020-09-22T13:31:04+00:00"
+            "time": "2020-11-27T14:49:42+00:00"
         },
         {
             "name": "php-http/guzzle6-adapter",
@@ -12367,7 +12371,10 @@
                 },
                 "branch-alias": {
                     "dev-8.x-1.x": "1.x-dev"
-                }
+                },
+                "patches_applied": [
+                    "https://www.drupal.org/files/issues/2020-08-11/removed_config_override_logic-2826189-39.patch"
+                ]
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
@@ -15146,7 +15153,7 @@
         "drupal/select_or_other": 15,
         "drupal/toolbar_themes": 15,
         "drupal/ultimate_cron": 15,
-        "drupal/watchdog-registry": 20,
+        "drupal/watchdog_registry": 20,
         "drupal-composer/drupal-security-advisories": 20
     },
     "prefer-stable": true,

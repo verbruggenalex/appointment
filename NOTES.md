@@ -9,7 +9,6 @@ dependencies will be of the version that you tested by the time your project
 reaches production. Instead use drupal/core-recommended. This will ensure you
 have the fixed versions from the release.
 
-See:
  * [Documentation](https://www.drupal.org/docs/develop/using-composer/using-composer-to-install-drupal-and-manage-dependencies)
  * [Vendor hardening in drupal/core-recommended](https://github.com/drupal/core-recommended/blob/8.9.10//composer.json#L4)
  * [Vendor hardening in drupal/core](https://github.com/drupal/drupal/blob/8.9.10/composer.json#L15)
