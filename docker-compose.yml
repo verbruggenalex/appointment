@@ -56,7 +56,7 @@ services:
     working_dir: /home/project
     environment:
       ENVIRONMENT: dev
-      BEHAT_PARAMS: '{"extensions":{"Behat\\MinkExtension":{"base_url":"http://dev"}}}'
+      BEHAT_PARAMS: '{"extensions":{"Behat\\MinkExtension":{"base_url":"http://dev.${TRAEFIK_DOMAIN}"}}}'
       TRAEFIK_DOMAIN:
       APACHE_DOCUMENT_ROOT: /home/project/web
       PHP_EXTENSION_BLACKFIRE: 1
@@ -99,6 +99,12 @@ services:
 
   selenium:
     image: selenium/standalone-chrome
+    extra_hosts:
+      - "dev.${TRAEFIK_DOMAIN}:172.17.0.1"
+      - "web.${TRAEFIK_DOMAIN}:172.17.0.1"
+      - "production.${TRAEFIK_DOMAIN}:172.17.0.1"
+      - "pre-production.${TRAEFIK_DOMAIN}:172.17.0.1"
+      - "post-production.${TRAEFIK_DOMAIN}:172.17.0.1"
     networks:
       - proxy
 
@@ -180,7 +186,7 @@ services:
     working_dir: /var/www/html
     environment:
       ENVIRONMENT: ci
-      BEHAT_PARAMS: '{"extensions":{"Behat\\MinkExtension":{"base_url":"http://ci"}}}'
+      BEHAT_PARAMS: '{"extensions":{"Behat\\MinkExtension":{"base_url":"http://web.${TRAEFIK_DOMAIN}"}}}'
       TRAEFIK_DOMAIN:
       SOCIAL_AUTH_FACEBOOK_APP_ID:
       SOCIAL_AUTH_FACEBOOK_APP_SECRET:
