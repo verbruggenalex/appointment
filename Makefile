@@ -24,6 +24,6 @@ example_build:
 dev:
 	docker-compose up -d traefik portainer dev mysql selenium smtp
 ci:
-	docker-compose up -d traefik portainer ci mysql selenium
+	docker-compose up -d traefik ci mysql selenium
 prod:
 	docker-compose up -d traefik portainer prod mysql
