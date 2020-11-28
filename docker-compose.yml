@@ -55,7 +55,8 @@ services:
     image: verbral/php-theia:7.4
     working_dir: /home/project
     environment:
-      ENVIRONMENT:
+      ENVIRONMENT: dev
+      BEHAT_PARAMS: '{"extensions":{"Behat\\MinkExtension":{"base_url":"http://dev"}}}'
       TRAEFIK_DOMAIN:
       APACHE_DOCUMENT_ROOT: /home/project/web
       PHP_EXTENSION_BLACKFIRE: 1
@@ -75,7 +76,7 @@ services:
       # CRON_SCHEDULE_1: '* * * * *'
       # CRON_COMMAND_1: ./vendor/bin/drush core:cron
     extra_hosts:
-      - "web.${TRAEFIK_DOMAIN}:127.0.0.1"
+      - "dev.${TRAEFIK_DOMAIN}:127.0.0.1"
     volumes:
       - ${PWD}:/home/project
       - ~/.ssh:/home/docker/.ssh
@@ -98,9 +99,6 @@ services:
 
   selenium:
     image: selenium/standalone-chrome
-    external_links:
-      - "dev:web.localhost.com"
-      - "ci:web.localhost.com"
     networks:
       - proxy
 
@@ -181,6 +179,8 @@ services:
     image: docker.pkg.github.com/verbruggenalex/appointment/ci:latest
     working_dir: /var/www/html
     environment:
+      ENVIRONMENT: ci
+      BEHAT_PARAMS: '{"extensions":{"Behat\\MinkExtension":{"base_url":"http://ci"}}}'
       TRAEFIK_DOMAIN:
       SOCIAL_AUTH_FACEBOOK_APP_ID:
       SOCIAL_AUTH_FACEBOOK_APP_SECRET:
