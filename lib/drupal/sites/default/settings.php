@@ -20,7 +20,7 @@ $databases['default']['default'] = [
 
 // With Traefik setup we always limit to the exact root domain.
 $settings['trusted_host_patterns'] = ['dev', 'ci', 'prod'];
-$settings['trusted_host_patterns'][]= ($domain = getenv('TRAEFIK_DOMAIN')) ? '.*' . str_replace('.', '\.', $domain) . '$': '.*';
+$settings['trusted_host_patterns'][] = ($domain = getenv('TRAEFIK_DOMAIN')) ? '.*' . str_replace('.', '\.', $domain) . '$' : '.*';
 
 $config['locale.settings']['translation']['use_source'] = 'local';
 $config['locale.settings']['translation']['path'] = '../lib/drupal/translations';
