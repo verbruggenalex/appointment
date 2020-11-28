@@ -207,10 +207,6 @@
             "composer install --no-dev --no-progress --no-suggest --ansi",
             "tar -zcf dist.tar.gz lib/drupal vendor/ web/ composer.json composer.lock"
         ],
-        "deploy": [
-            "mkdir -p build/dist/$2",
-            "tar -zxf dist.tar.gz -C build/dist/$2"
-        ],
         "set-permissions": [
             "sudo chown -R docker:$APACHE_RUN_GROUP web",
             "find web -type d -exec chmod u=rwx,g=rx,o= '{}' \\;",

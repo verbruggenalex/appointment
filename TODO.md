@@ -24,6 +24,7 @@ https://www.drupal.org/project/views_ical
 # Deployment
 
 * Make sure the deployed files have the correct permissions (files folder)
+* Create command to download release and place files in pre-production.
 
 # Behat testing
 

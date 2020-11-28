@@ -27,3 +27,11 @@ ci:
 	docker-compose up -d traefik ci mysql selenium
 prod:
 	docker-compose up -d traefik portainer prod mysql
+
+# Deployment commands
+deploy:
+		rm -rf build/dist/$(tag) && rm dist.tar.gz && mkdir -p build/dist/$(tag) \
+		&& wget https://github.com/verbruggenalex/appointment/releases/download/$(tag)/dist.tar.gz \
+		&& tar -zxf dist.tar.gz -C build/dist/$(tag) \
+		&& rm -rf dist.tar.gz \
+		&& ln -sfn dist/$(tag)/ $${PWD}/build/pre-production
