@@ -17,7 +17,7 @@ default:
       selenium2:
         wd_host: 'http://selenium:4444/wd/hub'
         capabilities: { "browser": 'chrome', "version": "*" }
-      base_url: http://dev
+      base_url: http://dev.localhost.com
     Drupal\DrupalExtension:
       blackbox: ~
       api_driver: "drupal"

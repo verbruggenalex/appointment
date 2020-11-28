@@ -98,6 +98,9 @@ services:
 
   selenium:
     image: selenium/standalone-chrome
+    external_links:
+      - "dev:web.localhost.com"
+      - "ci:web.localhost.com"
     networks:
       - proxy
 
