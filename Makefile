@@ -17,8 +17,6 @@ docker_network_create:
 	docker network create ${TRAEFIK_NETWORK}
 setup_hosts:
 	echo "127.0.0.1  traefik.${TRAEFIK_DOMAIN} portainer.${TRAEFIK_DOMAIN} dev.${TRAEFIK_DOMAIN} ide.${TRAEFIK_DOMAIN} web.${TRAEFIK_DOMAIN} production.${TRAEFIK_DOMAIN} pre-production.${TRAEFIK_DOMAIN} post-production.${TRAEFIK_DOMAIN}" | sudo tee -a /etc/hosts
-example_build:
-	cp -Rf lib/build .
 
 
 dev:
