@@ -47,7 +47,6 @@ certificatesResolvers:
   lets-encrypt:
     acme:
       email: verbruggenalex@gmail.com
-      acmelogging: true
       caserver: https://acme-staging-v02.api.letsencrypt.org/directory
       storage: acme.json
       # entrypoint: foobar
@@ -63,7 +62,7 @@ certificatesResolvers:
       # httpchallenge:
       #   entrypoint: foobar
       tlschallenge: {}
-      domains:
-        - main: "{{env "TRAEFIK_DOMAIN"}}"
-          sans:
-            - "*.{{env "TRAEFIK_DOMAIN"}}"
+#      domains:
+#        - main: "{{env "TRAEFIK_DOMAIN"}}"
+#          sans:
+#            - "*.{{env "TRAEFIK_DOMAIN"}}"
