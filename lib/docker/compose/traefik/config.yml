@@ -9,6 +9,7 @@ http:
           - main: "{{env "TRAEFIK_DOMAIN"}}"
             sans:
               - "*.{{env "TRAEFIK_DOMAIN"}}"
+        certResolver: lets-encrypt
   middlewares:
     secure-basicauth:
       basicauth:
