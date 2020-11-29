@@ -81,8 +81,8 @@ jobs:
 
       - name: Test deploy of distribution
         run: |
-          git fetch --tags
-          make deploy --tag=1.1.0
+		      ln -sfn $${PWD}/web/ $${PWD}/build/production \
+          make deploy tag=1.1.0
 
       - name: Create release
         uses: "marvinpinto/action-automatic-releases@latest"
