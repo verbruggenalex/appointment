@@ -22,6 +22,7 @@ https://www.drupal.org/project/views_ical
 
 # Deployment
 
+* Move deploy command from make into bash script in lib/scripts?
 * Make sure the deployed files have the correct permissions (files folder)
 * Move files into a shared location for prod, pre-prod and post prod?
 
