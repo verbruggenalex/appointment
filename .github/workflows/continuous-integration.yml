@@ -63,16 +63,16 @@ jobs:
           docker-compose exec -T ci composer setup-project
           docker-compose exec -T ci composer test-behat
 
-      - name: Test lighthouse
-        if: startsWith(github.ref, 'refs/tags/') != true
-        uses: treosh/lighthouse-ci-action@v3
-        with:
-          urls: |
-            https://web.localhost.com/en
-            https://web.localhost.com/fr
-            https://web.localhost.com/nl
-          configPath: ./lighthouserc.json
-          temporaryPublicStorage: true
+      # - name: Test lighthouse
+      #   if: startsWith(github.ref, 'refs/tags/') != true
+      #   uses: treosh/lighthouse-ci-action@v3
+      #   with:
+      #     urls: |
+      #       https://web.localhost.com/en
+      #       https://web.localhost.com/fr
+      #       https://web.localhost.com/nl
+      #     configPath: ./lighthouserc.json
+      #     temporaryPublicStorage: true
 
       - name: Prepare release
         run: |
@@ -82,7 +82,7 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/') != true
         run: |
           docker-compose exec -T ci cp -Rf lib/build .
-          docker-compose exec -T ci ln -sfn ${PWD}/ ${PWD}/build/production
+          docker-compose exec -T ci ln -sfn var/www/html/ /var/www/html/build/production
           docker-compose exec -T ci make deploy tag=1.1.0
 
       - name: Create release
