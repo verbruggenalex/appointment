@@ -30,7 +30,16 @@ drush cc drush
 drush @pre-prod sql-drop -y
 drush @pre-prod sql-create -y
 drush @pre-prod sqlc < ${BACKUP_DIR}/production-${BACKUP_TIME}.sql
-drush @pre-prod cache-rebuild
+
+# Deployment procedure.
+drush @pre-prod status
+drush @pre-prod cache:rebuild
+drush @pre-prod updatedb -y --no-post-updates
+drush @pre-prod config:import -y
+drush @pre-prod updatedb -y --post-updates
+drush @pre-prod cache:rebuild
+drush @pre-prod core:cron
+drush @pre-prod status
 
 # Cleanup when successful.
 rm -rf dist.tar.gz
