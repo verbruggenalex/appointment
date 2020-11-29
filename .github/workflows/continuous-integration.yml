@@ -81,7 +81,7 @@ jobs:
 
       - name: Test deploy of distribution
         run: |
-		      ln -sfn ${PWD}/ ${PWD}/build/production
+          ln -sfn ${PWD}/ ${PWD}/build/production
           make deploy tag=1.1.0
 
       - name: Create release
