@@ -179,7 +179,7 @@ services:
     labels:
       traefik.enable: true
       traefik.http.routers.production.tls: true
-      traefik.http.routers.pre-production.middlewares: secure-basicauth@file
+      traefik.http.routers.production.middlewares: secure-basicauth@file
       traefik.http.routers.production.rule: Host(`${TRAEFIK_DOMAIN}`)
       traefik.http.routers.pre-production.tls: true
       traefik.http.routers.pre-production.middlewares: secure-basicauth@file
