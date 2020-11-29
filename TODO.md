@@ -2,8 +2,7 @@
 
 ## Development
 
-* Getting an error: Warning: touch(): Utime failed: Operation not permitted in /home/project/web/core/lib/Drupal/Component/PhpStorage/MTimeProtectedFastFileStorage.php on line 100
- * https://www.drupal.org/project/drupal/issues/2712769
+* Try updating to Drupal 9.1 normally out next Wednesday. Need composer 2.x as well for this.
 * Create cleanup module to remove "Cron run completed." messages from the dblog:
  * A module with it's own cronjob that every so often through ultimate_cron will
    fetch all these messages, delete them and place a counter message in the

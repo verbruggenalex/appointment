@@ -30,8 +30,15 @@ prod:
 
 # Deployment commands
 deploy:
-		rm -rf build/dist/$(tag) && rm dist.tar.gz && mkdir -p build/dist/$(tag) \
+		export BACKUP_TIME=$$(date +'%y%m%d%H%M%S') \
+		&& export BACKUP_DATE=$$(date +'%y%m%d') \
+		&& export BACKUP_LOC=$${APACHE_DOCUMENT_ROOT}/build/bak/$${BACKUP_DATE} \
+		&& rm -rf build/dist/$(tag) && rm dist.tar.gz && mkdir -p build/dist/$(tag) \
 		&& wget https://github.com/verbruggenalex/appointment/releases/download/$(tag)/dist.tar.gz \
 		&& tar -zxf dist.tar.gz -C build/dist/$(tag) \
 		&& rm -rf dist.tar.gz \
 		&& ln -sfn dist/$(tag)/ $${PWD}/build/pre-production
+		&& mkdir -p $${BACKUP_LOC} \
+		&& drush @prod sql-dump --result-file=$${BACKUP_LOC}/production-$${BACKUP_TIME}.sql \
+		&& ln -sfn $${BACKUP_LOC}/production-$${BACKUP_TIME}.sql $$(dirname $${BACKUP_LOC})/production-latest.sql \
+		&& drush @pre-prod sqlc < $${BACKUP_LOC}/production-$${BACKUP_TIME}.sql
