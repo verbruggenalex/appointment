@@ -44,22 +44,8 @@ certificatesResolvers:
   lets-encrypt:
     acme:
       email: verbruggenalex@gmail.com
-#      caserver: https://acme-staging-v02.api.letsencrypt.org/directory
       storage: acme.json
-      # entrypoint: foobar
-      # keytype: foobar
-      # onhostrule: true
       dnschallenge:
         provider: digitalocean
         delaybeforecheck: 0
-      #   resolvers:
-      #     - foobar
-      #     - foobar
-      #   disablepropagationcheck: true
-      # httpchallenge:
-      #   entrypoint: foobar
       tlschallenge: {}
-#      domains:
-#        - main: "{{env "TRAEFIK_DOMAIN"}}"
-#          sans:
-#            - "*.{{env "TRAEFIK_DOMAIN"}}"
