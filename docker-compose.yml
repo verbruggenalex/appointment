@@ -15,6 +15,7 @@ services:
       TRAEFIK_DOMAIN:
       TRAEFIK_BASIC_AUTH:
       TRAEFIK_PROXY:
+      DO_AUTH_TOKEN:
     security_opt:
       - no-new-privileges:true
     ports:

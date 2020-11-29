@@ -33,8 +33,37 @@ entryPoints:
           scheme: https
   https:
     address: ":443"
+    http:
+      tls:
+        certResolver: lets-encrypt
+
   ping:
     address: ":8082"
 
 ping:
   entryPoint: ping
+
+certificatesResolvers:
+  lets-encrypt:
+    acme:
+      email: verbruggenalex@gmail.com
+      acmelogging: true
+      caserver: https://acme-staging-v02.api.letsencrypt.org/directory
+      storage: acme.json
+      # entrypoint: foobar
+      # keytype: foobar
+      # onhostrule: true
+      dnschallenge:
+        provider: digitalocean
+        delaybeforecheck: 0
+      #   resolvers:
+      #     - foobar
+      #     - foobar
+      #   disablepropagationcheck: true
+      # httpchallenge:
+      #   entrypoint: foobar
+      tlschallenge: {}
+      domains:
+        - main: "{{env "TRAEFIK_DOMAIN"}}"
+          sans:
+            - "*.{{env "TRAEFIK_DOMAIN"}}"

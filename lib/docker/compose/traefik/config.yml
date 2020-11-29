@@ -19,7 +19,7 @@ http:
   #          - 127.0.0.1/32
   #          - 172.29.0.1/32
 
-tls:
-  certificates:
-    - certFile: "/etc/certs/local-cert.pem"
-      keyFile: "/etc/certs/local-key.pem"
+# tls:
+#   certificates:
+#     - certFile: "/etc/certs/local-cert.pem"
+#       keyFile: "/etc/certs/local-key.pem"
