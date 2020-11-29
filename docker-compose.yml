@@ -179,15 +179,11 @@ services:
     labels:
       traefik.enable: true
       traefik.http.routers.production.tls: true
-      traefik.http.routers.production.tls.certResolver: lets-encrypt
-      traefik.http.routers.production.middlewares: secure-basicauth@file
       traefik.http.routers.production.rule: Host(`${TRAEFIK_DOMAIN}`)
       traefik.http.routers.pre-production.tls: true
-      traefik.http.routers.pre-production.tls.certResolver: lets-encrypt
       traefik.http.routers.pre-production.middlewares: secure-basicauth@file
       traefik.http.routers.pre-production.rule: Host(`pre-production.${TRAEFIK_DOMAIN}`)
       traefik.http.routers.post-production.tls: true
-      traefik.http.routers.post-production.tls.certResolver: lets-encrypt
       traefik.http.routers.post-production.middlewares: secure-basicauth@file
       traefik.http.routers.post-production.rule: Host(`post-production.${TRAEFIK_DOMAIN}`)
     networks:
