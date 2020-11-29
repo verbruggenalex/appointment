@@ -1,11 +1,11 @@
 # File: self.site.yml
 # @see: vendor/drush/drush/examples/self.site.yml
 prod:
-  root: /var/www/html/build/production
+  root: ${env.APACHE_DOCUMENT_ROOT}/build/production
   uri: https://production.${env.TRAEFIK_DOMAIN}
 pre-prod:
-  root: /var/www/html/build/pre-production
+  root: ${env.APACHE_DOCUMENT_ROOT}/build/pre-production
   uri: https://pre-production.${env.TRAEFIK_DOMAIN}
 post-prod:
-  root: /var/www/html/build/post-production
+  root: ${env.APACHE_DOCUMENT_ROOT}/build/post-production
   uri: https://pre-production.${env.TRAEFIK_DOMAIN}

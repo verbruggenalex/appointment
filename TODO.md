@@ -36,3 +36,7 @@ https://www.drupal.org/project/views_ical
  * Log in
  * Create appointment
  * Log out
+
+# Theia image:
+
+* add twig2 extension
