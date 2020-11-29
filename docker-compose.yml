@@ -156,7 +156,9 @@ services:
     image: docker.pkg.github.com/verbruggenalex/appointment/prod:latest
     working_dir: /var/www/html
     environment:
+      ENVIRONMENT: prod
       TRAEFIK_DOMAIN:
+      APACHE_DOCUMENT_ROOT: /var/www/html
       SOCIAL_AUTH_FACEBOOK_APP_ID:
       SOCIAL_AUTH_FACEBOOK_APP_SECRET:
       SOCIAL_AUTH_GOOGLE_CLIENT_ID:
@@ -197,6 +199,7 @@ services:
       ENVIRONMENT: ci
       BEHAT_PARAMS: '{"extensions":{"Behat\\MinkExtension":{"base_url":"http://web.${TRAEFIK_DOMAIN}"}}}'
       TRAEFIK_DOMAIN:
+      APACHE_DOCUMENT_ROOT: /var/www/html
       SOCIAL_AUTH_FACEBOOK_APP_ID:
       SOCIAL_AUTH_FACEBOOK_APP_SECRET:
       SOCIAL_AUTH_GOOGLE_CLIENT_ID:
