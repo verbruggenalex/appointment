@@ -31,7 +31,6 @@ services:
     labels:
       traefik.enable: true
       traefik.http.routers.traefik: true
-      traefik.http.routers.traefik.middlewares: secure-basicauth@file
 
   portainer:
     image: portainer/portainer-ce
@@ -160,6 +159,7 @@ services:
     environment:
       ENVIRONMENT: prod
       TRAEFIK_DOMAIN:
+      TRAEFIK_BASIC_AUTH:
       APACHE_DOCUMENT_ROOT: /var/www/html
       SOCIAL_AUTH_FACEBOOK_APP_ID:
       SOCIAL_AUTH_FACEBOOK_APP_SECRET:
@@ -168,9 +168,7 @@ services:
       GOOGLE_MAPS_API_KEY:
       CRON_USER_1: www-data
       CRON_SCHEDULE_1: '* * * * *'
-      CRON_COMMAND_1: |
-        /usr/bin/wget -O - -q -t 1 \
-        http://production.${TRAEFIK_DOMAIN}/cron.php
+      CRON_COMMAND_1: '/usr/bin/wget -O - -q -t 1 http://production.${TRAEFIK_DOMAIN}/cron.php'
     volumes:
       - ${PWD}:/var/www/html
     extra_hosts:
@@ -181,7 +179,7 @@ services:
       traefik.enable: true
       traefik.http.routers.production.tls: true
       traefik.http.routers.production.middlewares: secure-basicauth@file
-      traefik.http.routers.production.rule: Host(`production.${TRAEFIK_DOMAIN}`)
+      traefik.http.routers.production.rule: Host(`${TRAEFIK_DOMAIN}`)
       traefik.http.routers.pre-production.tls: true
       traefik.http.routers.pre-production.middlewares: secure-basicauth@file
       traefik.http.routers.pre-production.rule: Host(`pre-production.${TRAEFIK_DOMAIN}`)
