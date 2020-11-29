@@ -79,6 +79,11 @@ jobs:
         run: |
           docker-compose exec -T ci composer build-dist
 
+      - name: Test deploy of distribution
+        run: |
+          git fetch --tags
+          make deploy --tag=1.1.0
+
       - name: Create release
         uses: "marvinpinto/action-automatic-releases@latest"
         if: startsWith(github.ref, 'refs/tags/')
