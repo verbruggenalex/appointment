@@ -81,7 +81,7 @@ jobs:
       - name: Test deploy of distribution
         if: startsWith(github.ref, 'refs/tags/') != true
         run: |
-          ln -sfn ${PWD}/ ${PWD}/build/production
+          sudo ln -sfn ${PWD}/ ${PWD}/build/production
           make deploy tag=1.1.0
 
       - name: Create release
