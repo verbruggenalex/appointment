@@ -24,4 +24,4 @@ dev:
 ci:
 	docker-compose up -d traefik ci mysql selenium
 prod:
-	docker-compose up -d traefik portainer prod mysql
+	docker-compose up -d traefik prod mysql

@@ -8,7 +8,11 @@ http:
           - main: "{{env "TRAEFIK_DOMAIN"}}"
             sans:
               - "*.{{env "TRAEFIK_DOMAIN"}}"
-  # middlewares:
+  middlewares:
+    secure-basicauth:
+      basicauth:
+        users: "lex:$apr1$Nq5v/Dh3$z.PrrgbmfP.fABwykzzLG1"
+#        users: "{{env "TRAEFIK_BASIC_AUTH"}}"
   #   secure-whitelist:
   #     ipwhitelist:
   #       sourcerange:

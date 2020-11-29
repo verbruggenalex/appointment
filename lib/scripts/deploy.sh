@@ -19,9 +19,6 @@ tar -zxf dist.tar.gz -C build/dist/${TAG}
 ln -sfn ${BUILD_DIR}/dist/${TAG}/ ${BUILD_DIR}/pre-production
 composer set-permissions -d ${BUILD_DIR}/pre-production
 
-# Debug.
-ls -la lib/drupal/sites/default
-
 # Backup production and import on pre-production
 mkdir -p ${BACKUP_DIR}
 drush @prod sql-dump --result-file=${BACKUP_DIR}/production-${BACKUP_TIME}.sql
@@ -33,11 +30,13 @@ drush @pre-prod sqlc < ${BACKUP_DIR}/production-${BACKUP_TIME}.sql
 
 # Deployment procedure.
 drush @pre-prod status
+drush @pre-prod cron:disable all
 drush @pre-prod cache:rebuild
 drush @pre-prod updatedb -y --no-post-updates
 drush @pre-prod config:import -y
 drush @pre-prod updatedb -y --post-updates
 drush @pre-prod cache:rebuild
+drush @pre-prod cron:enable all
 drush @pre-prod core:cron
 drush @pre-prod status
 

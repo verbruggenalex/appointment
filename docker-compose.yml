@@ -13,6 +13,8 @@ services:
       start_period: 5s
     environment:
       TRAEFIK_DOMAIN:
+      TRAEFIK_BASIC_AUTH:
+      TRAEFIK_PROXY:
     security_opt:
       - no-new-privileges:true
     ports:
@@ -29,7 +31,7 @@ services:
     labels:
       traefik.enable: true
       traefik.http.routers.traefik: true
-      # traefik.http.routers.traefik.middlewares: secure-whitelist@file
+      traefik.http.routers.traefik.middlewares: secure-basicauth@file
 
   portainer:
     image: portainer/portainer-ce
@@ -178,17 +180,14 @@ services:
     labels:
       traefik.enable: true
       traefik.http.routers.production.tls: true
-      traefik.http.routers.production.middlewares: production-basicauth
+      traefik.http.routers.production.middlewares: secure-basicauth@file
       traefik.http.routers.production.rule: Host(`production.${TRAEFIK_DOMAIN}`)
-      traefik.http.middlewares.production-basicauth.basicauth.users: ${TRAEFIK_BASIC_AUTH}
       traefik.http.routers.pre-production.tls: true
-      traefik.http.routers.pre-production.middlewares: pre-production-basicauth
+      traefik.http.routers.pre-production.middlewares: secure-basicauth@file
       traefik.http.routers.pre-production.rule: Host(`pre-production.${TRAEFIK_DOMAIN}`)
-      traefik.http.middlewares.pre-production-basicauth.basicauth.users: ${TRAEFIK_BASIC_AUTH}
       traefik.http.routers.post-production.tls: true
-      traefik.http.routers.post-production.middlewares: post-production-basicauth
+      traefik.http.routers.post-production.middlewares: secure-basicauth@file
       traefik.http.routers.post-production.rule: Host(`post-production.${TRAEFIK_DOMAIN}`)
-      traefik.http.middlewares.post-production-basicauth.basicauth.users: ${TRAEFIK_BASIC_AUTH}
     networks:
       - proxy
 
