@@ -8,7 +8,9 @@ BACKUP_DIR=${BUILD_DIR}/bak/${BACKUP_DATE}
 TAG=$1
 
 # Build codebase and set pre-production environment
-rm -rf build/dist/${TAG} && mkdir -p build/dist/${TAG}
+rm -rf build/dist/${TAG}
+mkdir -p build/dist/${TAG}
+mkdir -p ${BACKUP_DIR}
 if [ ! -f dist.tar.gz ]
   then
   wget https://github.com/verbruggenalex/appointment/releases/download/${TAG}/dist.tar.gz
@@ -18,8 +20,7 @@ ln -sfn ${BUILD_DIR}/dist/${TAG}/ ${BUILD_DIR}/pre-production
 composer set-permissions -d ${BUILD_DIR}/pre-production
 
 # Debug.
-cat ${BUILD_DIR}/pre-production/web/sites/default/settings.php
-ls -la cat ${BUILD_DIR}/pre-production/web/sites/default
+ls -la lib/drupal/sites/default
 
 # Backup production and import on pre-production
 mkdir -p ${BACKUP_DIR}
