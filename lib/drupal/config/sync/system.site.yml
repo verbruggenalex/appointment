@@ -1,6 +1,6 @@
 uuid: 6f305eea-1b69-4861-aefe-2548861790fe
-name: 'Open Appointment'
-mail: admin@example.com
+name: Pactora
+mail: verbruggenalex@gmail.com
 slogan: 'Create an appointment with anyone in three clicks!'
 page:
   403: ''
@@ -9,7 +9,7 @@ page:
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en
-default_langcode: en
+default_langcode: nl
 _core:
   default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
 mail_notification: ''

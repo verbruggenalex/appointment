@@ -25,7 +25,7 @@ $settings['trusted_host_patterns'][] = ($domain = getenv('TRAEFIK_DOMAIN')) ? '.
 $config['locale.settings']['translation']['use_source'] = 'local';
 $config['locale.settings']['translation']['path'] = '../lib/drupal/translations';
 
-$isDevelopmentEnvironment = getenv('ENVIRONMENT') === 'development';
+$isDevelopmentEnvironment = getenv('ENVIRONMENT') === 'dev';
 $hasDevelommentModule = file_exists(DRUPAL_ROOT . '/modules/contrib/devel/devel.info.yml');
 $config['config_split.config_split.config_dev']['status'] = ($isDevelopmentEnvironment && $hasDevelommentModule) ? TRUE : FALSE;
 if ($config['config_split.config_split.config_dev']['status']) {
