@@ -30,13 +30,13 @@ drush @pre-prod sqlc < ${BACKUP_DIR}/production-${BACKUP_TIME}.sql
 
 # Deployment procedure.
 drush @pre-prod status
-drush @pre-prod cron:disable all
+drush @pre-prod cron:disable --all
 drush @pre-prod cache:rebuild
 drush @pre-prod updatedb -y --no-post-updates
 drush @pre-prod config:import -y
 drush @pre-prod updatedb -y --post-updates
 drush @pre-prod cache:rebuild
-drush @pre-prod cron:enable all
+drush @pre-prod cron:enable --all
 drush @pre-prod core:cron
 drush @pre-prod status
 

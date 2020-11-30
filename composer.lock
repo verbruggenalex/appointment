@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b5c6ea4f7df5f5c2ad2410e5590347f9",
+    "content-hash": "9f4cf4dcc341aaf0eaa6eb1c4ced7acc",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5479,7 +5479,10 @@
                     "services": {
                         "drush.services.yml": "^9 || ^10"
                     }
-                }
+                },
+                "patches_applied": [
+                    "https://git.drupalcode.org/project/ultimate_cron/-/merge_requests/1/diffs.patch"
+                ]
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [

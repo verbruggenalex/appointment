@@ -155,6 +155,9 @@
             "drupal/toolbar_themes": [
                 "https://www.drupal.org/files/issues/2018-12-08/toolbar_themes-padding-issue-2981847-7.patch"
             ],
+            "drupal/ultimate_cron": [
+                "https://git.drupalcode.org/project/ultimate_cron/-/merge_requests/1/diffs.patch"
+            ],
             "drupal/views_autocomplete_filters": [
                 "https://www.drupal.org/files/issues/2020-08-14/autosubmit-on-select-1724278-10.patch"
             ]
