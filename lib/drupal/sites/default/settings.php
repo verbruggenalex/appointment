@@ -64,7 +64,3 @@ $settings['reverse_proxy_addresses'] = [$_SERVER['REMOTE_ADDR']];
 
 // phpcs:ignore
 $settings['reverse_proxy_trusted_headers'] = \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_ALL | \Symfony\Component\HttpFoundation\Request::HEADER_FORWARDED;
-
-if (getenv('DRUPAL_DEPLOY_IN_PROGRESS')) {
-  $conf['maintenance_mode'] = 1;
-}

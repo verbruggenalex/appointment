@@ -74,9 +74,15 @@ services:
       SOCIAL_AUTH_GOOGLE_CLIENT_ID:
       SOCIAL_AUTH_GOOGLE_CLIENT_SECRET:
       GOOGLE_MAPS_API_KEY:
-      # CRON_USER_1: root
-      # CRON_SCHEDULE_1: '* * * * *'
-      # CRON_COMMAND_1: ./vendor/bin/drush core:cron
+      CRON_USER_1: root
+      CRON_SCHEDULE_1: '* * * * *'
+      CRON_COMMAND_1: if [ "${CRON_DISABLED_PROD:-0}" != 1 ] ; then drush -q @prod core:cron ; fi
+      CRON_USER_2: root
+      CRON_SCHEDULE_2: '* * * * *'
+      CRON_COMMAND_2: if [ "${CRON_DISABLED_PREPROD:-0}" != 1 ] ; then drush -q @pre-prod core:cron ; fi
+      CRON_USER_2: root
+      CRON_SCHEDULE_2: '* * * * *'
+      CRON_COMMAND_2: if [ "${CRON_DISABLED_POSTPROD:-0}" != 1 ] ; then drush -q @post-prod core:cron ; fi
     extra_hosts:
       - "dev.${TRAEFIK_DOMAIN}:127.0.0.1"
     volumes:
@@ -167,9 +173,15 @@ services:
       SOCIAL_AUTH_GOOGLE_CLIENT_ID:
       SOCIAL_AUTH_GOOGLE_CLIENT_SECRET:
       GOOGLE_MAPS_API_KEY:
-      CRON_USER_1: www-data
+      CRON_USER_1: root
       CRON_SCHEDULE_1: '* * * * *'
-      CRON_COMMAND_1: '/usr/bin/wget -O - -q -t 1 http://production.${TRAEFIK_DOMAIN}/cron.php'
+      CRON_COMMAND_1: if [ "${CRON_DISABLED_PROD:-0}" != 1 ] ; then drush -q @prod core:cron ; fi
+      CRON_USER_2: root
+      CRON_SCHEDULE_2: '* * * * *'
+      CRON_COMMAND_2: if [ "${CRON_DISABLED_PREPROD:-0}" != 1 ] ; then drush -q @pre-prod core:cron ; fi
+      CRON_USER_2: root
+      CRON_SCHEDULE_2: '* * * * *'
+      CRON_COMMAND_2: if [ "${CRON_DISABLED_POSTPROD:-0}" != 1 ] ; then drush -q @post-prod core:cron ; fi
     volumes:
       - ${PWD}:/var/www/html
     extra_hosts:
@@ -203,9 +215,15 @@ services:
       SOCIAL_AUTH_GOOGLE_CLIENT_ID:
       SOCIAL_AUTH_GOOGLE_CLIENT_SECRET:
       GOOGLE_MAPS_API_KEY:
-      CRON_USER_1: www-data
+      CRON_USER_1: root
       CRON_SCHEDULE_1: '* * * * *'
-      CRON_COMMAND_1: /usr/bin/wget -O - -q -t 1 http://production.${TRAEFIK_DOMAIN}/cron.php
+      CRON_COMMAND_1: if [ "${CRON_DISABLED_PROD:-0}" != 1 ] ; then drush -q @prod core:cron ; fi
+      CRON_USER_2: root
+      CRON_SCHEDULE_2: '* * * * *'
+      CRON_COMMAND_2: if [ "${CRON_DISABLED_PREPROD:-0}" != 1 ] ; then drush -q @pre-prod core:cron ; fi
+      CRON_USER_2: root
+      CRON_SCHEDULE_2: '* * * * *'
+      CRON_COMMAND_2: if [ "${CRON_DISABLED_POSTPROD:-0}" != 1 ] ; then drush -q @post-prod core:cron ; fi
     volumes:
       - ${PWD}:/var/www/html
     extra_hosts:
