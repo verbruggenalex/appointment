@@ -83,7 +83,9 @@ jobs:
         run: |
           docker-compose exec -T ci cp -Rf lib/build .
           docker-compose exec -T ci ln -sfn var/www/html/ /var/www/html/build/production
+          docker-compose exec -T ci export DRUPAL_DEPLOY_IN_PROGRESS=1
           docker-compose exec -T ci ./lib/scripts/deploy.sh 1.0.0
+          docker-compose exec -T ci export DRUPAL_DEPLOY_IN_PROGRESS=0
 
       - name: Create release
         uses: "marvinpinto/action-automatic-releases@latest"
