@@ -56,3 +56,4 @@ RUN curl -sS https://getcomposer.org/installer | php -- --version=1.10.17 --inst
 FROM prod as ci
 
 ENV PHP_INI_DISABLE_FUNCTIONS=""
+
