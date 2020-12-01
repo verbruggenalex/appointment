@@ -17,7 +17,7 @@ if [ ! -f dist.tar.gz ]
 fi
 tar -zxf dist.tar.gz -C build/dist/${TAG}
 ln -sfn ${BUILD_DIR}/dist/${TAG}/ ${BUILD_DIR}/pre-production
-composer set-permissions -d ${BUILD_DIR}/pre-production
+composer reset-permissions -d ${BUILD_DIR}/pre-production
 
 # Backup production and import on pre-production
 mkdir -p ${BACKUP_DIR}

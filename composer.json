@@ -179,7 +179,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Appointment\\Tests\\": "./tests/"
+            "Appointment\\Behat\\": "./tests/behat/"
         }
     },
     "minimum-stability": "dev",

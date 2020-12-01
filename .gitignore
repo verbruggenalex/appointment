@@ -2,6 +2,7 @@
 /web/
 /vendor/
 /certs/
+/tests/backstop/backstop_data/
 /*.sql
 /*.png
 /*.tar.gz

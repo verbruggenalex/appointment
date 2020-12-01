@@ -156,11 +156,21 @@ services:
   #   networks:
   #     - proxy
 
-#  backstop:
-#    image: backstopjs/backstopjs
-#    volumes:
-#      - ${PWD}/tests/backstop:/src
-#    user: 1000:1000
+  backstop:
+    image: backstopjs/backstopjs
+    # These hosts point back outside of traefik to let traefik direct it to
+    # the correct service. We can not rely on the docker service names because
+    # apache is still directing to the right environment. Also this will work
+    # regardless of local, ci or production environments.
+    # @see: lib/docker/image/Dockerfile
+    extra_hosts:
+      - "web.${TRAEFIK_DOMAIN}:172.17.0.1"
+      - "production.${TRAEFIK_DOMAIN}:172.17.0.1"
+      - "pre-production.${TRAEFIK_DOMAIN}:172.17.0.1"
+      - "post-production.${TRAEFIK_DOMAIN}:172.17.0.1"
+    volumes:
+      - ${PWD}/tests/backstop:/src
+    user: 1000:1000
 
 #  blackfire:
 #    image: blackfire/blackfire

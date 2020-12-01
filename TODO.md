@@ -2,8 +2,7 @@
 
 ## Development
 
-* Remove language from login url of facebook and google.
-* Move files into shared location.
+
 * Try updating to Drupal 9.1 normally out next Wednesday. Need composer 2.x as well for this.
 * Create cleanup module to remove "Cron run completed." messages from the dblog:
  * A module with it's own cronjob that every so often through ultimate_cron will
@@ -16,6 +15,7 @@
 * Start cleaning up user sidebar.
 * Contact page form.
 * Fix breadcrumb.
+* Remove language from login url of facebook and google.
 * Change appointment creation message to be more user friendly.
 * Create licensing options
 * Calculate percentage booked to show on month calendar on days?

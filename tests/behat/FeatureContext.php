@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Appointment\Tests\Behat;
+namespace Appointment\Behat;
 
 use Behat\Mink\Exception\UnsupportedDriverActionException;
 use Behat\Testwork\Tester\Result\TestResult;
