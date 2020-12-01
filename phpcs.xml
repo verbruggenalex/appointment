@@ -11,5 +11,6 @@
   <exclude-pattern>*/build/*</exclude-pattern>
   <exclude-pattern>*/vendor/*</exclude-pattern>
   <exclude-pattern>*/web/*</exclude-pattern>
+  <exclude-pattern>*/tests/backstop/backstop_data/*</exclude-pattern>
 
 </ruleset>
