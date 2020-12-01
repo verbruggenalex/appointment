@@ -24,8 +24,9 @@ services:
       - 8080:8080
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ${PWD}/lib/docker/compose/traefik/traefik.yml:/etc/traefik/traefik.yml:ro
-      - ${PWD}/lib/docker/compose/traefik/config.yml:/etc/traefik/config.yml:ro
+      - ./lib/docker/compose/traefik/traefik.yml:/etc/traefik/traefik.yml:ro
+      - ./lib/docker/compose/traefik/config.yml:/etc/traefik/config.yml:ro
+      - ./certs/acme.json:/acme.json
       - ./certs:/etc/certs:ro
     networks:
       - ${TRAEFIK_NETWORK:-proxy}
@@ -91,10 +92,16 @@ services:
       - ~/.composer:/home/docker/.composer
     labels:
       traefik.enable: true
+      # Theia IDE.
+      traefik.http.routers.ide.tls: true
+      traefik.http.routers.ide.rule: Host(`ide.${TRAEFIK_DOMAIN}`)
+      traefik.http.routers.ide.service: ide
+      # Main development environment
       traefik.http.routers.web.tls: true
       traefik.http.routers.web.rule: Host(`web.${TRAEFIK_DOMAIN}`)
       traefik.http.routers.web.service: dev
       traefik.http.routers.production.tls: true
+      # Structure of a production environment (to test deployments on).
       traefik.http.routers.production.rule: Host(`production.${TRAEFIK_DOMAIN}`)
       traefik.http.routers.production.service: dev
       traefik.http.routers.pre-production.tls: true
@@ -103,10 +110,8 @@ services:
       traefik.http.routers.post-production.tls: true
       traefik.http.routers.post-production.rule: Host(`post-production.${TRAEFIK_DOMAIN}`)
       traefik.http.routers.post-production.service: dev
+      # Service ports (dev and ide).
       traefik.http.services.dev.loadbalancer.server.port: 80
-      traefik.http.routers.ide.rule: Host(`ide.${TRAEFIK_DOMAIN}`)
-      traefik.http.routers.ide.tls: true
-      traefik.http.routers.ide.service: ide
       traefik.http.services.ide.loadbalancer.server.port: 3000
     networks:
       - proxy
@@ -116,8 +121,12 @@ services:
 
   selenium:
     image: selenium/standalone-chrome
+    # These hosts point back outside of traefik to let traefik direct it to
+    # the correct service. We can not rely on the docker service names because
+    # apache is still directing to the right environment. Also this will work
+    # regardless of local, ci or production environments.
+    # @see: lib/docker/image/Dockerfile
     extra_hosts:
-      - "dev.${TRAEFIK_DOMAIN}:172.17.0.1"
       - "web.${TRAEFIK_DOMAIN}:172.17.0.1"
       - "production.${TRAEFIK_DOMAIN}:172.17.0.1"
       - "pre-production.${TRAEFIK_DOMAIN}:172.17.0.1"
@@ -125,6 +134,7 @@ services:
     networks:
       - proxy
 
+  # Planning to use this on dev (dev purposes) and ci (testing purposes).
   smtp:
     image: tophfr/mailcatcher
     ports:

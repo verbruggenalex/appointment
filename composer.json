@@ -187,14 +187,16 @@
     "scripts": {
         "setup-project": [
             "@create-dirs",
-            "@set-permissions",
+            "@reset-permissions",
             "@drupal-install-clean",
             "@import-local-translations",
             "@import-translations",
             "@build-bak"
         ],
         "create-dirs": [
-            "mkdir -p web/sites/default/files/geofieldmap_icons"
+            "cp -Rf lib/build .",
+            "mkdir -p web/sites/default/files/geofieldmap_icons",
+            "ln -sfn $APACHE_DOCUMENT_ROOT/build/files/public $PWD/web/sites/default/files"
         ],
         "drupal-install-clean": [
             "Composer\\Config::disableProcessTimeout",
@@ -210,12 +212,15 @@
             "composer install --no-dev --no-progress --no-suggest --ansi",
             "tar -zcf dist.tar.gz lib/drupal vendor/ web/ composer.json composer.lock"
         ],
-        "set-permissions": [
-            "sudo chown -R docker:$APACHE_RUN_GROUP web",
+        "reset-permissions": [
+            "sudo chown -R docker:$APACHE_RUN_GROUP web $APACHE_DOCUMENT_ROOT/build/files",
             "find web -type d -exec chmod u=rwx,g=rx,o= '{}' \\;",
             "find web -type f -exec chmod u=rw,g=r,o= '{}' \\;",
-            "find web/sites/default/files -type d -exec chmod ug=rwx,o= '{}' \\;",
-            "find web/sites/default/files -type f -exec chmod ug=rw,o= '{}' \\;"
+            "find $APACHE_DOCUMENT_ROOT/build/files -type d -exec chmod ug=rwx,o= '{}' \\;",
+            "find $APACHE_DOCUMENT_ROOT/build/files -type f -exec chmod ug=rw,o= '{}' \\;",
+            "chmod 2775 $APACHE_DOCUMENT_ROOT/build/files",
+            "chmod 555 web/sites/default",
+            "chmod 444 web/sites/default/settings.php"
         ],
         "export-local-translations": [
             "drush locale:export nl --types=customized > lib/drupal/translations/translations-custom.nl.po",

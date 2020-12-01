@@ -21,6 +21,8 @@ echo "export TRAEFIK_NETWORK=proxy" >> ~/.bashrc
 echo "export TRAEFIK_BASIC_AUTH=$(htpasswd -nb admin admin)" >> ~/.bashrc
 # Source .bashrc file.
 . ~/.bashrc
+# Install make
+sudo apt-get install make
 ```
 
 ### Makefile

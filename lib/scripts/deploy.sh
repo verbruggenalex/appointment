@@ -4,7 +4,7 @@
 BACKUP_TIME=$(date +'%y%m%d%H%M%S')
 BACKUP_DATE=$(date +'%y%m%d')
 BUILD_DIR=${APACHE_DOCUMENT_ROOT}/build
-BACKUP_DIR=${BUILD_DIR}/bak/${BACKUP_DATE}
+BACKUP_DIR=${BUILD_DIR}/backups/${BACKUP_DATE}
 TAG=$1
 
 # Build codebase and set pre-production environment
