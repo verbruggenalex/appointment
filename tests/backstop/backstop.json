@@ -16,10 +16,10 @@
   "onReadyScript": "puppet/onReady.js",
   "scenarios": [
     {
-      "label": "Project homepage",
+      "label": "BackstopJS Homepage",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "https://web.localhost.com",
-      "referenceUrl": "https://production.localhost.com",
+      "url": "https://garris.github.io/BackstopJS/",
+      "referenceUrl": "",
       "readyEvent": "",
       "readySelector": "",
       "delay": 0,

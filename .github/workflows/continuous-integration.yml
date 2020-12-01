@@ -67,8 +67,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/') != true
         run: |
           docker-compose exec -T ci ln -sfn var/www/html/ /var/www/html/build/production
-          docker-compose run --rm backstop init
           docker-compose run --rm backstop reference
+          docker-compose run --rm backstop test
           cat tests/backstop/backstop_data/html_report/config.js
 
       # - name: Test lighthouse
