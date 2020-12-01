@@ -20,7 +20,7 @@ setup_hosts:
 
 
 dev:
-	docker-compose up -d traefik portainer dev mysql selenium smtp
+	docker-compose up -d traefik portainer dev mysql selenium smtp backstop
 ci:
 	docker-compose up -d traefik ci mysql selenium
 prod:
