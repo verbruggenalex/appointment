@@ -2,9 +2,9 @@ default:
   suites:
     default:
       paths:
-        - ./tests/features
+        - ./tests/behat/features
       contexts:
-        - Appointment\Tests\Behat\FeatureContext
+        - Appointment\Behat\FeatureContext
         - Drupal\DrupalExtension\Context\DrupalContext
         - Drupal\DrupalExtension\Context\MinkContext
         - Drupal\DrupalExtension\Context\MessageContext
