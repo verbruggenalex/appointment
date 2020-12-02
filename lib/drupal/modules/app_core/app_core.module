@@ -336,6 +336,7 @@ function app_core_appointment_node_form_validate(array $form, FormStateInterface
   // form.
   $form_state->setValue('status', ['value' => 1]);
   var_dump($form_state);
+  var_dump($form_state);
 
   $startTimestamp = $form_state->getValue('slot_select');
   if ($startTimestamp === '') {
