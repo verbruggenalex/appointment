@@ -2,9 +2,10 @@
 /web/
 /vendor/
 /certs/
+/.tmp/
 /*.sql
 /*.png
-/*.tar.gz
+/*.gz
 /.env
 /tests/backstop/backstop_data/*
 !/tests/backstop/backstop_data/engine_scripts/

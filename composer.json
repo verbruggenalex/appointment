@@ -190,7 +190,8 @@
     "scripts": {
         "build-bak": [
             "./vendor/bin/drush cex -y",
-            "./vendor/bin/drush sql-dump --result-file=../dump.sql"
+            "./vendor/bin/drush sql-dump --result-file=../clean.sql",
+            "gzip clean.sql"
         ],
         "build-dist": [
             "composer install --no-dev --no-progress --no-suggest --ansi",
