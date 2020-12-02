@@ -55,28 +55,24 @@ jobs:
             dump.sql
           key: sql-vendor-web-${{ hashFiles('composer.lock') }}
 
-      - name: Get last tag
-        if: startsWith(github.ref, 'refs/tags/') != true
-        id: get-last
-        run: |
-          git fetch --tags
-          echo "::set-output name=tag::$(git describe --tags --abbrev=0)"
-        shell: bash
+      - name: 'Get Previous tag'
+        id: previoustag
+        uses: "WyriHaximus/github-action-get-previous-tag@master"
 
       - name: Cache last tag
         if: startsWith(github.ref, 'refs/tags/') != true
         uses: actions/cache@v2
         with:
           path: |
-            build/dist/${{ steps.get-last.outputs.tag }}/
-            .tmp/${{ steps.get-last.outputs.tag }}.sql
-          key: dist-sql-${{ steps.get-last.outputs.tag }}
+            build/dist/${{ steps.previoustag.outputs.tag }}/
+            .tmp/${{ steps.previoustag.outputs.tag }}.sql
+          key: dist-sql-${{ steps.previoustag.outputs.tag }}
 
       - name: Setup production
         if: startsWith(github.ref, 'refs/tags/') != true
         run: |
           docker-compose exec -T ci apt-get -y install wget
-          docker-compose exec -T ci ./lib/scripts/build.sh ${{ steps.get-last.outputs.tag }}
+          docker-compose exec -T ci ./lib/scripts/build.sh ${{ steps.previoustag.outputs.tag }}
 
       - name: Test project
         if: startsWith(github.ref, 'refs/tags/') != true
