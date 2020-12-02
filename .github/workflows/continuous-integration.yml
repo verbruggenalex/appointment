@@ -44,6 +44,7 @@ jobs:
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u verbruggenalex --password-stdin
           make ci
           sleep 5
+          git fetch --tags
 
       - name: Cache Composer
         if: startsWith(github.ref, 'refs/tags/') != true
