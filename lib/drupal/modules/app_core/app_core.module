@@ -332,7 +332,8 @@ function app_core_appointment_node_form_submit(array $form, FormStateInterface $
  */
 function app_core_appointment_node_form_validate(array $form, FormStateInterface $form_state) {
 
-  // For some reason we were not getting published appointments on the block form....
+  // For some reason we were not getting published appointments on the block
+  // form.
   $form_state->setValue('status', ['value' => 1]);
 
   $startTimestamp = $form_state->getValue('slot_select');
