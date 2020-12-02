@@ -202,11 +202,14 @@
             "mkdir -p web/sites/default/files/geofieldmap_icons",
             "ln -sfn $APACHE_DOCUMENT_ROOT/build/files/public $PWD/web/sites/default/files"
         ],
-        "drupal-install-clean": [
+        "drupal-deploy": [
             "Composer\\Config::disableProcessTimeout",
-            "if test -f 'dump.sql'; then ./vendor/bin/drush sql:create; ./vendor/bin/drush sqlc < dump.sql; else ./vendor/bin/drush si empty --account-pass=admin --ansi; fi",
-            "./vendor/bin/drush cset system.site uuid 6f305eea-1b69-4861-aefe-2548861790fe -y",
-            "./vendor/bin/drush cim -y"
+            "drush @web cache:rebuild",
+            "drush @web updatedb -y --no-post-updates",
+            "drush @web config:import -y",
+            "drush @web updatedb -y --post-updates",
+            "drush @web cache:rebuild",
+            "drush @web status"
         ],
         "export-local-translations": [
             "drush locale:export nl --types=customized > lib/drupal/translations/translations-custom.nl.po",
@@ -234,7 +237,7 @@
         "setup-project": [
             "@create-dirs",
             "@reset-permissions",
-            "@drupal-install-clean",
+            "@drupal-deploy",
             "@import-local-translations",
             "@import-translations",
             "@build-bak"

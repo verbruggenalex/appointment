@@ -1,5 +1,8 @@
 # File: self.site.yml
 # @see: vendor/drush/drush/examples/self.site.yml
+web:
+  root: ${env.APACHE_DOCUMENT_ROOT}/web
+  uri: https://web.${env.TRAEFIK_DOMAIN}
 prod:
   root: ${env.APACHE_DOCUMENT_ROOT}/build/production
   uri: https://production.${env.TRAEFIK_DOMAIN}

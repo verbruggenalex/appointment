@@ -25,6 +25,10 @@ fi
 if [ -f .tmp/$TAG.sql ]
   then
   drush cc drush
+  drush @web sql-create -y
+  drush @web sql-drop -y
+  drush @web sqlc < $APACHE_DOCUMENT_ROOT/.tmp/$TAG.sql
+  drush @web en app_default_content -y
   drush @prod sql-create -y
   drush @prod sql-drop -y
   drush @prod sqlc < $APACHE_DOCUMENT_ROOT/.tmp/$TAG.sql
