@@ -67,6 +67,7 @@
         "drupal/drupal-extension": "^4.1",
         "drupal/smtp": "^1.0",
         "ergebnis/composer-normalize": "^2.8",
+        "jakub-onderka/php-parallel-lint": "^1.0",
         "phpro/grumphp-shim": "^1.2",
         "sensiolabs/security-checker": "^6.0"
     },

@@ -10,7 +10,7 @@ grumphp:
         # brunch: ~
         # clover_coverage: ~
         # codeception: ~
-        # composer: ~
+        composer: ~
         composer_normalize: ~
         # composer_require_checker: ~
         # composer_script: ~
@@ -18,7 +18,15 @@ grumphp:
         # doctrine_orm: ~
         # ecs: ~
         # eslint: ~
-        # file_size: ~
+        file_size:
+            max_size: 1M
+            ignore_patterns:
+              # Images.
+              - bg2.jpg
+              # Css and js bundles.
+              - '/.*\.bundle\..*?css|js/'
+              # Drupal core translation files.
+              - '/drupal-(\*|\d+(\.\d+){0,2}(\.\*)?).(nl|fr).po/'
         # gherkin: ~
         # git_blacklist: ~
         # git_branch_name: ~
@@ -28,7 +36,7 @@ grumphp:
         # infection: ~
         jsonlint: ~
         # kahlan: ~
-        # make: ~
+        make: ~
         # npm_script: ~
         # paratest: ~
         # pest: ~
@@ -38,7 +46,7 @@ grumphp:
         # phpcpd: ~
         phpcs: ~
         # phpcsfixer: ~
-        # phplint: ~
+        phplint: ~
         # phpmd: ~
         # phpmnd: ~
         # phpparser: ~
