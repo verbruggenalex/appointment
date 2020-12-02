@@ -9,10 +9,9 @@
 DIFF=$(git -c diff.mnemonicprefix=false -c diff.noprefix=false --no-pager diff -r -p -m -M --full-index --no-color --staged | cat)
 
 # Grumphp env vars
-$(ENV)
-export GRUMPHP_GIT_WORKING_DIR="$(git rev-parse --show-toplevel)"
+export GIT_WORKING_DIR="$(git rev-parse --show-toplevel)"
 
 # Run GrumPHP
-(cd "${HOOK_EXEC_PATH}" && printf "%s\n" "${DIFF}" | $(EXEC_GRUMPHP_COMMAND) $(HOOK_COMMAND) '--skip-success-output')
+(cd "${HOOK_EXEC_PATH}" && printf "%s\n" "${DIFF}" | "./vendor/bin/phpcs")
 
-./vendor/bin/phpcs
+
