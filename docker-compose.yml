@@ -81,9 +81,9 @@ services:
       CRON_USER_2: root
       CRON_SCHEDULE_2: '* * * * *'
       CRON_COMMAND_2: if [ "${CRON_DISABLED_PREPROD:-0}" != 1 ] ; then drush -q @pre-prod core:cron ; fi
-      CRON_USER_2: root
-      CRON_SCHEDULE_2: '* * * * *'
-      CRON_COMMAND_2: if [ "${CRON_DISABLED_POSTPROD:-0}" != 1 ] ; then drush -q @post-prod core:cron ; fi
+      CRON_USER_3: root
+      CRON_SCHEDULE_3: '* * * * *'
+      CRON_COMMAND_3: if [ "${CRON_DISABLED_POSTPROD:-0}" != 1 ] ; then drush -q @post-prod core:cron ; fi
     extra_hosts:
       - "dev.${TRAEFIK_DOMAIN}:127.0.0.1"
     volumes:
@@ -198,9 +198,9 @@ services:
       CRON_USER_2: root
       CRON_SCHEDULE_2: '* * * * *'
       CRON_COMMAND_2: if [ "${CRON_DISABLED_PREPROD:-0}" != 1 ] ; then drush -q @pre-prod core:cron ; fi
-      CRON_USER_2: root
-      CRON_SCHEDULE_2: '* * * * *'
-      CRON_COMMAND_2: if [ "${CRON_DISABLED_POSTPROD:-0}" != 1 ] ; then drush -q @post-prod core:cron ; fi
+      CRON_USER_3: root
+      CRON_SCHEDULE_3: '* * * * *'
+      CRON_COMMAND_3: if [ "${CRON_DISABLED_POSTPROD:-0}" != 1 ] ; then drush -q @post-prod core:cron ; fi
     volumes:
       - ${PWD}:/var/www/html
     extra_hosts:
@@ -211,7 +211,7 @@ services:
       traefik.enable: true
       traefik.http.routers.production.tls: true
       traefik.http.routers.production.middlewares: secure-basicauth@file
-      traefik.http.routers.production.rule: Host(`${TRAEFIK_DOMAIN}`)
+      traefik.http.routers.production.rule'/home/project/vendor/bin/composer' 'normalize' '--no-update-lock': Host(`${TRAEFIK_DOMAIN}`)
       traefik.http.routers.pre-production.tls: true
       traefik.http.routers.pre-production.middlewares: secure-basicauth@file
       traefik.http.routers.pre-production.rule: Host(`pre-production.${TRAEFIK_DOMAIN}`)
@@ -240,9 +240,9 @@ services:
       CRON_USER_2: root
       CRON_SCHEDULE_2: '* * * * *'
       CRON_COMMAND_2: if [ "${CRON_DISABLED_PREPROD:-0}" != 1 ] ; then drush -q @pre-prod core:cron ; fi
-      CRON_USER_2: root
-      CRON_SCHEDULE_2: '* * * * *'
-      CRON_COMMAND_2: if [ "${CRON_DISABLED_POSTPROD:-0}" != 1 ] ; then drush -q @post-prod core:cron ; fi
+      CRON_USER_3: root
+      CRON_SCHEDULE_3: '* * * * *'
+      CRON_COMMAND_3: if [ "${CRON_DISABLED_POSTPROD:-0}" != 1 ] ; then drush -q @post-prod core:cron ; fi
     volumes:
       - ${PWD}:/var/www/html
     extra_hosts:

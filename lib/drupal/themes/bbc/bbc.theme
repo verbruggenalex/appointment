@@ -41,6 +41,6 @@ function bbc_page_attachments_alter(array &$attachments) {
   // For some reason the metatag module does not provide this html_head_link.
   $attachments['#attached']['html_head_link'][][] = [
     'rel' => 'apple-touch-icon',
-    'href' => '/themes/custom/bbc/icon-192.png'
+    'href' => '/themes/custom/bbc/icon-192.png',
   ];
 }

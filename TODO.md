@@ -48,4 +48,3 @@ https://www.drupal.org/project/views_ical
 # Theia image:
 
 * add twig2 extension
-

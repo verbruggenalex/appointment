@@ -7,8 +7,6 @@
 
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Ajax\AjaxResponse;
-use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Url;
 use Drupal\Core\Render\Markup;
 use Drupal\Core\Datetime\DrupalDateTime;
@@ -18,7 +16,7 @@ use Drupal\Core\Datetime\DrupalDateTime;
  */
 function app_core_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
-  //Main module help for the app_core module
+    // Main module help for the app_core module.
     case 'help.page.app_core':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
@@ -34,9 +32,8 @@ function app_core_help($route_name, RouteMatchInterface $route_match) {
  *
  * @see: https://www.drupal.org/project/fullcalendar_view/issues/3168188
  */
-function app_core_views_plugins_style_alter(array &$plugins)
-{
-  $plugins['fullcalendar_view_display']['even empty'] = true;
+function app_core_views_plugins_style_alter(array &$plugins) {
+  $plugins['fullcalendar_view_display']['even empty'] = TRUE;
 }
 
 /**
@@ -90,15 +87,14 @@ function _app_core_return_slot_options(array &$form, FormStateInterface $form_st
  *
  * Add social login buttons.
  */
-function app_core_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id)
-{
+function app_core_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if ($auth = \Drupal::config('social_auth.settings')->get('auth')) {
     // Set social auth redirection to current page if we are not on /user/login.
     $linkOptions = ($currentPath = \Drupal::service('path.current')->getPath()) && $currentPath != '/user/login' ? ['query' => ['destination' => $currentPath]] : [];
     $linkOptions['language'] = \Drupal::service('language_manager')->getCurrentLanguage();
     // Set a redirect on the form submit function to stay on current page.
     $form['#submit'][] = '_app_core_form_user_login_submit';
-    // @todo: Float submit button to the left.
+    // @todo Float submit button to the left.
     $form['actions']['submit']['#weight'] = 0;
     $form['actions']['submit']['#attributes']['class'][] = 'ml-2';
     $form['actions']['extra_actions'] = [
@@ -114,8 +110,6 @@ function app_core_form_user_login_form_alter(&$form, FormStateInterface $form_st
     }
   }
 }
-
-
 
 /**
  * Custom submit handler for user login form.
@@ -164,8 +158,7 @@ function app_core_form_node_form_alter(&$form, FormStateInterface $form_state, $
     $form['field_resource']['widget'][0]['target_id']['#ajax'] = $ajax;
     // This should be populated during validation?
     $form['field_smart_date_range']['#access'] = FALSE;
-    //$form['field_smart_date_range']['#disabled'] = TRUE;
-
+    // $form['field_smart_date_range']['#disabled'] = TRUE;
     $form['date_select'] = [
       '#type' => 'date',
       '#title' => t('Date'),
@@ -177,8 +170,9 @@ function app_core_form_node_form_alter(&$form, FormStateInterface $form_state, $
     ];
     $form['date_select']['#attributes']['min'] = date('Y-m-d');
     $form['date_select']['#attributes']['type'] = 'date';
-    // @todo: Make configurable according to the license type.
-    // $form['date_select']['#attributes']['max'] = date('Y-m-d', strtotime("+1 week"));
+    // @todo Make configurable according to the license type.
+    // $form['date_select']['#attributes']['max'] =
+    // date('Y-m-d', strtotime("+1 week"));
     // Add the slot select box.
     $form['slot_select'] = [
       '#title' => t('Time'),
@@ -192,7 +186,6 @@ function app_core_form_node_form_alter(&$form, FormStateInterface $form_state, $
       '#suffix' => '</div>',
     ];
     $nodeId = ($node = $form_state->getFormObject()->getEntity()) ? $node->id() : NULL;
-    // $appointmentStartDate = $form['field_smart_date_range']['widget'][0]['value']['#default_value'] = ($smartDateRange = $form_state->getValue('field_smart_date_range')) ? $smartDateRange[0]['value'] :  $form['field_smart_date_range']['widget'][0]['value']['#default_value'];
     $appointmentStartDate = ($startDate = $form_state->getValue('date_select')) ? DrupalDateTime::createFromFormat('Y-m-d', $startDate) : $form['field_smart_date_range']['widget'][0]['value']['#default_value'];
     $resourceNid = ($resourceReference = $form_state->getValue('field_resource')) ? $resourceReference[0]['target_id'] : $form['field_resource']['widget'][0]['target_id']['#default_value']->id();
 
@@ -240,7 +233,8 @@ function app_core_form_node_form_alter(&$form, FormStateInterface $form_state, $
           $form['field_n_persons']['widget'][0]['value']['#options'] = array_combine(range(1, $slotMaxCojoined), range(1, $slotMaxCojoined));
           $form['field_n_persons']['widget'][0]['value']['#default_value'] = $form_state->getValue('field_n_persons') ? $form_state->getValue('field_n_persons')[0]['value'] : $form['field_n_persons']['widget'][0]['value']['#default_value'];
           $form['field_n_persons']['widget'][0]['value']['#ajax'] = $ajax;
-        } else {
+        }
+        else {
           $form['field_n_persons']['#access'] = FALSE;
         }
       }
@@ -304,7 +298,8 @@ function app_core_form_node_form_alter(&$form, FormStateInterface $form_state, $
     // Populate the slots.
     if (count($slots) > 0) {
       $form['slot_select']['#options'] = $slots;
-    } else {
+    }
+    else {
       $form['slot_select']['#options'] = ['' => t('No slots available.')];
       $form['slot_select']['#default_value'] = '';
       $form['slot_select']['#disabled'] = TRUE;
@@ -324,9 +319,10 @@ function app_core_form_node_form_alter(&$form, FormStateInterface $form_state, $
 function app_core_appointment_node_form_submit(array $form, FormStateInterface $form_state) {
   // Redirect the form.
   $options = $form_state->getValue('date_select')
-    ? ['query' =>
-        ['date_select' => $form_state->getValue('date_select')]
-      ]
+    ? [
+      'query' =>
+        ['date_select' => $form_state->getValue('date_select')],
+    ]
     : [];
   $form_state->setRedirect('<current>', [], $options);
 }
@@ -336,7 +332,8 @@ function app_core_appointment_node_form_submit(array $form, FormStateInterface $
  */
 function app_core_appointment_node_form_validate(array $form, FormStateInterface $form_state) {
 
-  // For some reason we were not getting published appointments on the block form.
+  // For some reason we were not getting published appointments on the block
+  // form.
   $form_state->setValue('status', ['value' => 1]);
 
   $startTimestamp = $form_state->getValue('slot_select');
@@ -348,8 +345,8 @@ function app_core_appointment_node_form_validate(array $form, FormStateInterface
     $endTimestamp = $startTimestamp + ($duration * 60);
     $startDate = DrupalDateTime::createFromTimestamp($startTimestamp);
     $endDate = DrupalDateTime::createFromTimestamp($endTimestamp);
-    $appointmentId = ($appointment = $form_state->getFormObject()->getEntity()) ? $appointment->id() : null;
-    $resourceId = ($resource = $form_state->getValue('field_resource')) ? $resource[0]['target_id'] : null;
+    $appointmentId = ($appointment = $form_state->getFormObject()->getEntity()) ? $appointment->id() : NULL;
+    $resourceId = ($resource = $form_state->getValue('field_resource')) ? $resource[0]['target_id'] : NULL;
 
     $beginOfDay = strtotime("today", $startTimestamp);
     $endOfDay = strtotime("tomorrow", $beginOfDay) - 1;
@@ -433,7 +430,7 @@ function app_core_theme() {
       'variables' => [
         'firstname' => NULL,
         'login_url' => NULL,
-        'picture' => NULL
+        'picture' => NULL,
       ],
     ],
     'user_profile_block' => [
@@ -442,7 +439,7 @@ function app_core_theme() {
         'displayname' => NULL,
         'logout_url' => NULL,
         'profile_url' => NULL,
-        'picture' => NULL
+        'picture' => NULL,
       ],
     ],
   ];

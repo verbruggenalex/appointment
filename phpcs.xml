@@ -15,4 +15,10 @@
   <exclude-pattern>*/web/*</exclude-pattern>
   <exclude-pattern>*/tests/backstop/backstop_data/*</exclude-pattern>
 
+  <rule ref="Drupal.Files.TxtFileLineLength.TooLong">
+    <exclude-pattern>README.md</exclude-pattern>
+    <exclude-pattern>NOTES.md</exclude-pattern>
+    <exclude-pattern>TODO.md</exclude-pattern>
+  </rule>
+
 </ruleset>

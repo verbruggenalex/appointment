@@ -1,19 +1,19 @@
 http:
   routers:
     traefik:
-      rule: "Host(`traefik.{{env "TRAEFIK_DOMAIN"}}`)"
+      rule: 'Host(`traefik.{{env "TRAEFIK_DOMAIN"}}`)'
       service: "api@internal"
       middlewares: "secure-basicauth@file"
       tls:
         domains:
-          - main: "{{env "TRAEFIK_DOMAIN"}}"
+          - main: '{{env "TRAEFIK_DOMAIN"}}'
             sans:
-              - "*.{{env "TRAEFIK_DOMAIN"}}"
+              - '*.{{env "TRAEFIK_DOMAIN"}}'
         certResolver: lets-encrypt
   middlewares:
     secure-basicauth:
       basicauth:
-        users: "{{env "TRAEFIK_BASIC_AUTH"}}"
+        users: '{{env "TRAEFIK_BASIC_AUTH"}}'
   #   secure-whitelist:
   #     ipwhitelist:
   #       sourcerange:
