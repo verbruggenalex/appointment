@@ -55,6 +55,25 @@ jobs:
             dump.sql
           key: sql-vendor-web-${{ hashFiles('composer.lock') }}
 
+      - name: Get last tag
+        id: get-last
+        run: |
+          git fetch --tags
+          echo "::set-output name=tag::$(git describe --tags --abbrev=0)"
+        shell: bash
+
+      - uses: actions/cache@v2
+        with:
+          path: |
+            .tmp/${{ steps.get-last.outputs.tag }}.tar.gz
+            .tmp/${{ steps.get-last.outputs.tag }}.sql.gz
+          key: dist-sql-${{ steps.get-last.outputs.tag }}
+
+      - name: Setup production
+        if: startsWith(github.ref, 'refs/tags/') != true
+        run: |
+          docker-compose exec -T ci ./lib/scripts/build.sh
+
       - name: Test project
         if: startsWith(github.ref, 'refs/tags/') != true
         run: |
@@ -72,7 +91,6 @@ jobs:
       - name: Test backstopjs
         if: startsWith(github.ref, 'refs/tags/') != true
         run: |
-          docker-compose exec -T ci ln -sfn var/www/html/ /var/www/html/build/production
           docker-compose run --rm backstop reference
           docker-compose run --rm backstop test
           cat tests/backstop/backstop_data/html_report/config.js
