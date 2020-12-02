@@ -1,5 +1,8 @@
 # grumphp.yml
 grumphp:
+    ascii:
+        failed: ~
+        succeeded: ~
     tasks:
         # ant: ~
         # atoum: ~
