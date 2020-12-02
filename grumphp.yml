@@ -28,7 +28,7 @@ grumphp:
               # Drupal core translation files.
               - '/drupal-(\*|\d+(\.\d+){0,2}(\.\*)?).(nl|fr).po/'
         # gherkin: ~
-        # git_blacklist: ~
+        git_blacklist: ~
         # git_branch_name: ~
         # git_commit_message: ~
         # grunt: ~

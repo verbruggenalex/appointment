@@ -335,6 +335,7 @@ function app_core_appointment_node_form_validate(array $form, FormStateInterface
   // For some reason we were not getting published appointments on the block
   // form.
   $form_state->setValue('status', ['value' => 1]);
+  var_dump($form_state);
 
   $startTimestamp = $form_state->getValue('slot_select');
   if ($startTimestamp === '') {
