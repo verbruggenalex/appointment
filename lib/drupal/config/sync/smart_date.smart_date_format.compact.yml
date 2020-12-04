@@ -1,5 +1,5 @@
 uuid: d393b6d0-421b-4b91-b400-ac67384de615
-langcode: en
+langcode: nl
 status: true
 dependencies: {  }
 _core:
@@ -8,7 +8,7 @@ id: compact
 label: Compact
 date_format: 'M j Y'
 time_format: 'g:ia'
-time_hour_format: 'g:ia'
+time_hour_format: ga
 allday_label: ''
 separator: ' - '
 join: ' | '

@@ -51,7 +51,7 @@ ENV APACHE_RUN_USER=www-data \
 RUN apt-get update && \
     apt-get install -y patch mysql-client --no-install-recommends
 
-RUN curl -sS https://getcomposer.org/installer | php -- --version=1.10.17 --install-dir=/usr/local/bin --filename=composer
+RUN curl -sS https://getcomposer.org/installer | php -- --2 --install-dir=/usr/local/bin --filename=composer
 
 FROM prod as ci
 

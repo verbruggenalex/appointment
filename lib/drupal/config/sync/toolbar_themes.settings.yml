@@ -6,3 +6,4 @@ _core:
   default_config_hash: 1XzzhwMhZ4AXI3Z6BIeLiyv3XW03Fu3GCeM6JJ3IFV4
 actions:
   submit: Submit
+langcode: nl

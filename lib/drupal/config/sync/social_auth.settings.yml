@@ -15,3 +15,4 @@ disabled_roles:
 user_allowed: register
 _core:
   default_config_hash: 0E8z47ONguVcapiw1PGWDRs6g0NRDCzrym4mP_jcELU
+langcode: nl

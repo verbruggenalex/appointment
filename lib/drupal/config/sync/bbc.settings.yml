@@ -103,3 +103,4 @@ bootstrap_barrio_region_clean_top_bar: 0
 bootstrap_barrio_region_class_top_bar: row
 bootstrap_barrio_region_clean_topbar: 0
 bootstrap_barrio_region_class_topbar: ''
+langcode: nl

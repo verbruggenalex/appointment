@@ -12,3 +12,4 @@ geocoder:
     clientside: session_storage
 _core:
   default_config_hash: 0cOpr1OyXWdffdvJFlXdoNQpPest7EYeepdwUe7U9pQ
+langcode: nl
