@@ -1,11 +1,9 @@
-name: Docker Image CI
+name: Push on master
 
 on:
   push:
     branches:
       - master
-    tags:
-      - '*'
 
 jobs:
   push:
@@ -47,7 +45,6 @@ jobs:
           git fetch --tags
 
       - name: Cache Composer
-        if: startsWith(github.ref, 'refs/tags/') != true
         uses: actions/cache@v2
         with:
           path: |
@@ -61,7 +58,6 @@ jobs:
         uses: "WyriHaximus/github-action-get-previous-tag@master"
 
       - name: Cache last tag
-        if: startsWith(github.ref, 'refs/tags/') != true
         uses: actions/cache@v2
         with:
           path: |
@@ -70,31 +66,21 @@ jobs:
           key: dist-sql-${{ steps.previoustag.outputs.tag }}
 
       - name: Composer install
-        if: startsWith(github.ref, 'refs/tags/') != true
         run: |
           docker-compose exec -T ci composer install --no-progress --no-suggest --ansi
 
       - name: Setup production
-        if: startsWith(github.ref, 'refs/tags/') != true
         run: |
           docker-compose exec -T ci apt-get -y install wget
           docker-compose exec -T ci ./lib/scripts/build.sh ${{ steps.previoustag.outputs.tag }}
 
       - name: Test project
-        if: startsWith(github.ref, 'refs/tags/') != true
         run: |
           docker-compose exec -T ci composer test-phpcs
           docker-compose exec -T ci composer setup-project
           docker-compose exec -T ci composer test-behat
 
-      - name: Install project
-        if: startsWith(github.ref, 'refs/tags/')
-        run: |
-          docker-compose exec -T ci composer install --no-dev --no-progress --no-suggest --ansi
-          docker-compose exec -T ci composer setup-project
-
       - name: Test backstopjs
-        if: startsWith(github.ref, 'refs/tags/') != true
         run: |
           docker-compose run --rm backstop reference
           docker-compose run --rm backstop test || echo "Failed."
@@ -111,24 +97,9 @@ jobs:
       #     configPath: ./lighthouserc.json
       #     temporaryPublicStorage: true
 
-      - name: Prepare release
-        run: |
-          docker-compose exec -T ci composer build-dist
-
       - name: Test deploy of distribution
-        if: startsWith(github.ref, 'refs/tags/') != true
         run: |
           docker-compose exec -T ci ln -sfn var/www/html/ /var/www/html/build/production
           CRON_DISABLED_PREPROD=1 docker-compose up -d ci
           docker-compose exec -T ci ./lib/scripts/deploy.sh 1.0.0
           CRON_DISABLED_PREPROD=0 docker-compose up -d ci
-
-      - name: Create release
-        uses: "marvinpinto/action-automatic-releases@latest"
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          prerelease: false
-          files: |
-            dist.tar.gz
-            clean.sql.gz

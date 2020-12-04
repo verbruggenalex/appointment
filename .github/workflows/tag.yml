@@ -1,0 +1,79 @@
+name: Docker Image CI
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup environment
+        env:
+          TRAEFIK_DOMAIN: ${{ secrets.TRAEFIK_DOMAIN }}
+          TRAEFIK_NETWORK: ${{ secrets.TRAEFIK_NETWORK }}
+          TRAEFIK_BASIC_AUTH: ${{ secrets.TRAEFIK_BASIC_AUTH }}
+        run: |
+          sudo chmod 777 /var/run/docker.sock
+          cp .env.dist .env
+          make mkcert_setup mkcert_install docker_network_create setup_hosts
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u verbruggenalex --password-stdin
+          make ci
+          sleep 5
+
+      - name: Composer install
+        run: |
+          docker-compose exec -T ci composer install --no-dev --no-progress --no-suggest --ansi
+
+      - name: Test project
+        if: startsWith(github.ref, 'refs/tags/') != true
+        run: |
+          docker-compose exec -T ci composer drupal-install-clean
+          docker-compose exec -T ci composer import-local-translations
+          docker-compose exec -T ci composer import-translations
+
+
+      - name: Test backstopjs
+        if: startsWith(github.ref, 'refs/tags/') != true
+        run: |
+          docker-compose run --rm backstop reference
+          docker-compose run --rm backstop test || echo "Failed."
+          cat tests/backstop/backstop_data/html_report/config.js
+
+      # - name: Test lighthouse
+      #   if: startsWith(github.ref, 'refs/tags/') != true
+      #   uses: treosh/lighthouse-ci-action@v3
+      #   with:
+      #     urls: |
+      #       https://web.localhost.com/en
+      #       https://web.localhost.com/fr
+      #       https://web.localhost.com/nl
+      #     configPath: ./lighthouserc.json
+      #     temporaryPublicStorage: true
+
+      - name: Prepare release
+        run: |
+          docker-compose exec -T ci composer build-dist
+
+      - name: Test deploy of distribution
+        if: startsWith(github.ref, 'refs/tags/') != true
+        run: |
+          docker-compose exec -T ci ln -sfn var/www/html/ /var/www/html/build/production
+          CRON_DISABLED_PREPROD=1 docker-compose up -d ci
+          docker-compose exec -T ci ./lib/scripts/deploy.sh 1.0.0
+          CRON_DISABLED_PREPROD=0 docker-compose up -d ci
+
+      - name: Create release
+        uses: "marvinpinto/action-automatic-releases@latest"
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          files: |
+            dist.tar.gz
+            clean.sql.gz
