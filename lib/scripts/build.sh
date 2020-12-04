@@ -4,7 +4,7 @@
 TAG=$1
 
 mkdir .tmp
-if [ ! -f .tmp/$TAG.tar.gz ]
+if [ ! -d build/dist/$TAG ] && [ ! -f .tmp/$TAG.tar.gz ]
   then
   wget https://github.com/verbruggenalex/appointment/releases/download/$TAG/dist.tar.gz -O .tmp/$TAG.tar.gz
 fi
