@@ -2,6 +2,7 @@
     "name": "custom/empty",
     "description": "Empty profile",
     "type": "drupal-custom-profile",
+    "license": "MIT",
     "authors": [
         {
             "name": "Alex Verbruggen",

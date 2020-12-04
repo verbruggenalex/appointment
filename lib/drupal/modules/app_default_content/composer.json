@@ -2,6 +2,7 @@
     "name": "custom/app_default_content",
     "description": "Default content for the app (only for dev)",
     "type": "drupal-custom-module",
+    "license": "MIT",
     "authors": [
         {
             "name": "Alex Verbruggen",

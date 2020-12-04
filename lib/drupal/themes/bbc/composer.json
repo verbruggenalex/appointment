@@ -3,7 +3,7 @@
   "type": "drupal-custom-theme",
   "description": "Bootstrap Barrio Custom theme for Drupal 8",
   "homepage": "https://drupal.org/project/bbc",
-  "license": "GPL-2.0-or-later",
+  "license": "MIT",
   "authors": [
     {
       "name": "Verbruggen Alex",
