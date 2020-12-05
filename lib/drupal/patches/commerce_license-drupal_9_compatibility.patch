@@ -1,0 +1,12 @@
+diff --git a/commerce_license.info.yml b/commerce_license.info.yml
+index c68dff0..a5e504a 100644
+--- a/commerce_license.info.yml
++++ b/commerce_license.info.yml
+@@ -21,6 +21,6 @@ config_devel:
+ 
+ # Information added by Drupal.org packaging script on 2018-08-06
+ version: '8.x-2.0-alpha18'
+-core: '8.x'
++core_version_requirement: ^8 || ^9
+ project: 'commerce_license'
+ datestamp: 1533546786

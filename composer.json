@@ -36,7 +36,7 @@
         "drupal/office_hours": "^1.3",
         "drupal/pathauto": "^1.8",
         "drupal/profile": "^1.1",
-        "drupal/realname": "^1.0@RC",
+        "drupal/realname": "dev-1.x#51863f586e359671855e698f74587507ae910887",
         "drupal/select_or_other": "1.x-dev#1812d2bcd0a0165308e8163d856261b72652b98e",
         "drupal/smart_date": "^3.0",
         "drupal/social_auth_facebook": "dev-2.x#288258db5b49b0f17115f6260712004708961b03",
@@ -162,19 +162,31 @@
                 "https://www.drupal.org/files/issues/2019-12-09/drupal-language-prefix-neutral-content-2883450-31.patch"
             ],
             "drupal/commerce_license": [
-                "https://www.drupal.org/files/issues/2020-01-14/3100029-5-license-overview-broken.patch"
+                "https://www.drupal.org/files/issues/2020-01-14/3100029-5-license-overview-broken.patch",
+                "https://www.drupal.org/files/issues/2020-06-05/commerce_license.2.x-dev.rector.patch",
+                "lib/drupal/patches/commerce_license-drupal_9_compatibility.patch"
             ],
             "drupal/fullcalendar_view": [
                 "https://git.drupalcode.org/project/fullcalendar_view/-/merge_requests/1/diffs.patch"
             ],
+            "drupal/realname": [
+                "https://www.drupal.org/files/issues/2020-06-30/3101961-9.patch"
+            ],
+            "drupal/recurring_period": [
+                "lib/drupal/patches/recurring_period-drupal_9_compatibility.patch"
+            ],
             "drupal/smtp": [
                 "https://www.drupal.org/files/issues/2020-08-11/removed_config_override_logic-2826189-39.patch"
+            ],
+            "drupal/sw_register": [
+                "lib/drupal/patches/sw_register-drupal_9_compatibility.patch"
             ],
             "drupal/token": [
                 "https://www.drupal.org/files/issues/2020-09-21/token-consistent-entity-and-field-support-3047568-12.patch"
             ],
             "drupal/toolbar_themes": [
-                "https://www.drupal.org/files/issues/2018-12-08/toolbar_themes-padding-issue-2981847-7.patch"
+                "https://www.drupal.org/files/issues/2018-12-08/toolbar_themes-padding-issue-2981847-7.patch",
+                "lib/drupal/patches/toolbar_themes-drupal_9_compatibility.patch"
             ],
             "drupal/ultimate_cron": [
                 "https://git.drupalcode.org/project/ultimate_cron/-/merge_requests/1/diffs.patch"

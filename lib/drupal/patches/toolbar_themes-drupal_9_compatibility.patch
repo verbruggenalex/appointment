@@ -1,0 +1,12 @@
+diff --git a/toolbar_themes.info.yml b/toolbar_themes.info.yml
+index efe5bd8..a2de15f 100644
+--- a/toolbar_themes.info.yml
++++ b/toolbar_themes.info.yml
+@@ -8,6 +8,6 @@ dependencies:
+ 
+ # Information added by Drupal.org packaging script on 2016-09-18
+ version: '8.x-1.0-alpha4'
+-core: '8.x'
++core_version_requirement: ^8 || ^9
+ project: 'toolbar_themes'
+ datestamp: 1474198440
