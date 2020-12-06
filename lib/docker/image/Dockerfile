@@ -56,4 +56,3 @@ RUN curl -sS https://getcomposer.org/installer | php -- --2 --install-dir=/usr/l
 FROM prod as ci
 
 ENV PHP_INI_DISABLE_FUNCTIONS=""
-

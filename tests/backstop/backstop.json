@@ -19,7 +19,7 @@
       "label": "Project homepage.",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
       "url": "https://web.localhost.com",
-      "referenceUrl": "https://localhost.com",
+      "referenceUrl": "https://production.localhost.com",
       "readyEvent": "",
       "readySelector": "",
       "delay": 0,
