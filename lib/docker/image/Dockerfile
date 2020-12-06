@@ -35,12 +35,12 @@ USER root
 # traefik.http.middlewares.post-production-redirect.addprefix.prefix: /build/post-production
 
 COPY apache2/sites-available/* /etc/apache2/sites-available/
-RUN a2dissite 000-default.conf
-RUN a2dissite default-ssl.conf
-RUN a2ensite web.conf
-RUN a2ensite production.conf
-RUN a2ensite pre-production.conf
-RUN a2ensite post-production.conf
+RUN a2dissite 000-default.conf && \
+    a2dissite default-ssl.conf && \
+    a2ensite web.conf && \
+    a2ensite production.conf && \
+    a2ensite pre-production.conf && \
+    a2ensite post-production.conf
 
 # Change back Apache user and group to www-data use production ini.
 ENV APACHE_RUN_USER=www-data \
