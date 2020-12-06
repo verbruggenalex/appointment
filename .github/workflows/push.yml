@@ -61,7 +61,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: |
-            build/dist/${{ steps.previoustag.outputs.tag }}/
+            .tmp/${{ steps.previoustag.outputs.tag }}.tar.gz
             .tmp/${{ steps.previoustag.outputs.tag }}.sql
           key: dist-sql-${{ steps.previoustag.outputs.tag }}
 
