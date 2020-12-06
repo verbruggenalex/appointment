@@ -96,10 +96,3 @@ jobs:
       #       https://web.localhost.com/nl
       #     configPath: ./lighthouserc.json
       #     temporaryPublicStorage: true
-
-      - name: Test deploy of distribution
-        run: |
-          docker-compose exec -T ci ln -sfn var/www/html/ /var/www/html/build/production
-          CRON_DISABLED_PREPROD=1 docker-compose up -d ci
-          docker-compose exec -T ci ./lib/scripts/deploy.sh 1.0.0
-          CRON_DISABLED_PREPROD=0 docker-compose up -d ci
