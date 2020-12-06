@@ -20,7 +20,10 @@ if [ ! -d build/dist/$TAG ]
   mkdir -p build/dist/$TAG
   tar -zxf .tmp/$TAG.tar.gz -C build/dist/$TAG
   ln -sfn $APACHE_DOCUMENT_ROOT/build/dist/$TAG $APACHE_DOCUMENT_ROOT/build/production
-  ls -la $APACHE_DOCUMENT_ROOT/build/dist/$TAG
+  ls -la $APACHE_DOCUMENT_ROOT/build
+  rm -rf $APACHE_DOCUMENT_ROOT/build/production
+  ln -sf $APACHE_DOCUMENT_ROOT/build/dist/$TAG $APACHE_DOCUMENT_ROOT/build/production
+  ls -la $APACHE_DOCUMENT_ROOT/build
 fi
 
 if [ -f .tmp/$TAG.sql ]
