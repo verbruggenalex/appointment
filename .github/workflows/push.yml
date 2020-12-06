@@ -80,19 +80,27 @@ jobs:
           docker-compose exec -T ci composer setup-project
           docker-compose exec -T ci composer test-behat
 
-      - name: Test backstopjs
+      - name: Test backstop
         run: |
           docker-compose run --rm backstop reference
-          docker-compose run --rm backstop test || echo "Failed."
-          cat tests/backstop/backstop_data/html_report/config.js
+          docker-compose run --rm backstop test
 
-      - name: Test lighthouse
-        if: startsWith(github.ref, 'refs/tags/') != true
-        uses: treosh/lighthouse-ci-action@v3
+      - name: Upload backstop
+        uses: actions/upload-artifact@v2
+        if: failure()
         with:
-          urls: |
-            https://web.localhost.com/en
-            https://web.localhost.com/fr
-            https://web.localhost.com/nl
-          configPath: ./lighthouserc.json
-          temporaryPublicStorage: true
+          name: backstop
+          path: tests/backstop/backstop_data
+          if-no-files-found: ignore
+          retention-days: 1
+
+      # - name: Test lighthouse
+      #   if: startsWith(github.ref, 'refs/tags/') != true
+      #   uses: treosh/lighthouse-ci-action@v3
+      #   with:
+      #     urls: |
+      #       https://web.localhost.com/en
+      #       https://web.localhost.com/fr
+      #       https://web.localhost.com/nl
+      #     configPath: ./lighthouserc.json
+      #     temporaryPublicStorage: true
