@@ -7,8 +7,6 @@ label: 'Config dev'
 description: 'The development configuration.'
 folder: ../lib/drupal/config/dev
 module:
-  app_default_content: 0
-  default_content: 0
   devel: 0
   devel_generate: 0
   devel_kint_extras: 0

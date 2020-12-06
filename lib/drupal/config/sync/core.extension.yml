@@ -4,6 +4,7 @@ module:
   admin_toolbar_tools: 0
   advancedqueue: 0
   app_core: 0
+  app_default_content: 0
   auto_entitylabel: 0
   automated_cron: 0
   big_pipe: 0
@@ -34,6 +35,7 @@ module:
   datetime: 0
   datetime_range: 0
   dblog: 0
+  default_content: 0
   duration_field: 0
   dynamic_page_cache: 0
   editor: 0
