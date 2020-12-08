@@ -80,6 +80,8 @@ jobs:
           curl https://production.localhost.com
           curl https://localhost.com
           curl https://web.localhost.com
+          curl https://pre-production.localhost.com
+          curl https://post-production.localhost.com
 
       - name: Test project
         run: |
