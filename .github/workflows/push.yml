@@ -75,14 +75,6 @@ jobs:
           docker-compose exec -T ci apt-get -y install wget
           docker-compose exec -T ci ./lib/scripts/build.sh ${{ steps.previoustag.outputs.tag }}
 
-      - name: Curl environments
-        run: |
-          curl https://production.localhost.com
-          curl https://localhost.com
-          curl https://web.localhost.com
-          curl https://pre-production.localhost.com
-          curl https://post-production.localhost.com
-
       - name: Test project
         run: |
           docker-compose exec -T ci composer test-phpcs
@@ -91,6 +83,9 @@ jobs:
 
       - name: Test backstop
         run: |
+          curl https://localhost.com
+          docker-compose run --rm backstop reference
+          docker-compose run --rm backstop test || echo "Again"
           docker-compose run --rm backstop reference
           docker-compose run --rm backstop test
 
