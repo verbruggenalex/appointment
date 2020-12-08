@@ -261,8 +261,7 @@
             "drush locale-update"
         ],
         "reset-permissions": [
-            "sudo chown -R docker:$APACHE_RUN_GROUP web",
-            "sudo chown -R $APACHE_RUN_USER:docker web/sites/default/files",
+            "sudo chown -R docker:$APACHE_RUN_GROUP web $APACHE_DOCUMENT_ROOT/build/files",
             "find web -type d -exec chmod u=rwx,g=rx,o= '{}' \\;",
             "find web -type f -exec chmod u=rw,g=r,o= '{}' \\;",
             "find $APACHE_DOCUMENT_ROOT/build/files -type d -exec chmod ug=rwx,o= '{}' \\;",
