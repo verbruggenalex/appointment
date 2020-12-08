@@ -95,18 +95,18 @@ services:
       traefik.http.routers.ide.tls: true
       traefik.http.routers.ide.rule: Host(`ide.${TRAEFIK_DOMAIN}`)
       traefik.http.routers.ide.service: ide
-      traefik.http.routers.web.tls: true
-      traefik.http.routers.web.rule: Host(`web.${TRAEFIK_DOMAIN}`)
-      traefik.http.routers.web.service: dev
-      traefik.http.routers.production.tls: true
-      traefik.http.routers.production.rule: Host(`production.${TRAEFIK_DOMAIN}`)
-      traefik.http.routers.production.service: dev
-      traefik.http.routers.pre-production.tls: true
-      traefik.http.routers.pre-production.rule: Host(`pre-production.${TRAEFIK_DOMAIN}`)
-      traefik.http.routers.pre-production.service: dev
-      traefik.http.routers.post-production.tls: true
-      traefik.http.routers.post-production.rule: Host(`post-production.${TRAEFIK_DOMAIN}`)
-      traefik.http.routers.post-production.service: dev
+      # traefik.http.routers.web.tls: true
+      # traefik.http.routers.web.rule: Host(`web.${TRAEFIK_DOMAIN}`)
+      # traefik.http.routers.web.service: dev
+      # traefik.http.routers.production.tls: true
+      # traefik.http.routers.production.rule: Host(`production.${TRAEFIK_DOMAIN}`)
+      # traefik.http.routers.production.service: dev
+      # traefik.http.routers.pre-production.tls: true
+      # traefik.http.routers.pre-production.rule: Host(`pre-production.${TRAEFIK_DOMAIN}`)
+      # traefik.http.routers.pre-production.service: dev
+      # traefik.http.routers.post-production.tls: true
+      # traefik.http.routers.post-production.rule: Host(`post-production.${TRAEFIK_DOMAIN}`)
+      # traefik.http.routers.post-production.service: dev
       traefik.http.services.dev.loadbalancer.server.port: 80
       traefik.http.services.ide.loadbalancer.server.port: 3000
     networks:
@@ -248,7 +248,7 @@ services:
       traefik.http.routers.web.tls: true
       traefik.http.routers.web.rule: Host(`web.${TRAEFIK_DOMAIN}`)
       traefik.http.routers.production.tls: true
-      traefik.http.routers.production.rule: Host(`production.${TRAEFIK_DOMAIN}`)
+      traefik.http.routers.production.rule: Host(`${TRAEFIK_DOMAIN}`) || Host(`production.${TRAEFIK_DOMAIN}`)
       traefik.http.routers.pre-production.tls: true
       traefik.http.routers.pre-production.rule: Host(`pre-production.${TRAEFIK_DOMAIN}`)
       traefik.http.routers.post-production.tls: true
