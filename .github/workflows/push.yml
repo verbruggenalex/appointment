@@ -83,15 +83,12 @@ jobs:
 
       - name: Test backstop
         run: |
-          curl https://localhost.com
-          docker-compose run --rm backstop reference
-          docker-compose run --rm backstop test || echo "Again"
           docker-compose run --rm backstop reference
           docker-compose run --rm backstop test
 
       - name: Upload backstop
         uses: actions/upload-artifact@v2
-        if: failure()
+        if: always()
         with:
           name: backstop
           path: tests/backstop/backstop_data

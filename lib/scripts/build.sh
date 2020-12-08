@@ -20,10 +20,8 @@ if [ ! -d build/dist/$TAG ]
   mkdir -p build/dist/$TAG
   tar -zxf .tmp/$TAG.tar.gz -C build/dist/$TAG
   ln -sfn $APACHE_DOCUMENT_ROOT/build/dist/$TAG $APACHE_DOCUMENT_ROOT/build/production
-  ls -la $APACHE_DOCUMENT_ROOT/build
   rm -rf $APACHE_DOCUMENT_ROOT/build/dist/$TAG/web/sites/default/files
   ln -sf $APACHE_DOCUMENT_ROOT/build/files/public $APACHE_DOCUMENT_ROOT/build/dist/$TAG/web/sites/default/files
-  ls -la $APACHE_DOCUMENT_ROOT/build/dist/$TAG/web/sites/default
   composer reset-permissions -d $APACHE_DOCUMENT_ROOT/build/production
 fi
 
@@ -35,11 +33,9 @@ if [ -f .tmp/$TAG.sql ]
   drush @web sqlc < $APACHE_DOCUMENT_ROOT/.tmp/$TAG.sql
   drush @web en app_default_content -y
   drush @web cr
-  drush @web status
   drush @prod sql-create -y
   drush @prod sql-drop -y
   drush @prod sqlc < $APACHE_DOCUMENT_ROOT/.tmp/$TAG.sql
   drush @prod en app_default_content -y
   drush @prod cr
-  drush @prod status
 fi
