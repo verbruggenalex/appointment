@@ -229,8 +229,9 @@
         ],
         "create-dirs": [
             "cp -Rf lib/build .",
-            "mkdir -p web/sites/default/files/geofieldmap_icons",
-            "ln -sfn $APACHE_DOCUMENT_ROOT/build/files/public $PWD/web/sites/default/files"
+            "rm -rf $PWD/web/sites/default/files",
+            "ln -sfn $APACHE_DOCUMENT_ROOT/build/files/public $PWD/web/sites/default/files",
+            "mkdir -p web/sites/default/files/geofieldmap_icons"
         ],
         "drupal-deploy": [
             "Composer\\Config::disableProcessTimeout",
@@ -261,7 +262,8 @@
             "drush locale-update"
         ],
         "reset-permissions": [
-            "sudo chown -R docker:$APACHE_RUN_GROUP web $APACHE_DOCUMENT_ROOT/build/files",
+            "sudo chown -R docker:$APACHE_RUN_GROUP web",
+            "sudo chown -R $APACHE_RUN_USER:docker $APACHE_DOCUMENT_ROOT/build/files",
             "find web -type d -exec chmod u=rwx,g=rx,o= '{}' \\;",
             "find web -type f -exec chmod u=rw,g=r,o= '{}' \\;",
             "find $APACHE_DOCUMENT_ROOT/build/files -type d -exec chmod ug=rwx,o= '{}' \\;",
