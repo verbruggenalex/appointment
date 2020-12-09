@@ -83,9 +83,9 @@ jobs:
 
       - name: Check folders
         run: |
-          docker-compose exec -T ci ls -la $APACHE_DOCUMENT_ROOT/build/files/public
-          docker-compose exec -T ci ls -la $APACHE_DOCUMENT_ROOT/web/sites/default
-          docker-compose exec -T ci ls -la $APACHE_DOCUMENT_ROOT/build/dist/${{ steps.previoustag.outputs.tag }}/web/sites/default
+          docker-compose exec -T ci ls -la /var/www/html/build/files/public
+          docker-compose exec -T ci ls -la /var/www/html/web/sites/default
+          docker-compose exec -T ci ls -la /var/www/html/build/dist/${{ steps.previoustag.outputs.tag }}/web/sites/default
 
       - name: Test backstop
         run: |
