@@ -39,8 +39,8 @@ jobs:
 
       - name: Backstop reference
         run: |
-          docker-compose exec -T ci ln -sfn $APACHE_DOCUMENT_ROOT/web $APACHE_DOCUMENT_ROOT/build/production
-          docker-compose exec -T ci ls -la $APACHE_DOCUMENT_ROOT/build
+          docker-compose exec -T ci ln -sfn /var/www/html/web /var/www/html/build/production
+          docker-compose exec -T ci ls -la /var/www/html/build
           docker-compose run --rm backstop reference
           tar -czf backstop-reference.tar.gz tests/backstop/backstop_data/bitmaps_reference/
 
