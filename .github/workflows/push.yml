@@ -67,7 +67,7 @@ jobs:
 
       - name: Composer install
         run: |
-          docker-compose exec -T ci composer install --no-progress --no-suggest --ansi
+          docker-compose exec -T ci composer install --no-progress --ansi
           docker-compose exec -T ci composer create-dirs
 
       - name: Setup production
