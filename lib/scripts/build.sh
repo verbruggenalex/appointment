@@ -23,7 +23,6 @@ if [ ! -d build/dist/$TAG ]
   rm -rf $APACHE_DOCUMENT_ROOT/build/dist/$TAG/web/sites/default/files
   ln -sf $APACHE_DOCUMENT_ROOT/build/files/public $APACHE_DOCUMENT_ROOT/build/dist/$TAG/web/sites/default/files
   composer reset-permissions -d $APACHE_DOCUMENT_ROOT/build/production
-  ls -la $APACHE_DOCUMENT_ROOT/build/production/web/sites/default
 fi
 
 if [ -f .tmp/$TAG.sql ]

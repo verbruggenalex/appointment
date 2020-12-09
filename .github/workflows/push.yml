@@ -81,6 +81,12 @@ jobs:
           docker-compose exec -T ci composer setup-project
           docker-compose exec -T ci composer test-behat
 
+      - name: Check folders
+        run: |
+          docker-compose exec -T ci ls -la $APACHE_DOCUMENT_ROOT/build/files/public
+          docker-compose exec -T ci ls -la $APACHE_DOCUMENT_ROOT/web/sites/default
+          docker-compose exec -T ci ls -la $APACHE_DOCUMENT_ROOT/build/dist/${{ steps.previoustag.outputs.tag }}/web/sites/default
+
       - name: Test backstop
         run: |
           docker-compose run --rm backstop reference
