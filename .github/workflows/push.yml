@@ -89,8 +89,8 @@ jobs:
       - name: Check watchdog
         if: always()
         run: |
-          docker-compose exec -T ci drush @web ws
-          docker-compose exec -T ci drush @prod ws
+          docker-compose exec -T ci drush @web ws --count=50
+          docker-compose exec -T ci drush @prod ws --count=50
 
       - name: Upload backstop
         uses: actions/upload-artifact@v2

@@ -208,6 +208,7 @@ services:
     working_dir: /var/www/html
     environment:
       ENVIRONMENT: ci
+      COLUMNS: 200
       BEHAT_PARAMS: '{"extensions":{"Behat\\MinkExtension":{"base_url":"http://web.${TRAEFIK_DOMAIN}"}}}'
       TRAEFIK_DOMAIN:
       APACHE_DOCUMENT_ROOT: /var/www/html
