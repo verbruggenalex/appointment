@@ -30,6 +30,7 @@ jobs:
         run: |
           docker-compose exec -T ci composer install --no-dev --no-progress --ansi
           docker-compose exec -T ci composer create-dirs
+          docker-compose exec -T ci composer reset-permissions
 
       - name: Test project
         run: |
