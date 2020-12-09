@@ -81,16 +81,16 @@ jobs:
           docker-compose exec -T ci composer setup-project
           docker-compose exec -T ci composer test-behat
 
-      - name: Check folders
-        run: |
-          docker-compose exec -T ci ls -la /var/www/html/build/files/public
-          docker-compose exec -T ci ls -la /var/www/html/web/sites/default
-          docker-compose exec -T ci ls -la /var/www/html/build/dist/${{ steps.previoustag.outputs.tag }}/web/sites/default
-
       - name: Test backstop
         run: |
           docker-compose run --rm backstop reference
           docker-compose run --rm backstop test
+
+      - name: Check watchdog
+        if: always()
+        run: |
+          docker-compose exec -T ci drush @web ws
+          docker-compose exec -T ci drush @prod ws
 
       - name: Upload backstop
         uses: actions/upload-artifact@v2
