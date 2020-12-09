@@ -29,6 +29,7 @@ jobs:
       - name: Composer install
         run: |
           docker-compose exec -T ci composer install --no-dev --no-progress --ansi
+          docker-compose exec -T ci composer create-dirs
 
       - name: Test project
         run: |
