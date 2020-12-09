@@ -158,6 +158,7 @@
         },
         "patches": {
             "drupal/core": [
+                "https://www.drupal.org/files/issues/2020-05-04/1650930-default-mysql-transactions-84-D9.patch",
                 "https://www.drupal.org/files/issues/2020-05-04/2924549-38.patch",
                 "https://www.drupal.org/files/issues/2019-12-09/drupal-language-prefix-neutral-content-2883450-31.patch"
             ],
@@ -166,14 +167,8 @@
                 "https://www.drupal.org/files/issues/2020-06-05/commerce_license.2.x-dev.rector.patch",
                 "lib/drupal/patches/commerce_license-drupal_9_compatibility.patch"
             ],
-            "drupal/fullcalendar_view": [
-                "https://git.drupalcode.org/project/fullcalendar_view/-/merge_requests/1/diffs.patch"
-            ],
             "drupal/realname": [
                 "https://www.drupal.org/files/issues/2020-06-30/3101961-9.patch"
-            ],
-            "drupal/recurring_period": [
-                "lib/drupal/patches/recurring_period-drupal_9_compatibility.patch"
             ],
             "drupal/smtp": [
                 "https://www.drupal.org/files/issues/2020-08-11/removed_config_override_logic-2826189-39.patch"
