@@ -1,0 +1,105 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 211ba314-2349-4bda-a683-6add9e67f1b1
+  bundle: resource
+  default_langcode: zxx
+  depends:
+    fd8fcfaf-f1f9-4f30-beb5-6b95cca2db2c: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Samuchchaya Thaise Massage'
+  created:
+    -
+      value: 1609166481
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  field_address:
+    -
+      langcode: en
+      country_code: BE
+      administrative_area: ''
+      locality: Herentals
+      dependent_locality: ''
+      postal_code: '2200'
+      sorting_code: ''
+      address_line1: 'Schoolstraat 9'
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+  field_geofield:
+    -
+      value: 'POINT (4.829374 51.177438)'
+      geo_type: Point
+      lat: 51.177438
+      lon: 4.829374
+      left: 4.829374
+      top: 51.177438
+      right: 4.829374
+      bottom: 51.177438
+      geohash: u157jusdhtfm
+      latlon: '51.177438,4.829374'
+  field_occupation:
+    -
+      entity: fd8fcfaf-f1f9-4f30-beb5-6b95cca2db2c
+  field_office_hours:
+    -
+      day: 1
+      starthours: 1300
+      endhours: 2100
+      comment: ''
+    -
+      day: 2
+      starthours: 1300
+      endhours: 2100
+      comment: ''
+    -
+      day: 3
+      starthours: 1300
+      endhours: 2100
+      comment: ''
+    -
+      day: 4
+      starthours: 1300
+      endhours: 2100
+      comment: ''
+    -
+      day: 5
+      starthours: 1300
+      endhours: 2100
+      comment: ''
+    -
+      day: 6
+      starthours: 900
+      endhours: 2100
+      comment: ''
+    -
+      day: 0
+      starthours: 900
+      endhours: 2100
+      comment: ''
+  field_slot_duration:
+    -
+      value: 40
+  field_slot_max_cojoined:
+    -
+      value: 1

@@ -1,0 +1,100 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 689b3067-6090-4a5a-a2fb-9d3bc76cad20
+  bundle: resource
+  default_langcode: zxx
+  depends:
+    fd8fcfaf-f1f9-4f30-beb5-6b95cca2db2c: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: Pimmada
+  created:
+    -
+      value: 1609165949
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  field_address:
+    -
+      langcode: en
+      country_code: BE
+      administrative_area: ''
+      locality: Diest
+      dependent_locality: ''
+      postal_code: '3293'
+      sorting_code: ''
+      address_line1: 'Galgeveldstraat 78'
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+  field_geofield:
+    -
+      value: 'POINT(5.039445 50.975191)'
+      geo_type: Point
+      lat: 50.975191
+      lon: 5.039445
+      left: 5.039445
+      top: 50.975191
+      right: 5.039445
+      bottom: 50.975191
+      geohash: u159fxv8586d
+      latlon: '50.975191,5.039445'
+  field_occupation:
+    -
+      entity: fd8fcfaf-f1f9-4f30-beb5-6b95cca2db2c
+  field_office_hours:
+    -
+      day: 1
+      starthours: 900
+      endhours: 2100
+      comment: ''
+    -
+      day: 2
+      starthours: 900
+      endhours: 2100
+      comment: ''
+    -
+      day: 3
+      starthours: 900
+      endhours: 2100
+      comment: ''
+    -
+      day: 4
+      starthours: 900
+      endhours: 2100
+      comment: ''
+    -
+      day: 5
+      starthours: 900
+      endhours: 2100
+      comment: ''
+    -
+      day: 6
+      starthours: 900
+      endhours: 2100
+      comment: ''
+  field_slot_duration:
+    -
+      value: 60
+  field_slot_max_cojoined:
+    -
+      value: 1

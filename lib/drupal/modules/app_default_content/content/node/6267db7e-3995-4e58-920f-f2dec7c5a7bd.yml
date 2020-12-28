@@ -1,0 +1,95 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 6267db7e-3995-4e58-920f-f2dec7c5a7bd
+  bundle: resource
+  default_langcode: zxx
+  depends:
+    fd8fcfaf-f1f9-4f30-beb5-6b95cca2db2c: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Siam Wellness'
+  created:
+    -
+      value: 1609166366
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  field_address:
+    -
+      langcode: en
+      country_code: BE
+      administrative_area: ''
+      locality: Herentals
+      dependent_locality: ''
+      postal_code: '2200'
+      sorting_code: ''
+      address_line1: 'Velodroomstraat 25'
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+  field_geofield:
+    -
+      value: 'POINT(4.847462 51.174162)'
+      geo_type: Point
+      lat: 51.174162
+      lon: 4.847462
+      left: 4.847462
+      top: 51.174162
+      right: 4.847462
+      bottom: 51.174162
+      geohash: u157n7cz451w
+      latlon: '51.174162,4.847462'
+  field_occupation:
+    -
+      entity: fd8fcfaf-f1f9-4f30-beb5-6b95cca2db2c
+  field_office_hours:
+    -
+      day: 1
+      starthours: 900
+      endhours: 1900
+      comment: ''
+    -
+      day: 2
+      starthours: 900
+      endhours: 1900
+      comment: ''
+    -
+      day: 3
+      starthours: 900
+      endhours: 1900
+      comment: ''
+    -
+      day: 6
+      starthours: 1000
+      endhours: 1900
+      comment: ''
+    -
+      day: 0
+      starthours: 1000
+      endhours: 1900
+      comment: ''
+  field_slot_duration:
+    -
+      value: 30
+  field_slot_max_cojoined:
+    -
+      value: 1
