@@ -58,7 +58,7 @@ display:
       pager:
         type: full
         options:
-          items_per_page: 5
+          items_per_page: 10
           offset: 0
           id: 1
           total_pages: null
@@ -70,7 +70,7 @@ display:
           expose:
             items_per_page: true
             items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options: '10, 25, 50'
             items_per_page_options_all: false
             items_per_page_options_all_label: '- All -'
             offset: false
@@ -412,11 +412,11 @@ display:
             operator_list: {  }
             identifier: title
             required: false
-            remember: false
+            remember: true
             multiple: false
             remember_roles:
+              anonymous: anonymous
               authenticated: authenticated
-              anonymous: '0'
               administrator: '0'
               customer: '0'
               business: '0'
@@ -465,11 +465,11 @@ display:
             operator_list: {  }
             identifier: field_occupation_target_id
             required: false
-            remember: false
+            remember: true
             multiple: false
             remember_roles:
+              anonymous: anonymous
               authenticated: authenticated
-              anonymous: '0'
               administrator: '0'
               customer: '0'
               business: '0'
@@ -514,11 +514,11 @@ display:
             operator_list: {  }
             identifier: field_address_country_code
             required: false
-            remember: false
+            remember: true
             multiple: false
             remember_roles:
+              anonymous: anonymous
               authenticated: authenticated
-              anonymous: '0'
               administrator: '0'
               customer: '0'
               business: '0'
