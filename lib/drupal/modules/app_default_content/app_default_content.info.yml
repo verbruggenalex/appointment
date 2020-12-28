@@ -1,7 +1,7 @@
 name: 'App Default Content'
 type: module
 description: 'Contains default content to be used on clean install of this app.'
-core_version_requirement: ^8.8 || ^9
+core_version_requirement: ^8.8 ^9
 package: 'Custom'
 dependencies:
   - app_core:app_core
@@ -11,14 +11,16 @@ interface translation server pattern: modules/custom/%project/translations/%proj
 
 default_content:
   node:
-    - 6a2dfd13-b1fa-4aa8-a902-f0d2c577b5fa
-    - db583335-8a67-4c8e-930f-b8f94a7b4fc0
-    - 65e47993-8f0d-4e97-9e1e-d5604ca5c2d0
-    - 24fa96ad-6086-49d9-90f7-45be866e02df
     - 14dfe5cf-b5df-44d8-a501-f8382a4774ab
     - 1834f8db-f55b-4673-9fdb-33d2bcbf01fa
-    - 4b624068-1937-4ae7-a259-6a75837b6e71
     - 1473de02-46a4-4509-aae9-636c266bdbcf
+    - 4b624068-1937-4ae7-a259-6a75837b6e71
+    - 65e47993-8f0d-4e97-9e1e-d5604ca5c2d0
+    - db583335-8a67-4c8e-930f-b8f94a7b4fc0
+    - 24fa96ad-6086-49d9-90f7-45be866e02df
+    - 6a2dfd13-b1fa-4aa8-a902-f0d2c577b5fa
+    - bc0c1b62-3cad-4e1c-b1d3-35e2f97d954c
+    - f28cb8ba-e075-4a2d-baee-d5704ec0a4cb
   taxonomy_term:
     - 16fbefc2-d23e-40b0-a68d-90a27e823e29
     - 288675af-54d3-419d-b39a-650e7525fb66
@@ -29,5 +31,7 @@ default_content:
     - deba76dc-b532-4327-b404-ada6d02ae818
     - fd8fcfaf-f1f9-4f30-beb5-6b95cca2db2c
   file:
+    - 5c4bd31a-5f8f-4faf-82e7-f1afacaa485a
+    - 64e25bd9-d326-4818-ae3e-c89c8f1e9843
     - c0efb531-136d-4dde-b75c-48b2facb86ba
     - cad82075-71a4-48b2-9f7f-3d802195a4f8

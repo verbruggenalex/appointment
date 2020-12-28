@@ -1,0 +1,108 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: f28cb8ba-e075-4a2d-baee-d5704ec0a4cb
+  bundle: resource
+  default_langcode: zxx
+  depends:
+    5c4bd31a-5f8f-4faf-82e7-f1afacaa485a: file
+    cdd89c4d-2504-4590-9faa-c0aac6029c87: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: Barzan
+  created:
+    -
+      value: 1609161943
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  field_address:
+    -
+      langcode: en
+      country_code: BE
+      administrative_area: ''
+      locality: Herentals
+      dependent_locality: ''
+      postal_code: '2200'
+      sorting_code: ''
+      address_line1: 'Belgiëlaan 2-4'
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+  field_geofield:
+    -
+      value: 'POINT (4.835053 51.17951)'
+      geo_type: Point
+      lat: 51.17951
+      lon: 4.835053
+      left: 4.835053
+      top: 51.17951
+      right: 4.835053
+      bottom: 51.17951
+      geohash: u157nhby2bhu
+      latlon: '51.17951,4.835053'
+  field_image:
+    -
+      entity: 5c4bd31a-5f8f-4faf-82e7-f1afacaa485a
+      alt: ''
+      title: ''
+      width: 80
+      height: 80
+  field_occupation:
+    -
+      entity: cdd89c4d-2504-4590-9faa-c0aac6029c87
+  field_office_hours:
+    -
+      day: 1
+      starthours: 1200
+      endhours: 1900
+      comment: ''
+    -
+      day: 2
+      starthours: 900
+      endhours: 2000
+      comment: ''
+    -
+      day: 3
+      starthours: 900
+      endhours: 2100
+      comment: ''
+    -
+      day: 4
+      starthours: 900
+      endhours: 1900
+      comment: ''
+    -
+      day: 5
+      starthours: 900
+      endhours: 2200
+      comment: ''
+    -
+      day: 6
+      starthours: 900
+      endhours: 1900
+      comment: ''
+  field_slot_duration:
+    -
+      value: 26
+  field_slot_max_cojoined:
+    -
+      value: 1

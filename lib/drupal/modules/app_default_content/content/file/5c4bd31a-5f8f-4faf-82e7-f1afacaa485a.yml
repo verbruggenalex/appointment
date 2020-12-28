@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 5c4bd31a-5f8f-4faf-82e7-f1afacaa485a
+  default_langcode: nl
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: user4.jpg
+  uri:
+    -
+      value: 'public://2020-12/business-images/user4.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 8627
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1609162255
