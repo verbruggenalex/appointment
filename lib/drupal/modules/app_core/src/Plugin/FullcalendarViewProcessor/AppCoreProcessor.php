@@ -60,10 +60,27 @@ class AppCoreProcessor extends FullcalendarViewProcessorBase {
         // Change color for current user events to green.
         $event['title'] = t('We are expecting you!');
         $event['backgroundColor'] = '#C9F7F5';
+        $event['allDay'] = FALSE;
       }
     }
 
     $today = new DrupalDateTime('now');
+
+    $langId = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    if ($langId == 'en') {
+      $calendar_options['eventTimeFormat'] = [
+        'hour' => 'numeric',
+        'minute' => '2-digit',
+        'meridiem' => TRUE,
+      ];
+    }
+    else {
+      $calendar_options['eventTimeFormat'] = [
+        'hour' => '2-digit',
+        'minute' => '2-digit',
+        'hour12' => FALSE,
+      ];
+    }
 
     $calendar_options['defaultDate'] = ($date = \Drupal::request()->query->get('date_select')) ? $date : $today->format('Y-m-d');
     $calendar_options['dblClickToCreate'] = FALSE;
@@ -90,7 +107,6 @@ class AppCoreProcessor extends FullcalendarViewProcessorBase {
       }
     }
     $calendar_options['businessHours'] = array_values($businessHours);
-
     $variables['#attached']['drupalSettings']['fullCalendarView'][$view_index]['calendar_options'] = json_encode($calendar_options);
   }
 
