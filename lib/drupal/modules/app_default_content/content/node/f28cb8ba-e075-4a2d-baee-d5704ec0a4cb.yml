@@ -102,7 +102,7 @@ default:
       comment: ''
   field_slot_duration:
     -
-      value: 26
+      value: 20
   field_slot_max_cojoined:
     -
       value: 1

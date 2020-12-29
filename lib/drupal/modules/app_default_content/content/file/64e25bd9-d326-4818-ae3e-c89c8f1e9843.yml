@@ -12,7 +12,7 @@ default:
       value: user5.jpg
   uri:
     -
-      value: 'public://2020-12/business-images/user5.jpg'
+      value: 'public://2020-12/business-images/user5_1.jpg'
   filemime:
     -
       value: image/jpeg
