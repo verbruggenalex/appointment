@@ -37,15 +37,15 @@ function _app_cron_cleanup_watchdog_cron_cleanup(CronJob $job) {
   $database = \Drupal::database();
 
   // Get the count of messages to delete.
-  $query = $database->select('watchdog', 'w');
-  $query->condition('w.message', 'Cron run completed.');
-  $query->condition('w.timestamp', [$start_time, $request_time], 'BETWEEN');
+  $query = $database->select('watchdog');
+  $query->condition('message', 'Cron run completed.');
+  $query->condition('timestamp', [$start_time, $request_time], 'BETWEEN');
   $count = $query->countQuery()->execute()->fetchField();
 
   // Delete the messages.
-  $query = $database->delete('watchdog', 'w');
-  $query->condition('w.message', 'Cron run completed.');
-  $query->condition('w.timestamp', [$start_time, $request_time], 'BETWEEN');
+  $query = $database->delete('watchdog');
+  $query->condition('message', 'Cron run completed.');
+  $query->condition('timestamp', [$start_time, $request_time], 'BETWEEN');
   $query->execute();
 
   // Insert new message.

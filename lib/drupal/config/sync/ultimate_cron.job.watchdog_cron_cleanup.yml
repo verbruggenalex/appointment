@@ -3,7 +3,7 @@ langcode: nl
 status: true
 dependencies:
   module:
-    - dblog
+    - app_cron_cleanup
 title: 'Clean watchdog cron messages'
 id: watchdog_cron_cleanup
 weight: 0
@@ -13,15 +13,14 @@ scheduler:
   id: simple
   configuration:
     rules:
-      - '*/5+@ * * * *'
+      - '*/15+@ * * * *'
 launcher:
   id: serial
   configuration:
     timeouts:
       lock_timeout: 3600
-      max_execution_time: 3600
     launcher:
-      max_threads: 1
+      thread: 0
 logger:
   id: database
   configuration:
