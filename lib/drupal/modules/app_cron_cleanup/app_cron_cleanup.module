@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\ultimate_cron\Entity\CronJob;
 
 /**
  * Implements hook_help().
@@ -24,25 +25,30 @@ function app_cron_cleanup_help($route_name, RouteMatchInterface $route_match) {
 }
 
 /**
- * Implements hook_cron().
+ * Function callback to clean up watchdog of cron messages.
  */
-function app_cron_cleanup_cron() {
-  $interval = 60 * 5;
+function _app_cron_cleanup_watchdog_cron_cleanup(CronJob $job) {
   $request_time = REQUEST_TIME;
-  $next_execution = \Drupal::state()->get('app_cron_cleanup.next_execution');
-  $next_execution = !empty($next_execution) ? $next_execution : 0;
-  if ($request_time >= $next_execution) {
-    $previous_execution = $request_time - $interval;
-    \Drupal::logger('app_cron_cleanup')->notice('app_cron_cleanup ran');
+  \Drupal::logger('app_cron_cleanup')->notice('app_cron_cleanup ran');
 
-    $database = \Drupal::database();
-    $query = $database->select('watchdog', 'w');
-    $query->condition('w.message', 'Cron run completed.');
-    $query->condition('w.timestamp', [$request_time, $previous_execution], 'BETWEEN');
-    $count = $query->count()->execute();
+  $log_entry = isset($job->log_entry) ? $job->log_entry : $job->loadLatestLogEntry();
+  $start_time = $log_entry->start_time;
 
-    \Drupal::logger('app_cron_cleanup')->notice('Counted ' . $count . 'cron runs.');
+  $database = \Drupal::database();
 
-    \Drupal::state()->set('app_cron_cleanup.next_execution', REQUEST_TIME + $interval);
-  }
+  // Get the count of messages to delete.
+  $query = $database->select('watchdog', 'w');
+  $query->condition('w.message', 'Cron run completed.');
+  $query->condition('w.timestamp', [$start_time, $request_time], 'BETWEEN');
+  $count = $query->countQuery()->execute()->fetchField();
+
+  // Delete the messages.
+  $query = $database->delete('watchdog', 'w');
+  $query->condition('w.message', 'Cron run completed.');
+  $query->condition('w.timestamp', [$start_time, $request_time], 'BETWEEN');
+  $query->execute();
+
+  // Insert new message.
+  \Drupal::logger('app_cron_cleanup')->notice('Compiled: ' . $count . ' cron runs completed.');
+
 }
