@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8a66d5c670ce97229ea8129fa2c0a9e5",
+    "content-hash": "47e911336448c213ed0b77122aef8a5f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1354,6 +1354,29 @@
                 }
             ],
             "description": "App core",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "custom/app_cron_cleanup",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "lib/drupal/modules/app_cron_cleanup",
+                "reference": "6a7687736f0944ba0039dd5e7f084a612b03fb30"
+            },
+            "type": "drupal-custom-module",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Verbruggen",
+                    "email": "verbruggenalex@gmail.com"
+                }
+            ],
+            "description": "App cron cleanup",
             "transport-options": {
                 "relative": true
             }
@@ -12785,7 +12808,7 @@
             "extra": {
                 "drupal": {
                     "version": "4.0.1",
-                    "datestamp": "1600300079",
+                    "datestamp": "1609250413",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -14874,6 +14897,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "custom/app_core": 20,
+        "custom/app_cron_cleanup": 20,
         "custom/app_default_content": 20,
         "custom/bbc": 20,
         "custom/empty": 20,

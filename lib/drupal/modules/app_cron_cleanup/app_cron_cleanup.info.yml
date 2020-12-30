@@ -1,0 +1,5 @@
+name: 'App Cron Cleanup'
+type: module
+description: 'Cleans up cron messages.'
+core_version_requirement: ^8.8 || ^9
+package: 'Custom'

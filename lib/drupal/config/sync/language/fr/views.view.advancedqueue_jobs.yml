@@ -7,13 +7,9 @@ display:
           submit_button: Appliquer
           reset_button_label: Réinitialiser
           exposed_sorts_label: 'Trier par'
-          sort_asc_label: Asc
-          sort_desc_label: Desc
       pager:
         options:
           tags:
-            previous: ‹‹
-            next: ››
             first: '« Premier'
             last: 'Dernier »'
           expose:
@@ -21,16 +17,10 @@ display:
             items_per_page_options_all_label: '- Tout -'
             offset_label: Décalage
       fields:
-        job_id:
-          label: 'Identifiant (ID) de Travail'
         state:
           label: État
         type:
           label: 'Catégorie de travail'
-        payload:
-          label: Charges
-        message:
-          label: Message
         operations:
           label: Actions
       filters:
@@ -40,13 +30,8 @@ display:
         state:
           expose:
             label: État
-        available:
-          expose:
-            placeholder: AAAA-MM-JJ
       title: Travaux
       arguments:
         queue_id:
           exception:
             title: Tout
-  page_1:
-    display_title: Page

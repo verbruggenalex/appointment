@@ -14,6 +14,7 @@
     "require": {
         "composer/installers": "^1.9",
         "custom/app_core": "@dev",
+        "custom/app_cron_cleanup": "dev-master",
         "custom/app_default_content": "dev-master",
         "custom/bbc": "dev-master",
         "custom/empty": "dev-master",
@@ -82,20 +83,32 @@
             "allowed-packages": [
                 "drupal/core"
             ],
+            "file-mapping": {
+                "[web-root]/manifest.json": "lib/offline/manifest.json",
+                "[web-root]/offline.html": "lib/offline/offline.html",
+                "[web-root]/service-worker.js": "lib/offline/service-worker.js",
+                "[web-root]/sites/default/settings.php": "lib/drupal/sites/default/settings.php",
+                "[web-root]/sites/development.services.yml": "lib/drupal/sites/development.services.yml"
+            },
             "locations": {
                 "web-root": "./web"
             },
-            "file-mapping": {
-                "[web-root]/sites/default/settings.php": "lib/drupal/sites/default/settings.php",
-                "[web-root]/sites/development.services.yml": "lib/drupal/sites/development.services.yml",
-                "[web-root]/manifest.json": "lib/offline/manifest.json",
-                "[web-root]/offline.html": "lib/offline/offline.html",
-                "[web-root]/service-worker.js": "lib/offline/service-worker.js"
-            },
-            "symlink": true,
-            "overwrite": true
+            "overwrite": true,
+            "symlink": true
         },
         "installer-paths": {
+            "config/{$name}/sync": [
+                "type:drupal-config"
+            ],
+            "drush/Commands/contrib/{$name}": [
+                "type:drupal-drush"
+            ],
+            "vendor/drupal/console/language/{$name}": [
+                "type:drupal-console-language"
+            ],
+            "vendor/drupal/console/{$name}": [
+                "type:drupal-console"
+            ],
             "web/core": [
                 "type:drupal-core"
             ],
@@ -105,20 +118,11 @@
             "web/modules/contrib/{$name}": [
                 "type:drupal-module"
             ],
-            "web/profiles/contrib/{$name}": [
-                "type:drupal-profile"
-            ],
-            "web/themes/contrib/{$name}": [
-                "type:drupal-theme"
-            ],
-            "drush/Commands/contrib/{$name}": [
-                "type:drupal-drush"
-            ],
             "web/modules/custom/{$name}": [
                 "type:drupal-custom-module"
             ],
-            "web/themes/custom/{$name}": [
-                "type:drupal-custom-theme"
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
             ],
             "web/profiles/custom/{$name}": [
                 "type:drupal-custom-profile"
@@ -126,17 +130,15 @@
             "web/sites/{$name}": [
                 "type:drupal-drupal-multisite"
             ],
-            "vendor/drupal/console/{$name}": [
-                "type:drupal-console"
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
             ],
-            "vendor/drupal/console/language/{$name}": [
-                "type:drupal-console-language"
-            ],
-            "config/{$name}/sync": [
-                "type:drupal-config"
+            "web/themes/custom/{$name}": [
+                "type:drupal-custom-theme"
             ]
         },
         "metasyntactical/composer-plugin-license-check": {
+            "blacklist": [],
             "whitelist": [
                 "Artistic-1.0",
                 "GPL-2.0",
@@ -149,22 +151,21 @@
                 "GPL-2.0+",
                 "LGPL-2.1-only",
                 "none"
-            ],
-            "blacklist": []
+            ]
         },
         "patchLevel": {
             "drupal/core": "-p2"
         },
         "patches": {
-            "drupal/core": [
-                "https://www.drupal.org/files/issues/2020-05-04/1650930-default-mysql-transactions-84-D9.patch",
-                "https://www.drupal.org/files/issues/2020-05-04/2924549-38.patch",
-                "https://www.drupal.org/files/issues/2019-12-09/drupal-language-prefix-neutral-content-2883450-31.patch"
-            ],
             "drupal/commerce_license": [
                 "https://www.drupal.org/files/issues/2020-01-14/3100029-5-license-overview-broken.patch",
                 "https://www.drupal.org/files/issues/2020-06-05/commerce_license.2.x-dev.rector.patch",
                 "lib/drupal/patches/commerce_license-drupal_9_compatibility.patch"
+            ],
+            "drupal/core": [
+                "https://www.drupal.org/files/issues/2020-05-04/1650930-default-mysql-transactions-84-D9.patch",
+                "https://www.drupal.org/files/issues/2020-05-04/2924549-38.patch",
+                "https://www.drupal.org/files/issues/2019-12-09/drupal-language-prefix-neutral-content-2883450-31.patch"
             ],
             "drupal/realname": [
                 "https://www.drupal.org/files/issues/2020-06-30/3101961-9.patch"

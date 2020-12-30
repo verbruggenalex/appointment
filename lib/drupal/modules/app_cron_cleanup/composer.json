@@ -1,0 +1,12 @@
+{
+    "name": "custom/app_cron_cleanup",
+    "description": "App cron cleanup",
+    "type": "drupal-custom-module",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alex Verbruggen",
+            "email": "verbruggenalex@gmail.com"
+        }
+    ]
+}
