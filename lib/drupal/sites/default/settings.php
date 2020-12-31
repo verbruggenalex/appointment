@@ -25,9 +25,10 @@ $settings['trusted_host_patterns'][] = ($domain = getenv('TRAEFIK_DOMAIN')) ? '.
 $config['locale.settings']['translation']['use_source'] = 'local';
 $config['locale.settings']['translation']['path'] = '../lib/drupal/translations';
 
-// Disable the smtp (only enabled for dev and ci usage). Not in configuration
-// split because of complications.
-$config['smtp.settings']['smtp_on'] = FALSE;
+// We disable the smtp only on a production environment. This way we keep it on
+// for just development, ci, pre-prod and post-prod environments.
+$config['smtp.settings']['smtp_on'] = strpos($_SERVER['DOCUMENT_ROOT'], '/production/') === FALSE;
+$config['smtp.settings']['smtp_host'] = 'smtp';
 
 $isDevelopmentEnvironment = getenv('ENVIRONMENT') === 'dev';
 $hasDevelommentModule = file_exists(DRUPAL_ROOT . '/modules/contrib/devel/devel.info.yml');
@@ -46,10 +47,6 @@ if ($config['config_split.config_split.config_dev']['status']) {
   $settings['cache']['bins']['render'] = 'cache.backend.null';
   $settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
   $settings['cache']['bins']['page'] = 'cache.backend.null';
-
-  // Local SMTP settings.
-  $config['smtp.settings']['smtp_on'] = TRUE;
-  $config['smtp.settings']['smtp_host'] = 'smtp';
 
   // Translations local and remote.
   $config['locale.settings']['translation']['use_source'] = 'remote_and_local';
