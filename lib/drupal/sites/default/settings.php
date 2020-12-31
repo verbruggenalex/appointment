@@ -27,8 +27,9 @@ $config['locale.settings']['translation']['path'] = '../lib/drupal/translations'
 
 // We disable the smtp only on a production environment. This way we keep it on
 // for just development, ci, pre-prod and post-prod environments.
-$config['smtp.settings']['smtp_on'] = strpos($_SERVER['DOCUMENT_ROOT'], '/production/') === FALSE;
-$config['smtp.settings']['smtp_host'] = 'smtp';
+$notAbsoluteProduction = strpos($_SERVER['DOCUMENT_ROOT'], '/production/') === FALSE;
+$config['system.mail']['default'] = $notAbsoluteProduction ? 'SMTPMailSystem' : 'php_mail';
+$config['smtp.settings']['smtp_on'] = $notAbsoluteProduction;
 
 $isDevelopmentEnvironment = getenv('ENVIRONMENT') === 'dev';
 $hasDevelommentModule = file_exists(DRUPAL_ROOT . '/modules/contrib/devel/devel.info.yml');
