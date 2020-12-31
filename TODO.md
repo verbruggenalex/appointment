@@ -2,13 +2,7 @@
 
 ## Development
 
-* Add pre-commit hook to check phpcs.
 * Try updating to Drupal 9.1 normally out next Wednesday. Need composer 2.x as well for this.
-* Create cleanup module to remove "Cron run completed." messages from the dblog:
- * A module with it's own cronjob that every so often through ultimate_cron will
-   fetch all these messages, delete them and place a counter message in the
-   watchdog table. This way we can see the cron runs every minute but doesn't
-   create pages and pages of messages.
 * Fix bug where appointment is one hour off on calendar (only on local?).
 * Provide the first real behat tests.
 * Fix profile picture!!!!!!
