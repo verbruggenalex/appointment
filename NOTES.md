@@ -1,5 +1,51 @@
 # Notes
 
+## Deployment
+
+These notes are to keep track of the sequence we use to deploy new releases of
+our project.
+
+<details>
+ <summary>Deployment sequence</summary>
+
+```bash
+# All commands below are executed within the environment
+docker-compose exec prod bash
+
+# Create release folder
+mkdir -p build/dist/1.0.x
+# @TODO: Download pre-production codebase
+wget https://github.com/verbruggenalex/appointment/releases/download/1.0.x/dist.tar.gz
+# Extract pre-production codebase
+tar -zxf dist.tar.gz build/dist/1.0.x
+# Symlink pre-production codebase
+ln -sfn dist/1.0.x/ build/pre-production
+
+# @TODO: Make website readonly?
+drush @prod something
+# Dump production database (caches might not be needed?)
+drush @prod sql-dump --result-file=../../../pre-production/dump.sql
+# Import the production database into pre-production.
+drush @pre-prod sqlc < build/pre-production/dump.sql
+
+# Deployment sequence
+drush @pre-prod cache:rebuild
+drush @pre-prod updatedb -y --no-post-updates
+drush @pre-prod config:import -y
+drush @pre-prod updatedb -y --post-updates
+drush @pre-prod cache:rebuild
+drush @pre-prod status
+
+# Change symlinks of environments (if pre-production got accepted)
+ln -sfn dist/1.0.x/ build/production
+ln -sfn dist/1.0.(x-1)/ build/post-production
+# Remove symlink to older environment
+rm build/pre-production
+# @TODO: Maybe perform some cleanup actions so we dont get clutter on the
+# environments.
+```
+</details>
+
 ## Drupal core
 
 ### Stop requiring drupal/core!
@@ -50,10 +96,10 @@ wget https://raw.githubusercontent.com/GoogleChrome/samples/gh-pages/service-wor
 ```json
     "extra": {
         "drupal-scaffold": {
-            "file-mapping": {
-                "[web-root]/manifest.json": "lib/offline/manifest.json",
-                "[web-root]/offline.html": "lib/offline/offline.html",
-                "[web-root]/service-worker.js": "lib/offline/service-worker.js"
+file-mapping": {
+    [web-root]/manifest.json": "lib/offline/manifest.json",
+    [web-root]/offline.html": "lib/offline/offline.html",
+    [web-root]/service-worker.js": "lib/offline/service-worker.js"
             }
         }
     }

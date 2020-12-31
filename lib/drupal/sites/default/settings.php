@@ -25,6 +25,10 @@ $settings['trusted_host_patterns'][] = ($domain = getenv('TRAEFIK_DOMAIN')) ? '.
 $config['locale.settings']['translation']['use_source'] = 'local';
 $config['locale.settings']['translation']['path'] = '../lib/drupal/translations';
 
+// Disable the smtp (only enabled for dev and ci usage). Not in configuration
+// split because of complications.
+$config['smtp.settings']['smtp_on'] = FALSE;
+
 $isDevelopmentEnvironment = getenv('ENVIRONMENT') === 'dev';
 $hasDevelommentModule = file_exists(DRUPAL_ROOT . '/modules/contrib/devel/devel.info.yml');
 $config['config_split.config_split.config_dev']['status'] = ($isDevelopmentEnvironment && $hasDevelommentModule) ? TRUE : FALSE;
@@ -46,8 +50,6 @@ if ($config['config_split.config_split.config_dev']['status']) {
   // Local SMTP settings.
   $config['smtp.settings']['smtp_on'] = TRUE;
   $config['smtp.settings']['smtp_host'] = 'smtp';
-  $config['smtp.settings']['smtp_username'] = '';
-  $config['smtp.settings']['smtp_password'] = '';
 
   // Translations local and remote.
   $config['locale.settings']['translation']['use_source'] = 'remote_and_local';
