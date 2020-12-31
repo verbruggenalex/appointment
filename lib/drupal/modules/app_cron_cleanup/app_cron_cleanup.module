@@ -28,13 +28,12 @@ function app_cron_cleanup_help($route_name, RouteMatchInterface $route_match) {
  * Function callback to clean up watchdog of cron messages.
  */
 function _app_cron_cleanup_watchdog_cron_cleanup(CronJob $job) {
-  $request_time = REQUEST_TIME;
-  \Drupal::logger('app_cron_cleanup')->notice('app_cron_cleanup ran');
 
-  $log_entry = isset($job->log_entry) ? $job->log_entry : $job->loadLatestLogEntry();
-  $start_time = $log_entry->start_time;
-
+  // Setting some variables.
   $database = \Drupal::database();
+  $request_time = REQUEST_TIME + 5;
+  $start_time = $log_entry->start_time - 5;
+  $log_entry = isset($job->log_entry) ? $job->log_entry : $job->loadLatestLogEntry();
 
   // Get the count of messages to delete.
   $query = $database->select('watchdog');

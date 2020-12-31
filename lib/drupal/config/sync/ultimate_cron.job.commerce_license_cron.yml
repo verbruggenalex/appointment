@@ -6,7 +6,7 @@ dependencies:
     - commerce_license
 title: 'Default cron handler'
 id: commerce_license_cron
-weight: 0
+weight: -7
 module: commerce_license
 callback: commerce_license_cron
 scheduler:
