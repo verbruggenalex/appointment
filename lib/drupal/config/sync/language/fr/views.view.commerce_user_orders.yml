@@ -19,6 +19,8 @@ display:
       fields:
         order_id:
           label: 'Identifiant (ID)'
+        placed:
+          label: Date
         state:
           label: État
       arguments:

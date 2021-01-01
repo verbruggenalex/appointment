@@ -5,7 +5,7 @@ dependencies: {  }
 _core:
   default_config_hash: W37E6amSN5ZwF0sP-cmLtXFkJXrwBk0M7fiqWgXXclI
 id: default
-label: Default
+label: Standaard
 plugin: multistep_default
 configuration:
   display_checkout_progress: true

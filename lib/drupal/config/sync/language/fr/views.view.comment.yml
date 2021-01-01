@@ -14,13 +14,25 @@ display:
             items_per_page_options_all_label: '- Tout -'
             offset_label: Décalage
       fields:
+        subject:
+          label: Objet
         changed:
           label: 'Mis à jour'
         operations:
           label: Actions
+      filters:
+        subject:
+          expose:
+            label: Objet
   page_unapproved:
     display_options:
+      filters:
+        subject:
+          expose:
+            label: Objet
       fields:
+        subject:
+          label: Objet
         changed:
           label: 'Mis à jour'
         operations:

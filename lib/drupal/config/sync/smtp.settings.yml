@@ -14,3 +14,4 @@ smtp_client_helo: ''
 smtp_allowhtml: '0'
 smtp_debugging: false
 smtp_keepalive: false
+langcode: nl

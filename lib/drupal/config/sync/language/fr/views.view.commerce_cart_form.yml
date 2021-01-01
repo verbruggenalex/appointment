@@ -7,6 +7,9 @@ display:
           submit_button: Appliquer
           reset_button_label: Réinitialiser
           exposed_sorts_label: 'Trier par'
+      fields:
+        remove_button:
+          label: Retirer
       arguments:
         order_id:
           exception:
