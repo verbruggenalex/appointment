@@ -6,8 +6,8 @@ test_defaults:
     value: 'Test Message for SendGrid.'
     format: plain_text
   from_name: Pactora
-  to_name: ''
-  reply_to: verbruggenalex@gmail.com
+  to_name: 'Alex Verbruggen'
+  reply_to: noreply@pactora.be
 _core:
   default_config_hash: g4qz7cPnloXFwtnLYfIKI2VS0gf_UFOz_I2uQiiulC8
 langcode: nl
