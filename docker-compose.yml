@@ -129,18 +129,6 @@ services:
     networks:
       - proxy
 
-  # Planning to use this on dev (dev purposes) and ci (testing purposes).
-  smtp:
-    image: tophfr/mailcatcher
-    labels:
-      traefik.enable: true
-      traefik.http.routers.smtp.tls: true
-      traefik.http.routers.smtp.rule: Host(`smtp.${TRAEFIK_DOMAIN}`)
-      traefik.http.routers.smtp.service: smtp
-      traefik.http.services.smtp.loadbalancer.server.port: 80
-    networks:
-      - proxy
-
   backstop:
     image: backstopjs/backstopjs
     # These hosts point back outside of traefik to let traefik direct it to

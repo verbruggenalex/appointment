@@ -16,15 +16,21 @@ mkcert_install:
 docker_network_create:
 	docker network create ${TRAEFIK_NETWORK}
 setup_hosts:
-	echo "127.0.0.1	${TRAEFIK_DOMAIN} traefik.${TRAEFIK_DOMAIN} portainer.${TRAEFIK_DOMAIN} smtp.${TRAEFIK_DOMAIN} dev.${TRAEFIK_DOMAIN} ide.${TRAEFIK_DOMAIN} web.${TRAEFIK_DOMAIN} production.${TRAEFIK_DOMAIN} pre-production.${TRAEFIK_DOMAIN} post-production.${TRAEFIK_DOMAIN}" | sudo tee -a /etc/hosts
+	echo "127.0.0.1	${TRAEFIK_DOMAIN} traefik.${TRAEFIK_DOMAIN} portainer.${TRAEFIK_DOMAIN} dev.${TRAEFIK_DOMAIN} ide.${TRAEFIK_DOMAIN} web.${TRAEFIK_DOMAIN} production.${TRAEFIK_DOMAIN} pre-production.${TRAEFIK_DOMAIN} post-production.${TRAEFIK_DOMAIN}" | sudo tee -a /etc/hosts
 
 
-dev:
-	docker-compose up -d traefik portainer dev mysql selenium smtp backstop
-ci:
-	docker-compose up -d traefik ci mysql selenium smtp
-prod:
-	docker-compose up -d traefik prod mysql smtp
+up-dev:
+	docker-compose up -d traefik portainer dev mysql selenium backstop
+down-dev:
+	docker-compose rm -s -f traefik portainer dev mysql selenium backstop
+up-ci:
+	docker-compose up -d traefik ci mysql selenium
+down-ci:
+	docker-compose rm -s -f traefik ci mysql selenium
+up-prod:
+	docker-compose up -d traefik prod mysql
+down-prod:
+	docker-compose rm -s -f traefik prod mysql
 
 unpack:
 	wget https://github.com/verbruggenalex/appointment/releases/download/$(tag)/dist.tar.gz \
