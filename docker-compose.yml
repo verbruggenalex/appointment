@@ -166,6 +166,7 @@ services:
       SOCIAL_AUTH_GOOGLE_CLIENT_ID:
       SOCIAL_AUTH_GOOGLE_CLIENT_SECRET:
       GOOGLE_MAPS_API_KEY:
+      SENDGRID_API_KEY:
       CRON_USER_1: root
       CRON_SCHEDULE_1: '* * * * *'
       CRON_COMMAND_1: if [ "${CRON_DISABLED_PROD:-0}" != 1 ] ; then drush -q @prod core:cron ; fi
@@ -210,6 +211,7 @@ services:
       SOCIAL_AUTH_GOOGLE_CLIENT_ID:
       SOCIAL_AUTH_GOOGLE_CLIENT_SECRET:
       GOOGLE_MAPS_API_KEY:
+      SENDGRID_API_KEY:
       CRON_USER_1: root
       CRON_SCHEDULE_1: '* * * * *'
       CRON_COMMAND_1: if [ "${CRON_DISABLED_PROD:-1}" != 1 ] ; then drush -q @prod core:cron ; fi

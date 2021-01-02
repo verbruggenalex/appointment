@@ -2,8 +2,6 @@
 
 ## Development
 
-* Remove maillog from docker-compose and make.
-* Create a page for 0.0.1 where we are notified that no codebase has been set for this environment.
 * Try updating to Drupal 9.1 normally out next Wednesday. Need composer 2.x as well for this.
 * Fix bug where appointment is one hour off on calendar (only on local?).
 * Provide the first real behat tests.
@@ -25,7 +23,6 @@ https://www.drupal.org/project/views_ical
 * Mount acme.json to avoid down-up certificate generation on prod server.
 * Move deploy command from make into bash script in lib/scripts?
 * Make sure the deployed files have the correct permissions (files folder)
-* Move files into a shared location for prod, pre-prod and post prod?
 * Initial setup seems to require to not have htaccess pass before lets-encrypt
   can request it's certificates.
 
