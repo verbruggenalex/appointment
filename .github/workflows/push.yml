@@ -40,7 +40,7 @@ jobs:
           cp .env.dist .env
           make mkcert_setup mkcert_install docker_network_create setup_hosts
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u verbruggenalex --password-stdin
-          make ci
+          make up-ci
           sleep 5
           git fetch --tags
 
