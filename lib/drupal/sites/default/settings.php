@@ -6,6 +6,13 @@
  */
 
 $dbName = preg_match('/\/build\/(dist|dev)\/((?:[0-9]+\.?)+)\//i', __DIR__, $matches) ? $matches[1] . '_' . str_replace('.', '_', $matches[2]) : 'appointment';
+$domain = getenv('TRAEFIK_DOMAIN');
+$environment = getenv('ENVIRONMENT');
+$isProductionEnvironment = $environment === 'prod';
+$isDevelopmentEnvironment = $environment === 'dev';
+$hasDevelommentModule = file_exists(DRUPAL_ROOT . '/modules/contrib/devel/devel.info.yml');
+$notAbsoluteProduction = strpos($_SERVER['DOCUMENT_ROOT'], '/production/') === FALSE && !$isProductionEnvironment;
+$isAbsoluteDevelopment = ($isDevelopmentEnvironment && $hasDevelommentModule) ? TRUE : FALSE;
 
 $databases['default']['default'] = [
   'database' => $dbName,
@@ -19,27 +26,19 @@ $databases['default']['default'] = [
 ];
 
 // With Traefik setup we always limit to the exact root domain.
-$settings['trusted_host_patterns'] = ['dev', 'ci', 'prod'];
-$settings['trusted_host_patterns'][] = ($domain = getenv('TRAEFIK_DOMAIN')) ? '.*' . str_replace('.', '\.', $domain) . '$' : '.*';
+$settings['trusted_host_patterns'] = [$domain ? '.*' . str_replace('.', '\.', $domain) . '$' : '.*'];
 
+// Use the local translations for anything other than absolute development.
 $config['locale.settings']['translation']['use_source'] = 'local';
 $config['locale.settings']['translation']['path'] = '../lib/drupal/translations';
 
-// We disable the smtp only on a production environment. This way we keep it on
-// for just development, ci, pre-prod and post-prod environments.
-$notAbsoluteProduction = strpos($_SERVER['DOCUMENT_ROOT'], '/production/') === FALSE;
-if ($notAbsoluteProduction) {
-  $config['mail_safety.settings']['enabled'] = TRUE;
-  $config['mail_safety.settings']['send_mail_to_dashboard'] = TRUE;
-}
-else {
-  $config['mail_safety.settings']['enabled'] = FALSE;
-  $config['mail_safety.settings']['send_mail_to_dashboard'] = FALSE;
-}
+// Never send out emails directly from any environment other than an absolute
+// production environment.
+$config['mail_safety.settings']['enabled'] = $notAbsoluteProduction;
+$config['mail_safety.settings']['send_mail_to_dashboard'] = $notAbsoluteProduction;
 
-$isDevelopmentEnvironment = getenv('ENVIRONMENT') === 'dev';
-$hasDevelommentModule = file_exists(DRUPAL_ROOT . '/modules/contrib/devel/devel.info.yml');
-$config['config_split.config_split.config_dev']['status'] = ($isDevelopmentEnvironment && $hasDevelommentModule) ? TRUE : FALSE;
+// Disable caching only for an absolute development environment.
+$config['config_split.config_split.config_dev']['status'] = $isAbsoluteDevelopment;
 if ($config['config_split.config_split.config_dev']['status']) {
 
   // Use development services.
@@ -58,7 +57,6 @@ if ($config['config_split.config_split.config_dev']['status']) {
   // Translations local and remote.
   $config['locale.settings']['translation']['use_source'] = 'remote_and_local';
 }
-
 
 $settings['hash_salt'] = 'rFikc364CPkTMP22vy_PhbXU0HTq0U-jSmg5v22qpiKNNPnO3-6LQq4FG43GVFs4-L1vc1X1CA';
 
