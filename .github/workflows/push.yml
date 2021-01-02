@@ -86,11 +86,19 @@ jobs:
           docker-compose run --rm backstop reference
           docker-compose run --rm backstop test
 
-      - name: Check watchdog
+      - name: Report web
         if: always()
         run: |
-          docker-compose exec -T ci drush @web ws --count=50
-          docker-compose exec -T ci drush @prod ws --count=50
+          docker-compose exec -T ci drush @web st
+          docker-compose exec -T ci drush @web rq
+          docker-compose exec -T ci drush @web ws --count=25
+
+      - name: Report prod
+        if: always()
+        run: |
+          docker-compose exec -T ci drush @prod st
+          docker-compose exec -T ci drush @prod rq
+          docker-compose exec -T ci drush @prod ws --count=25
 
       - name: Upload backstop
         uses: actions/upload-artifact@v2
