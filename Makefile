@@ -16,7 +16,7 @@ mkcert_install:
 docker_network_create:
 	docker network create ${TRAEFIK_NETWORK}
 setup_hosts:
-	echo "127.0.0.1  ${TRAEFIK_DOMAIN} traefik.${TRAEFIK_DOMAIN} portainer.${TRAEFIK_DOMAIN} smtp.${TRAEFIK_DOMAIN} dev.${TRAEFIK_DOMAIN} ide.${TRAEFIK_DOMAIN} web.${TRAEFIK_DOMAIN} production.${TRAEFIK_DOMAIN} pre-production.${TRAEFIK_DOMAIN} post-production.${TRAEFIK_DOMAIN}" | sudo tee -a /etc/hosts
+	echo "127.0.0.1	${TRAEFIK_DOMAIN} traefik.${TRAEFIK_DOMAIN} portainer.${TRAEFIK_DOMAIN} smtp.${TRAEFIK_DOMAIN} dev.${TRAEFIK_DOMAIN} ide.${TRAEFIK_DOMAIN} web.${TRAEFIK_DOMAIN} production.${TRAEFIK_DOMAIN} pre-production.${TRAEFIK_DOMAIN} post-production.${TRAEFIK_DOMAIN}" | sudo tee -a /etc/hosts
 
 
 dev:
@@ -25,3 +25,22 @@ ci:
 	docker-compose up -d traefik ci mysql selenium smtp
 prod:
 	docker-compose up -d traefik prod mysql smtp
+
+unpack:
+	wget https://github.com/verbruggenalex/appointment/releases/download/$(tag)/dist.tar.gz \
+	&& rm -rf build/dist/$(tag) && mkdir -p build/dist/$(tag) \
+	&& tar -zxf dist.tar.gz --directory=build/dist/$(tag) \
+	&& ln -sfn dist/$(tag)/ build/pre-production
+
+deploy:
+	docker-compose exec prod drush @pre-prod cache:rebuild && \
+	docker-compose exec prod drush @pre-prod updatedb -y --no-post-updates && \
+	docker-compose exec prod drush @pre-prod config:import -y && \
+	docker-compose exec prod drush @pre-prod updatedb -y --post-updates && \
+	docker-compose exec prod drush @pre-prod cache:rebuild && \
+	docker-compose exec prod drush @pre-prod status
+
+accept:
+	ln -sfn dist/$$(basename $$(readlink -f build/production)) build/post-production && \
+	ln -sfn dist/$$(basename $$(readlink -f build/pre-production)) build/production
+	ln -sfn dist/0.0.1 build/pre-production

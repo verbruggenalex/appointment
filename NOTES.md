@@ -25,6 +25,8 @@ ln -sfn dist/1.0.x/ build/pre-production
 drush @prod something
 # Dump production database (caches might not be needed?)
 drush @prod sql-dump --result-file=../../../pre-production/dump.sql
+# Make sure we have a new database ready.
+drush @pre-prod sql-create -y
 # Import the production database into pre-production.
 drush @pre-prod sqlc < build/pre-production/dump.sql
 
