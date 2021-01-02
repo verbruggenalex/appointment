@@ -109,13 +109,10 @@ jobs:
           if-no-files-found: ignore
           retention-days: 1
 
-      # - name: Test lighthouse
-      #   if: startsWith(github.ref, 'refs/tags/') != true
-      #   uses: treosh/lighthouse-ci-action@v3
-      #   with:
-      #     urls: |
-      #       https://web.localhost.com/en
-      #       https://web.localhost.com/fr
-      #       https://web.localhost.com/nl
-      #     configPath: ./lighthouserc.json
-      #     temporaryPublicStorage: true
+      - name: Test lighthouse
+        uses: treosh/lighthouse-ci-action@v3
+        with:
+          urls: |
+            https://web.localhost.com/en
+          configPath: ./lighthouserc.json
+          temporaryPublicStorage: true
