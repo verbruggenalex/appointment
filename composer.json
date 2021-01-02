@@ -170,6 +170,9 @@
                 "https://www.drupal.org/files/issues/2020-05-04/2924549-38.patch",
                 "https://www.drupal.org/files/issues/2019-12-09/drupal-language-prefix-neutral-content-2883450-31.patch"
             ],
+            "drupal/metatag": [
+                "https://www.drupal.org/files/issues/2020-12-25/metatag-fix-status-report.patch"
+            ],
             "drupal/realname": [
                 "https://www.drupal.org/files/issues/2020-06-30/3101961-9.patch"
             ],
