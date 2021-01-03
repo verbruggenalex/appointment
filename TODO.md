@@ -19,6 +19,7 @@ https://www.drupal.org/project/views_ical
 
 # Deployment
 
+* Start working with pull requests.
 * Think about the deployment if we really want to use the Makefile?
 * Mount acme.json to avoid down-up certificate generation on prod server.
 * Move deploy command from make into bash script in lib/scripts?
