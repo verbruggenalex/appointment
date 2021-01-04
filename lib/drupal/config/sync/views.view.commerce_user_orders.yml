@@ -11,9 +11,9 @@ dependencies:
 _core:
   default_config_hash: ixfojlMdSpKQCFLyPcNv8yfWcracf58Oxi0O5Kzu_EE
 id: commerce_user_orders
-label: 'User orders'
+label: 'Bestellingen van gebruiker'
 module: views
-description: 'Display a list of placed orders for a user.'
+description: 'Geef een lijst van bestellingen van een gebruiker weer.'
 tag: Commerce
 base_table: commerce_order
 base_field: order_id
@@ -21,7 +21,7 @@ display:
   default:
     display_plugin: default
     id: default
-    display_title: Master
+    display_title: Hoofd
     position: 0
     display_options:
       access:
@@ -42,13 +42,13 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Toepassen
           reset_button: false
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Sorteren op'
           expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Oplopend
+          sort_desc_label: Aflopend
       pager:
         type: full
         options:
@@ -57,18 +57,18 @@ display:
           id: 0
           total_pages: null
           tags:
-            previous: '‹ Previous'
-            next: 'Next ›'
-            first: '« First'
-            last: 'Last »'
+            previous: '‹ Vorige'
+            next: 'Volgende ›'
+            first: '« Eerste'
+            last: 'Laatste »'
           expose:
             items_per_page: false
-            items_per_page_label: 'Items per page'
+            items_per_page_label: 'Items per pagina'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- Alle -'
             offset: false
-            offset_label: Offset
+            offset_label: Startpunt
           quantity: 9
       style:
         type: table
@@ -200,7 +200,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Order number'
+          label: Bestelnummer
           exclude: false
           alter:
             alter_text: false
@@ -332,7 +332,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Total
+          label: Totaal
           exclude: false
           alter:
             alter_text: false
@@ -398,7 +398,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: State
+          label: Status
           exclude: false
           alter:
             alter_text: false
@@ -499,7 +499,7 @@ display:
           entity_field: state
           plugin_id: state_machine_state
       sorts: {  }
-      title: Orders
+      title: Bestellingen
       header: {  }
       footer: {  }
       empty:
@@ -513,7 +513,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: 'You have not placed any orders with us yet.'
+            value: 'U heeft nog geen bestellingen bij ons gedaan.'
             format: basic_html
           plugin_id: text
       relationships: {  }
@@ -570,14 +570,14 @@ display:
   order_page:
     display_plugin: page
     id: order_page
-    display_title: 'User orders'
+    display_title: 'Bestellingen van gebruiker'
     position: 1
     display_options:
       display_extenders: {  }
       path: user/%user/orders
       menu:
         type: tab
-        title: Orders
+        title: Bestellingen
         description: ''
         expanded: false
         parent: ''

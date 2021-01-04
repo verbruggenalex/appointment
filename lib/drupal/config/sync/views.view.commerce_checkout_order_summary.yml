@@ -12,7 +12,7 @@ dependencies:
 _core:
   default_config_hash: IO68Tn5kmZ9jXgm6I21JFTU4ppw63HJIndPEOtg-9rw
 id: commerce_checkout_order_summary
-label: 'Checkout Order Summary'
+label: 'Bestellingsoverzicht bij afrekenen'
 module: views
 description: ''
 tag: commerce_order_summary
@@ -22,7 +22,7 @@ display:
   default:
     display_plugin: default
     id: default
-    display_title: Master
+    display_title: Hoofd
     position: 0
     display_options:
       access:
@@ -42,13 +42,13 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Toepassen
           reset_button: false
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Sorteren op'
           expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Oplopend
+          sort_desc_label: Aflopend
       pager:
         type: none
         options:

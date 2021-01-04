@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: K4BKKNQKVK_M6umjUM7jVfktdoHhPSijaXg8KBGlGpw
 id: profiles
-label: Profiles
+label: Profielen
 module: views
 description: ''
 tag: ''
@@ -17,7 +17,7 @@ display:
   default:
     display_plugin: default
     id: default
-    display_title: Master
+    display_title: Hoofd
     position: 0
     display_options:
       access:
@@ -37,13 +37,13 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Toepassen
           reset_button: false
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Sorteren op'
           expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Oplopend
+          sort_desc_label: Aflopend
       pager:
         type: none
         options:
@@ -333,7 +333,7 @@ display:
           entity_field: status
           plugin_id: numeric
       display_extenders: {  }
-      title: Profiles
+      title: Profielen
     cache_metadata:
       max-age: -1
       contexts:
@@ -343,7 +343,7 @@ display:
   user_page:
     display_plugin: embed
     id: user_page
-    display_title: 'User page'
+    display_title: Profielpagina
     position: 1
     display_options:
       display_extenders: {  }

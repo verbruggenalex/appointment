@@ -5,7 +5,7 @@ dependencies: {  }
 _core:
   default_config_hash: QOzaA8j2871_aWBJyVZm_LqREilQnXZqRuk3HNANrEo
 id: default
-label: default
+label: standaard
 date_format: 'D, M j Y'
 time_format: 'g:ia'
 time_hour_format: ga

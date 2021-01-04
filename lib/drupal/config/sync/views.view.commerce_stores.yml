@@ -9,7 +9,7 @@ dependencies:
 _core:
   default_config_hash: 6-ekZ3lqOfRVbp4N2jIUbGavaDcHc8_TKxSvCEKV_Fg
 id: commerce_stores
-label: Stores
+label: Winkels
 module: views
 description: ''
 tag: Commerce
@@ -19,7 +19,7 @@ display:
   default:
     display_plugin: default
     id: default
-    display_title: Master
+    display_title: Hoofd
     position: 0
     display_options:
       access:
@@ -40,13 +40,13 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Toepassen
           reset_button: false
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Sorteren op'
           expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Oplopend
+          sort_desc_label: Aflopend
       pager:
         type: full
         options:
@@ -56,17 +56,17 @@ display:
           total_pages: null
           expose:
             items_per_page: false
-            items_per_page_label: 'Items per page'
+            items_per_page_label: 'Items per pagina'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- Alle -'
             offset: false
-            offset_label: Offset
+            offset_label: Startpunt
           tags:
-            previous: '‹ previous'
-            next: 'next ›'
-            first: '« first'
-            last: 'last »'
+            previous: '‹ vorige'
+            next: 'volgende ›'
+            first: '« eerste'
+            last: 'laatste »'
           quantity: 9
       style:
         type: table
@@ -158,7 +158,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          action_title: 'With selection'
+          action_title: 'Met selectie'
           include_exclude: exclude
           selected_actions: {  }
           entity_type: commerce_store
@@ -170,7 +170,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Name
+          label: Naam
           exclude: false
           alter:
             alter_text: false
@@ -301,7 +301,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Operations
+          label: Bewerkingen
           exclude: false
           alter:
             alter_text: false
@@ -391,7 +391,7 @@ display:
           entity_field: type
           plugin_id: commerce_entity_bundle
       sorts: {  }
-      title: Stores
+      title: Winkels
       header: {  }
       footer: {  }
       empty:
@@ -404,7 +404,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: 'No stores available.'
+          content: 'Geen winkels beschikbaar.'
           plugin_id: text_custom
       relationships: {  }
       arguments: {  }
@@ -422,7 +422,7 @@ display:
   page_1:
     display_plugin: page
     id: page_1
-    display_title: Page
+    display_title: Pagina
     position: 1
     display_options:
       display_extenders: {  }

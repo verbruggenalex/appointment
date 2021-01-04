@@ -10,7 +10,7 @@ _core:
 id: watchdog
 label: Watchdog
 module: views
-description: 'Recent log messages'
+description: 'Recente logberichten'
 tag: ''
 base_table: watchdog
 base_field: wid
@@ -18,7 +18,7 @@ display:
   default:
     display_plugin: default
     id: default
-    display_title: Master
+    display_title: Hoofd
     position: 0
     display_options:
       access:
@@ -42,10 +42,10 @@ display:
           submit_button: Filter
           reset_button: true
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Sorteren op'
           expose_sort_order: false
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Oplopend
+          sort_desc_label: Aflopend
       pager:
         type: full
         options:
@@ -60,12 +60,12 @@ display:
             last: 'Last »'
           expose:
             items_per_page: true
-            items_per_page_label: 'Items per page'
+            items_per_page_label: 'Items per pagina'
             items_per_page_options: '50,100,250'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- Alle -'
             offset: false
-            offset_label: Offset
+            offset_label: Startpunt
           quantity: 9
       style:
         type: table
@@ -153,7 +153,7 @@ display:
           field: nothing
           relationship: none
           group_type: group
-          admin_label: Icon
+          admin_label: Pictogram
           label: ''
           exclude: false
           alter:
@@ -203,7 +203,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: WID
+          label: Watchdog-ID
           exclude: true
           alter:
             alter_text: false
@@ -252,7 +252,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Severity
+          label: Ernst
           exclude: true
           alter:
             alter_text: false
@@ -403,7 +403,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Message
+          label: Bericht
           exclude: false
           alter:
             alter_text: false
@@ -453,7 +453,7 @@ display:
           relationship: uid
           group_type: group
           admin_label: ''
-          label: User
+          label: Gebruiker
           exclude: false
           alter:
             alter_text: false
@@ -518,7 +518,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Operations
+          label: Bewerkingen
           exclude: false
           alter:
             alter_text: false
@@ -615,7 +615,7 @@ display:
           exposed: true
           expose:
             operator_id: severity_op
-            label: Severity
+            label: Ernst
             description: ''
             use_operator: false
             operator: severity_op
@@ -656,7 +656,7 @@ display:
           expose:
             label: ''
           plugin_id: standard
-      title: 'Recent log messages'
+      title: 'Recente logberichten'
       header: {  }
       footer: {  }
       empty:
@@ -666,10 +666,10 @@ display:
           field: area_text_custom
           relationship: none
           group_type: group
-          admin_label: 'No log messages available.'
+          admin_label: 'Geen logberichten beschikbaar.'
           empty: true
           tokenize: false
-          content: 'No log messages available.'
+          content: 'Geen logberichten beschikbaar.'
           plugin_id: text_custom
       relationships:
         uid:
@@ -700,7 +700,7 @@ display:
   page:
     display_plugin: page
     id: page
-    display_title: Page
+    display_title: Pagina
     position: 1
     display_options:
       display_extenders: {  }

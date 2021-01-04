@@ -1,3 +1,4 @@
+label: 'Bloc du panier'
 display:
   default:
     display_title: Maître
@@ -7,6 +8,15 @@ display:
           submit_button: Appliquer
           reset_button_label: Réinitialiser
           exposed_sorts_label: 'Trier par'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      fields:
+        quantity:
+          separator: ', '
+        title:
+          separator: ', '
+        total_price__number:
+          separator: ', '
       arguments:
         order_id:
           exception:

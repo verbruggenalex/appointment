@@ -11,7 +11,7 @@ dependencies:
 _core:
   default_config_hash: Wfu6EDwNNNV0FZiMAndYyWpKCyCZ2TfdZ2QkPUFOINY
 id: commerce_order_delete_action
-label: 'Delete order'
+label: 'Bestelling verwijderen'
 type: commerce_order
 plugin: 'entity_delete_action:commerce_order'
 configuration: {  }

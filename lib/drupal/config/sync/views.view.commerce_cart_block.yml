@@ -11,7 +11,7 @@ dependencies:
 _core:
   default_config_hash: sTKMNZJ4DVegYkx0Lake4yfkpxD7y_g2bQO28xTs5co
 id: commerce_cart_block
-label: 'Cart block'
+label: Winkelwagenblok
 module: views
 description: ''
 tag: commerce_cart_block
@@ -21,7 +21,7 @@ display:
   default:
     display_plugin: default
     id: default
-    display_title: Master
+    display_title: Hoofd
     position: 0
     display_options:
       access:
@@ -41,13 +41,13 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Toepassen
           reset_button: false
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Sorteren op'
           expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Oplopend
+          sort_desc_label: Aflopend
       pager:
         type: none
         options:
