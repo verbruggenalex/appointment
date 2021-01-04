@@ -5,7 +5,6 @@
 * Try updating to Drupal 9.1 normally out next Wednesday. Need composer 2.x as well for this.
 * Fix bug where appointment is one hour off on calendar (only on local?).
 * Provide the first real behat tests.
-* Fix profile picture!!!!!!
 * Start cleaning up user sidebar.
 * Contact page form.
 * Fix breadcrumb.
