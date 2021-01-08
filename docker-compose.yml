@@ -49,19 +49,18 @@ services:
       traefik.http.routers.portainer.rule: Host(`portainer.${TRAEFIK_DOMAIN}`)
       traefik.http.routers.portainer.tls: true
       traefik.http.routers.portainer.service: portainer
-      # traefik.http.routers.portainer.middlewares: secure-whitelist@file
       traefik.http.services.portainer.loadbalancer.server.port: 9000
     networks:
       - proxy
 
   dev:
     image: verbral/php-theia:7.4
-    working_dir: /home/project
+    working_dir: ${PWD}
     environment:
       ENVIRONMENT: dev
       BEHAT_PARAMS: '{"extensions":{"Behat\\MinkExtension":{"base_url":"http://dev.${TRAEFIK_DOMAIN}"}}}'
       TRAEFIK_DOMAIN:
-      APACHE_DOCUMENT_ROOT: /home/project
+      APACHE_DOCUMENT_ROOT: ${PWD}
       PHP_EXTENSION_BLACKFIRE: 1
       PHP_EXTENSION_GD: 1
       PHP_EXTENSION_BCMATH: 1
@@ -88,7 +87,8 @@ services:
     extra_hosts:
       - "web.${TRAEFIK_DOMAIN}:127.0.0.1"
     volumes:
-      - ${PWD}:/home/project
+      - ${PWD}:${PWD}
+      - /var/run/docker.sock:/var/run/docker.sock:ro
       - ~/.ssh:/home/docker/.ssh
       - ~/.composer:/home/docker/.composer
     labels:
