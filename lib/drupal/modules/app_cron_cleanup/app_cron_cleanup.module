@@ -32,8 +32,8 @@ function _app_cron_cleanup_watchdog_cron_cleanup(CronJob $job) {
   // Setting some variables.
   $database = \Drupal::database();
   $request_time = REQUEST_TIME + 5;
-  $start_time = $log_entry->start_time - 5;
   $log_entry = isset($job->log_entry) ? $job->log_entry : $job->loadLatestLogEntry();
+  $start_time = $log_entry->start_time - 5;
 
   // Get the count of messages to delete.
   $query = $database->select('watchdog');

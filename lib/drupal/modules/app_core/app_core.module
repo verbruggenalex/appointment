@@ -211,8 +211,8 @@ function app_core_form_node_form_alter(&$form, FormStateInterface $form_state, $
         $slotMaxCojoined = $resource->get('field_slot_max_cojoined')->getValue() ? $resource->get('field_slot_max_cojoined')->getValue()[0]['value'] : 1;
         foreach ($officeHours as $restrictedHour) {
           if ($restrictedHour['day'] === $day) {
-            $start = DrupalDateTime::createFromFormat('Y-m-d Hi', $dateString . ' ' . sprintf('%04d', $restrictedHour['starthours']));
-            $end = DrupalDateTime::createFromFormat('Y-m-d Hi', $dateString . ' ' . sprintf('%04d', $restrictedHour['endhours']));
+            $start = DrupalDateTime::createFromFormat('Y-m-d Hi', $dateString . ' ' . sprintf('%04d', $restrictedHour['starthours']), $timeZone);
+            $end = DrupalDateTime::createFromFormat('Y-m-d Hi', $dateString . ' ' . sprintf('%04d', $restrictedHour['endhours']), $timeZone);
             $interval = new \DateInterval('PT' . $slotDuration . 'M');
             $periods = new \DatePeriod($start->getPhpDateTime(), $interval, $end->getPhpDateTime());
             foreach ($periods as $period) {
