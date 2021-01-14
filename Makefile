@@ -39,16 +39,17 @@ unpack:
 	ln -sfn dist/$(tag)/ build/pre-production
 
 deploy:
-	docker-compose exec prod drush @prod sql-dump --result-file=../../../pre-production/dump.sql && \
-	docker-compose exec prod drush @pre-prod sql-drop -y && \
-	docker-compose exec prod drush @pre-prod sql-create -y && \
-	docker-compose exec prod drush @pre-prod sqlc < build/pre-production/dump.sql && \
-	docker-compose exec prod drush @pre-prod cache:rebuild && \
-	docker-compose exec prod drush @pre-prod updatedb -y --no-post-updates && \
-	docker-compose exec prod drush @pre-prod config:import -y && \
-	docker-compose exec prod drush @pre-prod updatedb -y --post-updates && \
-	docker-compose exec prod drush @pre-prod cache:rebuild && \
-	docker-compose exec prod drush @pre-prod status
+	docker-compose exec -T prod composer --working-dir=build/pre-production reset-permissions && \
+	docker-compose exec -T prod drush @prod sql-dump --result-file=../../../pre-production/dump.sql && \
+	docker-compose exec -T prod drush @pre-prod sql-drop -y && \
+	docker-compose exec -T prod drush @pre-prod sql-create -y && \
+	docker-compose exec -T prod drush @pre-prod sqlc < build/pre-production/dump.sql && \
+	docker-compose exec -T prod drush @pre-prod cache:rebuild && \
+	docker-compose exec -T prod drush @pre-prod updatedb -y --no-post-updates && \
+	docker-compose exec -T prod drush @pre-prod config:import -y && \
+	docker-compose exec -T prod drush @pre-prod updatedb -y --post-updates && \
+	docker-compose exec -T prod drush @pre-prod cache:rebuild && \
+	docker-compose exec -T prod drush @pre-prod status
 
 accept:
 	ln -sfn dist/$$(basename $$(readlink -f build/production)) build/post-production && \
@@ -59,3 +60,6 @@ rollback:
 	ln -sfn dist/$$(basename $$(readlink -f build/production)) build/pre-production && \
 	ln -sfn dist/$$(basename $$(readlink -f build/post-production)) build/production && \
 	ln -sfn dist/0.0.1 build/post-production
+
+cleanup:
+	find build/dist -maxdepth 1 -mindepth 1 -type d ! -name 0.0.1 ! -name 0.0.2 ! -name 0.0.3 ! -name "$$(basename $$(readlink -f build/production))" ! -name "$$(basename $$(readlink -f build/pre-production))" ! -name "$$(basename $$(readlink -f build/post-production))" -exec sudo rm -rf "{}" \;
