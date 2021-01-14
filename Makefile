@@ -33,12 +33,16 @@ down-prod:
 	docker-compose rm -s -f traefik prod mysql
 
 unpack:
-	wget https://github.com/verbruggenalex/appointment/releases/download/$(tag)/dist.tar.gz \
-	&& rm -rf build/dist/$(tag) && mkdir -p build/dist/$(tag) \
-	&& tar -zxf dist.tar.gz --directory=build/dist/$(tag) \
-	&& ln -sfn dist/$(tag)/ build/pre-production
+	wget https://github.com/verbruggenalex/appointment/releases/download/$(tag)/dist.tar.gz && \
+	rm -rf build/dist/$(tag) && mkdir -p build/dist/$(tag) && \
+	tar -zxf dist.tar.gz --directory=build/dist/$(tag) && \
+	ln -sfn dist/$(tag)/ build/pre-production
 
 deploy:
+	docker-compose exec prod drush @prod sql-dump --result-file=../../../pre-production/dump.sql && \
+	docker-compose exec prod drush @pre-prod sql-drop -y && \
+	docker-compose exec prod drush @pre-prod sql-create -y && \
+	docker-compose exec prod drush @pre-prod sqlc < build/pre-production/dump.sql && \
 	docker-compose exec prod drush @pre-prod cache:rebuild && \
 	docker-compose exec prod drush @pre-prod updatedb -y --no-post-updates && \
 	docker-compose exec prod drush @pre-prod config:import -y && \
@@ -50,3 +54,8 @@ accept:
 	ln -sfn dist/$$(basename $$(readlink -f build/production)) build/post-production && \
 	ln -sfn dist/$$(basename $$(readlink -f build/pre-production)) build/production
 	ln -sfn dist/0.0.1 build/pre-production
+
+rollback:
+	ln -sfn dist/$$(basename $$(readlink -f build/production)) build/pre-production && \
+	ln -sfn dist/$$(basename $$(readlink -f build/post-production)) build/production && \
+	ln -sfn dist/0.0.1 build/post-production
