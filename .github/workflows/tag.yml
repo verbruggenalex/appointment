@@ -65,3 +65,19 @@ jobs:
             dist.tar.gz
             clean.sql.gz
             backstop-reference.tar.gz
+
+      - name: Deploy with SSH
+        uses: appleboy/ssh-action@master
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT }}
+          username: ${{ secrets.SSH_USER }}
+          passphrase: ${{ secrets.SSH_PASS }}
+          script: |
+            cd appointment
+            git pull
+            git checkout ${GITHUB_REF#refs/heads/}
+            make unpack tag=${GITHUB_REF/refs\/tags\//}
+            make deploy
+
