@@ -22,5 +22,5 @@ jobs:
         script: |
           cd appointment
           git pull
-          git checkout ${GITHUB_REF#refs/heads/}
+          git checkout $(echo $GITHUB_REF | cut -d'/' -f 3)
           make unpack tag=1.0.28
