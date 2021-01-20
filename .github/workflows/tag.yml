@@ -78,6 +78,6 @@ jobs:
             cd appointment
             git pull
             git checkout ${GITHUB_REF#refs/heads/}
-            make unpack tag=${GITHUB_REF/refs\/tags\//}
+            make unpack tag=${GITHUB_REF#refs/tags/}
             make deploy
 
