@@ -5,11 +5,13 @@ on:
     branches:
       - ssh-deploy
 
-  build:
-    name: Build
+jobs:
+  push:
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: executing remote ssh commands using password
+
+    - name: Deploy with SSH.
       uses: appleboy/ssh-action@master
       with:
         key: ${{ secrets.SSH_KEY }}
