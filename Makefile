@@ -33,6 +33,7 @@ down-prod:
 	docker-compose rm -s -f traefik prod mysql
 
 unpack:
+	rm dist.tar.gz
 	wget https://github.com/verbruggenalex/appointment/releases/download/$(tag)/dist.tar.gz && \
 	rm -rf build/dist/$(tag) && mkdir -p build/dist/$(tag) && \
 	tar -zxf dist.tar.gz --directory=build/dist/$(tag) && \
