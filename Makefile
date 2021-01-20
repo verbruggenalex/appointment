@@ -35,7 +35,7 @@ down-prod:
 unpack:
 	rm -f dist.tar.gz
 	wget https://github.com/verbruggenalex/appointment/releases/download/$(tag)/dist.tar.gz && \
-	rm -rf build/dist/$(tag) && mkdir -p build/dist/$(tag) && \
+	sudo rm -rf build/dist/$(tag) && mkdir -p build/dist/$(tag) && \
 	tar -zxf dist.tar.gz --directory=build/dist/$(tag) && \
 	ln -sfn dist/$(tag)/ build/pre-production
 
