@@ -1,0 +1,22 @@
+name: SSH Deploy
+
+on:
+  push:
+    branches:
+      - ssh-deploy
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        key: ${{ secrets.SSH_KEY }}
+        host: ${{ secrets.SSH_HOST }}
+        port: ${{ secrets.SSH_PORT }}
+        username: ${{ secrets.SSH_USER }}
+        # password: ${{ secrets.SSH_PASS }}
+        script: |
+          cd appointment
+          ls -al
