@@ -11,6 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+    - name: Extract branch name
+      shell: bash
+      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+      id: extract_branch
+
     - name: Deploy with SSH
       uses: appleboy/ssh-action@master
       with:
@@ -22,5 +27,5 @@ jobs:
         script: |
           cd appointment
           git pull
-          git checkout $(echo $GITHUB_REF | cut -d'/' -f 3)
+          git checkout ${{ steps.extract_branch.outputs.branch }}
           make unpack tag=1.0.28
