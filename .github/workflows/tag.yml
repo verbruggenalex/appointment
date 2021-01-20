@@ -75,9 +75,10 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           passphrase: ${{ secrets.SSH_PASS }}
           script: |
+            echo ${GITHUB_REF#refs/*/}
             cd appointment
             git pull
-            git checkout ${GITHUB_REF#refs/heads/}
-            make unpack tag=${GITHUB_REF#refs/tags/}
+            git checkout ${GITHUB_REF#refs/*/}
+            make unpack tag=${GITHUB_REF#refs/*/}
             make deploy
 
