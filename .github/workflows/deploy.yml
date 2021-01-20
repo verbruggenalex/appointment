@@ -27,3 +27,4 @@ jobs:
             git pull
             git checkout ${GITHUB_REF#refs/heads/}
             make unpack tag=1.0.28
+            make deploy
