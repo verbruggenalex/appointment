@@ -160,11 +160,6 @@
             "drupal/core": "-p2"
         },
         "patches": {
-            "drupal/commerce_license": [
-                "https://www.drupal.org/files/issues/2020-01-14/3100029-5-license-overview-broken.patch",
-                "https://www.drupal.org/files/issues/2020-06-05/commerce_license.2.x-dev.rector.patch",
-                "lib/drupal/patches/commerce_license-drupal_9_compatibility.patch"
-            ],
             "drupal/core": [
                 "https://www.drupal.org/files/issues/2020-05-04/1650930-default-mysql-transactions-84-D9.patch",
                 "https://www.drupal.org/files/issues/2020-05-04/2924549-38.patch",
