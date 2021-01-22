@@ -1,0 +1,26 @@
+diff --git a/realname.module b/realname.module
+index c0051b8..7b9d0db 100644
+--- a/realname.module
++++ b/realname.module
+@@ -62,7 +62,7 @@ function realname_user_format_name_alter(&$name, $account) {
+ 
+   // Real name was loaded/generated via hook_user_load(), so re-use it.
+   if (isset($account->realname)) {
+-    if (Unicode::strlen($account->realname)) {
++    if (mb_strlen($account->realname)) {
+       // Only if the real name is a non-empty string is $name actually altered.
+       $name = $account->realname;
+     }
+diff --git a/src/Controller/RealnameAutocompleteController.php b/src/Controller/RealnameAutocompleteController.php
+index fd536d5..0c5d63c 100644
+--- a/src/Controller/RealnameAutocompleteController.php
++++ b/src/Controller/RealnameAutocompleteController.php
+@@ -29,7 +29,7 @@ class RealnameAutocompleteController extends EntityAutocompleteController {
+     $matches = [];
+     if ($input = $request->query->get('q')) {
+       $typed_string = Tags::explode($input);
+-      $typed_string = Unicode::strtolower(array_pop($typed_string));
++      $typed_string = mb_strtolower(array_pop($typed_string));
+       $selection_settings = $this->keyValue->get($selection_settings_key, FALSE);
+       if ($selection_settings !== FALSE) {
+         $selection_settings_hash = Crypt::hmacBase64(serialize($selection_settings) . $target_type . $selection_handler, Settings::getHashSalt());
