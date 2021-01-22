@@ -8,7 +8,8 @@ dependencies:
 id: geocoder_api_key
 label: 'Geocoder API Key'
 config_type: geocoder_provider
-config_prefix: geocoder.geocoder_provider
 config_name: googlemaps
+config_prefix: geocoder.geocoder_provider
 config_item: configuration.apiKey
 key_id: google_maps_api_key
+key: null

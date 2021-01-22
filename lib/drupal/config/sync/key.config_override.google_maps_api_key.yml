@@ -8,7 +8,8 @@ dependencies:
 id: google_maps_api_key
 label: 'Google Maps API Key'
 config_type: system.simple
-config_prefix: ''
 config_name: geofield_map.settings
+config_prefix: ''
 config_item: gmap_api_key
 key_id: google_maps_api_key
+key: null
