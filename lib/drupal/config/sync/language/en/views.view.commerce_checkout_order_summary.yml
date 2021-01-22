@@ -1,4 +1,3 @@
-label: 'Checkout Order Summary'
 display:
   default:
     display_title: Master
@@ -12,8 +11,6 @@ display:
           sort_desc_label: Desc
       fields:
         quantity:
-          alter:
-            text: '{{ quantity }}&nbsp;x'
           separator: ', '
         purchased_entity:
           separator: ', '

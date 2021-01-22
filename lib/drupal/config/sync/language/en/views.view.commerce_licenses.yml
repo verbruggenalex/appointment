@@ -28,7 +28,6 @@ display:
         label:
           label: Label
         type:
-          label: 'License type'
           separator: ', '
         uid:
           label: Owner
@@ -40,7 +39,6 @@ display:
           label: Updated
           separator: ', '
         granted:
-          label: Granted
           separator: ', '
         operations:
           label: 'Operations links'
