@@ -89,6 +89,7 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  balance: true
   billing_profile: true
   order_number: true
   store_id: true
