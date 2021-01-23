@@ -2,7 +2,7 @@
 
 ## Development
 
-* Try updating to Drupal 9.1 normally out next Wednesday. Need composer 2.x as well for this.
+* Remove web root and use pre-production for local deployments.
 * Provide the first real behat tests.
 * Start cleaning up user sidebar.
 * Contact page form.
