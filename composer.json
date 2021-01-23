@@ -403,7 +403,7 @@
             "cp -Rf lib/build .",
             "sudo rm -rf $PWD/web/sites/default/files",
             "sudo mkdir -p -m 777 $PWD/web/sites/default/files",
-            "ln -sfn $APACHE_DOCUMENT_ROOT/web $APACHE_DOCUMENT_ROOT/build/pre-production",
+            "ln -sfn $APACHE_DOCUMENT_ROOT $APACHE_DOCUMENT_ROOT/build/pre-production",
             "ln -sfn $APACHE_DOCUMENT_ROOT/build/files/public $PWD/web/sites/default/files",
             "mkdir -p web/sites/default/files/geofieldmap_icons"
         ],

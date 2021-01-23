@@ -89,6 +89,11 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ~/.ssh:/home/docker/.ssh
       - ~/.composer:/home/docker/.composer
+    extra_hosts:
+      - "${TRAEFIK_DOMAIN}:127.0.0.1"
+      - "production.${TRAEFIK_DOMAIN}:127.0.0.1"
+      - "pre-production.${TRAEFIK_DOMAIN}:127.0.0.1"
+      - "post-production.${TRAEFIK_DOMAIN}:127.0.0.1"
     labels:
       traefik.enable: true
       traefik.http.routers.ide.tls: true
