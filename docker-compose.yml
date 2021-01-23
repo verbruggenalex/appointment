@@ -58,7 +58,7 @@ services:
     working_dir: ${PWD}
     environment:
       ENVIRONMENT: dev
-      BEHAT_PARAMS: '{"extensions":{"Behat\\MinkExtension":{"base_url":"http://dev.${TRAEFIK_DOMAIN}"}}}'
+      BEHAT_PARAMS: '{"extensions":{"Behat\\MinkExtension":{"base_url":"http://pre-production.${TRAEFIK_DOMAIN}"}}}'
       TRAEFIK_DOMAIN:
       APACHE_DOCUMENT_ROOT: ${PWD}
       PHP_EXTENSION_BLACKFIRE: 1
@@ -201,7 +201,7 @@ services:
     environment:
       ENVIRONMENT: ci
       COLUMNS: 200
-      BEHAT_PARAMS: '{"extensions":{"Behat\\MinkExtension":{"base_url":"http://web.${TRAEFIK_DOMAIN}"}}}'
+      BEHAT_PARAMS: '{"extensions":{"Behat\\MinkExtension":{"base_url":"http://pre-production.${TRAEFIK_DOMAIN}"}}}'
       TRAEFIK_DOMAIN:
       APACHE_DOCUMENT_ROOT: /var/www/html
       SOCIAL_AUTH_FACEBOOK_APP_ID:
