@@ -1,5 +1,5 @@
 ARG PHP_EXTENSIONS="apcu bcmath gd mysqli pdo_mysql"
-ARG PHP_VERSION=8.0
+ARG PHP_VERSION=7.4
 ARG INSTALL_CRON=1
 
 FROM thecodingmachine/php:$PHP_VERSION-v4-slim-apache as prod
@@ -44,8 +44,8 @@ RUN a2dissite 000-default.conf && \
 # Change back Apache user and group to www-data use production ini.
 ENV APACHE_RUN_USER=www-data \
     APACHE_RUN_GROUP=www-data \
-    TEMPLATE_PHP_INI=production
-    # PHP_INI_DISABLE_FUNCTIONS=phpinfo
+    TEMPLATE_PHP_INI=production \
+    PHP_INI_DISABLE_FUNCTIONS=phpinfo
 
 RUN apt-get update && \
     apt-get install -y patch mysql-client --no-install-recommends
