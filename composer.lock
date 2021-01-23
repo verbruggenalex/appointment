@@ -1185,7 +1185,7 @@
         },
         {
             "name": "custom/app_core",
-            "version": "dev-d9",
+            "version": "dev-master",
             "dist": {
                 "type": "path",
                 "url": "lib/drupal/modules/app_core",
