@@ -2,7 +2,6 @@
 
 ## Development
 
-* Remove web root and use pre-production for local deployments.
 * Provide the first real behat tests.
 * Start cleaning up user sidebar.
 * Contact page form.

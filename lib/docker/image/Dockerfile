@@ -1,8 +1,8 @@
 ARG PHP_EXTENSIONS="apcu bcmath gd mysqli pdo_mysql"
-ARG PHP_VERSION=7.4
+ARG PHP_VERSION=8.0
 ARG INSTALL_CRON=1
 
-FROM thecodingmachine/php:$PHP_VERSION-v3-slim-apache as prod
+FROM thecodingmachine/php:$PHP_VERSION-v4-slim-apache as prod
 
 USER root
 

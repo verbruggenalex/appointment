@@ -64,3 +64,6 @@ rollback:
 
 cleanup:
 	find build/dist -maxdepth 1 -mindepth 1 -type d ! -name 0.0.1 ! -name 0.0.2 ! -name 0.0.3 ! -name "$$(basename $$(readlink -f build/production))" ! -name "$$(basename $$(readlink -f build/pre-production))" ! -name "$$(basename $$(readlink -f build/post-production))" -exec sudo rm -rf "{}" \;
+
+drop-dbs-incomplete:
+	find build/dist -maxdepth 1 -mindepth 1 -type d ! -name "$$(basename $$(readlink -f build/production))" ! -name "$$(basename $$(readlink -f build/pre-production))" ! -name "$$(basename $$(readlink -f build/post-production))" -exec sudo docker-compose exec mysql mysql -u root DROP DATABASE IF EXISTS 'sed -e "s/^build\///" | sed -r "s/\//_/" <(echo $1)' {} \;
