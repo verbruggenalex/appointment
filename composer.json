@@ -391,7 +391,7 @@
     "scripts": {
         "build-bak": [
             "./vendor/bin/drush cex -y",
-            "./vendor/bin/drush sql-dump --skip-tables-list=cache,cache_* --result-file=../clean.sql",
+            "./vendor/bin/drush sql-dump --skip-tables-list=cache,cache_* --result-file=../clean.sql --extra-dump='--skip-column-statistics'",
             "gzip clean.sql"
         ],
         "build-dist": [

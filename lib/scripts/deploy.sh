@@ -21,7 +21,7 @@ composer reset-permissions -d ${BUILD_DIR}/pre-production
 
 # Backup production and import on pre-production
 mkdir -p ${BACKUP_DIR}
-drush @prod sql-dump --result-file=${BACKUP_DIR}/production-${BACKUP_TIME}.sql
+drush @prod sql-dump  --skip-tables-list=cache,cache_* --extra-dump='--skip-column-statistics' --result-file=${BACKUP_DIR}/production-${BACKUP_TIME}.sql
 ln -sfn ${BACKUP_DIR}/production-${BACKUP_TIME}.sql $(dirname ${BACKUP_DIR})/production-latest.sql
 drush cc drush
 drush @pre-prod sql-drop -y
