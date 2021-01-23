@@ -41,7 +41,7 @@ unpack:
 
 deploy:
 	docker-compose exec -T prod composer --working-dir=build/pre-production reset-permissions && \
-	docker-compose exec -T prod drush @prod sql-dump --result-file=../../../pre-production/dump.sql && \
+	docker-compose exec -T prod drush @prod sql-dump  --skip-tables-list=cache,cache_* --result-file=../../../pre-production/dump.sql && \
 	docker-compose exec -T prod drush @pre-prod sql-drop -y && \
 	docker-compose exec -T prod drush @pre-prod sql-create -y && \
 	docker-compose exec -T prod drush @pre-prod sqlc < build/pre-production/dump.sql && \
