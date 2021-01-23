@@ -402,6 +402,7 @@
         "create-dirs": [
             "cp -Rf lib/build .",
             "sudo rm -rf $PWD/web/sites/default/files",
+            "sudo chmod 777 $PWD/web/sites/default",
             "ln -sfn $APACHE_DOCUMENT_ROOT $APACHE_DOCUMENT_ROOT/build/pre-production",
             "ln -sfn $APACHE_DOCUMENT_ROOT/build/files/public $PWD/web/sites/default/files",
             "mkdir -p web/sites/default/files/geofieldmap_icons"
