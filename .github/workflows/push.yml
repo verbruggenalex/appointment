@@ -89,9 +89,9 @@ jobs:
       - name: Report web
         if: always()
         run: |
-          docker-compose exec -T ci drush @web st
-          docker-compose exec -T ci drush @web rq
-          docker-compose exec -T ci drush @web ws --count=25
+          docker-compose exec -T ci drush @pre-prod st
+          docker-compose exec -T ci drush @pre-prod rq
+          docker-compose exec -T ci drush @pre-prod ws --count=25
 
       - name: Report prod
         if: always()

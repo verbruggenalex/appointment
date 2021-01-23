@@ -31,11 +31,11 @@ if [ -f .tmp/$TAG.sql ]
   drush @pre-prod sql-create -y
   drush @pre-prod sql-drop -y
   drush @pre-prod sqlc < $APACHE_DOCUMENT_ROOT/.tmp/$TAG.sql
-  drush @pre-prod en app_default_content -y
   drush @pre-prod cr
+  drush @pre-prod en app_default_content -y
   drush @prod sql-create -y
   drush @prod sql-drop -y
   drush @prod sqlc < $APACHE_DOCUMENT_ROOT/.tmp/$TAG.sql
-  drush @prod en app_default_content -y
   drush @prod cr
+  drush @prod en app_default_content -y
 fi
