@@ -193,7 +193,7 @@ function app_core_form_node_form_alter(&$form, FormStateInterface $form_state, $
       // In format drupalDateTime.
       $date = $appointmentStartDate;
       $dateString = $date->format('Y-m-d');
-      $timeZone = drupal_get_user_timezone();
+      $timeZone = date_default_timezone_get();
       // Find the weekday of this date.
       $day = $date->format('w');
 
