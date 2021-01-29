@@ -1,10 +1,10 @@
 # Dutch translation of Devel (4.1.1)
-# Copyright (c) 2020 by the Dutch translation team
+# Copyright (c) 2021 by the Dutch translation team
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Devel (4.1.1)\n"
-"POT-Creation-Date: 2020-12-31 17:22+0000\n"
+"POT-Creation-Date: 2021-01-11 22:58+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Language-Team: Dutch\n"
 "MIME-Version: 1.0\n"
@@ -210,6 +210,8 @@ msgid "Completed"
 msgstr "Voltooid"
 msgid "Failed"
 msgstr "Mislukt"
+msgid "Assets"
+msgstr "Bedrijfsmiddelen"
 msgid "Enter username"
 msgstr "Gebruikersnaam invoeren"
 msgid "Username not found"

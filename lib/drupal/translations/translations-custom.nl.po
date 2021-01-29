@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2021-01-29 19:19+0000\n"
-"PO-Revision-Date: 2021-01-29 19:19+0000\n"
+"POT-Creation-Date: 2021-01-29 19:56+0000\n"
+"PO-Revision-Date: 2021-01-29 19:56+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -1062,6 +1062,24 @@ msgstr "Mijn profiel"
 
 msgid "My appointments"
 msgstr "Mijn afspraken"
+
+msgid "Select the date for your appointment."
+msgstr "Selecteer de datum voor uw afspraak."
+
+msgid "Select the time for your appointment."
+msgstr "Selecteer het tijdstip voor uw afspraak."
+
+msgid "Book appointment now!"
+msgstr "Boek afspraak nu!"
+
+msgid "Appointment with"
+msgstr "Afspraak met"
+
+msgid "Starts in"
+msgstr "Begint binnen"
+
+msgid "Currently closed"
+msgstr "Op dit moment gesloten"
 
 msgid "Upcoming appointments"
 msgstr "Aankomende afspraken"
