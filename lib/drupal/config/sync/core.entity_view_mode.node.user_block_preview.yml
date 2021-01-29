@@ -1,0 +1,10 @@
+uuid: 3a31d484-7100-4816-9112-3f69165eda77
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.user_block_preview
+label: 'User block preview'
+targetEntityType: node
+cache: true

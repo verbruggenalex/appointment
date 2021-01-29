@@ -1,0 +1,36 @@
+uuid: 09f40a6f-9890-4028-8efb-16d3f268495b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.user_block_preview
+    - field.field.node.appointment.field_n_persons
+    - field.field.node.appointment.field_resource
+    - field.field.node.appointment.field_smart_date_range
+    - node.type.appointment
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.appointment.user_block_preview
+targetEntityType: node
+bundle: appointment
+mode: user_block_preview
+content:
+  langcode:
+    type: language
+    weight: 0
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+      native_language: false
+    third_party_settings: {  }
+hidden:
+  field_n_persons: true
+  field_resource: true
+  field_smart_date_range: true
+  links: true

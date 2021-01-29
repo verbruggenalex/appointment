@@ -28,6 +28,7 @@ display:
         label:
           label: Étiquette
         type:
+          label: 'Type de licence'
           separator: ', '
         uid:
           label: Propriétaire
@@ -39,6 +40,7 @@ display:
           label: 'Mis à jour'
           separator: ', '
         granted:
+          label: Accordé(e)
           separator: ', '
         operations:
           label: 'Liens d''actions'

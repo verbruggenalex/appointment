@@ -1,4 +1,3 @@
-label: Produits
 display:
   default:
     display_title: Maître
@@ -48,7 +47,6 @@ display:
         title:
           expose:
             label: Titre
-      title: Produits
       empty:
         area_text_custom:
           content: 'Aucun produit disponible.'

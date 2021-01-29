@@ -3,6 +3,7 @@ langcode: nl
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.user_block_preview
     - field.storage.node.field_resource
     - node.type.appointment
   module:
@@ -54,8 +55,15 @@ display:
           offset: 0
       style:
         type: default
+        options:
+          row_class: ''
+          default_row_class: false
+          uses_fields: false
       row:
-        type: fields
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: user_block_preview
       fields:
         field_resource:
           id: field_resource
@@ -309,21 +317,19 @@ display:
             group_items: {  }
           plugin_id: date
       sorts:
-        created:
-          id: created
-          table: node_field_data
-          field: created
-          order: DESC
-          entity_type: node
-          entity_field: created
-          plugin_id: date
+        field_smart_date_range_value:
+          id: field_smart_date_range_value
+          table: node__field_smart_date_range
+          field: field_smart_date_range_value
           relationship: none
           group_type: group
           admin_label: ''
+          order: ASC
           exposed: false
           expose:
             label: ''
           granularity: second
+          plugin_id: date
       title: 'Upcoming appointments'
       header: {  }
       footer: {  }
@@ -385,6 +391,25 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_resource'
+  page_1:
+    display_plugin: page
+    id: page_1
+    display_title: Page
+    position: 2
+    display_options:
+      display_extenders: {  }
+      path: upcoming-appointments
     cache_metadata:
       max-age: -1
       contexts:
