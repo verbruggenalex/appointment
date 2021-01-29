@@ -88,7 +88,6 @@ function _app_core_return_slot_options(array &$form, FormStateInterface $form_st
  * Add social login buttons.
  */
 function app_core_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  $form['testing'] = $form_id->getId();
   if ($auth = \Drupal::config('social_auth.settings')->get('auth')) {
     // Set social auth redirection to current page if we are not on /user/login.
     $linkOptions = ($currentPath = \Drupal::service('path.current')->getPath()) && $currentPath != '/user/login' ? ['query' => ['destination' => $currentPath]] : [];

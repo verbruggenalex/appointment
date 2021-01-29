@@ -3,7 +3,7 @@
 ## Development
 
 * Buy and set the real logo!!!! :) Trust in God.
-* Provide translations for user sidebar.
+* Provide more translations.
 * Provide the first real behat tests.
 * Start cleaning up user sidebar.
 * Contact page form.
