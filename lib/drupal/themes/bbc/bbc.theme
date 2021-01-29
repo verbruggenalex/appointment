@@ -51,6 +51,7 @@ function bbc_page_attachments_alter(array &$attachments) {
 function bbc_preprocess_node__appointment__user_block_preview(&$variables) {
   /** @var \Drupal\Core\Datetime\DateFormatterInterface $formatter */
   $date_formatter = \Drupal::service('date.formatter');
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
   $request_time = \Drupal::time()->getRequestTime();
   $appointment_time = $variables['node']->get('field_smart_date_range')->getValue() ?
     $variables['node']->get('field_smart_date_range')->getValue()[0]['value'] :
@@ -72,7 +73,7 @@ function bbc_preprocess_node__appointment__user_block_preview(&$variables) {
   // Hence sets the readable time in the future.
   $variables['hence'] = $date_formatter->formatDiff($request_time, $appointment_time, [
     'granularity' => 2,
-    'langcode' => 'nl',
+    'langcode' => $language,
     'return_as_object' => TRUE,
   ])->toRenderable();
 }
