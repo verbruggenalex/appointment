@@ -44,3 +44,35 @@ function bbc_page_attachments_alter(array &$attachments) {
     'href' => '/themes/custom/bbc/icon-192.png',
   ];
 }
+
+/**
+ * Preprocess the upcoming appointment nodes in the user sidebar.
+ */
+function bbc_preprocess_node__appointment__user_block_preview(&$variables) {
+  /** @var \Drupal\Core\Datetime\DateFormatterInterface $formatter */
+  $date_formatter = \Drupal::service('date.formatter');
+  $request_time = \Drupal::time()->getRequestTime();
+  $appointment_time = $variables['node']->get('field_smart_date_range')->getValue() ?
+    $variables['node']->get('field_smart_date_range')->getValue()[0]['value'] :
+    NULL;
+  // The urgency determines the color of the node button.
+  $urgency = $appointment_time - $request_time;
+  switch ($urgency) {
+    case $urgency < 14400:
+      $variables['urgency'] = 'danger';
+      break;
+
+    case $urgency < 86400:
+      $variables['urgency'] = 'warning';
+      break;
+
+    default:
+      $variables['urgency'] = 'success';
+  }
+  // Hence sets the readable time in the future.
+  $variables['hence'] = $date_formatter->formatDiff($request_time, $appointment_time, [
+    'granularity' => 2,
+    'langcode' => 'nl',
+    'return_as_object' => TRUE,
+  ])->toRenderable();
+}

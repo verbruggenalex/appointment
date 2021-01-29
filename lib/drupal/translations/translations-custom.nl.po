@@ -1,10 +1,10 @@
-# Dutch translation of Open Appointment
+# Dutch translation of Pactora
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-11-25 22:25+0000\n"
-"PO-Revision-Date: 2020-11-25 22:25+0000\n"
+"POT-Creation-Date: 2021-01-29 19:19+0000\n"
+"PO-Revision-Date: 2021-01-29 19:19+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -12,43 +12,1066 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-msgid "Any country"
-msgstr "Eender land"
+msgid "Default"
+msgstr "Standaard"
 
-msgid "Any occupation"
-msgstr "Eender beroep"
+msgid "Personal contact form"
+msgstr "Persoonlijk contactformulier"
 
-msgid "Dutch"
-msgstr "Dutch"
+msgid "Your message has been sent."
+msgstr "Uw bericht is verzonden."
 
-msgid "Login with"
-msgstr "Log in met"
+msgid "Fallback date format"
+msgstr "Fallback datumnotatie"
 
-msgid "Login by username/email address"
-msgstr "Log in met gebruikersnaam/email adres"
+msgid "HTML Date"
+msgstr "HTML datum"
 
-msgid "You can use your username or email address to login."
-msgstr "Je kan je gebruikersnaam of email adres gebruiken om in te loggen."
+msgid "HTML Month"
+msgstr "HTML maand"
 
-msgid "Currently closed"
-msgstr "Op dit moment gesloten"
+msgid "HTML Time"
+msgstr "HTML tijd"
 
-msgid "Select the date for your appointment."
-msgstr "Selecteer de datum voor uw afspraak."
+msgid "HTML Week"
+msgstr "HTML week"
 
-msgid "No slots available."
-msgstr "Geen slots beschikbaar."
+msgid "HTML Year"
+msgstr "HTML jaar"
 
-msgid "Select the time for your appointment."
-msgstr "Selecteer het tijdstip voor uw afspraak."
+msgid "HTML Yearless date"
+msgstr "HTML datum zonder jaar"
 
-msgid "Book appointment now!"
-msgstr "Boek afspraak nu!"
+msgid "Default long date"
+msgstr "Standaarddatum - lang"
 
-msgid "Open at this moment!"
-msgstr "Open op dit moment!"
+msgid "Default medium date"
+msgstr "Standaarddatum - middel"
 
-msgid "We are expecting you!"
-msgstr "Wij verwachten u!"
+msgid "Default short date"
+msgstr "Standaarddatum - kort"
+
+msgid "Add to cart"
+msgstr "Aan winkelwagen toevoegen"
+
+msgid "Full"
+msgstr "Volledig"
+
+msgid "Full comment"
+msgstr "Volledige reactie"
+
+msgid "User"
+msgstr "Gebruiker"
+
+msgid "Add to Cart Form"
+msgstr "Formulier 'Toevoegen aan winkelwagen'"
+
+msgid "Cart"
+msgstr "Winkelwagen"
+
+msgid "Summary"
+msgstr "Samenvatting"
+
+msgid "Large (480×480)"
+msgstr "Groot (480×480)"
+
+msgid "Medium (220×220)"
+msgstr "Gemiddeld (220×220)"
+
+msgid "Thumbnail (100×100)"
+msgstr "Miniatuur (100×100)"
+
+msgid "order item"
+msgstr "bestelitem"
+
+msgid "order items"
+msgstr "bestelitems"
+
+msgid "English"
+msgstr "Engels"
+
+msgid "Not specified"
+msgstr "Niet gespecificeerd"
+
+msgid "Not applicable"
+msgstr "Niet van toepassing"
+
+msgid "Search result highlighting input"
+msgstr "Zoekresultaat uitlichten-invoer"
+
+msgid "Search index"
+msgstr "Zoekindex"
+
+msgid "Full content"
+msgstr "Volledige inhoud"
+
+msgid "Customer"
+msgstr "Klant"
+
+msgid "Customer information"
+msgstr "Klantgegevens"
+
+msgid "Address"
+msgstr "Adres"
+
+msgid "Content"
+msgstr "Inhoud"
+
+msgid "default"
+msgstr "standaard"
+
+msgid "Delete comment"
+msgstr "Reactie verwijderen"
+
+msgid "Publish comment"
+msgstr "Reactie publiceren"
+
+msgid "Save comment"
+msgstr "Reactie opslaan"
+
+msgid "Unpublish comment"
+msgstr "Reactie depubliceren"
+
+msgid "Delete order"
+msgstr "Bestelling verwijderen"
+
+msgid "Delete product"
+msgstr "Product verwijderen"
+
+msgid "Delete store"
+msgstr "Winkel verwijderen"
+
+msgid "Unpublish product"
+msgstr "Product depubliceren"
+
+msgid "Delete content"
+msgstr "Inhoud verwijderen"
+
+msgid "Make content sticky"
+msgstr "Inhoud vastgeplakt bovenaan de lijst maken"
+
+msgid "Make content unsticky"
+msgstr "Inhoud niet vastgeplakt bovenaan de lijst maken"
+
+msgid "Promote content to front page"
+msgstr "Inhoud op de voorpagina zichtbaar maken"
+
+msgid "Publish content"
+msgstr "Inhoud publiceren"
+
+msgid "Save content"
+msgstr "Inhoud opslaan"
+
+msgid "Remove content from front page"
+msgstr "Inhoud van de voorpagina verwijderen"
+
+msgid "Unpublish content"
+msgstr "Publicatie ongedaan maken"
+
+msgid "Update URL alias"
+msgstr "URL-alias bijwerken"
+
+msgid "User account menu"
+msgstr "Gebruikersmenu"
+
+msgid "Links related to the active user account"
+msgstr "Links gerelateerd aan de actieve gebruikersaccount"
+
+msgid "Administration"
+msgstr "Beheer"
+
+msgid "Administrative task links"
+msgstr "Links voor beheertaken"
+
+msgid "Footer"
+msgstr "Voet"
+
+msgid "Site information links"
+msgstr "Websitegegevens-links"
+
+msgid "Main navigation"
+msgstr "Hoofdnavigatie"
+
+msgid "Site section links"
+msgstr "Sectielinks van de site"
+
+msgid "Tools"
+msgstr "Hulpmiddelen"
+
+msgid "User tool links, often added by modules"
+msgstr "Links voor hulpmiddelen, vaak toegevoegd door modules"
+
+msgid "Unpublish taxonomy term"
+msgstr "Taxonomieterm depubliceren"
+
+msgid "Publish taxonomy term"
+msgstr "Taxonomieterm publiceren"
+
+msgid "Taxonomy term page"
+msgstr "Pagina met taxonomietermen"
+
+msgid "Body"
+msgstr "Inhoud"
+
+msgid "Unblock the selected user(s)"
+msgstr "De geselecteerde gebruiker(s) activeren"
+
+msgid "Cancel the selected user account(s)"
+msgstr "De geselecteerde gebruikersaccount(s) annuleren"
+
+msgid "Block the selected user(s)"
+msgstr "De geselecteerde gebruiker(s) blokkeren"
+
+msgid "Users"
+msgstr "Gebruikers"
+
+msgid "User account"
+msgstr "Gebruikersaccount"
+
+msgid "Register"
+msgstr "Inschrijven"
+
+msgid "Anonymous user"
+msgstr "Anonieme gebruiker"
+
+msgid "Authenticated user"
+msgstr "Geverifieerde gebruiker"
+
+msgid "Master"
+msgstr "Hoofd"
+
+msgid "Apply"
+msgstr "Toepassen"
+
+msgid "Sort by"
+msgstr "Sorteren op"
+
+msgid "Asc"
+msgstr "Oplopend"
+
+msgid "Desc"
+msgstr "Aflopend"
+
+msgid "« First"
+msgstr "« Eerste"
+
+msgid "Last »"
+msgstr "Laatste »"
+
+msgid "Items per page"
+msgstr "Items per pagina"
+
+msgid "- All -"
+msgstr "- Alle -"
+
+msgid "Offset"
+msgstr "Startpunt"
+
+msgid "State"
+msgstr "Status"
+
+msgid "Job type"
+msgstr "Vacaturetype"
+
+msgid "Message"
+msgstr "Bericht"
+
+msgid "Operations"
+msgstr "Bewerkingen"
+
+msgid "Jobs"
+msgstr "Opdrachten"
+
+msgid "All"
+msgstr "Alle"
+
+msgid "Page"
+msgstr "Pagina"
+
+msgid "Archive"
+msgstr "Archief"
+
+msgid "All content, by month."
+msgstr "Alle inhoud, op maand."
+
+msgid "Monthly archive"
+msgstr "Maandelijks archief"
+
+msgid "Block"
+msgstr "Blok"
+
+msgid "Custom block library"
+msgstr "Aangepaste blokken-bibliotheek"
+
+msgid "Find and manage custom blocks."
+msgstr "Aangepaste blokken zoeken en beheren"
+
+msgid "‹ Previous"
+msgstr "‹ Vorige"
+
+msgid "Next ›"
+msgstr "Volgende ›"
+
+msgid "Block description"
+msgstr "Blokbeschrijving"
+
+msgid "Block type"
+msgstr "Blok type"
+
+msgid "Updated"
+msgstr "Bijgewerkt"
+
+msgid "There are no custom blocks available."
+msgstr "Er zijn geen aangepaste blokken beschikbaar."
+
+msgid "Comments"
+msgstr "Reacties"
+
+msgid "Find and manage comments."
+msgstr "Zoek en beheer reacties."
+
+msgid "Filter"
+msgstr "Filter"
+
+msgid "‹ previous"
+msgstr "‹ vorige"
+
+msgid "next ›"
+msgstr "volgende ›"
+
+msgid "« first"
+msgstr "« eerste"
+
+msgid "last »"
+msgstr "laatste »"
+
+msgid "Action"
+msgstr "Actie"
+
+msgid "Subject"
+msgstr "Onderwerp"
+
+msgid "Author"
+msgstr "Auteur"
+
+msgid "Posted in"
+msgstr "Geplaatst in"
+
+msgid "Author name"
+msgstr "Naam auteur"
+
+msgid "Language"
+msgstr "Taal"
+
+msgid "No comments available."
+msgstr "Geen reacties beschikbaar."
+
+msgid "more"
+msgstr "meer"
+
+msgid "Published comments"
+msgstr "Gepubliceerde reacties"
+
+msgid "Comments published"
+msgstr "Reacties gepubliceerd."
+
+msgid "The approved comments listing."
+msgstr "Lijst met goedgekeurde reacties."
+
+msgid "Unapproved comments"
+msgstr "Niet-goedgekeurde reacties"
+
+msgid "Comments unapproved"
+msgstr "Reacties afgekeurd"
+
+msgid "The unapproved comments listing."
+msgstr "Lijst met afgekeurde reacties."
+
+msgid "Author Name"
+msgstr "Auteursnaam"
+
+msgid "Recent comments"
+msgstr "Recente reacties"
+
+msgid "Recent comments."
+msgstr "Recente reacties."
+
+msgid "Lists (Views)"
+msgstr "Lijsten (Overzichten)"
+
+msgid "Cart block"
+msgstr "Winkelwagenblok"
+
+msgid "Cart form"
+msgstr "Winkelwagenformulier"
+
+msgid "Price"
+msgstr "Prijs"
+
+msgid "Quantity"
+msgstr "Hoeveelheid"
+
+msgid "Remove"
+msgstr "Verwijderen"
+
+msgid "Total"
+msgstr "Totaal"
+
+msgid "Carts"
+msgstr "Winkelwagens"
+
+msgid "With selection"
+msgstr "Met selectie"
+
+msgid "Store"
+msgstr "Winkel"
+
+msgid "Email"
+msgstr "E-mail"
+
+msgid "No orders available."
+msgstr "U heeft nog geen bestellingen geplaatst."
+
+msgid "Checkout Order Summary"
+msgstr "Bestellingsoverzicht bij afrekenen"
+
+msgid "Licenses"
+msgstr "Licenties"
+
+msgid "Owner"
+msgstr "Eigenaar"
+
+msgid "Operations links"
+msgstr "Bewerkingslinks"
+
+msgid "Order items"
+msgstr "Bestellingsitems"
+
+msgid "Display a set of order items in a table."
+msgstr "Een set bestellingsitems in een tabel weergeven."
+
+msgid "Title"
+msgstr "Titel"
+
+msgid "Unit price"
+msgstr "Eenheidsprijs"
+
+msgid "Total price"
+msgstr "Totaalprijs"
+
+msgid "There are no order items yet."
+msgstr "Er zijn nog geen bestellingsitems."
+
+msgid "Orders"
+msgstr "Bestellingen"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Order number"
+msgstr "Bestelnummer"
+
+msgid "Manage your orders."
+msgstr "Bestellingen beheren."
+
+msgid "Products"
+msgstr "Producten"
+
+msgid "Published"
+msgstr "Gepubliceerd"
+
+msgid "Unpublished"
+msgstr "Niet gepubliceerd"
+
+msgid "No products available."
+msgstr "Geen producten beschikbaar."
+
+msgid "Stores"
+msgstr "Winkels"
+
+msgid "Name"
+msgstr "Naam"
+
+msgid "No stores available."
+msgstr "Geen winkels beschikbaar."
+
+msgid "User orders"
+msgstr "Bestellingen van gebruiker"
+
+msgid "Display a list of placed orders for a user."
+msgstr "Geef een lijst van bestellingen van een gebruiker weer."
+
+msgid "You have not placed any orders with us yet."
+msgstr "U heeft nog geen bestellingen bij ons gedaan."
+
+msgid "Find and manage content."
+msgstr "Inhoud zoeken en beheren"
+
+msgid "Content type"
+msgstr "Inhoudstype"
+
+msgid "Published status"
+msgstr "Publicatiestatus"
+
+msgid "No content available."
+msgstr "Geen inhoud beschikbaar."
+
+msgid "Find and manage content"
+msgstr "Inhoud vinden en beheren"
+
+msgid "Recent content"
+msgstr "Recente inhoud"
+
+msgid "Recent content."
+msgstr "Recente inhoud."
+
+msgid "More"
+msgstr "Meer"
+
+msgid "Files"
+msgstr "Bestanden"
+
+msgid "Find and manage files."
+msgstr "Bestanden vinden en beheren."
+
+msgid "MIME type"
+msgstr "MIME-type"
+
+msgid "Size"
+msgstr "Grootte"
+
+msgid "Temporary"
+msgstr "Tijdelijk"
+
+msgid "Upload date"
+msgstr "Uploaddatum"
+
+msgid "Changed date"
+msgstr "Aanpassingsdatum"
+
+msgid "Used in"
+msgstr "Gebruikt in"
+
+msgid "Filename"
+msgstr "Bestandsnaam"
+
+msgid "No files available."
+msgstr "Geen bestanden beschikbaar."
+
+msgid "Files overview"
+msgstr "Bestandenoverzicht"
+
+msgid "File usage"
+msgstr "Bestandsgebruik"
+
+msgid "Entity"
+msgstr "Entiteit"
+
+msgid "Entity type"
+msgstr "Entiteitstype"
+
+msgid "Registering module"
+msgstr "Module registreren"
+
+msgid "Use count"
+msgstr "Gebruiksfrequentie"
+
+msgid "File usage information for {{ arguments.fid }}"
+msgstr "Bestandsgebruikinformatie voor {{ arguments.fid }}"
+
+msgid "Frontpage"
+msgstr "Voorpagina"
+
+msgid "All content promoted to the front page."
+msgstr "Alle inhoud die wordt aangeraden op de voorpagina."
+
+msgid ""
+"No front page content has been created yet.<br/>Follow the <a "
+"target=\"_blank\" "
+"href=\"https://www.drupal.org/docs/user_guide/en/index.html\">User "
+"Guide</a> to start building your site."
+msgstr ""
+"Er is nog geen inhoud gemaakt voor de voorpagina.<br />Volg de <a "
+"target=\"_blank\" "
+"href=\"https://www.drupal.org/docs/user_guide/en/index.html\">Gebruikershandleiding</a> "
+"om uw site te bouwen."
+
+msgid "Welcome to [site:name]"
+msgstr "Welkom op [site:name]"
+
+msgid "Glossary"
+msgstr "Woordenlijst"
+
+msgid "All content, by letter."
+msgstr "Alle inhoud, op letter."
+
+msgid "Last update"
+msgstr "Laatst bijgewerkt"
+
+msgid "Attachment"
+msgstr "Bijlage"
+
+msgid "Profiles"
+msgstr "Profielen"
+
+msgid "User page"
+msgstr "Profielpagina"
+
+msgid "Taxonomy term"
+msgstr "Taxonomieterm"
+
+msgid "Content belonging to a certain taxonomy term."
+msgstr "Inhoud van een bepaalde taxonomieterm"
+
+msgid "403 access denied"
+msgstr "403 geen toegang"
+
+msgid "People"
+msgstr "Personen"
+
+msgid "Find and manage people interacting with your site."
+msgstr "Vind en beheer personen die gebruik maken van de website."
+
+msgid "Bulk update"
+msgstr "Bulk-update"
+
+msgid "Username"
+msgstr "Gebruikersnaam"
+
+msgid "Active"
+msgstr "Actief"
+
+msgid "Blocked"
+msgstr "Geblokkeerd"
+
+msgid "Roles"
+msgstr "Rollen"
+
+msgid "Member for"
+msgstr "Geregistreerd sinds"
+
+msgid "Last access"
+msgstr "Laatste toegang"
+
+msgid "Name or email contains"
+msgstr "Naam of e-mail bevat"
+
+msgid "Role"
+msgstr "Rol"
+
+msgid "Permission"
+msgstr "Toegangsrechten"
+
+msgid "No people available."
+msgstr "Geen personen beschikbaar."
+
+msgid "List"
+msgstr "Lijst"
+
+msgid "Manage user accounts, roles, and permissions."
+msgstr "Gebruikersaccounts, rollen en toegangsrechten beheren."
+
+msgid "404 page not found"
+msgstr "404 pagina niet gevonden"
+
+msgid "Recent log messages"
+msgstr "Recente logberichten"
+
+msgid "Icon"
+msgstr "Pictogram"
+
+msgid "WID"
+msgstr "Watchdog-ID"
+
+msgid "Severity"
+msgstr "Ernst"
+
+msgid "No log messages available."
+msgstr "Geen logberichten beschikbaar."
+
+msgid "Front page"
+msgstr "Voorpagina"
+
+msgid "Who's new"
+msgstr "Wie is nieuw"
+
+msgid "Shows a list of the newest user accounts on the site."
+msgstr "Toont een lijst van de nieuwste gebruikersaccounts op de website."
+
+msgid "A list of new users"
+msgstr "Een lijst van nieuwe gebruikers"
+
+msgid "Global"
+msgstr "Algemeen"
+
+msgid "Who's online block"
+msgstr "'Wie is online'-blok"
+
+msgid ""
+"Shows the user names of the most recently active users, and the total "
+"number of active users."
+msgstr ""
+"Toont de gebruikersnamen van de meest recente actieve gebruikers, en "
+"het totale aantal actieve gebruikers."
+
+msgid ""
+"A user is considered online for this long after they have last viewed "
+"a page."
+msgstr ""
+"Een gebruiker wordt online verondersteld voor deze tijd nadat hij voor "
+"een laatste keer een pagina heeft bekeken."
+
+msgid "Who's online"
+msgstr "Wie is online"
+
+msgid "There are currently @total users online."
+msgstr "Er zijn nu @total gebruikers online."
+
+msgid "There are currently 0 users online."
+msgstr "Er zijn nu 0 gebruikers online."
+
+msgid "A list of users that are currently logged in."
+msgstr "Een lijst van gebruikers die nu zijn ingelogd."
+
+msgid "Plain text"
+msgstr "Platte tekst"
+
+msgid ""
+"@site is currently under maintenance. We should be back shortly. Thank "
+"you for your patience."
+msgstr ""
+"@site is momenteel wegens onderhoud niet beschikbaar. De website zal "
+"binnenkort weer beschikbaar zijn. Bedankt voor uw geduld."
+
+msgid ""
+"[user:display-name],\n"
+"\n"
+"A request to cancel your account has been "
+"made at [site:name].\n"
+"\n"
+"You may now cancel your account on "
+"[site:url-brief] by clicking this link or copying and pasting it into "
+"your browser:\n"
+"\n"
+"[user:cancel-url]\n"
+"\n"
+"NOTE: The cancellation of "
+"your account is not reversible.\n"
+"\n"
+"This link expires in one day and "
+"nothing will happen if it is not used.\n"
+"\n"
+"--  [site:name] team"
+msgstr ""
+"[user:display-name],\r\n"
+"\r\n"
+"A request to cancel your account has "
+"been made at [site:name].\r\n"
+"\r\n"
+"You may now cancel your account on "
+"[site:url-brief] by clicking this link or copying and pasting it into "
+"your browser:\r\n"
+"\r\n"
+"[user:cancel-url]\r\n"
+"\r\n"
+"NOTE: The "
+"cancellation of your account is not reversible.\r\n"
+"\r\n"
+"This link "
+"expires in one day and nothing will happen if it is not "
+"used.\r\n"
+"\r\n"
+"--  [site:name] team"
+
+msgid "Account cancellation request for [user:display-name] at [site:name]"
+msgstr "Verzoek om account te annuleren van [user:display-name] op [site:name]"
+
+msgid ""
+"[user:display-name],\n"
+"\n"
+"A request to reset the password for your "
+"account has been made at [site:name].\n"
+"\n"
+"You may now log in by "
+"clicking this link or copying and pasting it into your "
+"browser:\n"
+"\n"
+"[user:one-time-login-url]\n"
+"\n"
+"This link can only be "
+"used once to log in and will lead you to a page where you can set your "
+"password. It expires after one day and nothing will happen if it's not "
+"used.\n"
+"\n"
+"--  [site:name] team"
+msgstr ""
+"[user:display-name],\r\n"
+"\r\n"
+"A request to reset the password for your "
+"account has been made at [site:name].\r\n"
+"\r\n"
+"You may now log in by "
+"clicking this link or copying and pasting it into your "
+"browser:\r\n"
+"\r\n"
+"[user:one-time-login-url]\r\n"
+"\r\n"
+"This link can "
+"only be used once to log in and will lead you to a page where you can "
+"set your password. It expires after one day and nothing will happen if "
+"it's not used.\r\n"
+"\r\n"
+"--  [site:name] team"
+
+msgid "Replacement login information for [user:display-name] at [site:name]"
+msgstr "Vervangende logininformatie voor [user:display-name] op [site:name]"
+
+msgid ""
+"[user:display-name],\n"
+"\n"
+"A site administrator at [site:name] has "
+"created an account for you. You may now log in by clicking this link "
+"or copying and pasting it into your "
+"browser:\n"
+"\n"
+"[user:one-time-login-url]\n"
+"\n"
+"This link can only be "
+"used once to log in and will lead you to a page where you can set your "
+"password.\n"
+"\n"
+"After setting your password, you will be able to log in "
+"at [site:login-url] in the future using:\n"
+"\n"
+"username: "
+"[user:name]\n"
+"password: Your password\n"
+"\n"
+"--  [site:name] team"
+msgstr ""
+"[user:display-name],\r\n"
+"\r\n"
+"A site administrator at [site:name] has "
+"created an account for you. You may now log in by clicking this link "
+"or copying and pasting it into your "
+"browser:\r\n"
+"\r\n"
+"[user:one-time-login-url]\r\n"
+"\r\n"
+"This link can "
+"only be used once to log in and will lead you to a page where you can "
+"set your password.\r\n"
+"\r\n"
+"After setting your password, you will be "
+"able to log in at [site:login-url] in the future "
+"using:\r\n"
+"\r\n"
+"username: [user:name]\r\n"
+"password: Your "
+"password\r\n"
+"\r\n"
+"--  [site:name] team"
+
+msgid "An administrator created an account for you at [site:name]"
+msgstr "Er is een account voor u aangemaakt voor [site:name]"
+
+msgid ""
+"[user:display-name],\n"
+"\n"
+"Thank you for registering at [site:name]. "
+"You may now log in by clicking this link or copying and pasting it "
+"into your browser:\n"
+"\n"
+"[user:one-time-login-url]\n"
+"\n"
+"This link can "
+"only be used once to log in and will lead you to a page where you can "
+"set your password.\n"
+"\n"
+"After setting your password, you will be able "
+"to log in at [site:login-url] in the future using:\n"
+"\n"
+"username: "
+"[user:name]\n"
+"password: Your password\n"
+"\n"
+"--  [site:name] team"
+msgstr ""
+"[user:display-name],\r\n"
+"\r\n"
+"Thank you for registering at "
+"[site:name]. You may now log in by clicking this link or copying and "
+"pasting it into your "
+"browser:\r\n"
+"\r\n"
+"[user:one-time-login-url]\r\n"
+"\r\n"
+"This link can "
+"only be used once to log in and will lead you to a page where you can "
+"set your password.\r\n"
+"\r\n"
+"After setting your password, you will be "
+"able to log in at [site:login-url] in the future "
+"using:\r\n"
+"\r\n"
+"username: [user:name]\r\n"
+"password: Your "
+"password\r\n"
+"\r\n"
+"--  [site:name] team"
+
+msgid "Account details for [user:display-name] at [site:name]"
+msgstr "Accountgegevens voor [user:display-name] op [site:name]"
+
+msgid ""
+"[user:display-name],\n"
+"\n"
+"Thank you for registering at [site:name]. "
+"Your application for an account is currently pending approval. Once it "
+"has been approved, you will receive another email containing "
+"information about how to log in, set your password, and other "
+"details.\n"
+"\n"
+"--  [site:name] team"
+msgstr ""
+"[user:display-name],\r\n"
+"\r\n"
+"Thank you for registering at "
+"[site:name]. Your application for an account is currently pending "
+"approval. Once it has been approved, you will receive another email "
+"containing information about how to log in, set your password, and "
+"other details.\r\n"
+"\r\n"
+"--  [site:name] team"
+
+msgid ""
+"Account details for [user:display-name] at [site:name] (pending admin "
+"approval)"
+msgstr ""
+"Accountgegevens voor [user:display-name] op [site:name] (wachtend op "
+"de goedkeuring van de beheerder)"
+
+msgid ""
+"[user:display-name] has applied for an account.\n"
+"\n"
+"[user:edit-url]"
+msgstr ""
+"[user:display-name] has applied for an "
+"account.\r\n"
+"\r\n"
+"[user:edit-url]"
+
+msgid ""
+"[user:display-name],\n"
+"\n"
+"Your account at [site:name] has been "
+"activated.\n"
+"\n"
+"You may now log in by clicking this link or copying "
+"and pasting it into your "
+"browser:\n"
+"\n"
+"[user:one-time-login-url]\n"
+"\n"
+"This link can only be "
+"used once to log in and will lead you to a page where you can set your "
+"password.\n"
+"\n"
+"After setting your password, you will be able to log in "
+"at [site:login-url] in the future using:\n"
+"\n"
+"username: "
+"[user:account-name]\n"
+"password: Your password\n"
+"\n"
+"--  [site:name] "
+"team"
+msgstr ""
+"[user:display-name],\r\n"
+"\r\n"
+"Your account at [site:name] has been "
+"activated.\r\n"
+"\r\n"
+"You may now log in by clicking this link or "
+"copying and pasting it into your "
+"browser:\r\n"
+"\r\n"
+"[user:one-time-login-url]\r\n"
+"\r\n"
+"This link can "
+"only be used once to log in and will lead you to a page where you can "
+"set your password.\r\n"
+"\r\n"
+"After setting your password, you will be "
+"able to log in at [site:login-url] in the future "
+"using:\r\n"
+"\r\n"
+"username: [user:account-name]\r\n"
+"password: Your "
+"password\r\n"
+"\r\n"
+"--  [site:name] team"
+
+msgid "Account details for [user:display-name] at [site:name] (approved)"
+msgstr "Accountgegevens voor [user:display-name] op [site:name] (goedgekeurd)"
+
+msgid ""
+"[user:display-name],\n"
+"\n"
+"Your account on [site:name] has been "
+"blocked.\n"
+"\n"
+"--  [site:name] team"
+msgstr ""
+"[user:display-name],\r\n"
+"\r\n"
+"Your account on [site:name] has been "
+"blocked.\r\n"
+"\r\n"
+"--  [site:name] team"
+
+msgid "Account details for [user:display-name] at [site:name] (blocked)"
+msgstr "Accountgegevens voor [user:display-name] op [site:name] (geblokkeerd)"
+
+msgid ""
+"[user:display-name],\n"
+"\n"
+"Your account on [site:name] has been "
+"canceled.\n"
+"\n"
+"--  [site:name] team"
+msgstr ""
+"[user:display-name],\r\n"
+"\r\n"
+"Your account on [site:name] has been "
+"canceled.\r\n"
+"\r\n"
+"--  [site:name] team"
+
+msgid "Account details for [user:display-name] at [site:name] (canceled)"
+msgstr "Accountgegevens voor [user:display-name] op [site:name] (geannuleerd)"
+
+msgid "Anonymous"
+msgstr "Anoniem"
+
+msgid "Log out"
+msgstr "Uitloggen"
+
+msgid "My profile"
+msgstr "Mijn profiel"
+
+msgid "My appointments"
+msgstr "Mijn afspraken"
+
+msgid "Upcoming appointments"
+msgstr "Aankomende afspraken"
+
+msgid "Account settings and more"
+msgstr ""
+"\r\n"
+"Accountinstellingen en meer"
+
+msgid "View all your appointments"
+msgstr "Bekijk al je afspraken"
 
 

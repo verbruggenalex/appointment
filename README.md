@@ -43,19 +43,25 @@ make mkcert_setup mkcert_install docker_network_create setup_hosts example_build
 
 ```bash
 # Starts all required services for a development environment.
-make dev
+make up-dev
+# Stops all services of a development environment.
+make down-dev
 ```
 
 ### Continuous integration.
 
 ```bash
 # Starts all required services for a ci environment.
-make ci
+make up-ci
+# Stops all services of a ci environment.
+make down-ci
 ```
 
 ### Production.
 
 ```bash
 # Starts all required services for a production environment.
-make prod
+make up-prod
+# Stops all services of a production environment.
+make down-prod
 ```

@@ -2,6 +2,7 @@
 
 ## Development
 
+* Provide translations for user sidebar.
 * Provide the first real behat tests.
 * Start cleaning up user sidebar.
 * Contact page form.

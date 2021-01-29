@@ -1,10 +1,10 @@
-# French translation of Open Appointment
+# French translation of Pactora
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-11-25 22:25+0000\n"
-"PO-Revision-Date: 2020-11-25 22:25+0000\n"
+"POT-Creation-Date: 2021-01-29 19:19+0000\n"
+"PO-Revision-Date: 2021-01-29 19:19+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -54,11 +54,14 @@ msgstr "Travaux"
 msgid "All"
 msgstr "Tout"
 
-msgid "Licenses"
-msgstr "Licences"
+msgid "Updated"
+msgstr "Mis à jour"
 
 msgid "Filter"
 msgstr "Filtrer"
+
+msgid "Licenses"
+msgstr "Licences"
 
 msgid "ID"
 msgstr "Identifiant (ID)"
@@ -69,51 +72,25 @@ msgstr "Étiquette"
 msgid "Owner"
 msgstr "Propriétaire"
 
-msgid "Updated"
-msgstr "Mis à jour"
-
 msgid "Operations links"
 msgstr "Liens d'actions"
 
-msgid "Any country"
-msgstr "Tous les pays"
+msgid "Log out"
+msgstr "Se déconnecter"
 
-msgid "Any occupation"
-msgstr "Toute profession"
+msgid "My profile"
+msgstr "Mon profil"
 
-msgid "Login with"
-msgstr "Connectez-vous avec"
+msgid "My appointments"
+msgstr "Mes rendez-vous"
 
-msgid "Login by username/email address"
-msgstr "Connexion par nom d'utilisateur/adresse e-mail"
+msgid "Upcoming appointments"
+msgstr "Prochains rendez-vous"
 
-msgid "You can use your username or email address to login."
-msgstr ""
-"Vous pouvez utiliser votre nom d'utilisateur ou adresse e-mail pour "
-"vous connecter."
+msgid "Account settings and more"
+msgstr "Paramètres de compte et plus"
 
-msgid "Currently closed"
-msgstr "Actuellement fermé"
-
-msgid "Select the date for your appointment."
-msgstr "Sélectionnez la date de votre rendez-vous."
-
-msgid "No slots available."
-msgstr "Aucun emplacement disponible."
-
-msgid "Select the time for your appointment."
-msgstr "Sélectionnez l'heure de votre rendez-vous."
-
-msgid "Book appointment now!"
-msgstr "Prenez rendez-vous maintenant!"
-
-msgid "Open at this moment!"
-msgstr "Ouvert en ce moment!"
-
-msgid "We are expecting you!"
-msgstr "Nous vous attendons!"
-
-msgid "French"
-msgstr "French"
+msgid "View all your appointments"
+msgstr "Afficher tous vos rendez-vous"
 
 

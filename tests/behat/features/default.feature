@@ -7,5 +7,8 @@ Feature: Default
     When I visit '/en'
     When I visit '/fr'
     When I visit '/nl'
+    When I visit '/en/business/barzan'
+    When I visit '/fr/business/barzan'
+    When I visit '/nl/business/barzan'
 
 
