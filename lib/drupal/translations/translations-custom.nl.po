@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2021-01-29 19:56+0000\n"
-"PO-Revision-Date: 2021-01-29 19:56+0000\n"
+"POT-Creation-Date: 2021-01-29 20:22+0000\n"
+"PO-Revision-Date: 2021-01-29 20:22+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -1054,6 +1054,9 @@ msgstr "Accountgegevens voor [user:display-name] op [site:name] (geannuleerd)"
 msgid "Anonymous"
 msgstr "Anoniem"
 
+msgid "Open at this moment!"
+msgstr "Open op dit moment!"
+
 msgid "Log out"
 msgstr "Uitloggen"
 
@@ -1077,6 +1080,9 @@ msgstr "Afspraak met"
 
 msgid "Starts in"
 msgstr "Begint binnen"
+
+msgid "We are expecting you!"
+msgstr "We verwachten je!"
 
 msgid "Currently closed"
 msgstr "Op dit moment gesloten"

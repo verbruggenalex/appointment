@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2021-01-29 19:56+0000\n"
-"PO-Revision-Date: 2021-01-29 19:56+0000\n"
+"POT-Creation-Date: 2021-01-29 20:22+0000\n"
+"PO-Revision-Date: 2021-01-29 20:22+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -75,6 +75,9 @@ msgstr "Propriétaire"
 msgid "Operations links"
 msgstr "Liens d'actions"
 
+msgid "Open at this moment!"
+msgstr "Ouvert en ce moment!"
+
 msgid "Log out"
 msgstr "Se déconnecter"
 
@@ -98,6 +101,9 @@ msgstr "Rendez-vous avec"
 
 msgid "Starts in"
 msgstr "Démarre dans"
+
+msgid "We are expecting you!"
+msgstr "Nous vous attendons!"
 
 msgid "Currently closed"
 msgstr "Actuellement fermé"
