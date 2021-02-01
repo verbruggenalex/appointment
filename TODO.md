@@ -2,7 +2,7 @@
 
 ## Development
 
-* Buy and set the real logo!!!! :) Trust in God.
+* Set the real logo!!!! :) Trust in God.
 * Provide more translations.
 * Provide the first real behat tests.
 * Start cleaning up user sidebar.

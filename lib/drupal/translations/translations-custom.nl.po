@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2021-01-29 20:22+0000\n"
-"PO-Revision-Date: 2021-01-29 20:22+0000\n"
+"POT-Creation-Date: 2021-01-30 11:56+0000\n"
+"PO-Revision-Date: 2021-01-30 11:56+0000\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -1086,6 +1086,11 @@ msgstr "We verwachten je!"
 
 msgid "Currently closed"
 msgstr "Op dit moment gesloten"
+
+msgid "No slots available."
+msgstr ""
+"\r\n"
+"Aucun emplacement disponible."
 
 msgid "Upcoming appointments"
 msgstr "Aankomende afspraken"

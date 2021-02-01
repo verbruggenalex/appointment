@@ -39,6 +39,7 @@ module:
   default_content: 0
   duration_field: 0
   dynamic_page_cache: 0
+  easy_breadcrumb: 0
   editor: 0
   entity: 0
   entity_reference_revisions: 0

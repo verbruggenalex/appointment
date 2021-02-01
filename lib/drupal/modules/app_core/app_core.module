@@ -423,24 +423,6 @@ function app_core_preprocess_links__language_block(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_HOOK().
- */
-function app_core_preprocess_breadcrumb(&$variables) {
-  $request = \Drupal::request();
-  $route_match = \Drupal::routeMatch();
-  $page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
-  $is_front = \Drupal::service('path.matcher')->isFrontPage();
-
-  $variables['#cache']['contexts'][] = 'url';
-  if (!$is_front) {
-    $variables['breadcrumb'][0]['text'] = t('Business list');
-    $variables['breadcrumb'][] = [
-      'text' => $page_title,
-    ];
-  }
-}
-
-/**
  * Implements hook_theme().
  */
 function app_core_theme() {

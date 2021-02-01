@@ -1,3 +1,5 @@
+label: 'User orders'
+description: 'Display a list of placed orders for a user.'
 display:
   default:
     display_title: Master
@@ -46,6 +48,7 @@ display:
           exception:
             title: All
   order_page:
+    display_title: 'User orders'
     display_options:
       menu:
         title: Orders
