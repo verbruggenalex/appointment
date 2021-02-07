@@ -2930,16 +2930,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "9.1.3",
+            "version": "9.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "62f5d7d0f9f7c279b996b0f33d0ccd501adcd980"
+                "reference": "d16a7cb33b7a01e3b2e66d36e2011f27ba9786f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/62f5d7d0f9f7c279b996b0f33d0ccd501adcd980",
-                "reference": "62f5d7d0f9f7c279b996b0f33d0ccd501adcd980",
+                "url": "https://api.github.com/repos/drupal/core/zipball/d16a7cb33b7a01e3b2e66d36e2011f27ba9786f4",
+                "reference": "d16a7cb33b7a01e3b2e66d36e2011f27ba9786f4",
                 "shasum": ""
             },
             "require": {
@@ -3176,13 +3176,13 @@
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
             "support": {
-                "source": "https://github.com/drupal/core/tree/9.1.3"
+                "source": "https://github.com/drupal/core/tree/9.1.4"
             },
-            "time": "2021-01-19T23:10:47+00:00"
+            "time": "2021-02-03T19:21:05+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
-            "version": "9.1.3",
+            "version": "9.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-composer-scaffold.git",
@@ -3226,22 +3226,22 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-composer-scaffold/tree/9.1.3"
+                "source": "https://github.com/drupal/core-composer-scaffold/tree/9.1.4"
             },
             "time": "2020-08-07T22:30:13+00:00"
         },
         {
             "name": "drupal/core-recommended",
-            "version": "9.1.3",
+            "version": "9.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-recommended.git",
-                "reference": "cc9bbc18cdd2a2aa9174d6ffc1f6428c330ba1ca"
+                "reference": "e48e05b546b0ebef74af26a6d3104dd3bd499202"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/cc9bbc18cdd2a2aa9174d6ffc1f6428c330ba1ca",
-                "reference": "cc9bbc18cdd2a2aa9174d6ffc1f6428c330ba1ca",
+                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/e48e05b546b0ebef74af26a6d3104dd3bd499202",
+                "reference": "e48e05b546b0ebef74af26a6d3104dd3bd499202",
                 "shasum": ""
             },
             "require": {
@@ -3250,7 +3250,7 @@
                 "doctrine/annotations": "1.11.1",
                 "doctrine/lexer": "1.2.1",
                 "doctrine/reflection": "1.2.2",
-                "drupal/core": "9.1.3",
+                "drupal/core": "9.1.4",
                 "egulias/email-validator": "2.1.22",
                 "guzzlehttp/guzzle": "6.5.5",
                 "guzzlehttp/promises": "1.4.0",
@@ -3311,9 +3311,9 @@
             ],
             "description": "Locked core dependencies; require this project INSTEAD OF drupal/core.",
             "support": {
-                "source": "https://github.com/drupal/core-recommended/tree/9.1.3"
+                "source": "https://github.com/drupal/core-recommended/tree/9.1.4"
             },
-            "time": "2021-01-19T23:10:47+00:00"
+            "time": "2021-02-03T19:21:05+00:00"
         },
         {
             "name": "drupal/ctools",
@@ -5810,17 +5810,17 @@
         },
         {
             "name": "drupal/views_autosubmit",
-            "version": "1.3.0",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views_autosubmit.git",
-                "reference": "8.x-1.3"
+                "reference": "8.x-1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_autosubmit-8.x-1.3.zip",
-                "reference": "8.x-1.3",
-                "shasum": "0dff8d8788afab23b97a5aaadb97765dc895d9e0"
+                "url": "https://ftp.drupal.org/files/projects/views_autosubmit-8.x-1.4.zip",
+                "reference": "8.x-1.4",
+                "shasum": "baae0d4a8df0edf3cc9787d8342e31fd22aa6ac4"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
@@ -5828,8 +5828,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.3",
-                    "datestamp": "1607189918",
+                    "version": "8.x-1.4",
+                    "datestamp": "1612186250",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7179,26 +7179,26 @@
         },
         {
             "name": "league/oauth2-facebook",
-            "version": "2.0.4",
+            "version": "2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/oauth2-facebook.git",
-                "reference": "e1d6cc369c56507b84811c985aa0ce9ed6683ed2"
+                "reference": "14cead7580cab8caace67f5a61ea5d2a8ff213eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/oauth2-facebook/zipball/e1d6cc369c56507b84811c985aa0ce9ed6683ed2",
-                "reference": "e1d6cc369c56507b84811c985aa0ce9ed6683ed2",
+                "url": "https://api.github.com/repos/thephpleague/oauth2-facebook/zipball/14cead7580cab8caace67f5a61ea5d2a8ff213eb",
+                "reference": "14cead7580cab8caace67f5a61ea5d2a8ff213eb",
                 "shasum": ""
             },
             "require": {
                 "league/oauth2-client": "^2.0",
-                "php": "^5.6 || ^7.0"
+                "php": "^5.6 || ^7.0 || ^8.0"
             },
             "require-dev": {
                 "ext-json": "*",
                 "mockery/mockery": "~1.3.0",
-                "phpunit/phpunit": "^5.7|^6.0",
+                "phpunit/phpunit": "^9.4",
                 "squizlabs/php_codesniffer": "~3.0"
             },
             "type": "library",
@@ -7229,9 +7229,9 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/oauth2-facebook/issues",
-                "source": "https://github.com/thephpleague/oauth2-facebook/tree/2.0.4"
+                "source": "https://github.com/thephpleague/oauth2-facebook/tree/2.0.5"
             },
-            "time": "2021-01-31T17:56:04+00:00"
+            "time": "2021-02-01T15:33:45+00:00"
         },
         {
             "name": "league/oauth2-google",
@@ -11779,25 +11779,26 @@
         },
         {
             "name": "behat/gherkin",
-            "version": "v4.7.1",
+            "version": "v4.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Behat/Gherkin.git",
-                "reference": "987bcdc3d29ba433e6bd4b1db4ae59737ba3dacd"
+                "reference": "2391482cd003dfdc36b679b27e9f5326bd656acd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Gherkin/zipball/987bcdc3d29ba433e6bd4b1db4ae59737ba3dacd",
-                "reference": "987bcdc3d29ba433e6bd4b1db4ae59737ba3dacd",
+                "url": "https://api.github.com/repos/Behat/Gherkin/zipball/2391482cd003dfdc36b679b27e9f5326bd656acd",
+                "reference": "2391482cd003dfdc36b679b27e9f5326bd656acd",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6"
+                "php": "~7.2|~8.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~5.7|~6|~7",
-                "symfony/phpunit-bridge": "~2.7|~3|~4",
-                "symfony/yaml": "~2.3|~3|~4"
+                "cucumber/cucumber": "dev-gherkin-16.0.0",
+                "phpunit/phpunit": "~8|~9",
+                "symfony/phpunit-bridge": "~3|~4|~5",
+                "symfony/yaml": "~3|~4|~5"
             },
             "suggest": {
                 "symfony/yaml": "If you want to parse features, represented in YAML files"
@@ -11836,9 +11837,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Behat/Gherkin/issues",
-                "source": "https://github.com/Behat/Gherkin/tree/v4.7.1"
+                "source": "https://github.com/Behat/Gherkin/tree/v4.8.0"
             },
-            "time": "2021-01-26T16:24:32+00:00"
+            "time": "2021-02-04T12:44:21+00:00"
         },
         {
             "name": "behat/mink",
@@ -14242,16 +14243,16 @@
         },
         {
             "name": "phpro/grumphp-shim",
-            "version": "v1.3.0",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpro/grumphp-shim.git",
-                "reference": "7fb57a01d106cf130b69e2e2d015134b2809ce3e"
+                "reference": "5536482f3cb79cebbd31c562a5f846c4e426dca0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpro/grumphp-shim/zipball/7fb57a01d106cf130b69e2e2d015134b2809ce3e",
-                "reference": "7fb57a01d106cf130b69e2e2d015134b2809ce3e",
+                "url": "https://api.github.com/repos/phpro/grumphp-shim/zipball/5536482f3cb79cebbd31c562a5f846c4e426dca0",
+                "reference": "5536482f3cb79cebbd31c562a5f846c4e426dca0",
                 "shasum": ""
             },
             "require": {
@@ -14296,9 +14297,9 @@
             "description": "GrumPHP Phar distribution",
             "support": {
                 "issues": "https://github.com/phpro/grumphp-shim/issues",
-                "source": "https://github.com/phpro/grumphp-shim/tree/v1.3.0"
+                "source": "https://github.com/phpro/grumphp-shim/tree/v1.3.1"
             },
-            "time": "2020-12-17T13:18:56+00:00"
+            "time": "2021-02-04T06:29:19+00:00"
         },
         {
             "name": "sirbrillig/phpcs-variable-analysis",
