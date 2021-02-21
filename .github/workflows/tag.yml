@@ -49,7 +49,7 @@ jobs:
       - name: Check watchdog
         if: always()
         run: |
-          docker-compose exec -T ci drush @web ws --count=50
+          docker-compose exec -T ci drush ws --count=50
           docker-compose exec -T ci drush @prod ws --count=50
 
       - name: Prepare release
